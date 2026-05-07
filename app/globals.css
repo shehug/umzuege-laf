@@ -1,26 +1,220 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --laf-yellow: #f6c21a;
+  --laf-black: #050505;
+  --laf-dark: #111111;
+  --laf-soft: #f7f7f2;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  margin: 0;
+  background: var(--laf-black);
+  color: white;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: var(--laf-yellow);
+  color: black;
+}
+
+.laf-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at top, black, transparent 72%);
+}
+
+.laf-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.laf-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  animation: orbFloat 12s ease-in-out infinite;
+}
+
+.laf-orb-one {
+  width: 420px;
+  height: 420px;
+  left: -120px;
+  top: 80px;
+  background: rgba(246, 194, 26, 0.28);
+}
+
+.laf-orb-two {
+  width: 480px;
+  height: 480px;
+  right: -160px;
+  top: 160px;
+  background: rgba(246, 194, 26, 0.18);
+  animation-delay: -4s;
+}
+
+.laf-orb-three {
+  width: 360px;
+  height: 360px;
+  left: 35%;
+  bottom: -180px;
+  background: rgba(255, 255, 255, 0.08);
+  animation-delay: -8s;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #f6c21a, #fff1a6, #f6c21a);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientMove 5s ease-in-out infinite;
+}
+
+.glow-button {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f6c21a, #ffe27a, #f6c21a);
+  box-shadow:
+    0 0 24px rgba(246, 194, 26, 0.35),
+    0 18px 60px rgba(246, 194, 26, 0.18);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.glow-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-120%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+  animation: shimmer 3.2s ease-in-out infinite;
+}
+
+.glow-button:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow:
+    0 0 34px rgba(246, 194, 26, 0.55),
+    0 22px 80px rgba(246, 194, 26, 0.24);
+}
+
+.premium-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(246, 194, 26, 0.65), rgba(255, 255, 255, 0.08), rgba(246, 194, 26, 0.22));
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.shine-card::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: linear-gradient(120deg, transparent 35%, rgba(255, 255, 255, 0.13), transparent 65%);
+  transform: rotate(18deg) translateX(-65%);
+  animation: cardShine 5.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.float-medium {
+  animation: floatMedium 5s ease-in-out infinite;
+}
+
+.laf-marquee {
+  overflow: hidden;
+}
+
+.marquee-track {
+  width: max-content;
+  animation: marquee 24s linear infinite;
+}
+
+@keyframes orbFloat {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(35px, -35px, 0) scale(1.08);
+  }
+}
+
+@keyframes gradientMove {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-120%);
+  }
+  55%, 100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes cardShine {
+  0% {
+    transform: rotate(18deg) translateX(-75%);
+  }
+  45%, 100% {
+    transform: rotate(18deg) translateX(75%);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+@keyframes floatMedium {
+  0%, 100% {
+    transform: translateY(0px) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(14px) rotate(1deg);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333%);
+  }
 }
