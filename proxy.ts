@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const PRIMARY_HOST = "umzuegelandshut.de";
+const PRIMARY_ORIGIN = "https://umzuegelandshut.de";
 
 const REDIRECT_HOSTS = new Set([
   "www.umzuegelandshut.de",
@@ -16,11 +16,12 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const url = request.nextUrl.clone();
-  url.protocol = "https:";
-  url.hostname = PRIMARY_HOST;
+  const redirectUrl = new URL(
+    request.nextUrl.pathname + request.nextUrl.search,
+    PRIMARY_ORIGIN
+  );
 
-  return NextResponse.redirect(url, 301);
+  return NextResponse.redirect(redirectUrl, 301);
 }
 
 export const config = {
