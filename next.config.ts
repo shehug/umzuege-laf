@@ -1,7 +1,32 @@
-import type { NextConfig } from "next";
+const nextConfig = {
+  turbopack: {
+    root: process.cwd(),
+  },
 
-const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: "/umzuege/privatumzug",
+        destination: "/privatumzug-landshut",
+        permanent: true,
+      },
+      {
+        source: "/umzuege/firmenumzug",
+        destination: "/firmenumzug-landshut",
+        permanent: true,
+      },
+      {
+        source: "/entruempelung",
+        destination: "/entruempelung-landshut",
+        permanent: true,
+      },
+      {
+        source: "/entruempelung/haushaltsaufloesung",
+        destination: "/wohnungsaufloesung-landshut",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

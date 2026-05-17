@@ -9,56 +9,44 @@ const phoneHref = "tel:+491629007565";
 
 const navItems = [
   { label: "Startseite", href: "/" },
-  { label: "Leistungen", href: "/leistungen" },
   {
-    label: "Umzüge",
-    href: "/umzuege",
+    label: "Umzugsunternehmen",
+    href: "/umzugsunternehmen-landshut",
     children: [
-      { label: "Privatumzug", href: "/umzuege/privatumzug" },
-      { label: "Firmenumzug", href: "/umzuege/firmenumzug" },
-      { label: "Fernumzug", href: "/umzuege/fernumzug" },
-      { label: "Expressumzug", href: "/umzuege/expressumzug" },
-      { label: "Einpackservice", href: "/umzuege/einpackservice" },
-      { label: "Möbelmontage", href: "/umzuege/moebelmontage" },
-      { label: "Lagerung", href: "/umzuege/lagerung" },
+      { label: "Umzugsunternehmen Landshut", href: "/umzugsunternehmen-landshut" },
+      { label: "Umzug Landshut", href: "/umzug-landshut" },
+      { label: "Privatumzug Landshut", href: "/privatumzug-landshut" },
+      { label: "Firmenumzug Landshut", href: "/firmenumzug-landshut" },
+      { label: "Fernumzug Landshut", href: "/umzuege/fernumzug" },
+      { label: "Expressumzug Landshut", href: "/umzuege/expressumzug" },
     ],
   },
   {
     label: "Entrümpelung",
-    href: "/entruempelung",
+    href: "/entruempelung-landshut",
     children: [
-      {
-        label: "Wohnungsentrümpelung",
-        href: "/entruempelung/wohnungsentruempelung",
-      },
-      {
-        label: "Haushaltsauflösung",
-        href: "/entruempelung/haushaltsaufloesung",
-      },
-      {
-        label: "Kellerentrümpelung",
-        href: "/entruempelung/kellerentruempelung",
-      },
-      {
-        label: "Dachbodenentrümpelung",
-        href: "/entruempelung/dachbodenentruempelung",
-      },
-      {
-        label: "Garagenentrümpelung",
-        href: "/entruempelung/garagenentruempelung",
-      },
-      {
-        label: "Büroentrümpelung",
-        href: "/entruempelung/bueroentruempelung",
-      },
-      {
-        label: "Sperrmüllentsorgung",
-        href: "/entruempelung/sperrmuellentsorgung",
-      },
+      { label: "Entrümpelung Landshut", href: "/entruempelung-landshut" },
+      { label: "Wohnungsauflösung Landshut", href: "/wohnungsaufloesung-landshut" },
+      { label: "Haushaltsauflösung Landshut", href: "/entruempelung/haushaltsaufloesung" },
+      { label: "Kellerentrümpelung", href: "/entruempelung/kellerentruempelung" },
+      { label: "Dachbodenentrümpelung", href: "/entruempelung/dachbodenentruempelung" },
+      { label: "Garagenentrümpelung", href: "/entruempelung/garagenentruempelung" },
+      { label: "Büroentrümpelung", href: "/entruempelung/bueroentruempelung" },
+      { label: "Sperrmüllentsorgung", href: "/entruempelung/sperrmuellentsorgung" },
+    ],
+  },
+  {
+    label: "Service",
+    href: "/leistungen",
+    children: [
+      { label: "Alle Leistungen", href: "/leistungen" },
+      { label: "Möbelmontage Landshut", href: "/umzuege/moebelmontage" },
+      { label: "Einpackservice Landshut", href: "/umzuege/einpackservice" },
+      { label: "Lagerung", href: "/umzuege/lagerung" },
+      { label: "FAQ", href: "/faq" },
     ],
   },
   { label: "Über uns", href: "/ueber-uns" },
-  { label: "FAQ", href: "/faq" },
   { label: "Kontakt", href: "/kontakt" },
 ];
 
@@ -92,6 +80,7 @@ export default function Header() {
                 src="/images/logo/laf-logo.png"
                 alt="Umzüge LAF Logo"
                 fill
+                sizes="144px"
                 className="object-contain"
                 priority
               />

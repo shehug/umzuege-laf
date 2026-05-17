@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import LocalSeoLinks from "../components/LocalSeoLinks";
 import { createSeoMetadata, seoPages } from "./seo";
 
 export const metadata = createSeoMetadata(seoPages.home);
@@ -15,7 +16,7 @@ const services = [
     title: "Privatumzug",
     label: "Umzüge",
     text: "Stressfrei umziehen mit sauberer Planung, sicherem Transport und zuverlässigem Team.",
-    href: "/umzuege/privatumzug",
+    href: "/privatumzug-landshut",
     number: "01",
     image: "/images/services/privatumzug.jpg",
   },
@@ -23,7 +24,7 @@ const services = [
     title: "Firmenumzug",
     label: "Gewerbe",
     text: "Strukturierte Betriebsumzüge mit minimaler Ausfallzeit und klarer Organisation.",
-    href: "/umzuege/firmenumzug",
+    href: "/firmenumzug-landshut",
     number: "02",
     image: "/images/services/firmenumzug.jpg",
   },
@@ -31,7 +32,7 @@ const services = [
     title: "Entrümpelung",
     label: "Räumung",
     text: "Wohnungen, Keller, Dachböden, Garagen und Gewerbeflächen sauber entrümpeln.",
-    href: "/entruempelung",
+    href: "/entruempelung-landshut",
     number: "03",
     image: "/images/services/entruempelung.jpg",
   },
@@ -78,15 +79,16 @@ export default function Home() {
             </div>
 
             <h1 className="max-w-5xl text-5xl font-black leading-[0.92] tracking-[-0.06em] md:text-7xl lg:text-8xl">
-              Umzug.
-              <span className="gradient-text block">Ohne Stress.</span>
+              Umzugsunternehmen Landshut.
+              <span className="gradient-text block">Umzug ohne Stress.</span>
               Mit LAF.
             </h1>
 
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/78 md:text-xl">
-              Von der Planung bis zum letzten Möbelstück: Umzüge LAF übernimmt
-              Privatumzüge, Firmenumzüge, Entrümpelungen, Möbelmontage und
-              Einpackservice — zuverlässig, sauber und persönlich.
+              Umzüge LAF ist Ihr Umzugsunternehmen in Landshut für Privatumzug,
+              Firmenumzug, Entrümpelung, Möbelmontage und Einpackservice.
+              Wir planen Ihren Umzug zuverlässig, sauber und persönlich —
+              in Landshut, Ergolding, Altdorf, Essenbach und Umgebung.
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -187,12 +189,21 @@ export default function Home() {
               </p>
             </div>
 
-            <Link
-              href="/leistungen"
-              className="w-fit rounded-full bg-black px-7 py-4 font-black text-white shadow-[0_20px_60px_rgba(0,0,0,0.18)] transition hover:bg-[#f6c21a] hover:text-black"
-            >
-              Alle Leistungen ansehen
-            </Link>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/umzugsunternehmen-landshut"
+                className="w-fit rounded-full bg-black px-7 py-4 font-black text-white shadow-[0_20px_60px_rgba(0,0,0,0.18)] transition hover:bg-[#f6c21a] hover:text-black"
+              >
+                Umzugsunternehmen Landshut
+              </Link>
+
+              <Link
+                href="/leistungen"
+                className="w-fit rounded-full border border-black/15 bg-white px-7 py-4 font-black text-black transition hover:bg-[#f6c21a]"
+              >
+                Alle Leistungen ansehen
+              </Link>
+            </div>
           </div>
 
           <div className="mt-16 grid gap-7 md:grid-cols-3">
@@ -405,6 +416,7 @@ export default function Home() {
   </div>
 </section>
 
+      <LocalSeoLinks />
       <Footer />
     </main>
   );

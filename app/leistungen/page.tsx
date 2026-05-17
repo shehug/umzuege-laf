@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import LocalSeoLinks from "../../components/LocalSeoLinks";
 import { createSeoMetadata, seoPages } from "../seo";
 
 export const metadata = createSeoMetadata(seoPages.leistungen);
@@ -332,6 +333,7 @@ export default function LeistungenPage() {
         </div>
       </section>
 
+      <LocalSeoLinks />
       <Footer />
     </main>
   );

@@ -23,90 +23,76 @@ const openingHoursSpecification = [
       "https://schema.org/Wednesday",
       "https://schema.org/Thursday",
       "https://schema.org/Friday",
-      "https://schema.org/Saturday",
+      "https://schema.org/Saturday"
     ],
     opens: "08:00",
-    closes: "18:00",
-  },
+    closes: "18:00"
+  }
+];
+
+const areaServed = [
+  { "@type": "City", name: "Landshut" },
+  { "@type": "City", name: "Ergolding" },
+  { "@type": "City", name: "Altdorf" },
+  { "@type": "City", name: "Essenbach" },
+  { "@type": "City", name: "Kumhausen" },
+  { "@type": "City", name: "Vilsbiburg" },
+  { "@type": "City", name: "Moosburg" },
+  { "@type": "AdministrativeArea", name: "Landkreis Landshut" },
+  { "@type": "State", name: "Bayern" }
 ];
 
 const services = [
   {
-    name: "Privatumzug",
+    name: "Umzugsunternehmen Landshut",
+    url: `${siteUrl}/umzuege`,
+    description: "Professionelle Umzüge in Landshut und Umgebung mit Umzüge LAF."
+  },
+  {
+    name: "Privatumzug Landshut",
     url: `${siteUrl}/umzuege/privatumzug`,
-    description: "Privatumzug in Landshut und Umgebung mit Umzüge LAF.",
+    description: "Privatumzug, Wohnungsumzug und Möbeltransport in Landshut."
   },
   {
-    name: "Firmenumzug",
+    name: "Firmenumzug Landshut",
     url: `${siteUrl}/umzuege/firmenumzug`,
-    description: "Strukturierter Firmenumzug in Landshut und Umgebung.",
+    description: "Firmenumzug, Büroumzug und Gewerbeumzug in Landshut."
   },
   {
-    name: "Fernumzug",
+    name: "Fernumzug Landshut",
     url: `${siteUrl}/umzuege/fernumzug`,
-    description: "Fernumzug mit Planung, Transport und zuverlässiger Umsetzung.",
+    description: "Fernumzug ab Landshut mit Planung, Transport und Möbelmontage."
   },
   {
-    name: "Expressumzug",
+    name: "Expressumzug Landshut",
     url: `${siteUrl}/umzuege/expressumzug`,
-    description: "Kurzfristige Expressumzüge in Landshut und Umgebung.",
+    description: "Kurzfristige Umzüge und schnelle Umzugshilfe in Landshut."
   },
   {
-    name: "Einpackservice",
+    name: "Einpackservice Landshut",
     url: `${siteUrl}/umzuege/einpackservice`,
-    description: "Einpackservice und Verpackungsservice für sichere Umzüge.",
+    description: "Einpackservice und Verpackungsservice für Umzüge in Landshut."
   },
   {
-    name: "Möbelmontage",
+    name: "Möbelmontage Landshut",
     url: `${siteUrl}/umzuege/moebelmontage`,
-    description: "Möbelmontage und Demontage im Rahmen Ihres Umzugs.",
+    description: "Möbel demontieren, transportieren und fachgerecht aufbauen lassen."
   },
   {
-    name: "Lagerung",
-    url: `${siteUrl}/umzuege/lagerung`,
-    description: "Flexible Lagerung und Zwischenlagerung für Möbel und Kartons.",
-  },
-  {
-    name: "Entrümpelung",
+    name: "Entrümpelung Landshut",
     url: `${siteUrl}/entruempelung`,
-    description: "Entrümpelung in Landshut und Umgebung durch Umzüge LAF.",
+    description: "Entrümpelung, Haushaltsauflösung und Sperrmüllentsorgung in Landshut."
   },
   {
-    name: "Wohnungsentrümpelung",
-    url: `${siteUrl}/entruempelung/wohnungsentruempelung`,
-    description: "Wohnungsentrümpelung in Landshut und Umgebung.",
-  },
-  {
-    name: "Haushaltsauflösung",
+    name: "Haushaltsauflösung Landshut",
     url: `${siteUrl}/entruempelung/haushaltsaufloesung`,
-    description: "Haushaltsauflösung für Wohnungen, Häuser und Nachlässe.",
+    description: "Haushaltsauflösung für Wohnung, Haus, Keller und Nachlass in Landshut."
   },
   {
-    name: "Kellerentrümpelung",
-    url: `${siteUrl}/entruempelung/kellerentruempelung`,
-    description: "Kellerentrümpelung für Keller, Kellerabteile und Lagerräume.",
-  },
-  {
-    name: "Dachbodenentrümpelung",
-    url: `${siteUrl}/entruempelung/dachbodenentruempelung`,
-    description: "Dachbodenentrümpelung für Dachböden, Kisten und Altbestände.",
-  },
-  {
-    name: "Garagenentrümpelung",
-    url: `${siteUrl}/entruempelung/garagenentruempelung`,
-    description:
-      "Garagenentrümpelung für Garagen, Regale, Reifen und Altbestände.",
-  },
-  {
-    name: "Büroentrümpelung",
-    url: `${siteUrl}/entruempelung/bueroentruempelung`,
-    description: "Büroentrümpelung für Büroflächen, Praxen und Gewerberäume.",
-  },
-  {
-    name: "Sperrmüllentsorgung",
+    name: "Sperrmüllentsorgung Landshut",
     url: `${siteUrl}/entruempelung/sperrmuellentsorgung`,
-    description: "Sperrmüllentsorgung und Abholung sperriger Gegenstände.",
-  },
+    description: "Sperrmüll, Möbel und sperrige Gegenstände in Landshut abholen lassen."
+  }
 ];
 
 const structuredData = {
@@ -119,37 +105,21 @@ const structuredData = {
       legalName,
       url: siteUrl,
       logo: `${siteUrl}/images/logo/laf-logo.png`,
-      image: `${siteUrl}/images/logo/laf-logo.png`,
+      image: `${siteUrl}/images/hero/hero-umzug-landshut.jpg`,
       description:
-        "Umzüge LAF ist Ihr zuverlässiges Umzugsunternehmen in Landshut für Privatumzüge, Firmenumzüge, Fernumzüge, Expressumzüge, Entrümpelungen, Haushaltsauflösungen, Möbelmontage, Einpackservice, Lagerung und Sperrmüllentsorgung.",
+        "Umzüge LAF ist ein Umzugsunternehmen in Landshut für Privatumzüge, Firmenumzüge, Fernumzüge, Expressumzüge, Entrümpelungen, Haushaltsauflösungen, Möbelmontage, Einpackservice, Lagerung und Sperrmüllentsorgung.",
       telephone: phone,
       email,
       vatID: "DE364728600",
-      priceRange: "$$",
+      priceRange: "€€",
       openingHours: "Mo-Sa 08:00-18:00",
       openingHoursSpecification,
       address,
-      areaServed: [
-        {
-          "@type": "City",
-          name: "Landshut",
-        },
-        {
-          "@type": "AdministrativeArea",
-          name: "Landshut und Umgebung",
-        },
-        {
-          "@type": "State",
-          name: "Bayern",
-        },
-      ],
-      serviceArea: {
-        "@type": "AdministrativeArea",
-        name: "Landshut und Umgebung",
-      },
+      areaServed,
+      serviceArea: areaServed,
       founder: {
         "@type": "Person",
-        name: legalName,
+        name: legalName
       },
       contactPoint: [
         {
@@ -158,17 +128,27 @@ const structuredData = {
           email,
           contactType: "customer service",
           areaServed: "DE-BY",
-          availableLanguage: ["de"],
-          hoursAvailable: openingHoursSpecification,
-        },
+          availableLanguage: ["de-DE"],
+          hoursAvailable: openingHoursSpecification
+        }
       ],
       sameAs: [
-        "https://umzuege-laf.de",
-        "https://www.facebook.com/61561388244118/",
+        "https://www.facebook.com/61561388244118/"
+      ],
+      knowsAbout: [
+        "Umzugsunternehmen Landshut",
+        "Umzug Landshut",
+        "Umzüge Landshut",
+        "Privatumzug Landshut",
+        "Firmenumzug Landshut",
+        "Entrümpelung Landshut",
+        "Haushaltsauflösung Landshut",
+        "Möbelmontage Landshut",
+        "Sperrmüllentsorgung Landshut"
       ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Leistungen von Umzüge LAF",
+        name: "Umzugs- und Entrümpelungsleistungen in Landshut",
         itemListElement: services.map((service) => ({
           "@type": "Offer",
           itemOffered: {
@@ -177,15 +157,12 @@ const structuredData = {
             url: service.url,
             description: service.description,
             provider: {
-              "@id": `${siteUrl}/#localbusiness`,
+              "@id": `${siteUrl}/#localbusiness`
             },
-            areaServed: {
-              "@type": "City",
-              name: "Landshut",
-            },
-          },
-        })),
-      },
+            areaServed
+          }
+        }))
+      }
     },
     {
       "@type": "Organization",
@@ -200,75 +177,47 @@ const structuredData = {
       address,
       founder: {
         "@type": "Person",
-        name: legalName,
+        name: legalName
       },
       sameAs: [
-        "https://umzuege-laf.de",
-        "https://www.facebook.com/61561388244118/",
-      ],
+        "https://www.facebook.com/61561388244118/"
+      ]
     },
     {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
-      name: "Umzüge LAF | Landshut",
+      name: "Umzüge LAF Landshut",
+      alternateName: [
+        "Umzüge LAF",
+        "Umzugsunternehmen Landshut",
+        "Umzüge Landshut"
+      ],
       url: siteUrl,
       inLanguage: "de-DE",
       publisher: {
-        "@id": `${siteUrl}/#organization`,
-      },
+        "@id": `${siteUrl}/#organization`
+      }
     },
     {
       "@type": "WebPage",
       "@id": `${siteUrl}/#webpage`,
       url: siteUrl,
-      name: "Umzüge LAF | Umzugsunternehmen & Entrümpelung in Landshut",
+      name: "Umzugsunternehmen Landshut | Umzüge LAF",
       description:
-        "Umzüge LAF ist Ihr zuverlässiges Umzugsunternehmen in Landshut für Umzüge, Entrümpelungen, Haushaltsauflösungen, Möbelmontage, Einpackservice und Sperrmüllentsorgung.",
+        "Umzüge LAF ist Ihr Umzugsunternehmen in Landshut für Umzug, Privatumzug, Firmenumzug, Entrümpelung, Haushaltsauflösung, Möbelmontage und Sperrmüllentsorgung.",
       inLanguage: "de-DE",
       isPartOf: {
-        "@id": `${siteUrl}/#website`,
+        "@id": `${siteUrl}/#website`
       },
       about: {
-        "@id": `${siteUrl}/#localbusiness`,
+        "@id": `${siteUrl}/#localbusiness`
       },
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": `${siteUrl}/#breadcrumb`,
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Startseite",
-          item: siteUrl,
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Leistungen",
-          item: `${siteUrl}/leistungen`,
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "Umzüge",
-          item: `${siteUrl}/umzuege`,
-        },
-        {
-          "@type": "ListItem",
-          position: 4,
-          name: "Entrümpelung",
-          item: `${siteUrl}/entruempelung`,
-        },
-        {
-          "@type": "ListItem",
-          position: 5,
-          name: "Kontakt",
-          item: `${siteUrl}/kontakt`,
-        },
-      ],
-    },
-  ],
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: `${siteUrl}/images/hero/hero-umzug-landshut.jpg`
+      }
+    }
+  ]
 };
 
 export default function SeoJsonLd() {

@@ -1,5 +1,6 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import LocalSeoLinks from "../../components/LocalSeoLinks";
 import ContactForm from "../../components/ContactForm";
 import { createSeoMetadata, seoPages } from "../seo";
 
@@ -340,6 +341,7 @@ export default function KontaktPage() {
         </div>
       </section>
 
+      <LocalSeoLinks />
       <Footer />
     </main>
   );

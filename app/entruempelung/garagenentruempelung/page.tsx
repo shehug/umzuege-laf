@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
+import LocalSeoLinks from "../../../components/LocalSeoLinks";
 import { createSeoMetadata, seoPages } from "../../seo";
 import ServiceJsonLd from "../../../components/ServiceJsonLd";
 import BreadcrumbJsonLd from "../../../components/BreadcrumbJsonLd";
@@ -545,6 +546,7 @@ export default function GaragenentruempelungPage() {
         </div>
       </section>
 
+      <LocalSeoLinks />
       <Footer />
     </main>
   );

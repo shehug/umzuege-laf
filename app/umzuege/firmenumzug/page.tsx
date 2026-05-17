@@ -2,11 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
+import LocalSeoLinks from "../../../components/LocalSeoLinks";
 import { createSeoMetadata, seoPages } from "../../seo";
 import ServiceJsonLd from "../../../components/ServiceJsonLd";
 import BreadcrumbJsonLd from "../../../components/BreadcrumbJsonLd";
 
-export const metadata = createSeoMetadata(seoPages.privatumzug);
+export const metadata = createSeoMetadata(seoPages.firmenumzug);
 
 const phone = "0162 900 75 65";
 const phoneHref = "tel:+491629007565";
@@ -417,6 +418,7 @@ export default function FirmenumzugPage() {
         </div>
       </section>
 
+      <LocalSeoLinks />
       <Footer />
     </main>
   );

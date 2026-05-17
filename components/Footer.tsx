@@ -8,20 +8,24 @@ const email = "info@umzuege-laf.de";
 
 const links = [
   { label: "Startseite", href: "/" },
+  { label: "Umzugsunternehmen Landshut", href: "/umzugsunternehmen-landshut" },
+  { label: "Umzug Landshut", href: "/umzug-landshut" },
   { label: "Leistungen", href: "/leistungen" },
-  { label: "Umzüge", href: "/umzuege" },
-  { label: "Entrümpelung", href: "/entruempelung" },
   { label: "Über uns", href: "/ueber-uns" },
+  { label: "FAQ", href: "/faq" },
   { label: "Kontakt", href: "/kontakt" },
 ];
 
 const services = [
-  { label: "Privatumzug", href: "/umzuege/privatumzug" },
-  { label: "Firmenumzug", href: "/umzuege/firmenumzug" },
-  { label: "Möbelmontage", href: "/umzuege/moebelmontage" },
-  { label: "Einpackservice", href: "/umzuege/einpackservice" },
-  { label: "Haushaltsauflösung", href: "/entruempelung/haushaltsaufloesung" },
-  { label: "Sperrmüllentsorgung", href: "/entruempelung/sperrmuellentsorgung" },
+  { label: "Privatumzug Landshut", href: "/privatumzug-landshut" },
+  { label: "Firmenumzug Landshut", href: "/firmenumzug-landshut" },
+  { label: "Entrümpelung Landshut", href: "/entruempelung-landshut" },
+  { label: "Wohnungsauflösung Landshut", href: "/wohnungsaufloesung-landshut" },
+  { label: "Möbelmontage Landshut", href: "/umzuege/moebelmontage" },
+  { label: "Einpackservice Landshut", href: "/umzuege/einpackservice" },
+  { label: "Fernumzug Landshut", href: "/umzuege/fernumzug" },
+  { label: "Expressumzug Landshut", href: "/umzuege/expressumzug" },
+  { label: "Sperrmüllentsorgung Landshut", href: "/entruempelung/sperrmuellentsorgung" },
 ];
 
 export default function Footer() {
@@ -36,15 +40,16 @@ export default function Footer() {
                   src="/images/logo/Lafi12.png"
                   alt="Umzüge LAF Logo"
                   fill
+                  sizes="192px"
                   className="object-contain"
                 />
               </div>
             </Link>
 
             <p className="mt-6 max-w-sm text-sm leading-7 text-white/60">
-              Umzüge LAF ist Ihr zuverlässiger Partner für Umzüge,
-              Entrümpelungen, Möbelmontage und Einpackservice in Landshut und
-              Umgebung.
+              Umzüge LAF ist Ihr Umzugsunternehmen in Landshut für Privatumzug,
+              Firmenumzug, Entrümpelung, Wohnungsauflösung, Möbelmontage und
+              Einpackservice in Landshut und Umgebung.
             </p>
 
             <div className="mt-6 flex flex-col gap-2 text-sm text-white/70">
@@ -117,7 +122,7 @@ export default function Footer() {
             <div className="mt-8 rounded-3xl border border-white/10 bg-white/[0.04] p-5">
               <p className="text-sm font-black text-white">Schnell anfragen</p>
               <p className="mt-2 text-sm leading-6 text-white/55">
-                Für Umzug, Entrümpelung oder Möbelmontage einfach kurz melden.
+                Für Umzug Landshut, Entrümpelung Landshut oder Möbelmontage einfach kurz melden.
               </p>
             </div>
           </div>

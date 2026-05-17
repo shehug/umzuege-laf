@@ -78,7 +78,7 @@ export function createSeoMetadata(page: SeoPage): Metadata {
 
 export const seoPages = {
   home: {
-    title: "Umzüge LAF | Umzugsunternehmen & Entrümpelung in Landshut",
+    title: "Umzüge Landshut | Umzugsunternehmen & Entrümpelung – LAF",
     description:
       "Umzüge LAF ist Ihr Umzugsunternehmen in Landshut für Privatumzug, Firmenumzug, Entrümpelung, Haushaltsauflösung, Möbelmontage und Sperrmüllentsorgung.",
     path: "/",

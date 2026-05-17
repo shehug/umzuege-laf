@@ -9,6 +9,36 @@ const routes = [
     changeFrequency: "weekly",
   },
   {
+    path: "/umzug-landshut",
+    priority: 1,
+    changeFrequency: "weekly",
+  },
+  {
+    path: "/privatumzug-landshut",
+    priority: 0.95,
+    changeFrequency: "weekly",
+  },
+  {
+    path: "/firmenumzug-landshut",
+    priority: 0.95,
+    changeFrequency: "weekly",
+  },
+  {
+    path: "/entruempelung-landshut",
+    priority: 0.95,
+    changeFrequency: "weekly",
+  },
+  {
+    path: "/wohnungsaufloesung-landshut",
+    priority: 0.9,
+    changeFrequency: "weekly",
+  },
+  {
+    path: "/umzugsunternehmen-landshut",
+    priority: 1,
+    changeFrequency: "weekly",
+  },
+  {
     path: "/leistungen",
     priority: 0.95,
     changeFrequency: "monthly",
@@ -16,16 +46,6 @@ const routes = [
   {
     path: "/umzuege",
     priority: 0.95,
-    changeFrequency: "monthly",
-  },
-  {
-    path: "/umzuege/privatumzug",
-    priority: 0.9,
-    changeFrequency: "monthly",
-  },
-  {
-    path: "/umzuege/firmenumzug",
-    priority: 0.9,
     changeFrequency: "monthly",
   },
   {
@@ -54,17 +74,7 @@ const routes = [
     changeFrequency: "monthly",
   },
   {
-    path: "/entruempelung",
-    priority: 0.95,
-    changeFrequency: "monthly",
-  },
-  {
     path: "/entruempelung/wohnungsentruempelung",
-    priority: 0.9,
-    changeFrequency: "monthly",
-  },
-  {
-    path: "/entruempelung/haushaltsaufloesung",
     priority: 0.9,
     changeFrequency: "monthly",
   },

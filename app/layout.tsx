@@ -11,8 +11,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
   title: {
-    default: "Umzüge LAF | Umzugsunternehmen & Entrümpelung in Landshut",
-    template: "%s | Umzüge LAF Landshut",
+    default: "Umzüge Landshut | Umzugsunternehmen & Entrümpelung – LAF",
+    template: "%s | Umzüge Landshut",
   },
 
   description:
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     locale: "de_DE",
     url: siteUrl,
     siteName: "Umzüge LAF",
-    title: "Umzüge LAF | Umzugsunternehmen & Entrümpelung in Landshut",
+    title: "Umzüge Landshut | Umzugsunternehmen & Entrümpelung – LAF",
     description:
       "Professionelle Umzüge, Entrümpelungen, Haushaltsauflösungen, Möbelmontage, Einpackservice und Sperrmüllentsorgung in Landshut & Umgebung.",
     images: [
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Umzüge LAF | Umzugsunternehmen in Landshut",
+    title: "Umzüge Landshut | Umzugsunternehmen LAF",
     description:
       "Umzüge, Entrümpelung, Haushaltsauflösung, Möbelmontage und Sperrmüllentsorgung in Landshut & Umgebung.",
     images: ["/images/logo/laf-logo.png"],
