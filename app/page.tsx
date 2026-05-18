@@ -51,7 +51,7 @@ export default function Home() {
 
       <Header />
 
-      <section className="relative z-10 min-h-screen overflow-hidden">
+      <section className="relative z-10 overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/hero/Hero.jpg"
@@ -68,9 +68,9 @@ export default function Home() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.22),transparent_28%)]" />
         </div>
 
-        <div className="relative mx-auto flex min-h-screen max-w-7xl items-center px-5 pb-16 pt-32 lg:px-8">
+        <div className="relative mx-auto flex min-h-[92svh] max-w-7xl items-center px-5 pb-10 pt-28 sm:pb-16 sm:pt-32 lg:min-h-screen lg:px-8">
           <div className="max-w-4xl">
-            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-[#f6c21a]/30 bg-[#f6c21a]/10 px-4 py-2 text-sm font-bold text-[#f6c21a] shadow-[0_0_40px_rgba(246,194,26,0.12)] backdrop-blur-xl">
+            <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-[#f6c21a]/30 bg-[#f6c21a]/10 px-4 py-2 text-xs font-bold text-[#f6c21a] shadow-[0_0_40px_rgba(246,194,26,0.12)] backdrop-blur-xl sm:mb-7 sm:text-sm">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f6c21a] opacity-75" />
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#f6c21a]" />
@@ -78,20 +78,20 @@ export default function Home() {
               Premium Umzugsservice in Landshut
             </div>
 
-            <h1 className="max-w-5xl text-5xl font-black leading-[0.92] tracking-[-0.06em] md:text-7xl lg:text-8xl">
+            <h1 className="max-w-5xl text-[2.55rem] font-black leading-[0.98] tracking-[-0.05em] sm:text-6xl sm:leading-[0.95] md:text-7xl lg:text-8xl">
               Umzugsunternehmen Landshut.
               <span className="gradient-text block">Umzug ohne Stress.</span>
               Mit LAF.
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/78 md:text-xl">
+            <p className="mt-5 max-w-2xl text-base leading-7 text-white/78 sm:mt-7 md:text-xl md:leading-8">
               Umzüge LAF ist Ihr Umzugsunternehmen in Landshut für Privatumzug,
               Firmenumzug, Entrümpelung, Möbelmontage und Einpackservice.
               Wir planen Ihren Umzug zuverlässig, sauber und persönlich —
               in Landshut, Ergolding, Altdorf, Essenbach und Umgebung.
             </p>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
               <Link
                 href="/kontakt"
                 className="glow-button rounded-full px-8 py-4 text-center text-base font-black text-black"
@@ -107,24 +107,30 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="mt-12 grid max-w-2xl grid-cols-1 gap-4 sm:grid-cols-3">
-              <div className="premium-border rounded-3xl bg-black/35 p-4 backdrop-blur-xl">
-                <p className="text-2xl font-black text-[#f6c21a]">100%</p>
-                <p className="mt-1 text-xs leading-5 text-white/65">
+            <div className="mt-8 grid max-w-2xl grid-cols-3 gap-2 sm:mt-12 sm:gap-4">
+              <div className="premium-border rounded-2xl bg-black/35 p-3 backdrop-blur-xl sm:rounded-3xl sm:p-4">
+                <p className="text-lg font-black text-[#f6c21a] sm:text-2xl">
+                  100%
+                </p>
+                <p className="mt-1 text-[11px] leading-4 text-white/65 sm:text-xs sm:leading-5">
                   persönlich geplant
                 </p>
               </div>
 
-              <div className="premium-border rounded-3xl bg-black/35 p-4 backdrop-blur-xl">
-                <p className="text-2xl font-black text-[#f6c21a]">Fair</p>
-                <p className="mt-1 text-xs leading-5 text-white/65">
+              <div className="premium-border rounded-2xl bg-black/35 p-3 backdrop-blur-xl sm:rounded-3xl sm:p-4">
+                <p className="text-lg font-black text-[#f6c21a] sm:text-2xl">
+                  Fair
+                </p>
+                <p className="mt-1 text-[11px] leading-4 text-white/65 sm:text-xs sm:leading-5">
                   transparente Preise
                 </p>
               </div>
 
-              <div className="premium-border rounded-3xl bg-black/35 p-4 backdrop-blur-xl">
-                <p className="text-2xl font-black text-[#f6c21a]">LAF</p>
-                <p className="mt-1 text-xs leading-5 text-white/65">
+              <div className="premium-border rounded-2xl bg-black/35 p-3 backdrop-blur-xl sm:rounded-3xl sm:p-4">
+                <p className="text-lg font-black text-[#f6c21a] sm:text-2xl">
+                  LAF
+                </p>
+                <p className="mt-1 text-[11px] leading-4 text-white/65 sm:text-xs sm:leading-5">
                   Team aus Landshut
                 </p>
               </div>
@@ -132,8 +138,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative z-20 mx-auto -mt-10 max-w-7xl px-5 pb-8 lg:px-8">
-          <div className="grid gap-4 rounded-[2rem] border border-white/10 bg-black/45 p-5 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-2xl md:grid-cols-3 md:p-6">
+        <div className="relative z-20 mx-auto mt-0 max-w-7xl px-5 pb-8 sm:-mt-10 lg:px-8">
+          <div className="grid gap-3 rounded-[1.5rem] border border-white/10 bg-black/55 p-4 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-2xl sm:rounded-[2rem] md:grid-cols-3 md:p-6">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.25em] text-[#f6c21a]">
                 Schnell
@@ -158,7 +164,9 @@ export default function Home() {
               <p className="text-xs font-black uppercase tracking-[0.25em] text-[#f6c21a]">
                 Persönlich
               </p>
-              <p className="mt-2 text-lg font-black">Direkter Ansprechpartner</p>
+              <p className="mt-2 text-lg font-black">
+                Direkter Ansprechpartner
+              </p>
               <p className="mt-1 text-sm text-white/60">
                 Ein Umzugspartner, der erreichbar ist und mitdenkt.
               </p>
@@ -277,144 +285,145 @@ export default function Home() {
       </section>
 
       <section className="relative z-10 overflow-hidden bg-[#050505] px-5 py-28 lg:px-8">
-  <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#f6c21a]/15 blur-3xl" />
-  <div className="absolute -right-40 bottom-10 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
+        <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#f6c21a]/15 blur-3xl" />
+        <div className="absolute -right-40 bottom-10 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
 
-  <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
-    <div>
-      <p className="font-black uppercase tracking-[0.28em] text-[#f6c21a]">
-        Anfrage starten
-      </p>
-
-      <h2 className="mt-5 max-w-3xl text-4xl font-black tracking-[-0.05em] text-white md:text-6xl">
-        Ein guter Umzug beginnt mit einem klaren Plan.
-      </h2>
-
-      <p className="mt-6 max-w-2xl text-lg leading-8 text-white/65">
-        Teilen Sie uns kurz mit, worum es geht. Ob Privatumzug,
-        Firmenumzug, Entrümpelung oder Möbelmontage — Umzüge LAF meldet sich
-        schnell und plant den Ablauf transparent mit Ihnen.
-      </p>
-
-      <div className="mt-10 grid gap-4 sm:grid-cols-2">
-        {[
-          "Kostenlose Ersteinschätzung",
-          "Persönliche Beratung",
-          "Faire und klare Planung",
-          "Landshut & Umgebung",
-        ].map((item) => (
-          <div
-            key={item}
-            className="premium-border rounded-3xl bg-white/[0.045] p-5 backdrop-blur-xl"
-          >
-            <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black">
-              ✓
-            </div>
-            <p className="font-black text-white">{item}</p>
-            <p className="mt-2 text-sm leading-6 text-white/55">
-              Schnell, unkompliziert und zuverlässig abgestimmt.
+        <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+          <div>
+            <p className="font-black uppercase tracking-[0.28em] text-[#f6c21a]">
+              Anfrage starten
             </p>
-          </div>
-        ))}
-      </div>
 
-      <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-        <a
-          href={phoneHref}
-          className="glow-button rounded-full px-8 py-4 text-center font-black text-black"
-        >
-          Jetzt anrufen
-        </a>
+            <h2 className="mt-5 max-w-3xl text-4xl font-black tracking-[-0.05em] text-white md:text-6xl">
+              Ein guter Umzug beginnt mit einem klaren Plan.
+            </h2>
 
-        <a
-          href={`mailto:${email}`}
-          className="rounded-full border border-white/15 bg-white/[0.03] px-8 py-4 text-center font-black text-white backdrop-blur-xl transition hover:border-[#f6c21a] hover:text-[#f6c21a]"
-        >
-          E-Mail schreiben
-        </a>
-      </div>
-    </div>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/65">
+              Teilen Sie uns kurz mit, worum es geht. Ob Privatumzug,
+              Firmenumzug, Entrümpelung oder Möbelmontage — Umzüge LAF meldet
+              sich schnell und plant den Ablauf transparent mit Ihnen.
+            </p>
 
-    <div className="relative">
-      <div className="absolute -inset-4 rounded-[2.5rem] bg-[#f6c21a]/20 blur-2xl" />
-
-      <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.06] p-5 shadow-[0_35px_120px_rgba(0,0,0,0.5)] backdrop-blur-2xl md:p-7">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.18),transparent_35%)]" />
-
-        <div className="relative">
-          <div className="mb-7 flex items-center justify-between gap-4">
-            <div>
-              <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
-                Schnellformular
-              </p>
-              <h3 className="mt-2 text-3xl font-black text-white">
-                Was möchten Sie anfragen?
-              </h3>
+            <div className="mt-10 grid gap-4 sm:grid-cols-2">
+              {[
+                "Kostenlose Ersteinschätzung",
+                "Persönliche Beratung",
+                "Faire und klare Planung",
+                "Landshut & Umgebung",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="premium-border rounded-3xl bg-white/[0.045] p-5 backdrop-blur-xl"
+                >
+                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black">
+                    ✓
+                  </div>
+                  <p className="font-black text-white">{item}</p>
+                  <p className="mt-2 text-sm leading-6 text-white/55">
+                    Schnell, unkompliziert und zuverlässig abgestimmt.
+                  </p>
+                </div>
+              ))}
             </div>
 
-            <div className="hidden h-14 w-14 items-center justify-center rounded-2xl bg-[#f6c21a] text-2xl font-black text-black sm:flex">
-              →
-            </div>
-          </div>
-
-          <div className="grid gap-3">
-            {[
-              "Privatumzug",
-              "Firmenumzug",
-              "Entrümpelung",
-              "Möbelmontage",
-              "Einpackservice",
-            ].map((item) => (
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a
-                key={item}
-                href={`mailto:${email}?subject=Anfrage: ${encodeURIComponent(
-                  item
-                )}&body=Hallo Umzüge LAF,%0D%0A%0D%0Aich möchte eine Anfrage stellen für: ${encodeURIComponent(
-                  item
-                )}.%0D%0A%0D%0AOrt:%0D%0ADatum:%0D%0AKurze Beschreibung:%0D%0A%0D%0AMit freundlichen Grüßen`}
-                className="group flex items-center justify-between rounded-2xl border border-white/10 bg-black/35 px-5 py-4 transition hover:border-[#f6c21a]/50 hover:bg-[#f6c21a]/10"
+                href={phoneHref}
+                className="glow-button rounded-full px-8 py-4 text-center font-black text-black"
               >
-                <span className="font-black text-white group-hover:text-[#f6c21a]">
-                  {item}
-                </span>
-
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition group-hover:bg-[#f6c21a] group-hover:text-black">
-                  →
-                </span>
+                Jetzt anrufen
               </a>
-            ))}
+
+              <a
+                href={`mailto:${email}`}
+                className="rounded-full border border-white/15 bg-white/[0.03] px-8 py-4 text-center font-black text-white backdrop-blur-xl transition hover:border-[#f6c21a] hover:text-[#f6c21a]"
+              >
+                E-Mail schreiben
+              </a>
+            </div>
           </div>
 
-          <div className="mt-7 rounded-[1.5rem] border border-[#f6c21a]/25 bg-[#f6c21a]/10 p-5">
-            <p className="font-black text-[#f6c21a]">
-              Tipp für eine schnelle Einschätzung
-            </p>
-            <p className="mt-2 text-sm leading-6 text-white/65">
-              Nennen Sie bitte Startadresse, Zieladresse, Etage, gewünschtes
-              Datum und ob Möbelmontage oder Verpackung gewünscht ist.
-            </p>
-          </div>
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-[2.5rem] bg-[#f6c21a]/20 blur-2xl" />
 
-          <div className="mt-7 grid gap-3 sm:grid-cols-2">
-            <a
-              href={phoneHref}
-              className="rounded-full bg-[#f6c21a] px-6 py-4 text-center font-black text-black transition hover:bg-white"
-            >
-              {phone}
-            </a>
+            <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.06] p-5 shadow-[0_35px_120px_rgba(0,0,0,0.5)] backdrop-blur-2xl md:p-7">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.18),transparent_35%)]" />
 
-            <a
-              href={`mailto:${email}`}
-              className="rounded-full border border-white/15 px-6 py-4 text-center font-black text-white transition hover:border-[#f6c21a] hover:text-[#f6c21a]"
-            >
-              {email}
-            </a>
+              <div className="relative">
+                <div className="mb-7 flex items-center justify-between gap-4">
+                  <div>
+                    <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
+                      Schnellformular
+                    </p>
+                    <h3 className="mt-2 text-3xl font-black text-white">
+                      Was möchten Sie anfragen?
+                    </h3>
+                  </div>
+
+                  <div className="hidden h-14 w-14 items-center justify-center rounded-2xl bg-[#f6c21a] text-2xl font-black text-black sm:flex">
+                    →
+                  </div>
+                </div>
+
+                <div className="grid gap-3">
+                  {[
+                    "Privatumzug",
+                    "Firmenumzug",
+                    "Entrümpelung",
+                    "Möbelmontage",
+                    "Einpackservice",
+                  ].map((item) => (
+                    <a
+                      key={item}
+                      href={`mailto:${email}?subject=Anfrage: ${encodeURIComponent(
+                        item
+                      )}&body=Hallo Umzüge LAF,%0D%0A%0D%0Aich möchte eine Anfrage stellen für: ${encodeURIComponent(
+                        item
+                      )}.%0D%0A%0D%0AOrt:%0D%0ADatum:%0D%0AKurze Beschreibung:%0D%0A%0D%0AMit freundlichen Grüßen`}
+                      className="group flex items-center justify-between rounded-2xl border border-white/10 bg-black/35 px-5 py-4 transition hover:border-[#f6c21a]/50 hover:bg-[#f6c21a]/10"
+                    >
+                      <span className="font-black text-white group-hover:text-[#f6c21a]">
+                        {item}
+                      </span>
+
+                      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition group-hover:bg-[#f6c21a] group-hover:text-black">
+                        →
+                      </span>
+                    </a>
+                  ))}
+                </div>
+
+                <div className="mt-7 rounded-[1.5rem] border border-[#f6c21a]/25 bg-[#f6c21a]/10 p-5">
+                  <p className="font-black text-[#f6c21a]">
+                    Tipp für eine schnelle Einschätzung
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-white/65">
+                    Nennen Sie bitte Startadresse, Zieladresse, Etage,
+                    gewünschtes Datum und ob Möbelmontage oder Verpackung
+                    gewünscht ist.
+                  </p>
+                </div>
+
+                <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                  <a
+                    href={phoneHref}
+                    className="rounded-full bg-[#f6c21a] px-6 py-4 text-center font-black text-black transition hover:bg-white"
+                  >
+                    {phone}
+                  </a>
+
+                  <a
+                    href={`mailto:${email}`}
+                    className="rounded-full border border-white/15 px-6 py-4 text-center font-black text-white transition hover:border-[#f6c21a] hover:text-[#f6c21a]"
+                  >
+                    {email}
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       <LocalSeoLinks />
       <Footer />
