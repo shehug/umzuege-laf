@@ -58,17 +58,17 @@ export default function Home() {
             alt="Umzüge LAF Hero Bild"
             fill
             priority
-            className="object-cover object-center"
+            className="object-cover object-[58%_center] sm:object-center"
           />
 
           <div className="absolute inset-0 bg-black/35" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-black/20 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/95 via-[#050505]/70 to-[#050505]/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/95 via-[#050505]/75 to-[#050505]/45 sm:to-[#050505]/20" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.22),transparent_28%)]" />
         </div>
 
-        <div className="relative mx-auto flex min-h-[92svh] max-w-7xl items-center px-5 pb-10 pt-28 sm:pb-16 sm:pt-32 lg:min-h-screen lg:px-8">
+        <div className="relative mx-auto flex min-h-[calc(100svh-72px)] max-w-7xl items-center px-5 pb-8 pt-24 sm:min-h-[92svh] sm:pb-16 sm:pt-32 lg:min-h-screen lg:px-8">
           <div className="max-w-4xl">
             <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-[#f6c21a]/30 bg-[#f6c21a]/10 px-4 py-2 text-xs font-bold text-[#f6c21a] shadow-[0_0_40px_rgba(246,194,26,0.12)] backdrop-blur-xl sm:mb-7 sm:text-sm">
               <span className="relative flex h-2.5 w-2.5">
@@ -78,36 +78,36 @@ export default function Home() {
               Premium Umzugsservice in Landshut
             </div>
 
-            <h1 className="max-w-5xl text-[2.55rem] font-black leading-[0.98] tracking-[-0.05em] sm:text-6xl sm:leading-[0.95] md:text-7xl lg:text-8xl">
+            <h1 className="max-w-5xl text-[2.2rem] font-black leading-[1.02] tracking-[-0.045em] min-[390px]:text-[2.55rem] sm:text-6xl sm:leading-[0.95] md:text-7xl lg:text-8xl">
               Umzugsunternehmen Landshut.
               <span className="gradient-text block">Umzug ohne Stress.</span>
               Mit LAF.
             </h1>
 
-            <p className="mt-5 max-w-2xl text-base leading-7 text-white/78 sm:mt-7 md:text-xl md:leading-8">
+            <p className="mt-4 max-w-2xl text-[15px] leading-6 text-white/78 sm:mt-7 sm:text-base sm:leading-7 md:text-xl md:leading-8">
               Umzüge LAF ist Ihr Umzugsunternehmen in Landshut für Privatumzug,
               Firmenumzug, Entrümpelung, Möbelmontage und Einpackservice.
               Wir planen Ihren Umzug zuverlässig, sauber und persönlich —
               in Landshut, Ergolding, Altdorf, Essenbach und Umgebung.
             </p>
 
-            <div className="mt-7 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
+            <div className="mt-6 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
               <Link
                 href="/kontakt"
-                className="glow-button rounded-full px-8 py-4 text-center text-base font-black text-black"
+                className="glow-button rounded-full px-6 py-3.5 text-center text-sm font-black text-black sm:px-8 sm:py-4 sm:text-base"
               >
                 Kostenlos anfragen
               </Link>
 
               <a
                 href={phoneHref}
-                className="rounded-full border border-white/15 bg-white/[0.05] px-8 py-4 text-center text-base font-black text-white backdrop-blur-xl transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 hover:text-[#f6c21a]"
+                className="rounded-full border border-white/15 bg-white/[0.05] px-6 py-3.5 text-center text-sm font-black text-white backdrop-blur-xl transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 hover:text-[#f6c21a] sm:px-8 sm:py-4 sm:text-base"
               >
                 Direkt anrufen
               </a>
             </div>
 
-            <div className="mt-8 grid max-w-2xl grid-cols-3 gap-2 sm:mt-12 sm:gap-4">
+            <div className="hidden max-w-2xl grid-cols-3 gap-4 sm:mt-12 sm:grid">
               <div className="premium-border rounded-2xl bg-black/35 p-3 backdrop-blur-xl sm:rounded-3xl sm:p-4">
                 <p className="text-lg font-black text-[#f6c21a] sm:text-2xl">
                   100%
