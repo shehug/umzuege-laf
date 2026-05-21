@@ -27,7 +27,7 @@ const navItems = [
     children: [
       { label: "Entrümpelung Landshut", href: "/entruempelung-landshut" },
       { label: "Wohnungsauflösung Landshut", href: "/wohnungsaufloesung-landshut" },
-      { label: "Haushaltsauflösung Landshut", href: "/entruempelung/haushaltsaufloesung" },
+      { label: "Haushaltsauflösung Landshut", href: "/haushaltsaufloesung-landshut" },
       { label: "Kellerentrümpelung", href: "/entruempelung/kellerentruempelung" },
       { label: "Dachbodenentrümpelung", href: "/entruempelung/dachbodenentruempelung" },
       { label: "Garagenentrümpelung", href: "/entruempelung/garagenentruempelung" },

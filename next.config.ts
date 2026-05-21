@@ -20,11 +20,7 @@ const nextConfig = {
         destination: "/entruempelung-landshut",
         permanent: true,
       },
-      {
-        source: "/entruempelung/haushaltsaufloesung",
-        destination: "/wohnungsaufloesung-landshut",
-        permanent: true,
-      },
+      
     ];
   },
 };

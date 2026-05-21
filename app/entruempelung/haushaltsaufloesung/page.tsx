@@ -102,13 +102,15 @@ export default function HaushaltsaufloesungPage() {
   serviceType="Haushaltsauflösung"
 />
 
-      <section className="relative z-10 min-h-[90vh] overflow-hidden px-5 pb-20 pt-40 lg:px-8">
+      <section className="relative z-10 min-h-[auto] overflow-hidden px-5 pb-12 pt-28 sm:min-h-[90vh] sm:pb-20 sm:pt-40 lg:px-8">
         <div className="absolute inset-0">
           <Image
             src="/images/services/ent4.jpg"
             alt="Haushaltsauflösung von Umzüge LAF in Landshut"
             fill
             priority
+            sizes="100vw"
+            quality={75}
             className="object-cover object-center"
           />
 
@@ -119,7 +121,7 @@ export default function HaushaltsaufloesungPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.32),transparent_34%)]" />
         </div>
 
-        <div className="relative mx-auto flex min-h-[72vh] max-w-7xl items-center">
+        <div className="relative mx-auto flex max-w-7xl items-center sm:min-h-[72vh]">
           <div className="max-w-4xl">
             <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-[#f6c21a]/40 bg-white/10 px-4 py-2 text-sm font-black text-[#f6c21a] shadow-[0_0_40px_rgba(246,194,26,0.16)] backdrop-blur-xl">
               <span className="relative flex h-2.5 w-2.5">
@@ -129,35 +131,35 @@ export default function HaushaltsaufloesungPage() {
               Haushaltsauflösung in Landshut & Umgebung
             </div>
 
-            <h1 className="max-w-5xl text-5xl font-black leading-[0.92] tracking-[-0.06em] text-white drop-shadow-2xl md:text-7xl lg:text-8xl">
+            <h1 className="max-w-5xl text-[2.35rem] font-black leading-[1.03] tracking-[-0.045em] text-white drop-shadow-2xl min-[390px]:text-5xl min-[390px]:leading-[0.98] md:text-7xl lg:text-8xl">
               Haushalt auflösen.
               <span className="gradient-text block">Sorgfältig geplant.</span>
               Spürbar entlastet.
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/84 drop-shadow md:text-xl">
+            <p className="mt-5 max-w-2xl text-[15px] leading-6 text-white/84 drop-shadow sm:mt-7 sm:text-lg sm:leading-8 md:text-xl">
               Ob Wohnung, Haus oder kompletter Nachlass: Umzüge LAF übernimmt
               Haushaltsauflösungen zuverlässig, diskret und strukturiert — von
               der Räumung bis zur sauberen Übergabe.
             </p>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
               <Link
                 href="/kontakt"
-                className="glow-button rounded-full px-8 py-4 text-center font-black text-black"
+                className="glow-button rounded-full px-6 py-3.5 text-center text-sm font-black text-black sm:px-8 sm:py-4 sm:text-base"
               >
                 Haushaltsauflösung anfragen
               </Link>
 
               <a
                 href={phoneHref}
-                className="rounded-full border border-white/25 bg-white/15 px-8 py-4 text-center font-black text-white backdrop-blur-xl transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/15 hover:text-[#f6c21a]"
+                className="rounded-full border border-white/25 bg-white/15 px-6 py-3.5 text-center text-sm font-black text-white backdrop-blur-xl transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/15 hover:text-[#f6c21a] sm:px-8 sm:py-4 sm:text-base"
               >
                 Direkt anrufen
               </a>
             </div>
 
-            <div className="mt-12 grid max-w-3xl gap-4 sm:grid-cols-3">
+            <div className="hidden max-w-3xl gap-4 sm:mt-12 sm:grid sm:grid-cols-3">
               {["Räumen", "Sortieren", "Übergeben"].map((item) => (
                 <div
                   key={item}
@@ -174,7 +176,7 @@ export default function HaushaltsaufloesungPage() {
         </div>
       </section>
 
-      <section className="relative z-10 overflow-hidden bg-[#f7f7f2] px-5 py-28 text-black lg:px-8">
+      <section className="relative z-10 overflow-hidden bg-[#f7f7f2] px-5 py-16 sm:py-28 text-black lg:px-8">
         <div className="absolute -left-32 top-20 h-72 w-72 rounded-full bg-[#f6c21a]/25 blur-3xl" />
         <div className="absolute -right-32 bottom-20 h-72 w-72 rounded-full bg-black/10 blur-3xl" />
 
@@ -211,22 +213,24 @@ export default function HaushaltsaufloesungPage() {
           </div>
 
           <div className="relative overflow-hidden rounded-[2.5rem] bg-black shadow-[0_30px_100px_rgba(0,0,0,0.25)]">
-            <div className="relative h-[560px]">
+            <div className="relative h-[380px] sm:h-[560px]">
               <Image
                 src="/images/services/ent1.jpg"
                 alt="Haushaltsauflösung und Entrümpelung mit Umzüge LAF"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={75}
                 className="object-cover"
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.24),transparent_36%)]" />
 
-              <div className="absolute bottom-6 left-6 right-6 rounded-[1.7rem] border border-white/10 bg-black/55 p-6 text-white backdrop-blur-xl">
+              <div className="absolute bottom-4 left-4 right-4 rounded-[1.4rem] border border-white/10 bg-black/65 p-4 text-white backdrop-blur-xl sm:bottom-6 sm:left-6 sm:right-6 sm:rounded-[1.7rem] sm:p-6">
                 <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
                   Komplettservice
                 </p>
-                <h3 className="mt-3 text-3xl font-black">
+                <h3 className="mt-3 text-2xl font-black sm:text-3xl">
                   Haushalt räumen, Gegenstände bewegen und Räume vorbereiten.
                 </h3>
                 <p className="mt-3 leading-7 text-white/65">
@@ -239,7 +243,7 @@ export default function HaushaltsaufloesungPage() {
         </div>
       </section>
 
-      <section className="relative z-10 bg-[#050505] px-5 py-28 lg:px-8">
+      <section className="relative z-10 bg-[#050505] px-5 py-16 sm:py-28 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-14 max-w-3xl">
             <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
@@ -280,7 +284,7 @@ export default function HaushaltsaufloesungPage() {
         </div>
       </section>
 
-      <section className="relative z-10 bg-[#f7f7f2] px-5 py-28 text-black lg:px-8">
+      <section className="relative z-10 bg-[#f7f7f2] px-5 py-16 sm:py-28 text-black lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
@@ -317,7 +321,7 @@ export default function HaushaltsaufloesungPage() {
         </div>
       </section>
 
-      <section className="relative z-10 bg-[#050505] px-5 py-28 lg:px-8">
+      <section className="relative z-10 bg-[#050505] px-5 py-16 sm:py-28 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
@@ -333,10 +337,10 @@ export default function HaushaltsaufloesungPage() {
               Teamgröße, Fahrzeuge und Zeitbedarf einschätzen.
             </p>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
               <Link
                 href="/kontakt"
-                className="glow-button rounded-full px-8 py-4 text-center font-black text-black"
+                className="glow-button rounded-full px-6 py-3.5 text-center text-sm font-black text-black sm:px-8 sm:py-4 sm:text-base"
               >
                 Kontaktformular öffnen
               </Link>
@@ -370,7 +374,7 @@ export default function HaushaltsaufloesungPage() {
         </div>
       </section>
 
-      <section className="relative z-10 overflow-hidden bg-[#f7f7f2] px-5 py-28 text-black lg:px-8">
+      <section className="relative z-10 overflow-hidden bg-[#f7f7f2] px-5 py-16 sm:py-28 text-black lg:px-8">
         <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.7rem] bg-black shadow-[0_35px_120px_rgba(0,0,0,0.22)]">
           <div className="grid lg:grid-cols-[1fr_0.9fr]">
             <div className="relative min-h-[460px]">
@@ -378,6 +382,8 @@ export default function HaushaltsaufloesungPage() {
                 src="/images/services/ent4.jpg"
                 alt="Haushaltsauflösung Landshut mit Umzüge LAF"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={75}
                 className="object-cover"
               />
 
@@ -400,10 +406,10 @@ export default function HaushaltsaufloesungPage() {
                 und klären den passenden Ablauf.
               </p>
 
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <div className="mt-7 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
                 <Link
                   href="/kontakt"
-                  className="glow-button rounded-full px-8 py-4 text-center font-black text-black"
+                  className="glow-button rounded-full px-6 py-3.5 text-center text-sm font-black text-black sm:px-8 sm:py-4 sm:text-base"
                 >
                   Haushaltsauflösung anfragen
                 </Link>

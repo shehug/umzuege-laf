@@ -135,47 +135,49 @@ export default function UmzugsunternehmenLandshutPage() {
 
       <FaqJsonLd />
 
-      <section className="relative min-h-[88vh] overflow-hidden px-5 pb-20 pt-40 lg:px-8">
+      <section className="relative min-h-[auto] overflow-hidden px-5 pb-12 pt-28 sm:min-h-[88vh] sm:pb-20 sm:pt-40 lg:px-8">
         <div className="absolute inset-0">
           <Image
             src="/images/hero/hero-umzug-landshut.jpg"
             alt="Umzugsunternehmen Landshut - Umzüge LAF"
             fill
             priority
+            sizes="100vw"
+            quality={75}
             className="object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/95 via-[#050505]/70 to-[#050505]/20" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
         </div>
 
-        <div className="relative mx-auto flex min-h-[70vh] max-w-7xl items-center">
+        <div className="relative mx-auto flex max-w-7xl items-center sm:min-h-[70vh]">
           <div className="max-w-4xl">
             <p className="mb-6 inline-flex rounded-full border border-[#f6c21a]/35 bg-[#f6c21a]/10 px-4 py-2 text-sm font-black text-[#f6c21a]">
               Umzüge LAF · Umzugsunternehmen in Landshut
             </p>
 
-            <h1 className="text-5xl font-black leading-[0.95] tracking-[-0.06em] md:text-7xl lg:text-8xl">
+            <h1 className="text-[2.35rem] font-black leading-[1.03] tracking-[-0.045em] min-[390px]:text-5xl min-[390px]:leading-[0.98] md:text-7xl lg:text-8xl">
               Umzugsunternehmen Landshut.
               <span className="gradient-text block">Zuverlässig umziehen.</span>
               Mit LAF.
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/80 md:text-xl">
+            <p className="mt-5 max-w-2xl text-[15px] leading-6 text-white/80 sm:mt-7 sm:text-lg sm:leading-8 md:text-xl">
               Umzüge LAF unterstützt Privatkunden, Firmen und Haushalte in Landshut
               mit klarer Planung, sicherem Transport, Möbelmontage, Einpackservice,
               Entrümpelung und persönlicher Beratung.
             </p>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
               <Link
                 href="/kontakt"
-                className="glow-button rounded-full px-8 py-4 text-center font-black text-black"
+                className="glow-button rounded-full px-6 py-3.5 text-center text-sm font-black text-black sm:px-8 sm:py-4 sm:text-base"
               >
                 Kostenloses Angebot anfragen
               </Link>
               <a
                 href={phoneHref}
-                className="rounded-full border border-white/20 bg-white/[0.05] px-8 py-4 text-center font-black text-white transition hover:border-[#f6c21a] hover:text-[#f6c21a]"
+                className="rounded-full border border-white/20 bg-white/[0.05] px-6 py-3.5 text-center text-sm font-black text-white transition hover:border-[#f6c21a] hover:text-[#f6c21a] sm:px-8 sm:py-4 sm:text-base"
               >
                 Direkt anrufen: {phone}
               </a>
@@ -184,7 +186,7 @@ export default function UmzugsunternehmenLandshutPage() {
         </div>
       </section>
 
-      <section className="bg-[#f7f7f2] px-5 py-24 text-black lg:px-8">
+      <section className="bg-[#f7f7f2] px-5 py-16 sm:py-24 text-black lg:px-8">
         <div className="mx-auto max-w-7xl">
           <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
             Umzüge in Landshut
@@ -215,7 +217,7 @@ export default function UmzugsunternehmenLandshutPage() {
         </div>
       </section>
 
-      <section className="bg-[#050505] px-5 py-24 lg:px-8">
+      <section className="bg-[#050505] px-5 py-16 sm:py-24 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
@@ -243,7 +245,7 @@ export default function UmzugsunternehmenLandshutPage() {
         </div>
       </section>
 
-      <section className="bg-[#f7f7f2] px-5 py-24 text-black lg:px-8">
+      <section className="bg-[#f7f7f2] px-5 py-16 sm:py-24 text-black lg:px-8">
         <div className="mx-auto max-w-7xl">
           <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
             Häufige Fragen
