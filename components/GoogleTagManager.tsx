@@ -1,27 +1,37 @@
 import Script from "next/script";
 
 const GTM_ID = "GTM-55B3P6B6";
+const GOOGLE_ADS_TAG_ID = "AW-18109176876";
 
 export default function GoogleTagManager() {
   return (
     <>
-      <Script id="google-consent-default" strategy="beforeInteractive">
+      {/* Google Ads Global Tag Script */}
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_TAG_ID}`}
+        strategy="afterInteractive"
+      />
+
+      <Script id="google-ads-gtag-init" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
           gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'analytics_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
+            'ad_storage': 'granted',
+            'analytics_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
             'functionality_storage': 'granted',
-            'security_storage': 'granted',
-            'wait_for_update': 500
+            'security_storage': 'granted'
           });
+
+          gtag('config', '${GOOGLE_ADS_TAG_ID}');
         `}
       </Script>
 
+      {/* Google Tag Manager Script */}
       <Script id="google-tag-manager" strategy="afterInteractive">
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({
