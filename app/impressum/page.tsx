@@ -12,7 +12,7 @@ const emailHref = "mailto:info@umzuege-laf.de";
 
 export default function ImpressumPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#050505] text-white">
+    <main className="min-h-screen overflow-hidden bg-[#fafaf7] text-[#18181b]">
       <div className="pointer-events-none fixed inset-0 z-0">
         <div className="laf-grid absolute inset-0 opacity-25" />
         <div className="laf-noise absolute inset-0 opacity-[0.05]" />
@@ -31,12 +31,12 @@ export default function ImpressumPage() {
               Rechtliche Angaben
             </div>
 
-            <h1 className="max-w-5xl text-5xl font-black leading-[0.95] tracking-[-0.06em] md:text-7xl lg:text-8xl">
+            <h1 className="max-w-5xl text-5xl font-black leading-[1.14] tracking-[-0.06em] md:text-7xl lg:text-8xl">
               Impressum
               <span className="gradient-text block">Umzüge LAF</span>
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/70 md:text-xl">
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-black/65 md:text-xl">
               Angaben gemäß § 5 TMG und rechtliche Informationen zum Anbieter
               dieser Website.
             </p>
@@ -129,12 +129,12 @@ export default function ImpressumPage() {
               </div>
             </div>
 
-            <div className="mt-8 rounded-[1.7rem] border border-black/10 bg-black p-6 text-white">
+            <div className="mt-8 rounded-[1.7rem] border border-black/10 bg-white border border-black/5 p-6 text-[#18181b]">
               <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
                 Inhaltlich verantwortlich
               </p>
 
-              <p className="mt-4 text-lg leading-8 text-white/70">
+              <p className="mt-4 text-lg leading-8 text-black/65">
                 Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:
                 <br />
                 Fahri Kalludra
@@ -207,8 +207,8 @@ export default function ImpressumPage() {
         </div>
       </section>
 
-      <section className="relative z-10 overflow-hidden bg-[#050505] px-5 py-24 lg:px-8">
-        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-[2.5rem] border border-white/10 bg-white/[0.05] p-8 backdrop-blur-xl md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
+      <section className="relative z-10 overflow-hidden bg-[#fafaf7] px-5 py-24 lg:px-8">
+        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-[2.5rem] border border-black/5 bg-white shadow-sm border border-black/5 p-8 backdrop-blur-xl md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
               Datenschutz
@@ -218,7 +218,7 @@ export default function ImpressumPage() {
               Mehr zu Ihren Daten.
             </h2>
 
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/65">
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-black/60">
               Weitere Informationen zur Verarbeitung personenbezogener Daten
               finden Sie in unserer Datenschutzerklärung.
             </p>

@@ -14,6 +14,12 @@ const address = {
   addressCountry: "DE",
 };
 
+const geo = {
+  "@type": "GeoCoordinates",
+  latitude: 48.5529,
+  longitude: 12.1648,
+};
+
 const openingHoursSpecification = [
   {
     "@type": "OpeningHoursSpecification",
@@ -45,17 +51,17 @@ const areaServed = [
 const services = [
   {
     name: "Umzugsunternehmen Landshut",
-    url: `${siteUrl}/umzuege`,
+    url: `${siteUrl}/umzugsunternehmen-landshut`,
     description: "Professionelle Umzüge in Landshut und Umgebung mit Umzüge LAF."
   },
   {
     name: "Privatumzug Landshut",
-    url: `${siteUrl}/umzuege/privatumzug`,
+    url: `${siteUrl}/privatumzug-landshut`,
     description: "Privatumzug, Wohnungsumzug und Möbeltransport in Landshut."
   },
   {
     name: "Firmenumzug Landshut",
-    url: `${siteUrl}/umzuege/firmenumzug`,
+    url: `${siteUrl}/firmenumzug-landshut`,
     description: "Firmenumzug, Büroumzug und Gewerbeumzug in Landshut."
   },
   {
@@ -80,7 +86,7 @@ const services = [
   },
   {
     name: "Entrümpelung Landshut",
-    url: `${siteUrl}/entruempelung`,
+    url: `${siteUrl}/entruempelung-landshut`,
     description: "Entrümpelung, Haushaltsauflösung und Sperrmüllentsorgung in Landshut."
   },
   {
@@ -115,6 +121,7 @@ const structuredData = {
       openingHours: "Mo-Sa 08:00-18:00",
       openingHoursSpecification,
       address,
+      geo,
       areaServed,
       serviceArea: areaServed,
       founder: {

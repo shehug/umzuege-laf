@@ -79,12 +79,12 @@ const wasteItems = [
 
 function SperrmuellVisual() {
   return (
-    <div className="premium-border relative overflow-hidden rounded-[2.5rem] bg-white/[0.045] p-5 shadow-[0_30px_100px_rgba(0,0,0,0.35)] backdrop-blur-xl">
-      <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_top,rgba(246,194,26,0.16),transparent_32%),linear-gradient(180deg,#171717_0%,#080808_100%)] p-6 md:p-8">
+    <div className="premium-border relative overflow-hidden rounded-[2.5rem] bg-white shadow-sm border border-black/5 p-5 shadow-[0_30px_100px_rgba(0,0,0,0.35)] backdrop-blur-xl">
+      <div className="relative overflow-hidden rounded-[2rem] border border-black/5 bg-[radial-gradient(circle_at_top,rgba(246,194,26,0.06),transparent_32%),linear-gradient(180deg,#ffffff_0%,#fafaf7_100%)] p-6 md:p-8">
         <div className="pointer-events-none absolute inset-0 opacity-30">
-          <div className="absolute left-[10%] right-[10%] top-[72px] h-[2px] bg-[#f6c21a]/25" />
-          <div className="absolute bottom-[80px] left-[12%] right-[12%] h-[2px] bg-white/10" />
-          <div className="absolute left-1/2 top-0 h-full w-[2px] -translate-x-1/2 bg-white/[0.04]" />
+          <div className="absolute left-[10%] right-[10%] top-[72px] h-[2px] bg-[#f6c21a]/30" />
+          <div className="absolute bottom-[80px] left-[12%] right-[12%] h-[2px] bg-black/10" />
+          <div className="absolute left-1/2 top-0 h-full w-[2px] -translate-x-1/2 bg-black/5" />
         </div>
 
         <div className="relative z-10">
@@ -93,13 +93,13 @@ function SperrmuellVisual() {
               Sperrmüll
             </div>
 
-            <div className="rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-white/70">
+            <div className="rounded-full border border-black/5 bg-white shadow-sm px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-black/65">
               Schnell weg
             </div>
           </div>
 
-          <div className="mb-6 rounded-[1.8rem] border border-white/10 bg-black/35 p-5 backdrop-blur-xl">
-            <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
+          <div className="mb-6 rounded-[1.8rem] border border-black/5 bg-[#fafaf7] p-5 shadow-sm">
+            <p className="text-sm font-black uppercase tracking-[0.25em] text-[#b28a00]">
               Typische Gegenstände
             </p>
 
@@ -107,33 +107,33 @@ function SperrmuellVisual() {
               {wasteItems.map((item) => (
                 <div
                   key={item}
-                  className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.055] px-4 py-3"
+                  className="flex items-center gap-3 rounded-2xl border border-black/5 bg-white border border-black/5 px-4 py-3 shadow-sm"
                 >
                   <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[#f6c21a] text-sm font-black text-black">
                     ✓
                   </div>
-                  <p className="text-sm font-black text-white">{item}</p>
+                  <p className="text-sm font-black text-[#18181b]">{item}</p>
                 </div>
               ))}
             </div>
           </div>
 
           <div className="grid gap-4 md:grid-cols-2">
-            <div className="rounded-[1.6rem] border border-white/10 bg-white/[0.06] p-5 backdrop-blur-xl">
-              <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
+            <div className="rounded-[1.6rem] border border-black/5 bg-white shadow-sm p-5 backdrop-blur-xl">
+              <p className="text-sm font-black uppercase tracking-[0.25em] text-[#b28a00]">
                 Abholung
               </p>
-              <p className="mt-3 text-sm leading-6 text-white/65">
+              <p className="mt-3 text-sm leading-6 text-black/60">
                 Wohnung, Keller, Garage oder Dachboden — wir holen sperrige
                 Gegenstände dort ab, wo sie stehen.
               </p>
             </div>
 
-            <div className="rounded-[1.6rem] border border-white/10 bg-white/[0.06] p-5 backdrop-blur-xl">
-              <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
+            <div className="rounded-[1.6rem] border border-black/5 bg-white shadow-sm p-5 backdrop-blur-xl">
+              <p className="text-sm font-black uppercase tracking-[0.25em] text-[#b28a00]">
                 Ziel
               </p>
-              <p className="mt-3 text-sm leading-6 text-white/65">
+              <p className="mt-3 text-sm leading-6 text-black/60">
                 Schnell Platz schaffen, schwere Dinge loswerden und Räume
                 wieder frei nutzen.
               </p>
@@ -156,14 +156,14 @@ function SperrmuellVisual() {
         </div>
       </div>
 
-      <div className="mt-5 rounded-[1.7rem] border border-white/10 bg-black/30 p-6 backdrop-blur-xl">
-        <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
+      <div className="mt-5 rounded-[1.7rem] border border-black/5 bg-black/30 p-6 backdrop-blur-xl">
+        <p className="text-sm font-black uppercase tracking-[0.25em] text-[#b28a00]">
           Sperrige Gegenstände
         </p>
-        <h3 className="mt-3 text-2xl font-black text-white">
+        <h3 className="mt-3 text-2xl font-black text-[#18181b]">
           Alte Möbel, Matratzen und große Gegenstände holen wir zuverlässig ab.
         </h3>
-        <p className="mt-3 leading-7 text-white/60">
+        <p className="mt-3 leading-7 text-black/60">
           Wir schaffen Platz, übernehmen das Tragen und organisieren den
           Abtransport sauber und zuverlässig.
         </p>
@@ -174,7 +174,7 @@ function SperrmuellVisual() {
 
 export default function SperrmuellentsorgungPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#050505] text-white">
+    <main className="min-h-screen overflow-hidden bg-[#fafaf7] text-[#18181b]">
       <div className="pointer-events-none fixed inset-0 z-0">
         <div className="laf-grid absolute inset-0 opacity-25" />
         <div className="laf-noise absolute inset-0 opacity-[0.05]" />
@@ -209,7 +209,7 @@ export default function SperrmuellentsorgungPage() {
 
         <div className="relative mx-auto grid min-h-[72vh] max-w-7xl items-center gap-14 lg:grid-cols-[1.02fr_0.98fr]">
           <div className="max-w-4xl">
-            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-[#f6c21a]/40 bg-white/10 px-4 py-2 text-sm font-black text-[#f6c21a] shadow-[0_0_40px_rgba(246,194,26,0.16)] backdrop-blur-xl">
+            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-[#f6c21a]/40 bg-black/10 px-4 py-2 text-sm font-black text-[#f6c21a] shadow-[0_0_40px_rgba(246,194,26,0.16)] backdrop-blur-xl">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f6c21a] opacity-75" />
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#f6c21a]" />
@@ -217,13 +217,13 @@ export default function SperrmuellentsorgungPage() {
               Sperrmüllentsorgung in Landshut & Umgebung
             </div>
 
-            <h1 className="max-w-5xl text-5xl font-black leading-[0.92] tracking-[-0.06em] text-white drop-shadow-2xl md:text-7xl lg:text-8xl">
+            <h1 className="max-w-5xl text-5xl font-black leading-[1.12] tracking-[-0.06em] text-[#18181b] md:text-7xl lg:text-8xl">
               Sperrmüll weg.
               <span className="gradient-text block">Platz zurück.</span>
               Schnell entlastet.
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/84 drop-shadow md:text-xl">
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-black/75 drop-shadow md:text-xl">
               Ob alte Möbel, Matratzen, Regale oder sperrige Gegenstände:
               Umzüge LAF übernimmt die Sperrmüllabholung zuverlässig,
               organisiert und ohne unnötigen Aufwand für Sie.
@@ -239,7 +239,7 @@ export default function SperrmuellentsorgungPage() {
 
               <a
                 href={phoneHref}
-                className="rounded-full border border-white/25 bg-white/15 px-8 py-4 text-center font-black text-white backdrop-blur-xl transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/15 hover:text-[#f6c21a]"
+                className="rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 hover:text-[#b28a00]"
               >
                 Direkt anrufen
               </a>
@@ -249,10 +249,10 @@ export default function SperrmuellentsorgungPage() {
               {["Abholen", "Tragen", "Platz schaffen"].map((item) => (
                 <div
                   key={item}
-                  className="premium-border rounded-3xl bg-black/35 p-5 backdrop-blur-xl"
+                  className="premium-border rounded-3xl bg-white border border-black/5 p-5 shadow-sm"
                 >
-                  <p className="text-xl font-black text-[#f6c21a]">{item}</p>
-                  <p className="mt-2 text-sm leading-6 text-white/65">
+                  <p className="text-xl font-black text-[#b28a00]">{item}</p>
+                  <p className="mt-2 text-sm leading-6 text-black/60">
                     organisiert geplant und sauber umgesetzt
                   </p>
                 </div>
@@ -265,7 +265,7 @@ export default function SperrmuellentsorgungPage() {
       </section>
 
       <section className="relative z-10 overflow-hidden bg-[#f7f7f2] px-5 py-28 text-black lg:px-8">
-        <div className="absolute -left-32 top-20 h-72 w-72 rounded-full bg-[#f6c21a]/25 blur-3xl" />
+        <div className="absolute -left-32 top-20 h-72 w-72 rounded-full bg-[#f6c21a]/30 blur-3xl" />
         <div className="absolute -right-32 bottom-20 h-72 w-72 rounded-full bg-black/10 blur-3xl" />
 
         <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
@@ -301,8 +301,8 @@ export default function SperrmuellentsorgungPage() {
           </div>
 
           <div className="premium-border rounded-[2.5rem] bg-black p-6 shadow-[0_30px_100px_rgba(0,0,0,0.25)]">
-            <div className="rounded-[2rem] bg-[linear-gradient(180deg,#0d0d0d_0%,#151515_100%)] p-6 text-white">
-              <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
+            <div className="rounded-[2rem] bg-[#fafaf7] p-6 text-[#18181b]">
+              <p className="text-sm font-black uppercase tracking-[0.25em] text-[#b28a00]">
                 Typische Herausforderung
               </p>
 
@@ -310,7 +310,7 @@ export default function SperrmuellentsorgungPage() {
                 Große Möbel, schwere Teile und wenig Zeit.
               </h3>
 
-              <p className="mt-4 leading-7 text-white/65">
+              <p className="mt-4 leading-7 text-black/60">
                 Sperrmüll ist oft unhandlich, schwer und schlecht zu
                 transportieren. Mit einem eingespielten Team wird die Abholung
                 deutlich einfacher und schneller.
@@ -333,10 +333,10 @@ export default function SperrmuellentsorgungPage() {
                 ].map((item) => (
                   <div
                     key={item.title}
-                    className="rounded-[1.4rem] border border-white/10 bg-white/[0.05] p-5"
+                    className="rounded-[1.4rem] border border-black/5 bg-white shadow-sm p-5"
                   >
                     <p className="text-lg font-black">{item.title}</p>
-                    <p className="mt-2 leading-7 text-white/60">{item.text}</p>
+                    <p className="mt-2 leading-7 text-black/60">{item.text}</p>
                   </div>
                 ))}
               </div>
@@ -345,7 +345,7 @@ export default function SperrmuellentsorgungPage() {
         </div>
       </section>
 
-      <section className="relative z-10 bg-[#050505] px-5 py-28 lg:px-8">
+      <section className="relative z-10 bg-[#fafaf7] px-5 py-28 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-14 max-w-3xl">
             <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
@@ -356,7 +356,7 @@ export default function SperrmuellentsorgungPage() {
               Sperrmüllentsorgung ohne Schleppen und ohne Chaos.
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-white/65">
+            <p className="mt-6 text-lg leading-8 text-black/60">
               Wir helfen Ihnen, schwere und sperrige Gegenstände schnell
               loszuwerden und wieder Platz zu schaffen.
             </p>
@@ -366,17 +366,17 @@ export default function SperrmuellentsorgungPage() {
             {benefits.map((benefit, index) => (
               <div
                 key={benefit.title}
-                className="premium-border group rounded-[2rem] bg-white/[0.045] p-6 backdrop-blur-xl transition hover:-translate-y-2 hover:bg-white/[0.07]"
+                className="premium-border group rounded-[2rem] bg-white shadow-sm border border-black/5 p-6 backdrop-blur-xl transition hover:-translate-y-2 hover:bg-white/[0.07]"
               >
                 <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black transition group-hover:rotate-6 group-hover:scale-110">
                   0{index + 1}
                 </div>
 
-                <h3 className="text-2xl font-black text-white">
+                <h3 className="text-2xl font-black text-[#18181b]">
                   {benefit.title}
                 </h3>
 
-                <p className="mt-4 leading-7 text-white/60">
+                <p className="mt-4 leading-7 text-black/60">
                   {benefit.text}
                 </p>
               </div>
@@ -422,7 +422,7 @@ export default function SperrmuellentsorgungPage() {
         </div>
       </section>
 
-      <section className="relative z-10 bg-[#050505] px-5 py-28 lg:px-8">
+      <section className="relative z-10 bg-[#fafaf7] px-5 py-28 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
@@ -433,7 +433,7 @@ export default function SperrmuellentsorgungPage() {
               Diese Informationen helfen für ein schnelles Angebot.
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-white/65">
+            <p className="mt-6 text-lg leading-8 text-black/60">
               Je genauer Ihre Angaben sind, desto besser können wir Aufwand,
               Teamgröße und Zeitbedarf einschätzen.
             </p>
@@ -448,7 +448,7 @@ export default function SperrmuellentsorgungPage() {
 
               <a
                 href={phoneHref}
-                className="rounded-full border border-white/15 px-8 py-4 text-center font-black text-white transition hover:border-[#f6c21a] hover:text-[#f6c21a]"
+                className="rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:text-[#b28a00]"
               >
                 {phone}
               </a>
@@ -459,14 +459,14 @@ export default function SperrmuellentsorgungPage() {
             {checklist.map((item) => (
               <div
                 key={item}
-                className="premium-border rounded-[2rem] bg-white/[0.045] p-6 backdrop-blur-xl"
+                className="premium-border rounded-[2rem] bg-white shadow-sm border border-black/5 p-6 backdrop-blur-xl"
               >
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black">
                   ✓
                 </div>
 
-                <p className="text-lg font-black text-white">{item}</p>
-                <p className="mt-2 text-sm leading-6 text-white/55">
+                <p className="text-lg font-black text-[#18181b]">{item}</p>
+                <p className="mt-2 text-sm leading-6 text-black/55">
                   Hilft uns bei der genauen Planung Ihrer Sperrmüllentsorgung.
                 </p>
               </div>
@@ -476,17 +476,17 @@ export default function SperrmuellentsorgungPage() {
       </section>
 
       <section className="relative z-10 overflow-hidden bg-[#f7f7f2] px-5 py-28 text-black lg:px-8">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.7rem] bg-black shadow-[0_35px_120px_rgba(0,0,0,0.22)]">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.7rem] bg-white border border-black/5 shadow-lg">
           <div className="grid lg:grid-cols-[1fr_0.9fr]">
-            <div className="flex min-h-[460px] items-center justify-center bg-[radial-gradient(circle_at_center,rgba(246,194,26,0.16),transparent_32%),linear-gradient(180deg,#111111_0%,#060606_100%)] p-8">
-              <div className="w-full max-w-md rounded-[2rem] border border-white/10 bg-white/[0.05] p-8 text-white backdrop-blur-xl">
-                <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
+            <div className="flex min-h-[460px] items-center justify-center bg-[radial-gradient(circle_at_center,rgba(246,194,26,0.06),transparent_32%),linear-gradient(180deg,#ffffff_0%,#fafaf7_100%)] p-8">
+              <div className="w-full max-w-md rounded-[2rem] border border-black/5 bg-white shadow-sm p-8 text-[#18181b] backdrop-blur-xl">
+                <p className="text-sm font-black uppercase tracking-[0.25em] text-[#b28a00]">
                   Mehr Platz
                 </p>
                 <h3 className="mt-4 text-3xl font-black">
                   Sperrige Gegenstände raus, freie Fläche zurück.
                 </h3>
-                <p className="mt-4 leading-7 text-white/65">
+                <p className="mt-4 leading-7 text-black/60">
                   Wir helfen dabei, alte Möbel und große Gegenstände schnell
                   loszuwerden und Räume wieder nutzbar zu machen.
                 </p>
@@ -499,7 +499,7 @@ export default function SperrmuellentsorgungPage() {
                   ].map((item) => (
                     <div
                       key={item}
-                      className="rounded-2xl border border-white/10 bg-black/25 px-4 py-3 text-sm font-bold text-white/80"
+                      className="rounded-2xl border border-black/5 bg-[#fafaf7] border border-black/5 px-4 py-3 text-sm font-bold text-black/80"
                     >
                       {item}
                     </div>
@@ -508,7 +508,7 @@ export default function SperrmuellentsorgungPage() {
               </div>
             </div>
 
-            <div className="flex flex-col justify-center p-8 text-white md:p-12">
+            <div className="flex flex-col justify-center p-8 text-[#18181b] md:p-12">
               <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
                 Angebot sichern
               </p>
@@ -517,7 +517,7 @@ export default function SperrmuellentsorgungPage() {
                 Lassen Sie Sperrmüll einfach abholen.
               </h2>
 
-              <p className="mt-6 text-lg leading-8 text-white/65">
+              <p className="mt-6 text-lg leading-8 text-black/60">
                 Schreiben Sie kurz, was abgeholt werden soll und wann der Termin
                 gewünscht ist. Wir melden uns schnell zurück und klären den
                 passenden Ablauf.
@@ -533,7 +533,7 @@ export default function SperrmuellentsorgungPage() {
 
                 <a
                   href={`mailto:${email}`}
-                  className="rounded-full border border-white/15 px-8 py-4 text-center font-black text-white transition hover:border-[#f6c21a] hover:text-[#f6c21a]"
+                  className="rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:text-[#b28a00]"
                 >
                   E-Mail schreiben
                 </a>

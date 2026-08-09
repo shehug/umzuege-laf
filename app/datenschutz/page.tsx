@@ -105,7 +105,7 @@ const privacySections = [
 
 export default function DatenschutzPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#050505] text-white">
+    <main className="min-h-screen overflow-hidden bg-[#fafaf7] text-[#18181b]">
       <div className="pointer-events-none fixed inset-0 z-0">
         <div className="laf-grid absolute inset-0 opacity-25" />
         <div className="laf-noise absolute inset-0 opacity-[0.05]" />
@@ -117,7 +117,7 @@ export default function DatenschutzPage() {
 
       <section className="relative z-10 overflow-hidden px-5 pb-20 pt-40 lg:px-8">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.26),transparent_34%)]" />
-        <div className="absolute left-1/2 top-20 h-96 w-96 -translate-x-1/2 rounded-full bg-white/10 blur-3xl" />
+        <div className="absolute left-1/2 top-20 h-96 w-96 -translate-x-1/2 rounded-full bg-white/20 blur-3xl" />
 
         <div className="relative mx-auto max-w-7xl">
           <div className="max-w-4xl">
@@ -125,12 +125,12 @@ export default function DatenschutzPage() {
               Datenschutz & Transparenz
             </div>
 
-            <h1 className="max-w-5xl text-5xl font-black leading-[0.95] tracking-[-0.06em] md:text-7xl lg:text-8xl">
+            <h1 className="max-w-5xl text-5xl font-black leading-[1.14] tracking-[-0.06em] md:text-7xl lg:text-8xl">
               Datenschutz
               <span className="gradient-text block">Umzüge LAF</span>
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/70 md:text-xl">
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-black/65 md:text-xl">
               Informationen darüber, welche personenbezogenen Daten beim Besuch
               dieser Website und bei Kontaktaufnahme verarbeitet werden.
             </p>
@@ -145,7 +145,7 @@ export default function DatenschutzPage() {
 
               <a
                 href={phoneHref}
-                className="rounded-full border border-white/15 bg-white/[0.04] px-8 py-4 text-center font-black text-white backdrop-blur-xl transition hover:border-[#f6c21a] hover:text-[#f6c21a]"
+                className="rounded-full border border-black/10 bg-white/[0.04] px-8 py-4 text-center font-black text-[#18181b] backdrop-blur-xl transition hover:border-[#f6c21a] hover:text-[#f6c21a]"
               >
                 Direkt anrufen
               </a>
@@ -226,12 +226,12 @@ export default function DatenschutzPage() {
               </section>
             ))}
 
-            <section className="rounded-[2rem] border border-black/10 bg-black p-6 text-white shadow-sm md:p-8">
-              <h2 className="text-3xl font-black tracking-[-0.03em] text-white">
+            <section className="rounded-[2rem] border border-black/10 bg-white border border-black/5 p-6 text-[#18181b] shadow-sm md:p-8">
+              <h2 className="text-3xl font-black tracking-[-0.03em] text-[#18181b]">
                 Kontakt zum Datenschutz
               </h2>
 
-              <p className="mt-5 leading-8 text-white/65">
+              <p className="mt-5 leading-8 text-black/60">
                 Für Fragen zur Verarbeitung personenbezogener Daten können Sie
                 sich jederzeit an uns wenden.
               </p>
@@ -246,7 +246,7 @@ export default function DatenschutzPage() {
 
                 <a
                   href={`mailto:${email}`}
-                  className="rounded-full border border-white/15 px-6 py-4 text-center font-black text-white transition hover:border-[#f6c21a] hover:text-[#f6c21a]"
+                  className="rounded-full border border-black/10 px-6 py-4 text-center font-black text-[#18181b] transition hover:border-[#f6c21a] hover:text-[#f6c21a]"
                 >
                   {email}
                 </a>
@@ -256,8 +256,8 @@ export default function DatenschutzPage() {
         </div>
       </section>
 
-      <section className="relative z-10 overflow-hidden bg-[#050505] px-5 py-24 lg:px-8">
-        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-[2.5rem] border border-white/10 bg-white/[0.05] p-8 backdrop-blur-xl md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
+      <section className="relative z-10 overflow-hidden bg-[#fafaf7] px-5 py-24 lg:px-8">
+        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-[2.5rem] border border-black/5 bg-white shadow-sm border border-black/5 p-8 backdrop-blur-xl md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
               Rechtliches
@@ -267,7 +267,7 @@ export default function DatenschutzPage() {
               Angaben zum Anbieter ansehen.
             </h2>
 
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/65">
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-black/60">
               Die Angaben zum verantwortlichen Anbieter finden Sie im Impressum.
             </p>
           </div>

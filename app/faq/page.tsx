@@ -88,10 +88,11 @@ const quickTopics = [
 
 export default function FAQPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#050505] text-white">
+    <main className="min-h-screen overflow-hidden bg-[#fafaf7] text-[#18181b]">
+      {/* Background orbs and grids */}
       <div className="pointer-events-none fixed inset-0 z-0">
-        <div className="laf-grid absolute inset-0 opacity-25" />
-        <div className="laf-noise absolute inset-0 opacity-[0.05]" />
+        <div className="laf-grid absolute inset-0 opacity-40" />
+        <div className="laf-noise absolute inset-0 opacity-[0.03]" />
         <div className="laf-orb laf-orb-one" />
         <div className="laf-orb laf-orb-two" />
         <div className="laf-orb laf-orb-three" />
@@ -99,26 +100,28 @@ export default function FAQPage() {
 
       <Header />
 
-      <section className="relative z-10 min-h-[82vh] overflow-hidden px-5 pb-20 pt-40 lg:px-8">
+      {/* Hero Section */}
+      <section className="relative z-10 overflow-hidden px-5 pb-16 pt-32 sm:pb-24 sm:pt-40 lg:px-8">
         <div className="absolute inset-0">
           <Image
             src="/images/services/faq.jpg"
             alt="Umzüge LAF FAQ"
             fill
             priority
+            sizes="100vw"
             className="object-cover object-center"
           />
 
-          <div className="absolute inset-0 bg-white/5" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/88 via-[#050505]/58 to-[#050505]/15" />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/16 to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.28),transparent_34%)]" />
+          <div className="absolute inset-0 bg-white/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#fafaf7]/98 via-[#fafaf7]/90 to-[#fafaf7]/40 sm:to-[#fafaf7]/16" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#fafaf7]/20 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#fafaf7] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.15),transparent_34%)]" />
         </div>
 
-        <div className="relative mx-auto flex min-h-[66vh] max-w-7xl items-center">
+        <div className="relative mx-auto flex min-h-[50vh] max-w-7xl items-center">
           <div className="max-w-4xl">
-            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-[#f6c21a]/35 bg-white/10 px-4 py-2 text-sm font-black text-[#f6c21a] shadow-[0_0_40px_rgba(246,194,26,0.16)] backdrop-blur-xl">
+            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#f6c21a] bg-[#f6c21a]/10 px-4 py-2 text-xs font-black uppercase tracking-wider text-[#b28a00] sm:text-sm">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f6c21a] opacity-75" />
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#f6c21a]" />
@@ -126,27 +129,27 @@ export default function FAQPage() {
               Häufige Fragen
             </div>
 
-            <h1 className="max-w-5xl text-5xl font-black leading-[0.95] tracking-[-0.06em] text-white drop-shadow-2xl md:text-7xl lg:text-8xl">
+            <h1 className="max-w-5xl text-[2.5rem] font-black leading-[1.15] tracking-tight text-[#18181b] min-[390px]:text-[2.85rem] sm:text-6xl md:text-7xl lg:text-8xl">
               Fragen?
               <span className="gradient-text block">Hier finden Sie Antworten.</span>
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/82 drop-shadow md:text-xl">
+            <p className="mt-5 max-w-2xl text-[16px] leading-7 text-black/75 sm:mt-7 sm:text-lg sm:leading-8 md:text-xl">
               Hier finden Sie die wichtigsten Antworten rund um Umzug,
               Entrümpelung, Möbelmontage, Anfrage und Service von Umzüge LAF.
             </p>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
               <Link
                 href="/kontakt"
-                className="glow-button rounded-full px-8 py-4 text-center font-black text-black"
+                className="glow-button rounded-full px-8 py-4 text-center font-black text-black shadow-lg"
               >
                 Anfrage stellen
               </Link>
 
               <a
                 href={phoneHref}
-                className="rounded-full border border-white/25 bg-white/15 px-8 py-4 text-center font-black text-white backdrop-blur-xl transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/15 hover:text-[#f6c21a]"
+                className="rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10"
               >
                 Direkt anrufen
               </a>
@@ -155,19 +158,20 @@ export default function FAQPage() {
         </div>
       </section>
 
-      <section className="relative z-10 bg-[#f7f7f2] px-5 py-24 text-black lg:px-8">
+      {/* FAQ content */}
+      <section className="relative z-10 bg-[#ffffff] px-5 py-20 text-[#18181b] lg:px-8 border-t border-black/5">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-            <div className="rounded-[2.4rem] border border-black/10 bg-white p-8 shadow-[0_25px_80px_rgba(0,0,0,0.08)] md:p-10">
+          <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+            <div className="rounded-[2.4rem] border border-black/5 bg-[#fafaf7] p-8 shadow-sm md:p-10">
               <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
                 Gut informiert
               </p>
 
-              <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] md:text-5xl">
+              <h2 className="mt-4 text-3xl font-black tracking-tight text-[#18181b] md:text-4xl">
                 Gut informiert vor der Anfrage.
               </h2>
 
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-black/65">
+              <p className="mt-4 max-w-2xl text-lg leading-8 text-black/60">
                 Je mehr Informationen wir haben, desto schneller können wir Ihr
                 Anliegen einschätzen. Hier finden Sie die häufigsten Fragen
                 übersichtlich geordnet.
@@ -177,9 +181,9 @@ export default function FAQPage() {
                 {quickTopics.map((topic) => (
                   <div
                     key={topic}
-                    className="rounded-3xl border border-black/10 bg-[#f7f7f2] p-5"
+                    className="rounded-3xl border border-black/5 bg-[#ffffff] p-5 shadow-sm"
                   >
-                    <p className="text-lg font-black text-black">{topic}</p>
+                    <p className="text-lg font-black text-[#18181b]">{topic}</p>
                     <p className="mt-2 text-sm leading-6 text-black/55">
                       Schnell erklärt und direkt beantwortet.
                     </p>
@@ -188,16 +192,16 @@ export default function FAQPage() {
               </div>
             </div>
 
-            <div className="rounded-[2.4rem] border border-black/10 bg-black p-8 text-white shadow-[0_25px_80px_rgba(0,0,0,0.14)] md:p-10">
-              <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
+            <div className="rounded-[2.4rem] border border-black/5 bg-white p-8 shadow-md md:p-10">
+              <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
                 Schnellkontakt
               </p>
 
-              <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] md:text-5xl">
+              <h2 className="mt-4 text-3xl font-black tracking-tight text-[#18181b] md:text-4xl">
                 Lieber direkt fragen?
               </h2>
 
-              <p className="mt-6 text-lg leading-8 text-white/65">
+              <p className="mt-4 text-lg leading-8 text-black/60">
                 Wenn Sie keine passende Antwort finden, helfen wir persönlich
                 weiter — schnell, direkt und unkompliziert.
               </p>
@@ -205,21 +209,21 @@ export default function FAQPage() {
               <div className="mt-8 grid gap-4">
                 <a
                   href={phoneHref}
-                  className="group rounded-[1.7rem] border border-white/10 bg-white/[0.05] p-5 transition hover:-translate-y-1 hover:border-[#f6c21a]/40 hover:bg-[#f6c21a]/10 active:scale-[0.98]"
+                  className="group rounded-[1.7rem] border border-black/5 bg-[#fafaf7] p-5 transition hover:-translate-y-1 hover:border-[#f6c21a]/40 hover:bg-[#f6c21a]/10"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f6c21a] text-2xl font-black text-black transition group-hover:rotate-6 group-hover:scale-110">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f6c21a] text-2xl font-black text-black shadow-sm transition group-hover:rotate-6">
                       ☎
                     </div>
 
                     <div>
-                      <p className="text-sm font-black uppercase tracking-[0.2em] text-[#f6c21a]">
+                      <p className="text-sm font-black uppercase tracking-[0.2em] text-[#b28a00]">
                         Direkt anrufen
                       </p>
-                      <p className="mt-1 text-xl font-black text-white">
+                      <p className="mt-1 text-xl font-black text-black">
                         {phone}
                       </p>
-                      <p className="mt-2 text-sm leading-6 text-white/60">
+                      <p className="mt-2 text-sm leading-6 text-black/60">
                         Ideal für schnelle Rückfragen und direkte Abstimmung.
                       </p>
                     </div>
@@ -228,21 +232,21 @@ export default function FAQPage() {
 
                 <a
                   href={`mailto:${email}`}
-                  className="group rounded-[1.7rem] border border-white/10 bg-white/[0.05] p-5 transition hover:-translate-y-1 hover:border-[#f6c21a]/40 hover:bg-[#f6c21a]/10 active:scale-[0.98]"
+                  className="group rounded-[1.7rem] border border-black/5 bg-[#fafaf7] p-5 transition hover:-translate-y-1 hover:border-[#f6c21a]/40 hover:bg-[#f6c21a]/10"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f6c21a] text-2xl font-black text-black transition group-hover:rotate-6 group-hover:scale-110">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f6c21a] text-2xl font-black text-black shadow-sm transition group-hover:rotate-6">
                       ✉
                     </div>
 
                     <div>
-                      <p className="text-sm font-black uppercase tracking-[0.2em] text-[#f6c21a]">
+                      <p className="text-sm font-black uppercase tracking-[0.2em] text-[#b28a00]">
                         E-Mail schreiben
                       </p>
-                      <p className="mt-1 text-xl font-black text-white">
+                      <p className="mt-1 text-xl font-black text-black">
                         {email}
                       </p>
-                      <p className="mt-2 text-sm leading-6 text-white/60">
+                      <p className="mt-2 text-sm leading-6 text-black/60">
                         Perfekt für ausführlichere Anfragen und Fotos.
                       </p>
                     </div>
@@ -251,21 +255,21 @@ export default function FAQPage() {
 
                 <Link
                   href="/kontakt"
-                  className="rounded-full bg-[#f6c21a] px-6 py-4 text-center font-black text-black shadow-[0_18px_60px_rgba(246,194,26,0.25)] transition hover:-translate-y-1 hover:bg-white active:scale-95"
+                  className="glow-button rounded-full px-6 py-4 text-center font-black text-black shadow-lg"
                 >
-                  Kontaktformular öffnen
+                  Direktanfrage senden
                 </Link>
               </div>
             </div>
           </div>
 
           <div className="mt-14 grid gap-8 lg:grid-cols-2">
-            <div className="rounded-[2.4rem] border border-black/10 bg-white p-6 shadow-sm md:p-8">
+            <div className="rounded-[2.4rem] border border-black/5 bg-[#fafaf7] p-6 shadow-sm md:p-8">
               <div className="mb-8">
                 <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
                   Gruppe 1
                 </p>
-                <h3 className="mt-3 text-3xl font-black tracking-[-0.04em] text-black">
+                <h3 className="mt-3 text-3xl font-black tracking-tight text-[#18181b]">
                   Fragen zu Umzug & Service
                 </h3>
               </div>
@@ -274,7 +278,7 @@ export default function FAQPage() {
                 {faqGroupOne.map((faq, index) => (
                   <details
                     key={faq.question}
-                    className="group overflow-hidden rounded-[1.6rem] border border-black/10 bg-[#f7f7f2] transition hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
+                    className="group overflow-hidden rounded-[1.6rem] border border-black/5 bg-[#ffffff] transition shadow-sm hover:shadow-md"
                   >
                     <summary className="flex cursor-pointer list-none items-start justify-between gap-5 p-5">
                       <div className="flex gap-4">
@@ -282,17 +286,17 @@ export default function FAQPage() {
                           {String(index + 1).padStart(2, "0")}
                         </div>
 
-                        <h4 className="text-lg font-black leading-7 text-black">
+                        <h4 className="text-lg font-black leading-7 text-[#18181b]">
                           {faq.question}
                         </h4>
                       </div>
 
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-black/10 text-2xl font-light text-black transition group-open:rotate-45 group-open:bg-[#f6c21a]">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-black/5 text-2xl font-light text-black transition group-open:rotate-45 group-open:bg-[#f6c21a]">
                         +
                       </span>
                     </summary>
 
-                    <div className="border-t border-black/10 px-5 pb-5 pt-4">
+                    <div className="border-t border-black/5 px-5 pb-5 pt-4 bg-[#fafaf7]">
                       <p className="leading-7 text-black/65 sm:pl-[60px]">
                         {faq.answer}
                       </p>
@@ -302,12 +306,12 @@ export default function FAQPage() {
               </div>
             </div>
 
-            <div className="rounded-[2.4rem] border border-black/10 bg-white p-6 shadow-sm md:p-8">
+            <div className="rounded-[2.4rem] border border-black/5 bg-[#fafaf7] p-6 shadow-sm md:p-8">
               <div className="mb-8">
                 <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
                   Gruppe 2
                 </p>
-                <h3 className="mt-3 text-3xl font-black tracking-[-0.04em] text-black">
+                <h3 className="mt-3 text-3xl font-black tracking-tight text-[#18181b]">
                   Fragen zu Anfrage & Entrümpelung
                 </h3>
               </div>
@@ -316,7 +320,7 @@ export default function FAQPage() {
                 {faqGroupTwo.map((faq, index) => (
                   <details
                     key={faq.question}
-                    className="group overflow-hidden rounded-[1.6rem] border border-black/10 bg-[#f7f7f2] transition hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
+                    className="group overflow-hidden rounded-[1.6rem] border border-black/5 bg-[#ffffff] transition shadow-sm hover:shadow-md"
                   >
                     <summary className="flex cursor-pointer list-none items-start justify-between gap-5 p-5">
                       <div className="flex gap-4">
@@ -324,17 +328,17 @@ export default function FAQPage() {
                           {String(index + 7).padStart(2, "0")}
                         </div>
 
-                        <h4 className="text-lg font-black leading-7 text-black">
+                        <h4 className="text-lg font-black leading-7 text-[#18181b]">
                           {faq.question}
                         </h4>
                       </div>
 
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-black/10 text-2xl font-light text-black transition group-open:rotate-45 group-open:bg-[#f6c21a]">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-black/5 text-2xl font-light text-black transition group-open:rotate-45 group-open:bg-[#f6c21a]">
                         +
                       </span>
                     </summary>
 
-                    <div className="border-t border-black/10 px-5 pb-5 pt-4">
+                    <div className="border-t border-black/5 px-5 pb-5 pt-4 bg-[#fafaf7]">
                       <p className="leading-7 text-black/65 sm:pl-[60px]">
                         {faq.answer}
                       </p>
@@ -347,20 +351,19 @@ export default function FAQPage() {
         </div>
       </section>
 
-      <section className="relative z-10 overflow-hidden bg-[#050505] px-5 py-24 lg:px-8">
-        <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#f6c21a]/15 blur-3xl" />
-
-        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-[2.5rem] border border-white/10 bg-white/[0.05] p-8 backdrop-blur-xl md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
+      {/* Call to action */}
+      <section className="relative z-10 overflow-hidden bg-[#fafaf7] px-5 py-20 lg:px-8 border-t border-black/5">
+        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-[2.5rem] border border-black/5 bg-white p-8 shadow-lg md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
-            <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
+            <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
               Noch Fragen?
             </p>
 
-            <h2 className="mt-4 max-w-3xl text-4xl font-black tracking-[-0.05em] md:text-6xl">
+            <h2 className="mt-4 max-w-3xl text-3xl font-black tracking-tight text-[#18181b] md:text-5xl lg:text-6xl">
               Wir helfen persönlich weiter.
             </h2>
 
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/65">
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-black/60">
               Schreiben Sie kurz, worum es geht. Wir melden uns schnell zurück
               und klären den passenden Ablauf.
             </p>
@@ -369,14 +372,14 @@ export default function FAQPage() {
           <div className="flex flex-col gap-3">
             <a
               href={phoneHref}
-              className="glow-button rounded-full px-8 py-4 text-center font-black text-black"
+              className="glow-button rounded-full px-8 py-4 text-center font-black text-black shadow-lg"
             >
               {phone}
             </a>
 
             <Link
               href="/kontakt"
-              className="rounded-full border border-white/15 px-8 py-4 text-center font-black text-white transition hover:border-[#f6c21a] hover:text-[#f6c21a]"
+              className="rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10"
             >
               Kontaktformular öffnen
             </Link>

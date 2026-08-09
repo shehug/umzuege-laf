@@ -73,7 +73,7 @@ const checklist = [
 
 export default function HaushaltsaufloesungPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#050505] text-white">
+    <main className="min-h-screen overflow-hidden bg-[#fafaf7] text-[#18181b]">
       <div className="pointer-events-none fixed inset-0 z-0">
         <div className="laf-grid absolute inset-0 opacity-25" />
         <div className="laf-noise absolute inset-0 opacity-[0.05]" />
@@ -114,16 +114,16 @@ export default function HaushaltsaufloesungPage() {
             className="object-cover object-center"
           />
 
-          <div className="absolute inset-0 bg-white/5" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/92 via-[#050505]/60 to-[#050505]/16" />
+          <div className="absolute inset-0 bg-white/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#fafaf7]/92 via-[#fafaf7]/60 to-[#fafaf7]/16" />
           <div className="absolute inset-0 bg-gradient-to-b from-white/15 via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#fafaf7] via-[#fafaf7]/20 to-transparent" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.32),transparent_34%)]" />
         </div>
 
         <div className="relative mx-auto flex max-w-7xl items-center sm:min-h-[72vh]">
           <div className="max-w-4xl">
-            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-[#f6c21a]/40 bg-white/10 px-4 py-2 text-sm font-black text-[#f6c21a] shadow-[0_0_40px_rgba(246,194,26,0.16)] backdrop-blur-xl">
+            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-[#f6c21a]/40 bg-white/20 px-4 py-2 text-sm font-black text-[#f6c21a] shadow-[0_0_40px_rgba(246,194,26,0.16)] backdrop-blur-xl">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f6c21a] opacity-75" />
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#f6c21a]" />
@@ -131,13 +131,13 @@ export default function HaushaltsaufloesungPage() {
               Haushaltsauflösung in Landshut & Umgebung
             </div>
 
-            <h1 className="max-w-5xl text-[2.35rem] font-black leading-[1.03] tracking-[-0.045em] text-white drop-shadow-2xl min-[390px]:text-5xl min-[390px]:leading-[0.98] md:text-7xl lg:text-8xl">
+            <h1 className="max-w-5xl text-[2.35rem] font-black leading-[1.15] tracking-[-0.045em] text-[#18181b] min-[390px]:text-5xl min-[390px]:leading-[1.14] md:text-7xl lg:text-8xl">
               Haushalt auflösen.
               <span className="gradient-text block">Sorgfältig geplant.</span>
               Spürbar entlastet.
             </h1>
 
-            <p className="mt-5 max-w-2xl text-[15px] leading-6 text-white/84 drop-shadow sm:mt-7 sm:text-lg sm:leading-8 md:text-xl">
+            <p className="mt-5 max-w-2xl text-[15px] leading-6 text-black/75 drop-shadow sm:mt-7 sm:text-lg sm:leading-8 md:text-xl">
               Ob Wohnung, Haus oder kompletter Nachlass: Umzüge LAF übernimmt
               Haushaltsauflösungen zuverlässig, diskret und strukturiert — von
               der Räumung bis zur sauberen Übergabe.
@@ -153,7 +153,7 @@ export default function HaushaltsaufloesungPage() {
 
               <a
                 href={phoneHref}
-                className="rounded-full border border-white/25 bg-white/15 px-6 py-3.5 text-center text-sm font-black text-white backdrop-blur-xl transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/15 hover:text-[#f6c21a] sm:px-8 sm:py-4 sm:text-base"
+                className="rounded-full border border-white/25 bg-white/15 px-6 py-3.5 text-center text-sm font-black text-[#18181b] backdrop-blur-xl transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/15 hover:text-[#f6c21a] sm:px-8 sm:py-4 sm:text-base"
               >
                 Direkt anrufen
               </a>
@@ -163,10 +163,10 @@ export default function HaushaltsaufloesungPage() {
               {["Räumen", "Sortieren", "Übergeben"].map((item) => (
                 <div
                   key={item}
-                  className="premium-border rounded-3xl bg-black/35 p-5 backdrop-blur-xl"
+                  className="premium-border rounded-3xl bg-white border border-black/5 p-5 shadow-sm"
                 >
-                  <p className="text-xl font-black text-[#f6c21a]">{item}</p>
-                  <p className="mt-2 text-sm leading-6 text-white/65">
+                  <p className="text-xl font-black text-[#b28a00]">{item}</p>
+                  <p className="mt-2 text-sm leading-6 text-black/60">
                     respektvoll geplant und sauber umgesetzt
                   </p>
                 </div>
@@ -212,7 +212,7 @@ export default function HaushaltsaufloesungPage() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[2.5rem] bg-black shadow-[0_30px_100px_rgba(0,0,0,0.25)]">
+          <div className="relative overflow-hidden rounded-[2.5rem] bg-white border border-black/5 shadow-md">
             <div className="relative h-[380px] sm:h-[560px]">
               <Image
                 src="/images/services/ent1.jpg"
@@ -226,14 +226,14 @@ export default function HaushaltsaufloesungPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.24),transparent_36%)]" />
 
-              <div className="absolute bottom-4 left-4 right-4 rounded-[1.4rem] border border-white/10 bg-black/65 p-4 text-white backdrop-blur-xl sm:bottom-6 sm:left-6 sm:right-6 sm:rounded-[1.7rem] sm:p-6">
+              <div className="absolute bottom-4 left-4 right-4 rounded-[1.4rem] border border-black/5 bg-black/65 p-4 text-white backdrop-blur-xl sm:bottom-6 sm:left-6 sm:right-6 sm:rounded-[1.7rem] sm:p-6">
                 <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
                   Komplettservice
                 </p>
                 <h3 className="mt-3 text-2xl font-black sm:text-3xl">
                   Haushalt räumen, Gegenstände bewegen und Räume vorbereiten.
                 </h3>
-                <p className="mt-3 leading-7 text-white/65">
+                <p className="mt-3 leading-7 text-white/80">
                   Wir achten auf einen geordneten Ablauf, sichere Durchführung
                   und eine Übergabe nach Absprache.
                 </p>
@@ -243,7 +243,7 @@ export default function HaushaltsaufloesungPage() {
         </div>
       </section>
 
-      <section className="relative z-10 bg-[#050505] px-5 py-16 sm:py-28 lg:px-8">
+      <section className="relative z-10 bg-[#fafaf7] px-5 py-16 sm:py-28 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-14 max-w-3xl">
             <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
@@ -254,7 +254,7 @@ export default function HaushaltsaufloesungPage() {
               Haushaltsauflösung mit Struktur, Ruhe und Erfahrung.
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-white/65">
+            <p className="mt-6 text-lg leading-8 text-black/60">
               Gerade bei kompletten Haushalten ist ein klarer Ablauf wichtig.
               Unser Team unterstützt Sie zuverlässig und nimmt Ihnen die
               körperliche und organisatorische Belastung ab.
@@ -265,17 +265,17 @@ export default function HaushaltsaufloesungPage() {
             {benefits.map((benefit, index) => (
               <div
                 key={benefit.title}
-                className="premium-border group rounded-[2rem] bg-white/[0.045] p-6 backdrop-blur-xl transition hover:-translate-y-2 hover:bg-white/[0.07]"
+                className="premium-border group rounded-[2rem] bg-white shadow-sm border border-black/5 p-6 backdrop-blur-xl transition hover:-translate-y-2 hover:bg-white/[0.07]"
               >
                 <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black transition group-hover:rotate-6 group-hover:scale-110">
                   0{index + 1}
                 </div>
 
-                <h3 className="text-2xl font-black text-white">
+                <h3 className="text-2xl font-black text-[#18181b]">
                   {benefit.title}
                 </h3>
 
-                <p className="mt-4 leading-7 text-white/60">
+                <p className="mt-4 leading-7 text-black/60">
                   {benefit.text}
                 </p>
               </div>
@@ -321,7 +321,7 @@ export default function HaushaltsaufloesungPage() {
         </div>
       </section>
 
-      <section className="relative z-10 bg-[#050505] px-5 py-16 sm:py-28 lg:px-8">
+      <section className="relative z-10 bg-[#fafaf7] px-5 py-16 sm:py-28 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
@@ -332,7 +332,7 @@ export default function HaushaltsaufloesungPage() {
               Diese Informationen helfen für ein schnelles Angebot.
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-white/65">
+            <p className="mt-6 text-lg leading-8 text-black/60">
               Je genauer Ihre Angaben sind, desto besser können wir Aufwand,
               Teamgröße, Fahrzeuge und Zeitbedarf einschätzen.
             </p>
@@ -347,7 +347,7 @@ export default function HaushaltsaufloesungPage() {
 
               <a
                 href={phoneHref}
-                className="rounded-full border border-white/15 px-8 py-4 text-center font-black text-white transition hover:border-[#f6c21a] hover:text-[#f6c21a]"
+                className="rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:text-[#b28a00]"
               >
                 {phone}
               </a>
@@ -358,14 +358,14 @@ export default function HaushaltsaufloesungPage() {
             {checklist.map((item) => (
               <div
                 key={item}
-                className="premium-border rounded-[2rem] bg-white/[0.045] p-6 backdrop-blur-xl"
+                className="premium-border rounded-[2rem] bg-white shadow-sm border border-black/5 p-6 backdrop-blur-xl"
               >
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black">
                   ✓
                 </div>
 
-                <p className="text-lg font-black text-white">{item}</p>
-                <p className="mt-2 text-sm leading-6 text-white/55">
+                <p className="text-lg font-black text-[#18181b]">{item}</p>
+                <p className="mt-2 text-sm leading-6 text-black/55">
                   Hilft uns bei der genauen Planung Ihrer Haushaltsauflösung.
                 </p>
               </div>
@@ -375,7 +375,7 @@ export default function HaushaltsaufloesungPage() {
       </section>
 
       <section className="relative z-10 overflow-hidden bg-[#f7f7f2] px-5 py-16 sm:py-28 text-black lg:px-8">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.7rem] bg-black shadow-[0_35px_120px_rgba(0,0,0,0.22)]">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.7rem] bg-white border border-black/5 shadow-lg">
           <div className="grid lg:grid-cols-[1fr_0.9fr]">
             <div className="relative min-h-[460px]">
               <Image
@@ -391,7 +391,7 @@ export default function HaushaltsaufloesungPage() {
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(246,194,26,0.24),transparent_35%)]" />
             </div>
 
-            <div className="flex flex-col justify-center p-8 text-white md:p-12">
+            <div className="flex flex-col justify-center p-8 text-[#18181b] md:p-12">
               <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
                 Angebot sichern
               </p>
@@ -400,7 +400,7 @@ export default function HaushaltsaufloesungPage() {
                 Planen Sie Ihre Haushaltsauflösung mit LAF.
               </h2>
 
-              <p className="mt-6 text-lg leading-8 text-white/65">
+              <p className="mt-6 text-lg leading-8 text-black/60">
                 Schreiben Sie kurz, welches Objekt aufgelöst werden soll und
                 wann die Räumung gewünscht ist. Wir melden uns schnell zurück
                 und klären den passenden Ablauf.
@@ -416,7 +416,7 @@ export default function HaushaltsaufloesungPage() {
 
                 <a
                   href={`mailto:${email}`}
-                  className="rounded-full border border-white/15 px-8 py-4 text-center font-black text-white transition hover:border-[#f6c21a] hover:text-[#f6c21a]"
+                  className="rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:text-[#b28a00]"
                 >
                   E-Mail schreiben
                 </a>

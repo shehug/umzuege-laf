@@ -149,7 +149,7 @@ export default function Header() {
               trackingLocation="Header"
               aria-label="Umzüge LAF anrufen"
               title="Umzüge LAF anrufen"
-              className="hidden h-11 w-11 items-center justify-center rounded-full border border-black/15 bg-white text-black transition hover:border-[#f6c21a] hover:bg-[#f6c21a] md:inline-flex"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/15 bg-white text-black transition hover:border-[#f6c21a] hover:bg-[#f6c21a]"
             >
               <PhoneIcon />
             </TrackedLink>

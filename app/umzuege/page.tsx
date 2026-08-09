@@ -77,7 +77,7 @@ const process = [
 
 export default function UmzuegePage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#050505] text-white">
+    <main className="min-h-screen overflow-hidden bg-[#fafaf7] text-[#18181b]">
       <div className="pointer-events-none fixed inset-0 z-0">
         <div className="laf-grid absolute inset-0 opacity-25" />
         <div className="laf-noise absolute inset-0 opacity-[0.05]" />
@@ -98,15 +98,15 @@ export default function UmzuegePage() {
             className="object-cover object-center"
           />
 
-          <div className="absolute inset-0 bg-white/5" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/92 via-[#050505]/62 to-[#050505]/18" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/20 to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.28),transparent_34%)]" />
+          <div className="absolute inset-0 bg-white/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#fafaf7]/92 via-[#fafaf7]/62 to-[#fafaf7]/18" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#fafaf7] via-[#fafaf7]/20 to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.15),transparent_34%)]" />
         </div>
 
         <div className="relative mx-auto flex min-h-[70vh] max-w-7xl items-center">
           <div className="max-w-4xl">
-            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-[#f6c21a]/40 bg-white/10 px-4 py-2 text-sm font-black text-[#f6c21a] shadow-[0_0_40px_rgba(246,194,26,0.16)] backdrop-blur-xl">
+            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-[#f6c21a]/40 bg-white/20 px-4 py-2 text-sm font-black text-[#f6c21a] shadow-[0_0_40px_rgba(246,194,26,0.16)] backdrop-blur-xl">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f6c21a] opacity-75" />
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#f6c21a]" />
@@ -114,13 +114,13 @@ export default function UmzuegePage() {
               Umzüge in Landshut & Umgebung
             </div>
 
-            <h1 className="max-w-5xl text-5xl font-black leading-[0.92] tracking-[-0.06em] text-white drop-shadow-2xl md:text-7xl lg:text-8xl">
+            <h1 className="max-w-5xl text-5xl font-black leading-[1.12] tracking-[-0.06em] text-[#18181b] md:text-7xl lg:text-8xl">
               Ihr Umzug.
               <span className="gradient-text block">Klar geplant.</span>
               Sicher bewegt.
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/82 drop-shadow md:text-xl">
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-black/80 drop-shadow md:text-xl">
               Umzüge LAF begleitet private und gewerbliche Umzüge mit Planung,
               Transport, Möbelmontage, Einpackservice und persönlicher
               Betreuung.
@@ -136,7 +136,7 @@ export default function UmzuegePage() {
 
               <a
                 href={phoneHref}
-                className="rounded-full border border-white/25 bg-white/15 px-8 py-4 text-center font-black text-white backdrop-blur-xl transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/15 hover:text-[#f6c21a]"
+                className="rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 hover:text-[#b28a00]"
               >
                 Direkt anrufen
               </a>
@@ -146,10 +146,10 @@ export default function UmzuegePage() {
               {["Privatumzug", "Firmenumzug", "Montage"].map((item) => (
                 <div
                   key={item}
-                  className="premium-border rounded-3xl bg-black/35 p-5 backdrop-blur-xl"
+                  className="premium-border rounded-3xl bg-white border border-black/5 p-5 shadow-sm"
                 >
-                  <p className="text-xl font-black text-[#f6c21a]">{item}</p>
-                  <p className="mt-2 text-sm leading-6 text-white/65">
+                  <p className="text-xl font-black text-[#b28a00]">{item}</p>
+                  <p className="mt-2 text-sm leading-6 text-black/60">
                     zuverlässig geplant und sauber umgesetzt
                   </p>
                 </div>
@@ -213,7 +213,7 @@ export default function UmzuegePage() {
         </div>
       </section>
 
-      <section className="relative z-10 bg-[#050505] px-5 py-28 lg:px-8">
+      <section className="relative z-10 bg-[#fafaf7] px-5 py-28 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
@@ -224,7 +224,7 @@ export default function UmzuegePage() {
               Ein guter Umzug braucht Struktur.
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-white/65">
+            <p className="mt-6 text-lg leading-8 text-black/60">
               Damit am Umzugstag alles klar ist, achten wir auf einfache
               Kommunikation, saubere Planung und zuverlässige Durchführung.
             </p>
@@ -239,7 +239,7 @@ export default function UmzuegePage() {
 
               <a
                 href={phoneHref}
-                className="rounded-full border border-white/15 px-8 py-4 text-center font-black text-white transition hover:border-[#f6c21a] hover:text-[#f6c21a]"
+                className="rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:text-[#b28a00]"
               >
                 {phone}
               </a>
@@ -250,7 +250,7 @@ export default function UmzuegePage() {
             {process.map((step, index) => (
               <div
                 key={step.title}
-                className="premium-border group rounded-[2rem] bg-white/[0.045] p-6 backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white/[0.07]"
+                className="premium-border group rounded-[2rem] bg-white shadow-sm border border-black/5 p-6 backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white/[0.07]"
               >
                 <div className="flex gap-5">
                   <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black transition group-hover:rotate-6 group-hover:scale-110">
@@ -258,10 +258,10 @@ export default function UmzuegePage() {
                   </div>
 
                   <div>
-                    <h3 className="text-2xl font-black text-white">
+                    <h3 className="text-2xl font-black text-[#18181b]">
                       {step.title}
                     </h3>
-                    <p className="mt-2 leading-7 text-white/60">{step.text}</p>
+                    <p className="mt-2 leading-7 text-black/60">{step.text}</p>
                   </div>
                 </div>
               </div>
@@ -272,7 +272,7 @@ export default function UmzuegePage() {
 
       <section className="relative z-10 bg-[#f7f7f2] px-5 py-28 text-black lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div className="relative overflow-hidden rounded-[2.5rem] bg-black shadow-[0_30px_100px_rgba(0,0,0,0.25)]">
+          <div className="relative overflow-hidden rounded-[2.5rem] bg-white border border-black/5 shadow-md">
             <div className="relative h-[520px]">
               <Image
                 src="/images/services/privatumzug.jpg"
@@ -284,14 +284,14 @@ export default function UmzuegePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.24),transparent_36%)]" />
 
-              <div className="absolute bottom-6 left-6 right-6 rounded-[1.7rem] border border-white/10 bg-black/55 p-6 text-white backdrop-blur-xl">
+              <div className="absolute bottom-6 left-6 right-6 rounded-[1.7rem] border border-black/5 bg-black/55 p-6 text-white backdrop-blur-md">
                 <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
                   Sorgfältig
                 </p>
                 <h3 className="mt-3 text-3xl font-black">
                   Möbel, Kartons und Räume in guten Händen.
                 </h3>
-                <p className="mt-3 leading-7 text-white/65">
+                <p className="mt-3 leading-7 text-black/60">
                   Wir achten auf sichere Abläufe und sauberen Umgang mit Ihrem
                   Eigentum.
                 </p>
@@ -336,10 +336,10 @@ export default function UmzuegePage() {
         </div>
       </section>
 
-      <section className="relative z-10 overflow-hidden bg-[#050505] px-5 py-24 lg:px-8">
+      <section className="relative z-10 overflow-hidden bg-[#fafaf7] px-5 py-24 lg:px-8">
         <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#f6c21a]/15 blur-3xl" />
 
-        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-[2.5rem] border border-white/10 bg-white/[0.05] p-8 backdrop-blur-xl md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-[2.5rem] border border-black/5 bg-white shadow-sm border border-black/5 p-8 backdrop-blur-xl md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
               Umzug anfragen
@@ -349,7 +349,7 @@ export default function UmzuegePage() {
               Bereit für Ihren Umzug?
             </h2>
 
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/65">
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-black/60">
               Schreiben Sie kurz, worum es geht. Wir melden uns schnell zurück
               und klären den passenden Ablauf.
             </p>
@@ -365,7 +365,7 @@ export default function UmzuegePage() {
 
             <a
               href={`mailto:${email}`}
-              className="rounded-full border border-white/15 px-8 py-4 text-center font-black text-white transition hover:border-[#f6c21a] hover:text-[#f6c21a]"
+              className="rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:text-[#b28a00]"
             >
               E-Mail schreiben
             </a>

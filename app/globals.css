@@ -2,9 +2,10 @@
 
 :root {
   --laf-yellow: #f6c21a;
-  --laf-black: #050505;
-  --laf-dark: #111111;
-  --laf-soft: #f7f7f2;
+  --laf-yellow-deep: #b28a00;
+  --laf-black: #18181b;
+  --laf-dark: #fafaf7;
+  --laf-soft: #ffffff;
 }
 
 * {
@@ -17,8 +18,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--laf-black);
-  color: white;
+  background: var(--laf-dark);
+  color: var(--laf-black);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -29,8 +30,8 @@ body {
 
 .laf-grid {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    linear-gradient(rgba(24, 24, 27, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(24, 24, 27, 0.035) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: radial-gradient(circle at top, black, transparent 72%);
 }
@@ -51,7 +52,7 @@ body {
   height: 420px;
   left: -120px;
   top: 80px;
-  background: rgba(246, 194, 26, 0.28);
+  background: rgba(246, 194, 26, 0.12);
 }
 
 .laf-orb-two {
@@ -59,7 +60,7 @@ body {
   height: 480px;
   right: -160px;
   top: 160px;
-  background: rgba(246, 194, 26, 0.18);
+  background: rgba(246, 194, 26, 0.08);
   animation-delay: -4s;
 }
 
@@ -68,17 +69,21 @@ body {
   height: 360px;
   left: 35%;
   bottom: -180px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(24, 24, 27, 0.02);
   animation-delay: -8s;
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #f6c21a, #fff1a6, #f6c21a);
+  background: linear-gradient(90deg, #b28a00, #18181b, #b28a00);
   background-size: 220% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   animation: gradientMove 5s ease-in-out infinite;
+  display: inline-block;
+  padding-bottom: 0.18em;
+  margin-bottom: -0.18em;
+  line-height: 1.15;
 }
 
 .glow-button {
@@ -86,8 +91,8 @@ body {
   overflow: hidden;
   background: linear-gradient(135deg, #f6c21a, #ffe27a, #f6c21a);
   box-shadow:
-    0 0 24px rgba(246, 194, 26, 0.35),
-    0 18px 60px rgba(246, 194, 26, 0.18);
+    0 0 24px rgba(246, 194, 26, 0.25),
+    0 12px 40px rgba(246, 194, 26, 0.15);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
@@ -106,8 +111,8 @@ body {
 .glow-button:hover {
   transform: translateY(-2px) scale(1.04);
   box-shadow:
-    0 0 34px rgba(246, 194, 26, 0.55),
-    0 22px 80px rgba(246, 194, 26, 0.24);
+    0 0 34px rgba(246, 194, 26, 0.45),
+    0 18px 50px rgba(246, 194, 26, 0.20);
 }
 
 .premium-border {
@@ -121,7 +126,7 @@ body {
   inset: 0;
   padding: 1px;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(246, 194, 26, 0.65), rgba(255, 255, 255, 0.08), rgba(246, 194, 26, 0.22));
+  background: linear-gradient(135deg, rgba(246, 194, 26, 0.45), rgba(24, 24, 27, 0.05), rgba(246, 194, 26, 0.15));
   mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);

@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import BreadcrumbJsonLd from "./BreadcrumbJsonLd";
 import ServiceJsonLd from "./ServiceJsonLd";
+import ContactForm from "./ContactForm";
 
 type FaqItem = {
   q: string;
@@ -90,7 +91,7 @@ export default function LocalSeoLanding({
   faqs,
 }: LocalSeoLandingProps) {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#050505] text-white">
+    <main className="min-h-screen overflow-hidden bg-[#fafaf7] text-[#18181b]">
       <Header />
 
       <BreadcrumbJsonLd
@@ -109,7 +110,8 @@ export default function LocalSeoLanding({
 
       <FaqJsonLd faqs={faqs} />
 
-      <section className="relative min-h-[88vh] overflow-hidden px-5 pb-20 pt-40 lg:px-8">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden px-5 pb-16 pt-32 sm:pb-24 sm:pt-40 lg:px-8">
         <div className="absolute inset-0">
           <Image
             src={image}
@@ -118,38 +120,43 @@ export default function LocalSeoLanding({
             priority
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/95 via-[#050505]/70 to-[#050505]/20" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.25),transparent_35%)]" />
+          <div className="absolute inset-0 bg-white/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#fafaf7]/98 via-[#fafaf7]/90 to-[#fafaf7]/40 sm:to-[#fafaf7]/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#fafaf7] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.15),transparent_35%)]" />
         </div>
 
-        <div className="relative mx-auto flex min-h-[70vh] max-w-7xl items-center">
+        <div className="relative mx-auto flex min-h-[50vh] max-w-7xl items-center">
           <div className="max-w-4xl">
-            <p className="mb-6 inline-flex rounded-full border border-[#f6c21a]/35 bg-[#f6c21a]/10 px-4 py-2 text-sm font-black text-[#f6c21a]">
+            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#f6c21a] bg-[#f6c21a]/10 px-4 py-2 text-xs font-black uppercase tracking-wider text-[#b28a00] sm:text-sm">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f6c21a] opacity-75" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#f6c21a]" />
+              </span>
               {badge}
-            </p>
+            </div>
 
-            <h1 className="text-5xl font-black leading-[0.95] tracking-[-0.06em] md:text-7xl lg:text-8xl">
+            <h1 className="text-[2.5rem] font-black leading-[1.02] tracking-tight text-[#18181b] min-[390px]:text-[2.85rem] sm:text-6xl md:text-7xl lg:text-8xl">
               {h1Top}
               <span className="gradient-text block">{h1Highlight}</span>
               {h1Bottom}
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/80 md:text-xl">
+            <p className="mt-5 max-w-2xl text-[16px] leading-7 text-black/75 sm:mt-7 sm:text-lg sm:leading-8 md:text-xl">
               {intro}
             </p>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="/kontakt"
-                className="glow-button rounded-full px-8 py-4 text-center font-black text-black"
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
+              <a
+                href="#anfrage-formular"
+                className="glow-button rounded-full px-8 py-4 text-center font-black text-black shadow-lg"
               >
                 Kostenlos anfragen
-              </Link>
+              </a>
 
               <a
                 href={phoneHref}
-                className="rounded-full border border-white/20 bg-white/[0.05] px-8 py-4 text-center font-black text-white transition hover:border-[#f6c21a] hover:text-[#f6c21a]"
+                className="rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10"
               >
                 Direkt anrufen: {phone}
               </a>
@@ -158,18 +165,19 @@ export default function LocalSeoLanding({
         </div>
       </section>
 
-      <section className="bg-[#f7f7f2] px-5 py-24 text-black lg:px-8">
+      {/* Services Section */}
+      <section className="relative bg-[#ffffff] px-5 py-20 text-black lg:px-8 border-t border-black/5">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-center">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
               {sectionKicker}
             </p>
 
-            <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] md:text-6xl">
+            <h2 className="mt-4 text-3xl font-black tracking-tight text-[#18181b] md:text-5xl lg:text-6xl">
               {sectionTitle}
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-black/65">
+            <p className="mt-6 text-lg leading-8 text-black/60">
               {sectionText}
             </p>
 
@@ -177,26 +185,26 @@ export default function LocalSeoLanding({
               {benefits.map((item) => (
                 <div
                   key={item}
-                  className="flex items-center gap-4 rounded-3xl border border-black/10 bg-white p-5 shadow-sm"
+                  className="flex items-center gap-4 rounded-3xl border border-black/5 bg-[#fafaf7] p-5 shadow-sm"
                 >
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#f6c21a] font-black text-black">
                     ✓
                   </span>
-                  <p className="font-black">{item}</p>
+                  <p className="font-black text-[#18181b]">{item}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[2.5rem] bg-black shadow-[0_30px_100px_rgba(0,0,0,0.25)]">
-            <div className="relative h-[520px]">
+          <div className="relative overflow-hidden rounded-[2.5rem] bg-white shadow-xl border border-black/5">
+            <div className="relative h-[480px]">
               <Image src={image} alt={imageAlt} fill className="object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 rounded-[1.7rem] border border-white/10 bg-black/55 p-6 backdrop-blur-xl">
-                <h3 className="text-3xl font-black text-white">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 rounded-[1.7rem] border border-white/10 bg-black/50 p-6 text-white backdrop-blur-md">
+                <h3 className="text-2xl font-black">
                   Persönlich geplant. Sauber umgesetzt.
                 </h3>
-                <p className="mt-3 leading-7 text-white/65">
+                <p className="mt-2 text-sm leading-6 text-white/75">
                   Umzüge LAF unterstützt Kunden in Landshut und Umgebung mit
                   klarer Abstimmung, zuverlässigem Team und fairer Planung.
                 </p>
@@ -206,52 +214,54 @@ export default function LocalSeoLanding({
         </div>
       </section>
 
-      <section className="bg-[#050505] px-5 py-24 lg:px-8">
+      {/* Process Section */}
+      <section className="relative bg-[#fafaf7] px-5 py-20 lg:px-8 border-t border-black/5">
         <div className="mx-auto max-w-7xl">
-          <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
+          <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
             Ablauf
           </p>
 
-          <h2 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.05em] md:text-6xl">
+          <h2 className="mt-4 text-3xl font-black tracking-tight text-[#18181b] md:text-5xl lg:text-6xl">
             So läuft die Zusammenarbeit mit Umzüge LAF ab.
           </h2>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, index) => (
               <div
                 key={step.title}
-                className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-6 backdrop-blur-xl"
+                className="group rounded-[2rem] border border-black/5 bg-white p-6 shadow-sm hover:shadow-md transition duration-300"
               >
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black">
                   {index + 1}
                 </div>
-                <h3 className="text-2xl font-black">{step.title}</h3>
-                <p className="mt-4 leading-7 text-white/60">{step.text}</p>
+                <h3 className="text-2xl font-black text-[#18181b]">{step.title}</h3>
+                <p className="mt-3 leading-7 text-black/60">{step.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[#f7f7f2] px-5 py-24 text-black lg:px-8">
+      {/* Related Services */}
+      <section className="relative bg-[#ffffff] px-5 py-20 text-black lg:px-8 border-t border-black/5">
         <div className="mx-auto max-w-7xl">
           <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
             Weitere Leistungen
           </p>
 
-          <h2 className="mt-4 max-w-4xl text-4xl font-black tracking-[-0.05em] md:text-6xl">
+          <h2 className="mt-4 text-3xl font-black tracking-tight text-[#18181b] md:text-5xl lg:text-6xl">
             Passende Leistungen rund um Umzug und Entrümpelung.
           </h2>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {relatedServices.map((service) => (
               <Link
                 key={service.href}
                 href={service.href}
-                className="rounded-[2rem] border border-black/10 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-[0_25px_70px_rgba(0,0,0,0.12)]"
+                className="rounded-[2rem] border border-black/5 bg-[#fafaf7] p-7 shadow-sm transition duration-300 hover:shadow-md"
               >
-                <h3 className="text-2xl font-black">{service.title}</h3>
-                <p className="mt-4 leading-7 text-black/60">{service.text}</p>
+                <h3 className="text-2xl font-black text-[#18181b]">{service.title}</h3>
+                <p className="mt-3 leading-7 text-black/60">{service.text}</p>
                 <p className="mt-6 font-black text-[#b28a00]">Mehr erfahren →</p>
               </Link>
             ))}
@@ -259,13 +269,14 @@ export default function LocalSeoLanding({
         </div>
       </section>
 
-      <section className="bg-[#050505] px-5 py-24 lg:px-8">
+      {/* FAQ & Form Section */}
+      <section className="relative bg-[#fafaf7] px-5 py-20 lg:px-8 border-t border-black/5">
         <div className="mx-auto max-w-7xl">
-          <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
+          <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
             Häufige Fragen
           </p>
 
-          <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] md:text-6xl">
+          <h2 className="mt-4 text-3xl font-black tracking-tight text-[#18181b] md:text-5xl lg:text-6xl">
             Fragen zu {breadcrumbName}.
           </h2>
 
@@ -273,35 +284,49 @@ export default function LocalSeoLanding({
             {faqs.map((item) => (
               <div
                 key={item.q}
-                className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-7 backdrop-blur-xl"
+                className="rounded-[2rem] border border-black/5 bg-white p-7 shadow-sm"
               >
-                <h3 className="text-xl font-black text-white">{item.q}</h3>
-                <p className="mt-4 leading-7 text-white/60">{item.a}</p>
+                <h3 className="text-xl font-black text-[#18181b]">{item.q}</h3>
+                <p className="mt-3 leading-7 text-black/60">{item.a}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 rounded-[2rem] bg-[#f6c21a] p-8 text-black">
-            <h2 className="text-3xl font-black">Jetzt Anfrage stellen</h2>
-            <p className="mt-4 max-w-2xl leading-7 text-black/70">
-              Senden Sie uns Ihre Anfrage oder rufen Sie direkt an. Wir klären
-              Umfang, Termin und Ablauf persönlich mit Ihnen.
-            </p>
+          <div className="mt-20 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+            <div>
+              <h2 className="text-3xl font-black text-[#18181b]">Umzug in Landshut geplant?</h2>
+              <p className="mt-4 leading-7 text-black/60">
+                Senden Sie uns Ihre Anfrage oder rufen Sie direkt an. Wir klären
+                Umfang, Termin und Ablauf persönlich mit Ihnen.
+              </p>
+              
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
+                <a
+                  href={phoneHref}
+                  className="glow-button rounded-full px-8 py-4 text-center font-black text-black shadow-lg"
+                >
+                  Direkt anrufen: {phone}
+                </a>
 
-            <div className="mt-7 flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="/kontakt"
-                className="rounded-full bg-black px-7 py-4 text-center font-black text-white transition hover:bg-white hover:text-black"
-              >
-                Anfrage senden
-              </Link>
+                <a
+                  href={`mailto:info@umzuege-laf.de`}
+                  className="rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10"
+                >
+                  E-Mail schreiben
+                </a>
+              </div>
+            </div>
 
-              <a
-                href={phoneHref}
-                className="rounded-full border border-black/20 px-7 py-4 text-center font-black text-black hover:bg-black hover:text-white"
-              >
-                {phone}
-              </a>
+            <div id="anfrage-formular" className="scroll-mt-24">
+              <div className="mb-5">
+                <p className="text-sm font-black uppercase tracking-[0.25em] text-[#b28a00]">
+                  Direktanfrage
+                </p>
+                <h3 className="mt-2 text-2xl font-black text-[#18181b]">
+                  Kostenloses Angebot anfordern
+                </h3>
+              </div>
+              <ContactForm />
             </div>
           </div>
         </div>

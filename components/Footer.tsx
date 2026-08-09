@@ -30,14 +30,14 @@ const services = [
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 border-t border-white/10 bg-[#050505] px-5 py-16 text-white lg:px-8">
+    <footer className="relative z-10 border-t border-black/5 bg-[#fafaf7] px-5 py-16 text-[#18181b] lg:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
           <div>
             <Link href="/" className="inline-flex items-center gap-4">
               <div className="relative h-20 w-48">
                 <Image
-                  src="/images/logo/Lafi12.png"
+                  src="/images/logo/laf-logo.png"
                   alt="Umzüge LAF Logo"
                   fill
                   sizes="192px"
@@ -46,20 +46,20 @@ export default function Footer() {
               </div>
             </Link>
 
-            <p className="mt-6 max-w-sm text-sm leading-7 text-white/60">
+            <p className="mt-6 max-w-sm text-sm leading-7 text-black/65">
               Umzüge LAF ist Ihr Umzugsunternehmen in Landshut für Privatumzug,
               Firmenumzug, Entrümpelung, Wohnungsauflösung, Möbelmontage und
               Einpackservice in Landshut und Umgebung.
             </p>
 
-            <div className="mt-6 flex flex-col gap-2 text-sm text-white/70">
+            <div className="mt-6 flex flex-col gap-2 text-sm font-bold text-black/75">
               <p>Ergoldinger Str. 15</p>
               <p>84030 Landshut</p>
             </div>
           </div>
 
           <div>
-            <h3 className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
+            <h3 className="text-sm font-black uppercase tracking-[0.25em] text-[#b28a00]">
               Navigation
             </h3>
 
@@ -68,7 +68,7 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-white/65 transition hover:text-[#f6c21a]"
+                  className="text-sm font-medium text-black/70 transition hover:text-[#b28a00]"
                 >
                   {link.label}
                 </Link>
@@ -77,7 +77,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
+            <h3 className="text-sm font-black uppercase tracking-[0.25em] text-[#b28a00]">
               Leistungen
             </h3>
 
@@ -86,7 +86,7 @@ export default function Footer() {
                 <Link
                   key={service.href}
                   href={service.href}
-                  className="text-sm text-white/65 transition hover:text-[#f6c21a]"
+                  className="text-sm font-medium text-black/70 transition hover:text-[#b28a00]"
                 >
                   {service.label}
                 </Link>
@@ -95,7 +95,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
+            <h3 className="text-sm font-black uppercase tracking-[0.25em] text-[#b28a00]">
               Kontakt
             </h3>
 
@@ -104,7 +104,7 @@ export default function Footer() {
                 href={phoneHref}
                 tracking="phone"
                 trackingLocation="Footer"
-                className="rounded-full bg-[#f6c21a] px-6 py-3 text-center text-sm font-black text-black transition hover:bg-white"
+                className="glow-button rounded-full px-6 py-3 text-center text-sm font-black text-black shadow-md"
               >
                 {phone}
               </TrackedLink>
@@ -113,41 +113,41 @@ export default function Footer() {
                 href={`mailto:${email}`}
                 tracking="email"
                 trackingLocation="Footer"
-                className="rounded-full border border-white/15 px-6 py-3 text-center text-sm font-black text-white transition hover:border-[#f6c21a] hover:text-[#f6c21a]"
+                className="rounded-full border border-black/15 bg-white px-6 py-3 text-center text-sm font-black text-black shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10"
               >
                 {email}
               </TrackedLink>
             </div>
 
-            <div className="mt-8 rounded-3xl border border-white/10 bg-white/[0.04] p-5">
-              <p className="text-sm font-black text-white">Schnell anfragen</p>
-              <p className="mt-2 text-sm leading-6 text-white/55">
+            <div className="mt-8 rounded-3xl border border-black/5 bg-white p-5 shadow-sm">
+              <p className="text-sm font-black text-[#18181b]">Schnell anfragen</p>
+              <p className="mt-2 text-sm leading-6 text-black/60">
                 Für Umzug Landshut, Entrümpelung Landshut oder Möbelmontage einfach kurz melden.
               </p>
             </div>
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-white/45 md:flex-row md:items-center md:justify-between">
+        <div className="mt-14 flex flex-col gap-4 border-t border-black/5 pt-6 text-sm text-black/50 md:flex-row md:items-center md:justify-between">
           <p>
             © {new Date().getFullYear()} Umzüge LAF. Alle Rechte vorbehalten.
           </p>
 
           <div className="flex flex-wrap gap-5">
-            <Link href="/impressum" className="transition hover:text-[#f6c21a]">
+            <Link href="/impressum" className="transition hover:text-[#b28a00]">
               Impressum
             </Link>
 
             <Link
               href="/datenschutz"
-              className="transition hover:text-[#f6c21a]"
+              className="transition hover:text-[#b28a00]"
             >
               Datenschutz
             </Link>
 
             <Link
               href="/admin/login"
-              className="transition hover:text-[#f6c21a]"
+              className="transition hover:text-[#b28a00]"
             >
               Admin
             </Link>

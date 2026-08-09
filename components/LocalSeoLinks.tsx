@@ -69,19 +69,19 @@ export default function LocalSeoLinks() {
   return (
     <section
       aria-label="Lokale Leistungen von Umzüge LAF in Landshut"
-      className="relative z-10 border-t border-white/10 bg-[#050505] px-5 py-16 text-white lg:px-8"
+      className="relative z-10 border-t border-black/5 bg-[#fafaf7] px-5 py-16 text-[#18181b] lg:px-8"
     >
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_1.3fr]">
         <div>
-          <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
+          <p className="text-sm font-black uppercase tracking-[0.25em] text-[#b28a00]">
             Umzüge LAF in Landshut
           </p>
 
-          <h2 className="mt-4 text-3xl font-black tracking-[-0.04em] md:text-5xl">
+          <h2 className="mt-4 text-3xl font-black tracking-tight text-[#18181b] md:text-4xl">
             Umzug, Entrümpelung und Möbelmontage in Landshut.
           </h2>
 
-          <p className="mt-5 max-w-xl leading-7 text-white/60">
+          <p className="mt-5 max-w-xl leading-7 text-black/60">
             Umzüge LAF unterstützt Privatkunden, Firmen und Haushalte in
             Landshut und Umgebung mit Umzug, Transport, Möbelmontage,
             Einpackservice, Entrümpelung und Sperrmüllentsorgung.
@@ -90,7 +90,7 @@ export default function LocalSeoLinks() {
 
         <div className="grid gap-8 md:grid-cols-2">
           <div>
-            <h3 className="text-lg font-black text-[#f6c21a]">
+            <h3 className="text-lg font-black text-[#b28a00]">
               Wichtige Seiten
             </h3>
 
@@ -99,7 +99,7 @@ export default function LocalSeoLinks() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="rounded-2xl border border-white/10 bg-white/[0.045] px-5 py-4 font-bold text-white transition hover:border-[#f6c21a]/50 hover:bg-[#f6c21a]/10 hover:text-[#f6c21a]"
+                  className="rounded-2xl border border-black/5 bg-white px-5 py-4 font-bold text-[#18181b] shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 hover:text-[#b28a00]"
                 >
                   {link.title}
                 </Link>
@@ -108,7 +108,7 @@ export default function LocalSeoLinks() {
           </div>
 
           <div>
-            <h3 className="text-lg font-black text-[#f6c21a]">
+            <h3 className="text-lg font-black text-[#b28a00]">
               Weitere Leistungen
             </h3>
 
@@ -117,7 +117,7 @@ export default function LocalSeoLinks() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="rounded-2xl border border-white/10 bg-white/[0.045] px-5 py-4 font-bold text-white transition hover:border-[#f6c21a]/50 hover:bg-[#f6c21a]/10 hover:text-[#f6c21a]"
+                  className="rounded-2xl border border-black/5 bg-white px-5 py-4 font-bold text-[#18181b] shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 hover:text-[#b28a00]"
                 >
                   {link.title}
                 </Link>
@@ -127,7 +127,7 @@ export default function LocalSeoLinks() {
         </div>
 
         <div className="lg:col-span-2">
-          <h3 className="text-lg font-black text-[#f6c21a]">
+          <h3 className="text-lg font-black text-[#b28a00]">
             Einsatzgebiet
           </h3>
 
@@ -135,7 +135,7 @@ export default function LocalSeoLinks() {
             {areas.map((area) => (
               <span
                 key={area}
-                className="rounded-full border border-white/10 bg-white/[0.045] px-5 py-3 text-sm font-bold text-white/75"
+                className="rounded-full border border-black/5 bg-white px-5 py-3 text-sm font-bold text-black/75 shadow-sm"
               >
                 {area}
               </span>
