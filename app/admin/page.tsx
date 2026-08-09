@@ -18,7 +18,7 @@ export default async function AdminPage() {
   const content = await readSiteContent();
 
   return (
-    <main className="min-h-screen bg-[#f7f7f2] px-5 py-24 lg:px-8">
+    <main className="min-h-screen bg-[#f7f7f2] px-4 py-14 sm:px-6 sm:py-20 md:py-24 lg:px-8">
       <div className="mx-auto max-w-5xl">
         <AdminContentEditor initialContent={content} />
       </div>

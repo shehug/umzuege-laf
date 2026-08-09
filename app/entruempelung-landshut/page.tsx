@@ -173,7 +173,7 @@ export default function EntruempelungLandshutPage() {
         </div>
       </section>
 
-      <section className="relative bg-[#ffffff] px-5 py-20 text-black lg:px-8 border-t border-black/5">
+      <section className="relative bg-[#ffffff] px-4 py-12 sm:px-6 sm:py-16 md:py-20 text-black lg:px-8 border-t border-black/5">
         <div className="mx-auto max-w-7xl">
           <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
@@ -197,7 +197,7 @@ export default function EntruempelungLandshutPage() {
               <Link
                 key={service.href}
                 href={service.href}
-                className="group relative overflow-hidden rounded-[2rem] border border-black/5 bg-white p-7 shadow-sm transition duration-300 hover:shadow-md"
+                className="group relative overflow-hidden rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white p-4.5 sm:p-7 shadow-sm transition duration-300 hover:shadow-md"
               >
                 <div className="absolute right-6 top-6 text-7xl font-black text-black/[0.04]">
                   {service.number}
@@ -224,7 +224,7 @@ export default function EntruempelungLandshutPage() {
         </div>
       </section>
 
-      <section className="relative bg-[#fafaf7] px-5 py-20 lg:px-8 border-t border-black/5">
+      <section className="relative bg-[#fafaf7] px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 border-t border-black/5">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
@@ -246,7 +246,7 @@ export default function EntruempelungLandshutPage() {
             {process.map((step, index) => (
               <div
                 key={step.title}
-                className="group rounded-[2rem] border border-black/5 bg-white p-6 shadow-sm"
+                className="group rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white p-6 shadow-sm"
               >
                 <div className="flex gap-5">
                   <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black">
@@ -266,7 +266,7 @@ export default function EntruempelungLandshutPage() {
         </div>
       </section>
 
-      <section className="relative bg-[#ffffff] px-5 py-20 text-black lg:px-8 border-t border-black/5">
+      <section className="relative bg-[#ffffff] px-4 py-12 sm:px-6 sm:py-16 md:py-20 text-black lg:px-8 border-t border-black/5">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_1fr] lg:items-start">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">

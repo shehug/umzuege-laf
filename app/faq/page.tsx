@@ -159,10 +159,10 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ content */}
-      <section className="relative z-10 bg-[#ffffff] px-5 py-20 text-[#18181b] lg:px-8 border-t border-black/5">
+      <section className="relative z-10 bg-[#ffffff] px-4 py-12 sm:px-6 sm:py-16 md:py-20 text-[#18181b] lg:px-8 border-t border-black/5">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-            <div className="rounded-[2.4rem] border border-black/5 bg-[#fafaf7] p-8 shadow-sm md:p-10">
+            <div className="rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/5 bg-[#fafaf7] p-5 sm:p-8 shadow-sm md:p-10">
               <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
                 Gut informiert
               </p>
@@ -192,7 +192,7 @@ export default function FAQPage() {
               </div>
             </div>
 
-            <div className="rounded-[2.4rem] border border-black/5 bg-white p-8 shadow-md md:p-10">
+            <div className="rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white p-8 shadow-md md:p-10">
               <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
                 Schnellkontakt
               </p>
@@ -209,7 +209,7 @@ export default function FAQPage() {
               <div className="mt-8 grid gap-4">
                 <a
                   href={phoneHref}
-                  className="group rounded-[1.7rem] border border-black/5 bg-[#fafaf7] p-5 transition hover:-translate-y-1 hover:border-[#f6c21a]/40 hover:bg-[#f6c21a]/10"
+                  className="group rounded-xl sm:rounded-xl sm:rounded-[1.4rem] border border-black/5 bg-[#fafaf7] p-5 transition hover:-translate-y-1 hover:border-[#f6c21a]/40 hover:bg-[#f6c21a]/10"
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f6c21a] text-2xl font-black text-black shadow-sm transition group-hover:rotate-6">
@@ -232,7 +232,7 @@ export default function FAQPage() {
 
                 <a
                   href={`mailto:${email}`}
-                  className="group rounded-[1.7rem] border border-black/5 bg-[#fafaf7] p-5 transition hover:-translate-y-1 hover:border-[#f6c21a]/40 hover:bg-[#f6c21a]/10"
+                  className="group rounded-xl sm:rounded-xl sm:rounded-[1.4rem] border border-black/5 bg-[#fafaf7] p-5 transition hover:-translate-y-1 hover:border-[#f6c21a]/40 hover:bg-[#f6c21a]/10"
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f6c21a] text-2xl font-black text-black shadow-sm transition group-hover:rotate-6">
@@ -264,7 +264,7 @@ export default function FAQPage() {
           </div>
 
           <div className="mt-14 grid gap-8 lg:grid-cols-2">
-            <div className="rounded-[2.4rem] border border-black/5 bg-[#fafaf7] p-6 shadow-sm md:p-8">
+            <div className="rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/5 bg-[#fafaf7] p-6 shadow-sm md:p-8">
               <div className="mb-8">
                 <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
                   Gruppe 1
@@ -306,7 +306,7 @@ export default function FAQPage() {
               </div>
             </div>
 
-            <div className="rounded-[2.4rem] border border-black/5 bg-[#fafaf7] p-6 shadow-sm md:p-8">
+            <div className="rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/5 bg-[#fafaf7] p-6 shadow-sm md:p-8">
               <div className="mb-8">
                 <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
                   Gruppe 2
@@ -352,8 +352,8 @@ export default function FAQPage() {
       </section>
 
       {/* Call to action */}
-      <section className="relative z-10 overflow-hidden bg-[#fafaf7] px-5 py-20 lg:px-8 border-t border-black/5">
-        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-[2.5rem] border border-black/5 bg-white p-8 shadow-lg md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
+      <section className="relative z-10 overflow-hidden bg-[#fafaf7] px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 border-t border-black/5">
+        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white p-5 sm:p-8 shadow-lg md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
               Noch Fragen?

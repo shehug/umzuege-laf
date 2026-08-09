@@ -44,9 +44,9 @@ export default function ImpressumPage() {
         </div>
       </section>
 
-      <section className="relative z-10 bg-[#f7f7f2] px-5 py-24 text-black lg:px-8">
+      <section className="relative z-10 bg-[#f7f7f2] px-4 py-14 sm:px-6 sm:py-20 md:py-24 text-black lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div className="rounded-[2.4rem] border border-black/10 bg-white p-8 shadow-[0_25px_80px_rgba(0,0,0,0.08)] md:p-10">
+          <div className="rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/10 bg-white p-5 sm:p-8 shadow-[0_25px_80px_rgba(0,0,0,0.08)] md:p-10">
             <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
               Anbieter
             </p>
@@ -77,9 +77,9 @@ export default function ImpressumPage() {
             </div>
           </div>
 
-          <div className="rounded-[2.4rem] border border-black/10 bg-white p-6 shadow-sm md:p-8">
+          <div className="rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/10 bg-white p-6 shadow-sm md:p-8">
             <div className="grid gap-4">
-              <div className="rounded-[1.5rem] border border-black/10 bg-[#f7f7f2] p-5">
+              <div className="rounded-xl sm:rounded-[1.4rem] border border-black/10 bg-[#f7f7f2] p-5">
                 <p className="text-sm font-black uppercase tracking-[0.2em] text-[#b28a00]">
                   Unternehmen
                 </p>
@@ -88,7 +88,7 @@ export default function ImpressumPage() {
                 </p>
               </div>
 
-              <div className="rounded-[1.5rem] border border-black/10 bg-[#f7f7f2] p-5">
+              <div className="rounded-xl sm:rounded-[1.4rem] border border-black/10 bg-[#f7f7f2] p-5">
                 <p className="text-sm font-black uppercase tracking-[0.2em] text-[#b28a00]">
                   Vertreten durch
                 </p>
@@ -97,7 +97,7 @@ export default function ImpressumPage() {
                 </p>
               </div>
 
-              <div className="rounded-[1.5rem] border border-black/10 bg-[#f7f7f2] p-5">
+              <div className="rounded-xl sm:rounded-[1.4rem] border border-black/10 bg-[#f7f7f2] p-5">
                 <p className="text-sm font-black uppercase tracking-[0.2em] text-[#b28a00]">
                   Adresse
                 </p>
@@ -108,7 +108,7 @@ export default function ImpressumPage() {
                 </p>
               </div>
 
-              <div className="rounded-[1.5rem] border border-black/10 bg-[#f7f7f2] p-5">
+              <div className="rounded-xl sm:rounded-[1.4rem] border border-black/10 bg-[#f7f7f2] p-5">
                 <p className="text-sm font-black uppercase tracking-[0.2em] text-[#b28a00]">
                   Kontakt
                 </p>
@@ -119,7 +119,7 @@ export default function ImpressumPage() {
                 </p>
               </div>
 
-              <div className="rounded-[1.5rem] border border-black/10 bg-[#f7f7f2] p-5">
+              <div className="rounded-xl sm:rounded-[1.4rem] border border-black/10 bg-[#f7f7f2] p-5">
                 <p className="text-sm font-black uppercase tracking-[0.2em] text-[#b28a00]">
                   Umsatzsteuer-ID
                 </p>
@@ -129,7 +129,7 @@ export default function ImpressumPage() {
               </div>
             </div>
 
-            <div className="mt-8 rounded-[1.7rem] border border-black/10 bg-white border border-black/5 p-6 text-[#18181b]">
+            <div className="mt-8 rounded-xl sm:rounded-xl sm:rounded-[1.4rem] border border-black/10 bg-white border border-black/5 p-6 text-[#18181b]">
               <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
                 Inhaltlich verantwortlich
               </p>
@@ -207,8 +207,8 @@ export default function ImpressumPage() {
         </div>
       </section>
 
-      <section className="relative z-10 overflow-hidden bg-[#fafaf7] px-5 py-24 lg:px-8">
-        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-[2.5rem] border border-black/5 bg-white shadow-sm border border-black/5 p-8 backdrop-blur-xl md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
+      <section className="relative z-10 overflow-hidden bg-[#fafaf7] px-4 py-14 sm:px-6 sm:py-20 md:py-24 lg:px-8">
+        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white shadow-sm border border-black/5 p-8 backdrop-blur-xl md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
               Datenschutz

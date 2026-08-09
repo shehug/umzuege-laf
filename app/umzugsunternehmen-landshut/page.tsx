@@ -200,7 +200,7 @@ export default function UmzugsunternehmenLandshutPage() {
       </section>
 
       {/* Services List Section */}
-      <section className="bg-[#ffffff] px-5 py-16 sm:py-24 text-black lg:px-8 border-t border-black/5">
+      <section className="bg-[#ffffff] px-4 py-10 sm:px-6 sm:py-14 md:py-16 sm:py-24 text-black lg:px-8 border-t border-black/5">
         <div className="mx-auto max-w-7xl">
           <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
             Umzüge in Landshut
@@ -220,7 +220,7 @@ export default function UmzugsunternehmenLandshutPage() {
               <Link
                 key={service.href}
                 href={service.href}
-                className="group rounded-[2rem] border border-black/5 bg-white p-7 shadow-sm transition duration-300 hover:shadow-md"
+                className="group rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white p-4.5 sm:p-7 shadow-sm transition duration-300 hover:shadow-md"
               >
                 <h3 className="text-2xl font-black text-[#18181b]">{service.title}</h3>
                 <p className="mt-4 leading-7 text-black/60">{service.text}</p>
@@ -232,7 +232,7 @@ export default function UmzugsunternehmenLandshutPage() {
       </section>
 
       {/* Areas Section */}
-      <section className="bg-[#fafaf7] px-5 py-16 sm:py-24 lg:px-8 border-t border-black/5">
+      <section className="bg-[#fafaf7] px-4 py-10 sm:px-6 sm:py-14 md:py-16 sm:py-24 lg:px-8 border-t border-black/5">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
@@ -261,7 +261,7 @@ export default function UmzugsunternehmenLandshutPage() {
       </section>
 
       {/* FAQs and Contact Form Section */}
-      <section className="bg-[#ffffff] px-5 py-16 sm:py-24 text-black lg:px-8 border-t border-black/5">
+      <section className="bg-[#ffffff] px-4 py-10 sm:px-6 sm:py-14 md:py-16 sm:py-24 text-black lg:px-8 border-t border-black/5">
         <div className="mx-auto max-w-7xl">
           <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
             Häufige Fragen
@@ -272,7 +272,7 @@ export default function UmzugsunternehmenLandshutPage() {
 
           <div className="mt-12 grid gap-5 md:grid-cols-2">
             {faqs.map((item) => (
-              <div key={item.q} className="rounded-[2rem] border border-black/5 bg-[#fafaf7] p-7 shadow-sm">
+              <div key={item.q} className="rounded-2xl sm:rounded-[2rem] border border-black/5 bg-[#fafaf7] p-4.5 sm:p-7 shadow-sm">
                 <h3 className="text-xl font-black text-[#18181b]">{item.q}</h3>
                 <p className="mt-4 leading-7 text-black/60">{item.a}</p>
               </div>

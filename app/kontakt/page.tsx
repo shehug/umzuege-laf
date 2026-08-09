@@ -102,7 +102,7 @@ export default function KontaktPage() {
               <a
                 key={item.title}
                 href={item.href}
-                className="group relative overflow-hidden rounded-[2.2rem] border border-black/5 bg-white p-7 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl"
+                className="group relative overflow-hidden rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white p-4.5 sm:p-7 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl"
               >
                 <div className="flex items-center justify-between">
                   <span className="rounded-full border border-black/5 bg-[#fafaf7] px-4 py-1.5 text-xs font-black text-black/70">
@@ -147,7 +147,7 @@ export default function KontaktPage() {
       </section>
 
       {/* Main Interactive Form Section */}
-      <section id="anfrageformular" className="relative z-10 bg-[#f7f7f2] px-5 py-24 text-black lg:px-8 border-t border-black/5">
+      <section id="anfrageformular" className="relative z-10 bg-[#f7f7f2] px-4 py-14 sm:px-6 sm:py-20 md:py-24 text-black lg:px-8 border-t border-black/5">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <div>
             <div className="mb-4 inline-block rounded-full bg-[#f6c21a]/20 px-4 py-1.5 text-xs font-black uppercase tracking-[0.2em] text-[#b28a00]">
@@ -162,7 +162,7 @@ export default function KontaktPage() {
               Füllen Sie einfach unser Online-Formular aus. Wir melden uns umgehend mit einem maßgeschneiderten Angebot bei Ihnen zurück.
             </p>
 
-            <div className="mt-8 rounded-[2rem] border border-black/10 bg-white p-6 shadow-sm">
+            <div className="mt-8 rounded-2xl sm:rounded-[2rem] border border-black/10 bg-white p-6 shadow-sm">
               <p className="font-black text-[#18181b] text-lg">💡 Hilfreiche Angaben für ein exaktes Angebot:</p>
               <ul className="mt-4 grid gap-3 text-sm leading-6 text-black/70">
                 <li className="flex items-center gap-2">
@@ -184,7 +184,7 @@ export default function KontaktPage() {
               </ul>
             </div>
 
-            <div className="mt-8 rounded-[2rem] border border-black/10 bg-white p-6 shadow-sm">
+            <div className="mt-8 rounded-2xl sm:rounded-[2rem] border border-black/10 bg-white p-6 shadow-sm">
               <p className="font-black text-[#18181b] text-lg">📍 Firmensitz in Landshut:</p>
               <div className="mt-3 text-sm leading-7 text-black/70">
                 <p className="font-bold">{address}</p>
@@ -201,8 +201,8 @@ export default function KontaktPage() {
       </section>
 
       {/* Direct Call Footer CTA */}
-      <section className="relative z-10 overflow-hidden bg-[#fafaf7] px-5 py-20 lg:px-8 border-t border-black/5">
-        <div className="relative mx-auto grid max-w-7xl gap-8 rounded-[2.5rem] border border-black/5 bg-white p-8 shadow-sm md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
+      <section className="relative z-10 overflow-hidden bg-[#fafaf7] px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 border-t border-black/5">
+        <div className="relative mx-auto grid max-w-7xl gap-8 rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white p-5 sm:p-8 shadow-sm md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
               Persönliche Beratung

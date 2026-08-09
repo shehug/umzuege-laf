@@ -37,8 +37,8 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#050505] px-5 py-24 text-white">
-      <div className="mx-auto max-w-md rounded-[2rem] border border-white/10 bg-white/[0.06] p-8 shadow-[0_30px_100px_rgba(0,0,0,0.45)]">
+    <main className="min-h-screen bg-[#050505] px-4 py-14 sm:px-6 sm:py-20 md:py-24 text-white">
+      <div className="mx-auto max-w-md rounded-2xl sm:rounded-[2rem] border border-white/10 bg-white/[0.06] p-8 shadow-[0_30px_100px_rgba(0,0,0,0.45)]">
         <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
           Umzüge LAF
         </p>

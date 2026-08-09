@@ -158,7 +158,7 @@ export default function PrivatumzugLandshutPage() {
         </div>
       </section>
 
-      <section className="relative bg-[#ffffff] px-5 py-20 text-black lg:px-8 border-t border-black/5">
+      <section className="relative bg-[#ffffff] px-4 py-12 sm:px-6 sm:py-16 md:py-20 text-black lg:px-8 border-t border-black/5">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
@@ -190,8 +190,8 @@ export default function PrivatumzugLandshutPage() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[2.5rem] bg-white shadow-xl border border-black/5">
-            <div className="relative h-[480px]">
+          <div className="relative overflow-hidden rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] bg-white shadow-xl border border-black/5">
+            <div className="relative h-[340px] sm:h-[320px] sm:h-[380px] md:h-[420px] md:h-[480px]">
               <Image
                 src="/images/services/PU1.jpg"
                 alt="Privatumzug mit Umzüge LAF"
@@ -199,7 +199,7 @@ export default function PrivatumzugLandshutPage() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 rounded-[1.7rem] border border-white/10 bg-black/50 p-6 text-white backdrop-blur-md">
+              <div className="absolute bottom-6 left-6 right-6 rounded-xl sm:rounded-xl sm:rounded-[1.4rem] border border-white/10 bg-black/50 p-6 text-white backdrop-blur-md">
                 <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
                   Sorgfältig
                 </p>
@@ -216,7 +216,7 @@ export default function PrivatumzugLandshutPage() {
         </div>
       </section>
 
-      <section className="relative bg-[#fafaf7] px-5 py-20 lg:px-8 border-t border-black/5">
+      <section className="relative bg-[#fafaf7] px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 border-t border-black/5">
         <div className="mx-auto max-w-7xl">
           <div className="mb-14 max-w-3xl">
             <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
@@ -237,7 +237,7 @@ export default function PrivatumzugLandshutPage() {
             {benefits.map((benefit, index) => (
               <div
                 key={benefit.title}
-                className="group rounded-[2rem] border border-black/5 bg-white p-6 shadow-sm hover:shadow-md transition duration-300"
+                className="group rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white p-6 shadow-sm hover:shadow-md transition duration-300"
               >
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black transition group-hover:rotate-6">
                   0{index + 1}
@@ -256,7 +256,7 @@ export default function PrivatumzugLandshutPage() {
         </div>
       </section>
 
-      <section className="relative bg-[#ffffff] px-5 py-20 text-black lg:px-8 border-t border-black/5">
+      <section className="relative bg-[#ffffff] px-4 py-12 sm:px-6 sm:py-16 md:py-20 text-black lg:px-8 border-t border-black/5">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
@@ -278,7 +278,7 @@ export default function PrivatumzugLandshutPage() {
             {process.map((step, index) => (
               <div
                 key={step.title}
-                className="flex gap-5 rounded-[2rem] border border-black/5 bg-[#fafaf7] p-6 shadow-sm"
+                className="flex gap-5 rounded-2xl sm:rounded-[2rem] border border-black/5 bg-[#fafaf7] p-6 shadow-sm"
               >
                 <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black">
                   {index + 1}
@@ -294,7 +294,7 @@ export default function PrivatumzugLandshutPage() {
         </div>
       </section>
 
-      <section className="relative bg-[#fafaf7] px-5 py-20 lg:px-8 border-t border-black/5">
+      <section className="relative bg-[#fafaf7] px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 border-t border-black/5">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_1fr] lg:items-start">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
@@ -314,7 +314,7 @@ export default function PrivatumzugLandshutPage() {
               {checklist.map((item) => (
                 <div
                   key={item}
-                  className="rounded-[2rem] border border-black/5 bg-white p-6 shadow-sm"
+                  className="rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white p-6 shadow-sm"
                 >
                   <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black">
                     ✓

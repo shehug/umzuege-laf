@@ -210,8 +210,8 @@ export default function BueroentruempelungPage() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[2.5rem] bg-white border border-black/5 shadow-md">
-            <div className="relative h-[560px]">
+          <div className="relative overflow-hidden rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] bg-white border border-black/5 shadow-md">
+            <div className="relative h-[360px] sm:h-[340px] sm:h-[320px] sm:h-[380px] md:h-[420px] md:h-[480px] md:h-[560px]">
               <Image
                 src="/images/services/ent2.jpg"
                 alt="Büro und Gewerbefläche entrümpeln mit Umzüge LAF"
@@ -222,7 +222,7 @@ export default function BueroentruempelungPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.24),transparent_36%)]" />
 
-              <div className="absolute bottom-6 left-6 right-6 rounded-[1.7rem] border border-black/5 bg-black/55 p-6 text-white backdrop-blur-md">
+              <div className="absolute bottom-6 left-6 right-6 rounded-xl sm:rounded-xl sm:rounded-[1.4rem] border border-black/5 bg-black/55 p-6 text-white backdrop-blur-md">
                 <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
                   Gewerbe & Büro
                 </p>
@@ -260,7 +260,7 @@ export default function BueroentruempelungPage() {
             {benefits.map((benefit, index) => (
               <div
                 key={benefit.title}
-                className="premium-border group rounded-[2rem] bg-white shadow-sm border border-black/5 p-6 backdrop-blur-xl transition hover:-translate-y-2 hover:bg-white/[0.07]"
+                className="premium-border group rounded-2xl sm:rounded-[2rem] bg-white shadow-sm border border-black/5 p-6 backdrop-blur-xl transition hover:-translate-y-2 hover:bg-white/[0.07]"
               >
                 <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black transition group-hover:rotate-6 group-hover:scale-110">
                   0{index + 1}
@@ -300,7 +300,7 @@ export default function BueroentruempelungPage() {
             {process.map((step, index) => (
               <div
                 key={step.title}
-                className="flex gap-5 rounded-[2rem] border border-black/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_25px_70px_rgba(0,0,0,0.10)]"
+                className="flex gap-5 rounded-2xl sm:rounded-[2rem] border border-black/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_25px_70px_rgba(0,0,0,0.10)]"
               >
                 <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black">
                   {index + 1}
@@ -353,7 +353,7 @@ export default function BueroentruempelungPage() {
             {checklist.map((item) => (
               <div
                 key={item}
-                className="premium-border rounded-[2rem] bg-white shadow-sm border border-black/5 p-6 backdrop-blur-xl"
+                className="premium-border rounded-2xl sm:rounded-[2rem] bg-white shadow-sm border border-black/5 p-6 backdrop-blur-xl"
               >
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black">
                   ✓
@@ -370,7 +370,7 @@ export default function BueroentruempelungPage() {
       </section>
 
       <section className="relative z-10 overflow-hidden bg-[#f7f7f2] px-5 py-28 text-black lg:px-8">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.7rem] bg-white border border-black/5 shadow-lg">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] bg-white border border-black/5 shadow-lg">
           <div className="grid lg:grid-cols-[1fr_0.9fr]">
             <div className="relative min-h-[460px]">
               <Image

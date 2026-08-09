@@ -79,8 +79,8 @@ const garageItems = [
 
 function GarageVisual() {
   return (
-    <div className="premium-border relative overflow-hidden rounded-[2.5rem] bg-white shadow-sm border border-black/5 p-5 shadow-[0_30px_100px_rgba(0,0,0,0.35)] backdrop-blur-xl">
-      <div className="relative overflow-hidden rounded-[2rem] border border-black/5 bg-[radial-gradient(circle_at_top,rgba(246,194,26,0.06),transparent_32%),linear-gradient(180deg,#ffffff_0%,#fafaf7_100%)] p-6 md:p-8">
+    <div className="premium-border relative overflow-hidden rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] bg-white shadow-sm border border-black/5 p-5 shadow-[0_30px_100px_rgba(0,0,0,0.35)] backdrop-blur-xl">
+      <div className="relative overflow-hidden rounded-2xl sm:rounded-[2rem] border border-black/5 bg-[radial-gradient(circle_at_top,rgba(246,194,26,0.06),transparent_32%),linear-gradient(180deg,#ffffff_0%,#fafaf7_100%)] p-6 md:p-8">
         <div className="pointer-events-none absolute inset-0 opacity-30">
           <div className="absolute left-[10%] right-[10%] top-[72px] h-[2px] bg-[#f6c21a]/30" />
           <div className="absolute left-[10%] right-[10%] bottom-[82px] h-[2px] bg-black/10" />
@@ -156,7 +156,7 @@ function GarageVisual() {
         </div>
       </div>
 
-      <div className="mt-5 rounded-[1.7rem] border border-black/5 bg-black/30 p-6 backdrop-blur-xl">
+      <div className="mt-5 rounded-xl sm:rounded-xl sm:rounded-[1.4rem] border border-black/5 bg-black/30 p-6 backdrop-blur-xl">
         <p className="text-sm font-black uppercase tracking-[0.25em] text-[#b28a00]">
           In der Garage
         </p>
@@ -301,8 +301,8 @@ export default function GaragenentruempelungPage() {
             </div>
           </div>
 
-          <div className="premium-border rounded-[2.5rem] bg-black p-6 shadow-[0_30px_100px_rgba(0,0,0,0.25)]">
-            <div className="rounded-[2rem] bg-[#fafaf7] p-6 text-[#18181b]">
+          <div className="premium-border rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] bg-black p-6 shadow-[0_30px_100px_rgba(0,0,0,0.25)]">
+            <div className="rounded-2xl sm:rounded-[2rem] bg-[#fafaf7] p-6 text-[#18181b]">
               <p className="text-sm font-black uppercase tracking-[0.25em] text-[#b28a00]">
                 Typische Herausforderung
               </p>
@@ -367,7 +367,7 @@ export default function GaragenentruempelungPage() {
             {benefits.map((benefit, index) => (
               <div
                 key={benefit.title}
-                className="premium-border group rounded-[2rem] bg-white shadow-sm border border-black/5 p-6 backdrop-blur-xl transition hover:-translate-y-2 hover:bg-white/[0.07]"
+                className="premium-border group rounded-2xl sm:rounded-[2rem] bg-white shadow-sm border border-black/5 p-6 backdrop-blur-xl transition hover:-translate-y-2 hover:bg-white/[0.07]"
               >
                 <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black transition group-hover:rotate-6 group-hover:scale-110">
                   0{index + 1}
@@ -407,7 +407,7 @@ export default function GaragenentruempelungPage() {
             {process.map((step, index) => (
               <div
                 key={step.title}
-                className="flex gap-5 rounded-[2rem] border border-black/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_25px_70px_rgba(0,0,0,0.10)]"
+                className="flex gap-5 rounded-2xl sm:rounded-[2rem] border border-black/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_25px_70px_rgba(0,0,0,0.10)]"
               >
                 <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black">
                   {index + 1}
@@ -460,7 +460,7 @@ export default function GaragenentruempelungPage() {
             {checklist.map((item) => (
               <div
                 key={item}
-                className="premium-border rounded-[2rem] bg-white shadow-sm border border-black/5 p-6 backdrop-blur-xl"
+                className="premium-border rounded-2xl sm:rounded-[2rem] bg-white shadow-sm border border-black/5 p-6 backdrop-blur-xl"
               >
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black">
                   ✓
@@ -478,10 +478,10 @@ export default function GaragenentruempelungPage() {
       </section>
 
       <section className="relative z-10 overflow-hidden bg-[#f7f7f2] px-5 py-28 text-black lg:px-8">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.7rem] bg-white border border-black/5 shadow-lg">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] bg-white border border-black/5 shadow-lg">
           <div className="grid lg:grid-cols-[1fr_0.9fr]">
             <div className="flex min-h-[460px] items-center justify-center bg-[radial-gradient(circle_at_center,rgba(246,194,26,0.06),transparent_32%),linear-gradient(180deg,#ffffff_0%,#fafaf7_100%)] p-8">
-              <div className="w-full max-w-md rounded-[2rem] border border-black/5 bg-white shadow-sm p-8 text-[#18181b] backdrop-blur-xl">
+              <div className="w-full max-w-md rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white shadow-sm p-8 text-[#18181b] backdrop-blur-xl">
                 <p className="text-sm font-black uppercase tracking-[0.25em] text-[#b28a00]">
                   Freie Fläche
                 </p>

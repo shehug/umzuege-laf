@@ -186,7 +186,7 @@ export default function UmzuegePage() {
               <Link
                 key={service.href}
                 href={service.href}
-                className="group relative overflow-hidden rounded-[2rem] border border-black/10 bg-white p-7 shadow-sm transition duration-500 hover:-translate-y-2 hover:shadow-[0_30px_90px_rgba(0,0,0,0.16)]"
+                className="group relative overflow-hidden rounded-2xl sm:rounded-[2rem] border border-black/10 bg-white p-4.5 sm:p-7 shadow-sm transition duration-500 hover:-translate-y-2 hover:shadow-[0_30px_90px_rgba(0,0,0,0.16)]"
               >
                 <div className="absolute right-6 top-6 text-7xl font-black text-black/[0.04] transition group-hover:text-[#f6c21a]/25">
                   {service.number}
@@ -250,7 +250,7 @@ export default function UmzuegePage() {
             {process.map((step, index) => (
               <div
                 key={step.title}
-                className="premium-border group rounded-[2rem] bg-white shadow-sm border border-black/5 p-6 backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white/[0.07]"
+                className="premium-border group rounded-2xl sm:rounded-[2rem] bg-white shadow-sm border border-black/5 p-6 backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white/[0.07]"
               >
                 <div className="flex gap-5">
                   <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black transition group-hover:rotate-6 group-hover:scale-110">
@@ -272,8 +272,8 @@ export default function UmzuegePage() {
 
       <section className="relative z-10 bg-[#f7f7f2] px-5 py-28 text-black lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div className="relative overflow-hidden rounded-[2.5rem] bg-white border border-black/5 shadow-md">
-            <div className="relative h-[520px]">
+          <div className="relative overflow-hidden rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] bg-white border border-black/5 shadow-md">
+            <div className="relative h-[350px] sm:h-[450px] md:h-[520px]">
               <Image
                 src="/images/services/privatumzug.jpg"
                 alt="Umzüge LAF Privatumzug"
@@ -284,7 +284,7 @@ export default function UmzuegePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.24),transparent_36%)]" />
 
-              <div className="absolute bottom-6 left-6 right-6 rounded-[1.7rem] border border-black/5 bg-black/55 p-6 text-white backdrop-blur-md">
+              <div className="absolute bottom-6 left-6 right-6 rounded-xl sm:rounded-xl sm:rounded-[1.4rem] border border-black/5 bg-black/55 p-6 text-white backdrop-blur-md">
                 <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
                   Sorgfältig
                 </p>
@@ -336,10 +336,10 @@ export default function UmzuegePage() {
         </div>
       </section>
 
-      <section className="relative z-10 overflow-hidden bg-[#fafaf7] px-5 py-24 lg:px-8">
+      <section className="relative z-10 overflow-hidden bg-[#fafaf7] px-4 py-14 sm:px-6 sm:py-20 md:py-24 lg:px-8">
         <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#f6c21a]/15 blur-3xl" />
 
-        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-[2.5rem] border border-black/5 bg-white shadow-sm border border-black/5 p-8 backdrop-blur-xl md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white shadow-sm border border-black/5 p-8 backdrop-blur-xl md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
               Umzug anfragen

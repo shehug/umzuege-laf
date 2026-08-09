@@ -154,9 +154,9 @@ export default function DatenschutzPage() {
         </div>
       </section>
 
-      <section className="relative z-10 bg-[#f7f7f2] px-5 py-24 text-black lg:px-8">
+      <section className="relative z-10 bg-[#f7f7f2] px-4 py-14 sm:px-6 sm:py-20 md:py-24 text-black lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
-          <aside className="sticky top-32 rounded-[2.4rem] border border-black/10 bg-white p-8 shadow-[0_25px_80px_rgba(0,0,0,0.08)]">
+          <aside className="sticky top-32 rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/10 bg-white p-5 sm:p-8 shadow-[0_25px_80px_rgba(0,0,0,0.08)]">
             <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
               Überblick
             </p>
@@ -193,7 +193,7 @@ export default function DatenschutzPage() {
               </Link>
             </div>
 
-            <div className="mt-8 rounded-[1.7rem] border border-black/10 bg-[#f7f7f2] p-5">
+            <div className="mt-8 rounded-xl sm:rounded-xl sm:rounded-[1.4rem] border border-black/10 bg-[#f7f7f2] p-5">
               <p className="font-black text-black">Hinweis</p>
               <p className="mt-2 text-sm leading-6 text-black/55">
                 Wenn später Tools wie Google Maps, Analytics, Fonts, WhatsApp
@@ -207,7 +207,7 @@ export default function DatenschutzPage() {
             {privacySections.map((section) => (
               <section
                 key={section.title}
-                className="rounded-[2rem] border border-black/10 bg-white p-6 shadow-sm md:p-8"
+                className="rounded-2xl sm:rounded-[2rem] border border-black/10 bg-white p-6 shadow-sm md:p-8"
               >
                 <h2 className="text-2xl font-black tracking-[-0.03em] text-black md:text-3xl">
                   {section.title}
@@ -226,7 +226,7 @@ export default function DatenschutzPage() {
               </section>
             ))}
 
-            <section className="rounded-[2rem] border border-black/10 bg-white border border-black/5 p-6 text-[#18181b] shadow-sm md:p-8">
+            <section className="rounded-2xl sm:rounded-[2rem] border border-black/10 bg-white border border-black/5 p-6 text-[#18181b] shadow-sm md:p-8">
               <h2 className="text-3xl font-black tracking-[-0.03em] text-[#18181b]">
                 Kontakt zum Datenschutz
               </h2>
@@ -256,8 +256,8 @@ export default function DatenschutzPage() {
         </div>
       </section>
 
-      <section className="relative z-10 overflow-hidden bg-[#fafaf7] px-5 py-24 lg:px-8">
-        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-[2.5rem] border border-black/5 bg-white shadow-sm border border-black/5 p-8 backdrop-blur-xl md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
+      <section className="relative z-10 overflow-hidden bg-[#fafaf7] px-4 py-14 sm:px-6 sm:py-20 md:py-24 lg:px-8">
+        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white shadow-sm border border-black/5 p-8 backdrop-blur-xl md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
               Rechtliches

@@ -144,7 +144,7 @@ export default function Home() {
 
         {/* Feature list */}
         <div className="relative z-20 mx-auto mt-0 max-w-7xl px-5 pb-8 sm:-mt-10 lg:px-8">
-          <div className="grid gap-3 rounded-[1.5rem] border border-black/5 bg-white p-4 shadow-lg sm:rounded-[2rem] md:grid-cols-3 md:p-6">
+          <div className="grid gap-3 rounded-xl sm:rounded-[1.4rem] border border-black/5 bg-white p-4 shadow-lg sm:rounded-2xl sm:rounded-[2rem] md:grid-cols-3 md:p-6">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.25em] text-[#b28a00]">
                 Schnell
@@ -181,7 +181,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="relative z-10 overflow-hidden bg-[#ffffff] px-5 py-24 text-black lg:px-8 border-t border-black/5">
+      <section className="relative z-10 overflow-hidden bg-[#ffffff] px-4 py-14 sm:px-6 sm:py-20 md:py-24 text-black lg:px-8 border-t border-black/5">
         <div className="relative mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div className="max-w-3xl">
@@ -222,9 +222,9 @@ export default function Home() {
               <Link
                 key={service.href}
                 href={service.href}
-                className="group relative overflow-hidden rounded-[2.2rem] bg-white shadow-md border border-black/5 transition duration-500 hover:-translate-y-3 hover:shadow-lg"
+                className="group relative overflow-hidden rounded-2xl sm:rounded-2xl sm:rounded-[2rem] bg-white shadow-md border border-black/5 transition duration-500 hover:-translate-y-3 hover:shadow-lg"
               >
-                <div className="relative h-[420px] overflow-hidden">
+                <div className="relative h-[320px] sm:h-[380px] md:h-[420px] overflow-hidden">
                   <Image
                     src={service.image}
                     alt={service.title}
@@ -244,7 +244,7 @@ export default function Home() {
                   </div>
 
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="rounded-[1.5rem] border border-white/10 bg-black/45 p-6 backdrop-blur-md text-white">
+                    <div className="rounded-xl sm:rounded-[1.4rem] border border-white/10 bg-black/45 p-6 backdrop-blur-md text-white">
                       <h3 className="text-2xl font-black">
                         {service.title}
                       </h3>
@@ -288,7 +288,7 @@ export default function Home() {
       </section>
 
       {/* Quote / Contact Section */}
-      <section id="direktanfrage" className="relative z-10 bg-[#fafaf7] px-5 py-24 lg:px-8 border-t border-black/5 scroll-mt-24">
+      <section id="direktanfrage" className="relative z-10 bg-[#fafaf7] px-4 py-14 sm:px-6 sm:py-20 md:py-24 lg:px-8 border-t border-black/5 scroll-mt-24">
         <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.95fr] lg:items-start">
           <div>
             <p className="font-black uppercase tracking-[0.28em] text-[#b28a00]">

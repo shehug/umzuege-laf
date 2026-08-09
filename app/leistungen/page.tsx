@@ -147,7 +147,7 @@ export default function LeistungenPage() {
       </section>
 
       {/* Main Services */}
-      <section className="relative z-10 bg-[#ffffff] px-5 py-20 text-black lg:px-8 border-t border-black/5">
+      <section className="relative z-10 bg-[#ffffff] px-4 py-12 sm:px-6 sm:py-16 md:py-20 text-black lg:px-8 border-t border-black/5">
         <div className="mx-auto max-w-7xl">
           <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
@@ -171,7 +171,7 @@ export default function LeistungenPage() {
               <Link
                 key={service.href}
                 href={service.href}
-                className="group relative overflow-hidden rounded-[2.2rem] bg-white shadow-md border border-black/5 transition duration-500 hover:-translate-y-3 hover:shadow-lg"
+                className="group relative overflow-hidden rounded-2xl sm:rounded-2xl sm:rounded-[2rem] bg-white shadow-md border border-black/5 transition duration-500 hover:-translate-y-3 hover:shadow-lg"
               >
                 <div className="relative h-[430px] overflow-hidden">
                   <Image
@@ -189,7 +189,7 @@ export default function LeistungenPage() {
                   </div>
 
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="rounded-[1.5rem] border border-white/10 bg-black/45 p-6 backdrop-blur-md text-white">
+                    <div className="rounded-xl sm:rounded-[1.4rem] border border-white/10 bg-black/45 p-6 backdrop-blur-md text-white">
                       <h3 className="text-2xl font-black">
                         {service.title}
                       </h3>
@@ -217,7 +217,7 @@ export default function LeistungenPage() {
       </section>
 
       {/* Additional Services */}
-      <section className="relative z-10 bg-[#fafaf7] px-5 py-20 lg:px-8 border-t border-black/5">
+      <section className="relative z-10 bg-[#fafaf7] px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 border-t border-black/5">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
             <div>
@@ -240,7 +240,7 @@ export default function LeistungenPage() {
                 <Link
                   key={service.href}
                   href={service.href}
-                  className="group rounded-[2rem] border border-black/5 bg-white p-6 shadow-sm hover:shadow-md transition duration-300"
+                  className="group rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white p-6 shadow-sm hover:shadow-md transition duration-300"
                 >
                   <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black transition group-hover:rotate-6">
                     →
@@ -261,7 +261,7 @@ export default function LeistungenPage() {
       </section>
 
       {/* Process Section */}
-      <section className="relative z-10 bg-[#ffffff] px-5 py-20 text-black lg:px-8 border-t border-black/5">
+      <section className="relative z-10 bg-[#ffffff] px-4 py-12 sm:px-6 sm:py-16 md:py-20 text-black lg:px-8 border-t border-black/5">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
@@ -283,7 +283,7 @@ export default function LeistungenPage() {
               {steps.map((step, index) => (
                 <div
                   key={step}
-                  className="flex items-center gap-5 rounded-[2rem] border border-black/5 bg-[#fafaf7] p-5 shadow-sm"
+                  className="flex items-center gap-5 rounded-2xl sm:rounded-[2rem] border border-black/5 bg-[#fafaf7] p-5 shadow-sm"
                 >
                   <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black">
                     {index + 1}
@@ -303,8 +303,8 @@ export default function LeistungenPage() {
       </section>
 
       {/* Call to action */}
-      <section className="relative z-10 overflow-hidden bg-[#fafaf7] px-5 py-20 lg:px-8 border-t border-black/5">
-        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-[2.5rem] border border-black/5 bg-white p-8 shadow-lg md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
+      <section className="relative z-10 overflow-hidden bg-[#fafaf7] px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 border-t border-black/5">
+        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white p-5 sm:p-8 shadow-lg md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
               Angebot

@@ -140,7 +140,7 @@ export default function UeberUnsPage() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="relative z-10 bg-[#ffffff] px-5 py-20 text-black lg:px-8 border-t border-black/5">
+      <section className="relative z-10 bg-[#ffffff] px-4 py-12 sm:px-6 sm:py-16 md:py-20 text-black lg:px-8 border-t border-black/5">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
@@ -173,8 +173,8 @@ export default function UeberUnsPage() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[2.5rem] bg-white shadow-xl border border-black/5">
-            <div className="relative h-[560px]">
+          <div className="relative overflow-hidden rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] bg-white shadow-xl border border-black/5">
+            <div className="relative h-[360px] sm:h-[340px] sm:h-[320px] sm:h-[380px] md:h-[420px] md:h-[480px] md:h-[560px]">
               <Image
                 src="/images/hero/hero-umzug-landshut.jpg"
                 alt="Umzüge LAF Umzug in Landshut"
@@ -183,7 +183,7 @@ export default function UeberUnsPage() {
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 rounded-[1.7rem] border border-white/10 bg-black/50 p-6 text-white backdrop-blur-md">
+              <div className="absolute bottom-6 left-6 right-6 rounded-xl sm:rounded-xl sm:rounded-[1.4rem] border border-white/10 bg-black/50 p-6 text-white backdrop-blur-md">
                 <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
                   LAF Service
                 </p>
@@ -201,7 +201,7 @@ export default function UeberUnsPage() {
       </section>
 
       {/* Values Section */}
-      <section className="relative z-10 bg-[#fafaf7] px-5 py-20 lg:px-8 border-t border-black/5">
+      <section className="relative z-10 bg-[#fafaf7] px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 border-t border-black/5">
         <div className="mx-auto max-w-7xl">
           <div className="mb-14 max-w-3xl">
             <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
@@ -222,7 +222,7 @@ export default function UeberUnsPage() {
             {values.map((value, index) => (
               <div
                 key={value.title}
-                className="group rounded-[2rem] border border-black/5 bg-white p-6 shadow-sm hover:shadow-md transition duration-300"
+                className="group rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white p-6 shadow-sm hover:shadow-md transition duration-300"
               >
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black transition group-hover:rotate-6">
                   0{index + 1}
@@ -240,7 +240,7 @@ export default function UeberUnsPage() {
       </section>
 
       {/* Work steps */}
-      <section className="relative z-10 bg-[#ffffff] px-5 py-20 text-black lg:px-8 border-t border-black/5">
+      <section className="relative z-10 bg-[#ffffff] px-4 py-12 sm:px-6 sm:py-16 md:py-20 text-black lg:px-8 border-t border-black/5">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
@@ -261,7 +261,7 @@ export default function UeberUnsPage() {
             {steps.map((step, index) => (
               <div
                 key={step.title}
-                className="flex gap-5 rounded-[2rem] border border-black/5 bg-[#fafaf7] p-6 shadow-sm"
+                className="flex gap-5 rounded-2xl sm:rounded-[2rem] border border-black/5 bg-[#fafaf7] p-6 shadow-sm"
               >
                 <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black">
                   {index + 1}
@@ -278,8 +278,8 @@ export default function UeberUnsPage() {
       </section>
 
       {/* Call to action */}
-      <section className="relative z-10 overflow-hidden bg-[#fafaf7] px-5 py-20 lg:px-8 border-t border-black/5">
-        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-[2.5rem] border border-black/5 bg-white p-8 shadow-lg md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
+      <section className="relative z-10 overflow-hidden bg-[#fafaf7] px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 border-t border-black/5">
+        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white p-5 sm:p-8 shadow-lg md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
               Kontakt
