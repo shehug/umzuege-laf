@@ -118,6 +118,8 @@ export default function LocalSeoLanding({
             alt={imageAlt}
             fill
             priority
+            fetchPriority="high"
+            sizes="100vw"
             className="object-cover object-center"
           />
           <div className="absolute inset-0 bg-white/20" />

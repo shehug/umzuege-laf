@@ -61,6 +61,7 @@ export default function Home() {
             alt="Umzüge LAF Hero Bild"
             fill
             priority
+            fetchPriority="high"
             sizes="100vw"
             className="object-cover object-[58%_center] sm:object-center"
           />
