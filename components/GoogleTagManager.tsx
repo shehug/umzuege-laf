@@ -1,7 +1,7 @@
 import Script from "next/script";
 
 const GTM_ID = "GTM-55B3P6B6";
-const GOOGLE_ADS_TAG_ID = "AW-18109176876";
+const GOOGLE_ADS_TAG_ID = "AW-11459071355";
 
 export default function GoogleTagManager() {
   return (
