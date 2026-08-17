@@ -99,21 +99,21 @@ export default function Home() {
             <div className="mt-6 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
               <a
                 href="#direktanfrage"
-                className="glow-button rounded-full px-6 py-3.5 text-center text-sm font-black text-black shadow-lg sm:px-8 sm:py-4 sm:text-base"
+                className="glow-button w-full rounded-full px-6 py-3.5 text-center text-sm font-black text-black shadow-lg sm:w-auto sm:px-8 sm:py-4 sm:text-base"
               >
                 Kostenlos anfragen
               </a>
 
               <a
                 href={phoneHref}
-                className="rounded-full border border-black/15 bg-white px-6 py-3.5 text-center text-sm font-black text-black shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 sm:px-8 sm:py-4 sm:text-base"
+                className="w-full rounded-full border border-black/15 bg-white px-6 py-3.5 text-center text-sm font-black text-black shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 sm:w-auto sm:px-8 sm:py-4 sm:text-base"
               >
                 Direkt anrufen
               </a>
             </div>
 
-            <div className="hidden max-w-2xl grid-cols-3 gap-4 sm:mt-12 sm:grid">
-              <div className="premium-border rounded-2xl bg-white p-3 shadow-sm backdrop-blur-xl sm:rounded-3xl sm:p-4 border border-black/5">
+            <div className="mt-6 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-1 sm:mt-12 sm:grid sm:max-w-2xl sm:grid-cols-3 sm:gap-4 sm:overflow-visible sm:pb-0">
+              <div className="premium-border w-[160px] flex-none snap-start rounded-2xl border border-black/5 bg-white p-3 shadow-sm backdrop-blur-xl sm:w-auto sm:rounded-3xl sm:p-4">
                 <p className="text-lg font-black text-[#b28a00] sm:text-2xl">
                   100%
                 </p>
@@ -122,7 +122,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="premium-border rounded-2xl bg-white p-3 shadow-sm backdrop-blur-xl sm:rounded-3xl sm:p-4 border border-black/5">
+              <div className="premium-border w-[160px] flex-none snap-start rounded-2xl border border-black/5 bg-white p-3 shadow-sm backdrop-blur-xl sm:w-auto sm:rounded-3xl sm:p-4">
                 <p className="text-lg font-black text-[#b28a00] sm:text-2xl">
                   Fair
                 </p>
@@ -131,7 +131,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="premium-border rounded-2xl bg-white p-3 shadow-sm backdrop-blur-xl sm:rounded-3xl sm:p-4 border border-black/5">
+              <div className="premium-border w-[160px] flex-none snap-start rounded-2xl border border-black/5 bg-white p-3 shadow-sm backdrop-blur-xl sm:w-auto sm:rounded-3xl sm:p-4">
                 <p className="text-lg font-black text-[#b28a00] sm:text-2xl">
                   LAF
                 </p>
@@ -145,8 +145,8 @@ export default function Home() {
 
         {/* Feature list */}
         <div className="relative z-20 mx-auto mt-0 max-w-7xl px-5 pb-8 sm:-mt-10 lg:px-8">
-          <div className="grid gap-3 rounded-xl sm:rounded-[1.4rem] border border-black/5 bg-white p-4 shadow-lg sm:rounded-2xl sm:rounded-[2rem] md:grid-cols-3 md:p-6">
-            <div>
+          <div className="divide-y divide-black/5 rounded-xl border border-black/5 bg-white shadow-lg sm:divide-y-0 sm:rounded-[2rem] md:grid md:grid-cols-3 md:divide-x md:divide-y-0">
+            <div className="p-5 sm:p-6 md:p-6">
               <p className="text-xs font-black uppercase tracking-[0.25em] text-[#b28a00]">
                 Schnell
               </p>
@@ -156,7 +156,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div>
+            <div className="p-5 sm:p-6 md:p-6">
               <p className="text-xs font-black uppercase tracking-[0.25em] text-[#b28a00]">
                 Sauber
               </p>
@@ -166,7 +166,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div>
+            <div className="p-5 sm:p-6 md:p-6">
               <p className="text-xs font-black uppercase tracking-[0.25em] text-[#b28a00]">
                 Persönlich
               </p>
@@ -244,13 +244,13 @@ export default function Home() {
                     {service.number}
                   </div>
 
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="rounded-xl sm:rounded-[1.4rem] border border-white/10 bg-black/45 p-6 backdrop-blur-md text-white">
-                      <h3 className="text-2xl font-black">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+                    <div className="rounded-xl sm:rounded-[1.4rem] border border-white/10 bg-black/45 p-4 sm:p-6 backdrop-blur-md text-white">
+                      <h3 className="text-xl font-black sm:text-2xl">
                         {service.title}
                       </h3>
 
-                      <p className="mt-3 min-h-[84px] leading-7 text-white/80">
+                      <p className="mt-2 min-h-0 leading-6 text-white/80 sm:mt-3 sm:min-h-[84px] sm:leading-7">
                         {service.text}
                       </p>
 

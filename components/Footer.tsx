@@ -35,12 +35,12 @@ export default function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
           <div>
             <Link href="/" className="inline-flex items-center gap-4">
-              <div className="relative h-20 w-48">
+              <div className="relative h-12 w-32 sm:h-20 sm:w-48">
                 <Image
                   src="/images/logo/laf-logo.png"
                   alt="Umzüge LAF Logo"
                   fill
-                  sizes="192px"
+                  sizes="(max-width: 640px) 128px, 192px"
                   className="object-contain"
                 />
               </div>
@@ -53,8 +53,15 @@ export default function Footer() {
             </p>
 
             <div className="mt-6 flex flex-col gap-2 text-sm font-bold text-black/75">
-              <p>Ergoldinger Str. 15</p>
-              <p>84030 Landshut</p>
+              <a
+                href="https://maps.google.com/?q=Ergoldinger+Str.+15,+84030+Landshut"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:text-[#b28a00] underline-offset-2 hover:underline"
+              >
+                <p>Ergoldinger Str. 15</p>
+                <p>84030 Landshut</p>
+              </a>
             </div>
           </div>
 

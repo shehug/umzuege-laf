@@ -91,7 +91,7 @@ export default function Header() {
               />
             </div>
 
-            <div className="hidden min-[420px]:block lg:block">
+            <div className="hidden min-[360px]:block lg:block">
               <p className="text-xs font-black tracking-wide text-black sm:text-sm">
                 Umzüge LAF
               </p>
@@ -269,7 +269,7 @@ export default function Header() {
                 onClick={() => setOpen(false)}
                 aria-label="Umzüge LAF anrufen"
                 title="Umzüge LAF anrufen"
-                className="flex items-center justify-center gap-2 rounded-2xl bg-[#f6c21a] py-3 text.sm font-black text-black shadow-md"
+                className="flex items-center justify-center gap-2 rounded-2xl bg-[#f6c21a] py-3 text-sm font-black text-black shadow-md"
               >
                 <PhoneIcon />
                 <span>Anrufen</span>
