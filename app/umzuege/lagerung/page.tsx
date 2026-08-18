@@ -142,14 +142,14 @@ export default function LagerungPage() {
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/kontakt"
-                className="glow-button rounded-full px-8 py-4 text-center font-black text-black"
+                className="glow-button w-full rounded-full px-8 py-4 text-center font-black text-black sm:w-auto"
               >
                 Lagerung anfragen
               </Link>
 
               <a
                 href={phoneHref}
-                className="rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 hover:text-[#b28a00]"
+                className="w-full rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 hover:text-[#b28a00] sm:w-auto"
               >
                 Direkt anrufen
               </a>
@@ -334,14 +334,14 @@ export default function LagerungPage() {
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/kontakt"
-                className="glow-button rounded-full px-8 py-4 text-center font-black text-black"
+                className="glow-button w-full rounded-full px-8 py-4 text-center font-black text-black sm:w-auto"
               >
                 Kontaktformular öffnen
               </Link>
 
               <a
                 href={phoneHref}
-                className="rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:text-[#b28a00]"
+                className="w-full rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:text-[#b28a00] sm:w-auto"
               >
                 {phone}
               </a>
@@ -401,14 +401,14 @@ export default function LagerungPage() {
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <Link
                   href="/kontakt"
-                  className="glow-button rounded-full px-8 py-4 text-center font-black text-black"
+                  className="glow-button w-full rounded-full px-8 py-4 text-center font-black text-black sm:w-auto"
                 >
                   Lagerung anfragen
                 </Link>
 
                 <a
                   href={`mailto:${email}`}
-                  className="rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:text-[#b28a00]"
+                  className="w-full rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:text-[#b28a00] sm:w-auto"
                 >
                   E-Mail schreiben
                 </a>

@@ -13,21 +13,21 @@ const navItems = [
     label: "Umzugsunternehmen",
     href: "/umzugsunternehmen-landshut",
     children: [
-      { label: "Umzugsunternehmen Landshut", href: "/umzugsunternehmen-landshut" },
-      { label: "Umzug Landshut", href: "/umzug-landshut" },
-      { label: "Privatumzug Landshut", href: "/privatumzug-landshut" },
-      { label: "Firmenumzug Landshut", href: "/firmenumzug-landshut" },
-      { label: "Fernumzug Landshut", href: "/umzuege/fernumzug" },
-      { label: "Expressumzug Landshut", href: "/umzuege/expressumzug" },
+      { label: "Umzugsunternehmen", href: "/umzugsunternehmen-landshut" },
+      { label: "Umzug", href: "/umzug-landshut" },
+      { label: "Privatumzug", href: "/privatumzug-landshut" },
+      { label: "Firmenumzug", href: "/firmenumzug-landshut" },
+      { label: "Fernumzug", href: "/umzuege/fernumzug" },
+      { label: "Expressumzug", href: "/umzuege/expressumzug" },
     ],
   },
   {
     label: "Entrümpelung",
     href: "/entruempelung-landshut",
     children: [
-      { label: "Entrümpelung Landshut", href: "/entruempelung-landshut" },
-      { label: "Wohnungsauflösung Landshut", href: "/wohnungsaufloesung-landshut" },
-      { label: "Haushaltsauflösung Landshut", href: "/haushaltsaufloesung-landshut" },
+      { label: "Entrümpelung", href: "/entruempelung-landshut" },
+      { label: "Wohnungsauflösung", href: "/wohnungsaufloesung-landshut" },
+      { label: "Haushaltsauflösung", href: "/haushaltsaufloesung-landshut" },
       { label: "Kellerentrümpelung", href: "/entruempelung/kellerentruempelung" },
       { label: "Dachbodenentrümpelung", href: "/entruempelung/dachbodenentruempelung" },
       { label: "Garagenentrümpelung", href: "/entruempelung/garagenentruempelung" },
@@ -40,8 +40,8 @@ const navItems = [
     href: "/leistungen",
     children: [
       { label: "Alle Leistungen", href: "/leistungen" },
-      { label: "Möbelmontage Landshut", href: "/umzuege/moebelmontage" },
-      { label: "Einpackservice Landshut", href: "/umzuege/einpackservice" },
+      { label: "Möbelmontage", href: "/umzuege/moebelmontage" },
+      { label: "Einpackservice", href: "/umzuege/einpackservice" },
       { label: "Lagerung", href: "/umzuege/lagerung" },
       { label: "FAQ", href: "/faq" },
     ],
@@ -79,7 +79,7 @@ export default function Header() {
     <>
       <header className="fixed left-0 top-0 z-50 w-full border-b border-black/10 bg-white/95 shadow-[0_10px_30px_rgba(0,0,0,0.06)] backdrop-blur-2xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-3.5 py-3 sm:px-6 sm:py-4 lg:px-8">
-          <Link href="/" className="group flex items-center gap-2.5">
+          <Link href="/" className="group flex items-center">
             <div className="relative h-10 w-28 transition group-hover:scale-105 sm:h-13 sm:w-36">
               <Image
                 src="/images/logo/laf-logo.png"
@@ -89,13 +89,6 @@ export default function Header() {
                 className="object-contain"
                 priority
               />
-            </div>
-
-            <div className="hidden min-[360px]:block lg:block">
-              <p className="text-xs font-black tracking-wide text-black sm:text-sm">
-                Umzüge LAF
-              </p>
-              <p className="text-[10px] text-black/55 sm:text-xs">Landshut & Umgebung</p>
             </div>
           </Link>
 

@@ -45,36 +45,7 @@ body {
 }
 
 .laf-orb {
-  position: absolute;
-  border-radius: 9999px;
-  filter: blur(70px);
-  animation: orbFloat 12s ease-in-out infinite;
-}
-
-.laf-orb-one {
-  width: 420px;
-  height: 420px;
-  left: -120px;
-  top: 80px;
-  background: rgba(246, 194, 26, 0.12);
-}
-
-.laf-orb-two {
-  width: 480px;
-  height: 480px;
-  right: -160px;
-  top: 160px;
-  background: rgba(246, 194, 26, 0.08);
-  animation-delay: -4s;
-}
-
-.laf-orb-three {
-  width: 360px;
-  height: 360px;
-  left: 35%;
-  bottom: -180px;
-  background: rgba(24, 24, 27, 0.02);
-  animation-delay: -8s;
+  display: none;
 }
 
 .gradient-text {

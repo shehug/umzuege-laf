@@ -222,7 +222,7 @@ export default function KontaktPage() {
               href={phoneHref}
               tracking="phone"
               trackingLocation="Kontakt Unterseite CTA"
-              className="glow-button rounded-full px-8 py-4 text-center font-black text-black shadow-md"
+              className="glow-button w-full rounded-full px-8 py-4 text-center font-black text-black shadow-md sm:w-auto"
             >
               ☎ {phone}
             </TrackedLink>
@@ -231,7 +231,7 @@ export default function KontaktPage() {
               href={whatsappHref}
               tracking="whatsapp"
               trackingLocation="Kontakt Unterseite CTA"
-              className="rounded-full bg-[#25D366] px-8 py-4 text-center font-black text-white shadow-md transition hover:opacity-90"
+              className="w-full rounded-full bg-[#25D366] px-8 py-4 text-center font-black text-white shadow-md transition hover:opacity-90 sm:w-auto"
             >
               💬 WhatsApp Chat
             </TrackedLink>

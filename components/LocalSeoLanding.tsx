@@ -122,10 +122,8 @@ export default function LocalSeoLanding({
             sizes="100vw"
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-white/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#fafaf7]/98 via-[#fafaf7]/90 to-[#fafaf7]/40 sm:to-[#fafaf7]/20" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#fafaf7] via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.15),transparent_35%)]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#fafaf7]/98 via-[#fafaf7]/85 to-[#fafaf7]/20 sm:to-[#fafaf7]/10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#fafaf7]/60 via-transparent to-[#fafaf7]" />
         </div>
 
         <div className="relative mx-auto flex min-h-[45vh] max-w-7xl items-center">
@@ -138,7 +136,7 @@ export default function LocalSeoLanding({
               {badge}
             </div>
 
-            <h1 className="text-[2.2rem] font-black leading-[1.12] tracking-tight text-[#18181b] min-[380px]:text-[2.6rem] sm:text-6xl md:text-7xl lg:text-8xl">
+            <h1 className="text-[1.9rem] font-black leading-[1.12] tracking-tight text-[#18181b] min-[380px]:text-[2.2rem] sm:text-5xl md:text-6xl lg:text-7xl">
               {h1Top}
               <span className="gradient-text block">{h1Highlight}</span>
               {h1Bottom}
@@ -151,14 +149,14 @@ export default function LocalSeoLanding({
             <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:gap-4">
               <a
                 href="#anfrage-formular"
-                className="glow-button rounded-full px-6 py-3.5 text-center text-sm font-black text-black shadow-md sm:px-8 sm:py-4 sm:text-base"
+                className="glow-button w-full rounded-full px-6 py-3.5 text-center text-sm font-black text-black shadow-md sm:px-8 sm:py-4 sm:text-base sm:w-auto"
               >
                 Kostenlos anfragen
               </a>
 
               <a
                 href={phoneHref}
-                className="rounded-full border border-black/15 bg-white px-6 py-3.5 text-center text-sm font-black text-black shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 sm:px-8 sm:py-4 sm:text-base"
+                className="w-full rounded-full border border-black/15 bg-white px-6 py-3.5 text-center text-sm font-black text-black shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 sm:px-8 sm:py-4 sm:text-base sm:w-auto"
               >
                 Direkt anrufen: {phone}
               </a>
@@ -305,14 +303,14 @@ export default function LocalSeoLanding({
               <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:gap-4">
                 <a
                   href={phoneHref}
-                  className="glow-button rounded-full px-6 py-3.5 text-center text-sm font-black text-black shadow-md sm:px-8 sm:py-4 sm:text-base"
+                  className="glow-button w-full rounded-full px-6 py-3.5 text-center text-sm font-black text-black shadow-md sm:px-8 sm:py-4 sm:text-base sm:w-auto"
                 >
                   Direkt anrufen: {phone}
                 </a>
 
                 <a
                   href={`mailto:info@umzuege-laf.de`}
-                  className="rounded-full border border-black/15 bg-white px-6 py-3.5 text-center text-sm font-black text-black shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 sm:px-8 sm:py-4 sm:text-base"
+                  className="w-full rounded-full border border-black/15 bg-white px-6 py-3.5 text-center text-sm font-black text-black shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 sm:px-8 sm:py-4 sm:text-base sm:w-auto"
                 >
                   E-Mail schreiben
                 </a>

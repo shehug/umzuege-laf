@@ -109,14 +109,14 @@ export default function UeberUnsPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
               <Link
                 href="/kontakt"
-                className="glow-button rounded-full px-8 py-4 text-center font-black text-black shadow-lg"
+                className="glow-button w-full rounded-full px-8 py-4 text-center font-black text-black shadow-lg sm:w-auto"
               >
                 Anfrage starten
               </Link>
 
               <a
                 href={phoneHref}
-                className="rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10"
+                className="w-full rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 sm:w-auto"
               >
                 Direkt anrufen
               </a>
@@ -298,14 +298,14 @@ export default function UeberUnsPage() {
           <div className="flex flex-col gap-3">
             <a
               href={phoneHref}
-              className="glow-button rounded-full px-8 py-4 text-center font-black text-black shadow-lg"
+              className="glow-button w-full rounded-full px-8 py-4 text-center font-black text-black shadow-lg sm:w-auto"
             >
               {phone}
             </a>
 
             <a
               href={`mailto:${email}`}
-              className="rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10"
+              className="w-full rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 sm:w-auto"
             >
               E-Mail schreiben
             </a>
