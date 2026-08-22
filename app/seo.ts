@@ -78,9 +78,9 @@ export function createSeoMetadata(page: SeoPage): Metadata {
 
 export const seoPages = {
   home: {
-    title: "Umzüge Landshut | Umzugsunternehmen & Entrümpelung – LAF",
+    title: "Umzugsunternehmen Landshut » Schnell & Fair | Umzüge LAF",
     description:
-      "Umzüge LAF ist Ihr Umzugsunternehmen in Landshut für Privatumzug, Firmenumzug, Entrümpelung, Haushaltsauflösung, Möbelmontage und Sperrmüllentsorgung.",
+      "★ 4.9 Sterne Umzugsunternehmen in Landshut: Privatumzug, Firmenumzug, Entrümpelung & Möbelmontage. Festpreis-Garantie & kostenloses Angebot in 2 Min.!",
     path: "/",
     keywords: [
       "Umzugsunternehmen Landshut",
@@ -93,7 +93,7 @@ export const seoPages = {
   leistungen: {
     title: "Leistungen | Umzüge, Entrümpelung & Montage in Landshut",
     description:
-      "Alle Leistungen von Umzüge LAF: Umzüge, Entrümpelung, Haushaltsauflösung, Möbelmontage, Einpackservice, Lagerung und Sperrmüllentsorgung in Landshut.",
+      "★ 4.9 Sterne Service: Umzüge, Entrümpelung, Haushaltsauflösung, Möbelmontage & Einpackservice in Landshut & Umgebung. Jetzt unverbindlich anfragen!",
     path: "/leistungen",
     keywords: [
       "Umzugsleistungen Landshut",
@@ -103,9 +103,9 @@ export const seoPages = {
   },
 
   umzuege: {
-    title: "Umzüge Landshut | Privatumzug, Firmenumzug & Fernumzug",
+    title: "Umzug Landshut » Zuverlässig & Günstig | Umzüge LAF",
     description:
-      "Umzüge LAF plant und realisiert Umzüge in Landshut und Umgebung: Privatumzug, Firmenumzug, Fernumzug, Expressumzug, Einpackservice und Möbelmontage.",
+      "Ihr Umzug in Landshut und Umgebung: Privatumzug, Firmenumzug, Fernumzug, Expressumzug & Möbelmontage. Zuverlässig, pünktlich & mit Festpreis.",
     path: "/umzuege",
     keywords: [
       "Umzüge Landshut",
@@ -116,9 +116,9 @@ export const seoPages = {
   },
 
   privatumzug: {
-    title: "Privatumzug Landshut | Umzüge LAF",
+    title: "Privatumzug Landshut » Stressfrei umziehen | Umzüge LAF",
     description:
-      "Privatumzug in Landshut mit Umzüge LAF: zuverlässige Planung, sicherer Transport, Möbelmontage und saubere Umsetzung für Ihren Wohnungsumzug.",
+      "Stressfreier Privatumzug in Landshut: Wohnungsumzug & Hausumzug mit Möbelmontage und Einpackservice. Jetzt kostenloses Angebot erhalten!",
     path: "/privatumzug-landshut",
     keywords: [
       "Privatumzug Landshut",
@@ -129,9 +129,9 @@ export const seoPages = {
   },
 
   firmenumzug: {
-    title: "Firmenumzug Landshut | Büro & Gewerbe umziehen",
+    title: "Firmenumzug Landshut » Büro & Gewerbe | Umzüge LAF",
     description:
-      "Firmenumzug in Landshut mit Umzüge LAF: strukturierte Planung für Büro, Praxis, Gewerbefläche, Arbeitsplätze, Möbel und Technik.",
+      "Professioneller Firmenumzug & Büroumzug in Landshut: Minimale Ausfallzeiten, strukturierte Planung, Möbel- & Techniktransport. Jetzt anfragen!",
     path: "/firmenumzug-landshut",
     keywords: [
       "Firmenumzug Landshut",
@@ -208,9 +208,9 @@ export const seoPages = {
   },
 
   entruempelung: {
-    title: "Entrümpelung Landshut | Wohnung, Keller, Garage & Sperrmüll",
+    title: "Entrümpelung Landshut » Schnell & Besenrein | Umzüge LAF",
     description:
-      "Entrümpelung in Landshut mit Umzüge LAF: Wohnungsentrümpelung, Haushaltsauflösung, Keller, Dachboden, Garage, Büro und Sperrmüllentsorgung.",
+      "★ 4.9 Sterne Entrümpelung in Landshut: Wohnungsentrümpelung, Keller, Haushaltsauflösung & Sperrmüll. Festpreis, besenrein & fair. Jetzt anfragen!",
     path: "/entruempelung-landshut",
     keywords: [
       "Entrümpelung Landshut",
