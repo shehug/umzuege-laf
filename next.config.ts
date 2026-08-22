@@ -27,6 +27,11 @@ const nextConfig = {
         destination: "/entruempelung-landshut",
         permanent: true,
       },
+      {
+        source: "/umzugsunternehmen",
+        destination: "/umzugsunternehmen-landshut",
+        permanent: true,
+      },
     ];
   },
 };
