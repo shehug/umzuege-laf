@@ -1,11 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --laf-yellow: #f6c21a;
-  --laf-yellow-deep: #b28a00;
-  --laf-black: #18181b;
-  --laf-dark: #fafaf7;
-  --laf-soft: #ffffff;
+  --laf-yellow: #f59e0b;
+  --laf-yellow-light: #fef3c7;
+  --laf-yellow-hover: #d97706;
+  --laf-dark: #0f172a;
+  --laf-navy: #1e293b;
+  --laf-gray-bg: #f8fafc;
+  --laf-gray-border: #e2e8f0;
+  --laf-gray-text: #64748b;
+  --laf-green: #16a34a;
 }
 
 * {
@@ -19,8 +23,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--laf-dark);
-  color: var(--laf-black);
+  background-color: #ffffff;
+  color: #0f172a;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -29,172 +33,85 @@ body {
 
 ::selection {
   background: var(--laf-yellow);
-  color: black;
+  color: #0f172a;
 }
 
-.laf-grid {
+/* Subtly textured background grid for hero */
+.laf-clean-grid {
   background-image:
-    linear-gradient(rgba(24, 24, 27, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(24, 24, 27, 0.035) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: radial-gradient(circle at top, black, transparent 72%);
+    linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
-.laf-noise {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+/* High-Trust Primary CTA Button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  background-color: #f59e0b;
+  color: #0f172a;
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.laf-orb {
-  display: none;
+.btn-primary:hover {
+  background-color: #d97706;
+  color: #ffffff;
+  box-shadow: 0 6px 20px 0 rgba(217, 119, 6, 0.45);
+  transform: translateY(-1px);
 }
 
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Solid Secondary Outline Button */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  background-color: #ffffff;
+  color: #0f172a;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  border-color: #f59e0b;
+  background-color: #fffbeb;
+  color: #b45309;
+}
+
+/* Trust Badge Card */
+.trust-badge {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+}
+
+/* Legacy gradient text compatibility */
 .gradient-text {
-  background: linear-gradient(90deg, #b28a00, #18181b, #b28a00);
-  background-size: 220% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: gradientMove 5s ease-in-out infinite;
+  color: #d97706;
   display: inline-block;
-  padding-bottom: 0.18em;
-  margin-bottom: -0.18em;
-  line-height: 1.15;
 }
 
 .glow-button {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, #f6c21a, #ffe27a, #f6c21a);
-  box-shadow:
-    0 0 24px rgba(246, 194, 26, 0.25),
-    0 12px 40px rgba(246, 194, 26, 0.15);
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
-}
-
-.glow-button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  transform: translateX(-120%);
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.65), transparent);
-  animation: shimmer 3.2s ease-in-out infinite;
+  background-color: #f59e0b;
+  color: #0f172a;
+  font-weight: 800;
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.35);
+  transition: all 0.2s ease;
 }
 
 .glow-button:hover {
-  transform: translateY(-2px) scale(1.04);
-  box-shadow:
-    0 0 34px rgba(246, 194, 26, 0.45),
-    0 18px 50px rgba(246, 194, 26, 0.20);
-}
-
-.premium-border {
-  position: relative;
-  overflow: hidden;
-}
-
-.premium-border::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  padding: 1px;
-  border-radius: inherit;
-  background: linear-gradient(135deg, rgba(246, 194, 26, 0.45), rgba(24, 24, 27, 0.05), rgba(246, 194, 26, 0.15));
-  mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-.shine-card::after {
-  content: "";
-  position: absolute;
-  inset: -40%;
-  background: linear-gradient(120deg, transparent 35%, rgba(255, 255, 255, 0.13), transparent 65%);
-  transform: rotate(18deg) translateX(-65%);
-  animation: cardShine 5.5s ease-in-out infinite;
-  pointer-events: none;
-}
-
-.float-slow {
-  animation: floatSlow 6s ease-in-out infinite;
-}
-
-.float-medium {
-  animation: floatMedium 5s ease-in-out infinite;
-}
-
-.laf-marquee {
-  overflow: hidden;
-}
-
-.marquee-track {
-  width: max-content;
-  animation: marquee 24s linear infinite;
-}
-
-@keyframes orbFloat {
-  0%, 100% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  50% {
-    transform: translate3d(35px, -35px, 0) scale(1.08);
-  }
-}
-
-@keyframes gradientMove {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    transform: translateX(-120%);
-  }
-  55%, 100% {
-    transform: translateX(120%);
-  }
-}
-
-@keyframes cardShine {
-  0% {
-    transform: rotate(18deg) translateX(-75%);
-  }
-  45%, 100% {
-    transform: rotate(18deg) translateX(75%);
-  }
-}
-
-@keyframes floatSlow {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-18px);
-  }
-}
-
-@keyframes floatMedium {
-  0%, 100% {
-    transform: translateY(0px) rotate(-1deg);
-  }
-  50% {
-    transform: translateY(14px) rotate(1deg);
-  }
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-33.333%);
-  }
+  background-color: #d97706;
+  color: #ffffff;
 }

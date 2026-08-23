@@ -9,9 +9,9 @@ import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata = createSeoMetadata({
-  title: "Entrümpelung Landshut | Wohnung, Keller & Sperrmüll",
+  title: "Entrümpelung Landshut » Schnell & Besenrein | Umzüge LAF",
   description:
-    "Entrümpelung in Landshut mit Umzüge LAF: Wohnungsentrümpelung, Keller, Dachboden, Garage, Büro, Haushaltsauflösung und Sperrmüllentsorgung.",
+    "Entrümpelung in Landshut mit Umzüge LAF: Wohnungsentrümpelung, Keller, Dachboden, Garage, Büro, Haushaltsauflösung und Sperrmüllentsorgung zum Festpreis.",
   path: "/entruempelung-landshut",
   keywords: [
     "Entrümpelung Landshut",
@@ -31,77 +31,64 @@ const clearingServices = [
     title: "Wohnungsentrümpelung",
     text: "Komplette Wohnungen sauber räumen lassen — zuverlässig, diskret und besenrein.",
     href: "/entruempelung/wohnungsentruempelung",
-    number: "01",
   },
   {
     title: "Haushaltsauflösung",
     text: "Strukturierte Haushaltsauflösungen mit Planung, Räumung und fachgerechter Entsorgung.",
     href: "/entruempelung/haushaltsaufloesung",
-    number: "02",
   },
   {
     title: "Kellerentrümpelung",
     text: "Kellerflächen schnell und sauber freiräumen — auch bei schwer zugänglichen Bereichen.",
     href: "/entruempelung/kellerentruempelung",
-    number: "03",
   },
   {
     title: "Dachbodenentrümpelung",
     text: "Dachböden professionell räumen lassen, inklusive Sortierung und Abtransport.",
     href: "/entruempelung/dachbodenentruempelung",
-    number: "04",
   },
   {
     title: "Garagenentrümpelung",
     text: "Garagen, Schuppen und Abstellflächen wieder nutzbar machen — sauber und effizient.",
     href: "/entruempelung/garagenentruempelung",
-    number: "05",
-  },
-  {
-    title: "Büroentrümpelung",
-    text: "Büros, Lagerflächen und Gewerberäume strukturiert räumen und übergeben.",
-    href: "/entruempelung/bueroentruempelung",
-    number: "06",
   },
   {
     title: "Sperrmüllentsorgung",
-    text: "Sperrmüll fachgerecht abtransportieren und entsorgen lassen.",
+    text: "Sperrmüll, Altmöbel und Großteile fachgerecht abholen und entsorgen lassen.",
     href: "/entruempelung/sperrmuellentsorgung",
-    number: "07",
   },
 ];
 
 const process = [
   {
-    title: "Anfrage",
-    text: "Sie beschreiben kurz, welche Räume oder Flächen entrümpelt werden sollen.",
+    num: "1",
+    title: "Anfrage & Erstgespräch",
+    text: "Sie beschreiben kurz, welche Räume oder Gegenstände geräumt werden sollen.",
   },
   {
-    title: "Einschätzung",
-    text: "Wir klären Umfang, Zugang, Etage, Parkmöglichkeit und gewünschtes Datum.",
+    num: "2",
+    title: "Festpreis-Kalkulation",
+    text: "Sie erhalten ein transparentes Festpreis-Angebot inklusive aller Entsorgungsgebühren.",
   },
   {
-    title: "Räumung",
-    text: "Unser Team räumt strukturiert, sorgfältig und zuverlässig.",
-  },
-  {
-    title: "Übergabe",
-    text: "Nach der Entrümpelung wird die Fläche sauber und besenrein übergeben.",
+    num: "3",
+    title: "Besenreine Übergabe",
+    text: "Unser Team räumt pünktlich, transportiert alles ab und übergibt die Räume besenrein.",
   },
 ];
 
 const benefits = [
-  "Besenreine Übergabe",
-  "Schnelle Terminabstimmung",
-  "Saubere Räumung",
-  "Fachgerechte Entsorgung",
-  "Persönliche Beratung",
-  "Landshut & Umgebung",
+  "Besenreine Übergabe garantiert",
+  "Transparente Festpreise",
+  "Fachgerechte & zertifizierte Entsorgung",
+  "Schnelle Terminvereinbarung",
+  "Diskrete & saubere Abwicklung",
+  "Einsatz in ganz Landshut & Umland",
 ];
 
 export default function EntruempelungLandshutPage() {
   return (
-    <main className="min-h-screen bg-[#fafaf7] text-[#18181b] overflow-hidden">
+    <main className="min-h-screen bg-white text-slate-900">
       <Header />
 
       <BreadcrumbJsonLd
@@ -113,201 +100,182 @@ export default function EntruempelungLandshutPage() {
 
       <ServiceJsonLd
         name="Entrümpelung Landshut"
-        description="Entrümpelung in Landshut mit Umzüge LAF: Wohnung, Keller, Dachboden, Garage, Büro, Haushaltsauflösung und Sperrmüllentsorgung."
+        description="Entrümpelung in Landshut mit Umzüge LAF: Wohnungsentrümpelung, Keller, Dachboden, Garage, Büro, Haushaltsauflösung und Sperrmüllentsorgung."
         path="/entruempelung-landshut"
         serviceType="Entrümpelung"
       />
 
-      <section className="relative overflow-hidden px-5 pb-16 pt-32 sm:pb-24 sm:pt-40 lg:px-8">
-        <div className="absolute inset-0">
+      {/* ── HERO ── */}
+      <section className="relative overflow-hidden bg-slate-950 pt-28 pb-16 text-white sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28">
+        <div className="absolute inset-0 z-0 opacity-60">
           <Image
-            src="/images/services/entruempelung1.jpg"
-            alt="Umzüge LAF Entrümpelung in Landshut"
+            src="/images/services/entruempelung.jpg"
+            alt="Umzüge LAF Entrümpelung Landshut"
             fill
             priority
-            className="object-cover object-center"
+            className="object-cover object-center sm:object-right"
           />
-          <div className="absolute inset-0 bg-white/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#fafaf7]/98 via-[#fafaf7]/90 to-[#fafaf7]/40 sm:to-[#fafaf7]/20" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#fafaf7] via-transparent to-transparent" />
         </div>
+        <div className="absolute inset-0 z-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/30 sm:to-transparent" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/40" />
 
-        <div className="relative mx-auto flex min-h-[50vh] max-w-7xl items-center">
-          <div className="max-w-4xl">
-            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#f6c21a] bg-[#f6c21a]/10 px-4 py-2 text-xs font-black uppercase tracking-wider text-[#b28a00] sm:text-sm">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f6c21a] opacity-75" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#f6c21a]" />
-              </span>
-              Entrümpelung in Landshut & Umgebung
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-400/10 px-3.5 py-1.5 text-xs font-extrabold text-amber-300">
+              <span>★ Besenrein & Fair ·</span>
+              <span>Entrümpelung Landshut & Umgebung</span>
             </div>
 
-            <h1 className="max-w-5xl text-[2.5rem] font-black leading-[1.15] tracking-tight text-[#18181b] min-[390px]:text-[2.85rem] sm:text-6xl md:text-7xl lg:text-8xl">
-              Raum schaffen.
-              <span className="gradient-text block">Sauber gelöst.</span>
-              Mit LAF.
+            <h1 className="text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.15]">
+              Entrümpelung in Landshut.<br />
+              <span className="text-amber-400">Schnell, diskret & besenrein.</span>
             </h1>
 
-            <p className="mt-5 max-w-2xl text-[16px] leading-7 text-black/75 sm:mt-7 sm:text-lg sm:leading-8 md:text-xl">
-              Ob Wohnung, Keller, Dachboden, Garage oder Büro: Umzüge LAF
-              übernimmt Entrümpelungen zuverlässig, diskret und sauber — von
-              der ersten Anfrage bis zur besenreinen Übergabe.
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+              Wohnungsauflösungen, Kellerentrümpelung, Haushaltsauflösung und Sperrmüll
+              in Landshut. Wir räumen schnell, zuverlässig und hinterlassen alles sauber übergeben.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
               <a
-                href="#anfrage-formular"
-                className="glow-button w-full rounded-full px-8 py-4 text-center font-black text-black shadow-lg sm:w-auto"
+                href={phoneHref}
+                className="flex items-center justify-center gap-2.5 rounded-full bg-[#f59e0b] px-7 py-4 text-center text-base font-black text-slate-950 shadow-lg transition hover:bg-amber-400 active:scale-98"
               >
-                Entrümpelung anfragen
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span>Direkt anrufen: {phone}</span>
               </a>
 
               <a
-                href={phoneHref}
-                className="w-full rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 sm:w-auto"
+                href="#anfrage-formular"
+                className="flex items-center justify-center rounded-full border-2 border-slate-600 bg-slate-800/80 px-7 py-4 text-center text-base font-bold text-white transition hover:border-slate-400 hover:bg-slate-700 active:scale-98"
               >
-                Direkt anrufen: {phone}
+                Angebot anfordern →
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="relative bg-[#ffffff] px-4 py-12 sm:px-6 sm:py-16 md:py-20 text-black lg:px-8 border-t border-black/5">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <div>
-              <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
-                Entrümpelungsservice
-              </p>
-
-              <h2 className="mt-4 text-3xl font-black tracking-tight text-[#18181b] md:text-5xl lg:text-6xl">
-                Für jede Räumung die passende Lösung.
-              </h2>
-            </div>
-
-            <p className="max-w-md text-lg leading-8 text-black/60">
-              Von kleinen Kellern bis zu kompletten Haushaltsauflösungen:
-              Wir räumen strukturiert, sauber und zuverlässig.
+      {/* ── ENTRÜMPELUNGS-SERVICES ── */}
+      <section className="py-16 sm:py-24 bg-white border-b border-slate-200">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
+              Unsere Leistungen
             </p>
+            <h2 className="mt-2 text-2xl sm:text-4xl font-black tracking-tight text-slate-900">
+              Räumung & Entsorgung für jeden Bedarf
+            </h2>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {clearingServices.map((service) => (
               <Link
                 key={service.href}
                 href={service.href}
-                className="group relative overflow-hidden rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white p-4.5 sm:p-7 shadow-sm transition duration-300 hover:shadow-md"
+                className="group rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm transition hover:border-amber-400 hover:bg-white hover:shadow-md"
               >
-                <div className="absolute right-6 top-6 text-7xl font-black text-black/[0.04]">
-                  {service.number}
-                </div>
-
-                <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f6c21a] text-2xl font-black text-black">
-                  →
-                </div>
-
-                <h3 className="relative text-2xl font-black text-black">
+                <h3 className="text-lg font-black text-slate-900 group-hover:text-[#b45309]">
                   {service.title}
                 </h3>
-
-                <p className="relative mt-3 min-h-[80px] leading-7 text-black/60">
+                <p className="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
                   {service.text}
                 </p>
-
-                <p className="relative mt-6 font-black text-black transition group-hover:text-[#b28a00]">
-                  Mehr erfahren
-                </p>
+                <p className="mt-4 text-xs font-extrabold text-[#b45309]">Mehr erfahren →</p>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="relative bg-[#fafaf7] px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 border-t border-black/5">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      {/* ── VORTEILE & ABLAUF ── */}
+      <section className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
           <div>
-            <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
-              Ablauf
+            <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
+              Ihre Vorteile
             </p>
-
-            <h2 className="mt-4 text-3xl font-black tracking-tight text-[#18181b] md:text-5xl lg:text-6xl">
-              Entrümpelung ohne Chaos.
+            <h2 className="mt-2 text-2xl sm:text-3xl font-black tracking-tight text-slate-900">
+              Zuverlässige Räumung ohne Stress
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-black/65">
-              Eine gute Entrümpelung braucht klare Absprache und saubere
-              Durchführung. Deshalb planen wir den Ablauf verständlich und
-              halten Sie auf dem Laufenden.
-            </p>
-          </div>
-
-          <div className="grid gap-4">
-            {process.map((step, index) => (
-              <div
-                key={step.title}
-                className="group rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white p-6 shadow-sm"
-              >
-                <div className="flex gap-5">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black">
-                    {index + 1}
-                  </div>
-
-                  <div>
-                    <h3 className="text-2xl font-black text-[#18181b]">
-                      {step.title}
-                    </h3>
-                    <p className="mt-2 leading-7 text-black/60">{step.text}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="relative bg-[#ffffff] px-4 py-12 sm:px-6 sm:py-16 md:py-20 text-black lg:px-8 border-t border-black/5">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_1fr] lg:items-start">
-          <div>
-            <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
-              Vorteile
-            </p>
-
-            <h2 className="mt-4 text-3xl font-black tracking-tight text-[#18181b] md:text-5xl lg:text-6xl">
-              Sauber, schnell und persönlich betreut.
-            </h2>
-
-            <p className="mt-6 text-lg leading-8 text-black/65">
-              Entrümpelungen sind oft mit Zeitdruck, Organisation und Aufwand
-              verbunden. Wir nehmen Ihnen die Arbeit ab und sorgen für einen
-              klaren Ablauf.
-            </p>
-
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
               {benefits.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-4 rounded-3xl border border-black/5 bg-[#fafaf7] p-5 shadow-sm"
-                >
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#f6c21a] font-black text-black">
-                    ✓
-                  </div>
-                  <p className="font-black text-[#18181b]">{item}</p>
+                <div key={item} className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white p-3.5 shadow-sm text-xs sm:text-sm font-bold text-slate-800">
+                  <span className="text-amber-500 font-black">✓</span>
+                  <span>{item}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <div id="anfrage-formular" className="scroll-mt-24">
-            <div className="mb-5">
-              <p className="text-sm font-black uppercase tracking-[0.25em] text-[#b28a00]">
-                Direktanfrage
-              </p>
-              <h3 className="mt-2 text-2xl font-black text-[#18181b]">
-                Angebot für Entrümpelung anfordern
-              </h3>
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
+            <h3 className="text-lg font-black text-slate-900">
+              In 3 Schritten besenrein
+            </h3>
+            <div className="mt-6 grid gap-4">
+              {process.map((p) => (
+                <div key={p.title} className="flex gap-4">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-sm font-black text-amber-800">
+                    {p.num}
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-black text-slate-900">{p.title}</h4>
+                    <p className="mt-1 text-xs text-slate-600 leading-relaxed">{p.text}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-            <ContactForm />
+          </div>
+        </div>
+      </section>
+
+      {/* ── ANFRAGE SEKTION ── */}
+      <section id="anfrage-formular" className="py-16 sm:py-24 bg-slate-900 text-white scroll-mt-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-amber-400/10 px-3 py-1 text-xs font-bold text-amber-300">
+                <span>📍</span>
+                <span>Standort: Ergoldinger Str. 15, 84030 Landshut</span>
+              </div>
+
+              <h2 className="mt-4 text-3xl sm:text-4xl font-black text-white">
+                Entrümpelung kostenlos anfragen
+              </h2>
+
+              <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
+                Rufen Sie uns direkt an oder füllen Sie das kurze Formular aus. Wir
+                erstellen Ihnen kurzfristig ein transparentes Festpreis-Angebot.
+              </p>
+
+              <div className="mt-6 rounded-2xl border border-slate-700 bg-slate-800/80 p-5">
+                <p className="text-xs font-bold text-amber-400 uppercase tracking-wider">
+                  Telefonische Beratung
+                </p>
+                <a
+                  href={phoneHref}
+                  className="mt-1 inline-flex items-center gap-2 text-xl font-black text-white hover:text-amber-400 transition"
+                >
+                  <span>📞</span>
+                  <span>{phone}</span>
+                </a>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-slate-700 bg-white p-6 sm:p-8 text-slate-900 shadow-2xl">
+              <h3 className="text-xl font-black text-slate-900">
+                Online-Anfrage für Entrümpelung
+              </h3>
+              <p className="mt-1 text-xs text-slate-500">
+                In 2 Minuten ausgefüllt – 100% unverbindlich.
+              </p>
+              <div className="mt-5">
+                <ContactForm />
+              </div>
+            </div>
           </div>
         </div>
       </section>

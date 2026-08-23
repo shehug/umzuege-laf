@@ -1,388 +1,139 @@
-import Image from "next/image";
 import Link from "next/link";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import LocalSeoLinks from "../../components/LocalSeoLinks";
+import ContactForm from "../../components/ContactForm";
 import { createSeoMetadata, seoPages } from "../seo";
 
 export const metadata = createSeoMetadata(seoPages.faq);
 
 const phone = "0162 900 75 65";
 const phoneHref = "tel:+491629007565";
-const email = "info@umzuege-laf.de";
 
-const faqGroupOne = [
+const allFaqs = [
   {
-    question: "Wie schnell kann ich ein Angebot erhalten?",
-    answer:
-      "Je genauer Ihre Angaben sind, desto schneller können wir Ihre Anfrage einschätzen. Hilfreich sind Startadresse, Zieladresse, Etage, gewünschtes Datum und der ungefähre Umfang.",
+    q: "Was kostet ein Umzug in Landshut mit Umzüge LAF?",
+    a: "Die Kosten hängen von Wohnungsgröße, Etage, Entfernung, Möbelmontage, Kartonanzahl und Zusatzleistungen ab. Umzüge LAF erstellt nach Klärung der wichtigsten Eckdaten ein verbindliches Festpreis-Angebot.",
   },
   {
-    question: "Macht Umzüge LAF auch kurzfristige Umzüge?",
-    answer:
-      "Ja, je nach Verfügbarkeit sind auch kurzfristige Umzüge möglich. Am besten rufen Sie direkt an, damit wir schnell prüfen können, was machbar ist.",
+    q: "Wie schnell kann ich ein Angebot erhalten?",
+    a: "In der Regel innerhalb weniger Stunden! Nennen Sie uns einfach Startadresse, Zieladresse, Etage, gewünschtes Datum und den ungefähren Umfang über unser Online-Formular oder telefonisch.",
   },
   {
-    question: "Übernimmt Umzüge LAF auch Möbelmontage?",
-    answer:
-      "Ja. Auf Wunsch übernehmen wir den Abbau, Transport und Wiederaufbau Ihrer Möbel. Teilen Sie uns einfach mit, welche Möbel betroffen sind.",
+    q: "Bietet Umzüge LAF auch kurzfristige Umzüge an?",
+    a: "Ja, je nach Teamverfügbarkeit realisieren wir auch kurzfristige und spontane Umzüge in Landshut und Umgebung.",
   },
   {
-    question: "Gibt es auch einen Einpackservice?",
-    answer:
-      "Ja. Wir unterstützen Sie auf Wunsch beim Verpacken Ihrer Gegenstände. Das spart Zeit und sorgt für einen strukturierten Ablauf.",
+    q: "Sind meine Möbel während des Umzugs versichert?",
+    a: "Ja, alle Transporte und Umzugsarbeiten sind selbstverständlich vollumfänglich und ordnungsgemäß nach deutschen Transportstandards versichert.",
   },
   {
-    question: "In welchem Gebiet arbeitet Umzüge LAF?",
-    answer:
-      "Umzüge LAF ist in Landshut und Umgebung tätig. Je nach Auftrag sind auch weitere Strecken und Fernumzüge möglich.",
+    q: "Übernehmen Sie auch den Abbau und Aufbau von Möbeln?",
+    a: "Ja, unser geschultes Personal übernimmt die fachgerechte Demontage und den Wiederaufbau von Schränken, Betten und Küchenmöbeln.",
   },
   {
-    question: "Kann ich Bilder zur Einschätzung schicken?",
-    answer:
-      "Ja, Bilder sind sehr hilfreich. Sie können uns Fotos von Möbeln, Räumen, Kellern, Dachböden oder Sperrmüll per E-Mail schicken.",
-  },
-];
-
-const faqGroupTwo = [
-  {
-    question: "Übernimmt Umzüge LAF auch Entrümpelungen?",
-    answer:
-      "Ja. Wir übernehmen Entrümpelungen von Wohnungen, Kellern, Dachböden, Garagen, Büros und auch Haushaltsauflösungen.",
+    q: "Gibt es auch einen professionellen Einpackservice?",
+    a: "Ja. Auf Wunsch bringen wir stabiles Verpackungsmaterial mit und verpacken Ihren gesamten Hausrat sicher und transportsicher.",
   },
   {
-    question: "Wie läuft eine Entrümpelung ab?",
-    answer:
-      "Zuerst klären wir Umfang, Räume, Zugang und Termin. Danach erfolgt die strukturierte Räumung, der Abtransport und auf Wunsch die besenreine Übergabe.",
+    q: "Übernehmen Sie auch Entrümpelungen und Haushaltsauflösungen?",
+    a: "Ja, wir räumen Wohnungen, Häuser, Keller, Dachböden und Gewerbeflächen inklusive fachgerechter und zertifizierter Sperrmüllentsorgung.",
   },
   {
-    question: "Kann Sperrmüll mitgenommen werden?",
-    answer:
-      "Ja. Sperrmüll kann im Rahmen einer Entrümpelung oder Räumung abtransportiert und fachgerecht entsorgt werden.",
+    q: "Kann vorab eine Besichtigung vor Ort stattfinden?",
+    a: "Ja, besonders bei größeren Wohnungen, Häusern oder Firmenumzügen bieten wir eine kostenlose und unverbindliche Vor-Ort-Besichtigung in Landshut an.",
   },
-  {
-    question: "Welche Informationen braucht ihr für eine Anfrage?",
-    answer:
-      "Wichtig sind Startadresse, Zieladresse, Etage, Aufzug, Parkmöglichkeit, gewünschter Termin, Umfang und ob Zusatzleistungen wie Montage oder Einpackservice gewünscht sind.",
-  },
-  {
-    question: "Ist eine Besichtigung möglich?",
-    answer:
-      "Ja, je nach Umfang ist eine Besichtigung sinnvoll. Besonders bei größeren Umzügen, Haushaltsauflösungen oder komplexen Entrümpelungen hilft das sehr.",
-  },
-  {
-    question: "Wie kann ich Umzüge LAF kontaktieren?",
-    answer:
-      "Sie können direkt anrufen, eine E-Mail schreiben oder das Kontaktformular auf der Website nutzen. Für schnelle Rückfragen ist ein Anruf oft am einfachsten.",
-  },
-];
-
-const quickTopics = [
-  "Privatumzug",
-  "Firmenumzug",
-  "Entrümpelung",
-  "Möbelmontage",
-  "Einpackservice",
-  "Sperrmüll",
 ];
 
 export default function FAQPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#fafaf7] text-[#18181b]">
-      {/* Background orbs and grids */}
-      <div className="pointer-events-none fixed inset-0 z-0">
-        <div className="laf-grid absolute inset-0 opacity-40" />
-        <div className="laf-noise absolute inset-0 opacity-[0.03]" />
-        <div className="laf-orb laf-orb-one" />
-        <div className="laf-orb laf-orb-two" />
-        <div className="laf-orb laf-orb-three" />
-      </div>
-
+    <main className="min-h-screen bg-white text-slate-900">
       <Header />
 
-      {/* Hero Section */}
-      <section className="relative z-10 overflow-hidden px-5 pb-16 pt-32 sm:pb-24 sm:pt-40 lg:px-8">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/services/faq.jpg"
-            alt="Umzüge LAF FAQ"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
+      {/* ── HERO ── */}
+      <section className="bg-slate-900 pt-28 pb-16 text-white sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-24 border-b border-slate-800">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-400/10 px-3.5 py-1.5 text-xs font-extrabold text-amber-300">
+            <span>★ Häufige Fragen & Antworten</span>
+          </div>
 
-          <div className="absolute inset-0 bg-white/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#fafaf7]/98 via-[#fafaf7]/90 to-[#fafaf7]/40 sm:to-[#fafaf7]/16" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#fafaf7]/20 via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#fafaf7] via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.15),transparent_34%)]" />
+          <h1 className="text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.15]">
+            Antworten rund um Ihren Umzug.<br />
+            <span className="text-amber-400">Klar, ehrlich & transparent.</span>
+          </h1>
+
+          <p className="mt-4 max-w-2xl mx-auto text-base text-slate-300 sm:text-lg leading-relaxed">
+            Hier finden Sie die wichtigsten Antworten zu Ablauf, Preisen, Versicherung
+            und unseren Leistungen in Landshut.
+          </p>
         </div>
+      </section>
 
-        <div className="relative mx-auto flex min-h-[50vh] max-w-7xl items-center">
-          <div className="max-w-4xl">
-            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#f6c21a] bg-[#f6c21a]/10 px-4 py-2 text-xs font-black uppercase tracking-wider text-[#b28a00] sm:text-sm">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f6c21a] opacity-75" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#f6c21a]" />
-              </span>
-              Häufige Fragen
-            </div>
-
-            <h1 className="max-w-5xl text-[2.5rem] font-black leading-[1.15] tracking-tight text-[#18181b] min-[390px]:text-[2.85rem] sm:text-6xl md:text-7xl lg:text-8xl">
-              Fragen?
-              <span className="gradient-text block">Hier finden Sie Antworten.</span>
-            </h1>
-
-            <p className="mt-5 max-w-2xl text-[16px] leading-7 text-black/75 sm:mt-7 sm:text-lg sm:leading-8 md:text-xl">
-              Hier finden Sie die wichtigsten Antworten rund um Umzug,
-              Entrümpelung, Möbelmontage, Anfrage und Service von Umzüge LAF.
-            </p>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
-              <Link
-                href="/kontakt"
-                className="glow-button w-full rounded-full px-8 py-4 text-center font-black text-black shadow-lg sm:w-auto"
+      {/* ── FAQ GRID ── */}
+      <section className="py-16 sm:py-24 bg-white border-b border-slate-200">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-4 sm:grid-cols-2">
+            {allFaqs.map((faq) => (
+              <div
+                key={faq.q}
+                className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm hover:border-amber-400 transition"
               >
-                Anfrage stellen
-              </Link>
-
-              <a
-                href={phoneHref}
-                className="w-full rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 sm:w-auto"
-              >
-                Direkt anrufen
-              </a>
-            </div>
+                <h3 className="text-base font-black text-slate-900">
+                  {faq.q}
+                </h3>
+                <p className="mt-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  {faq.a}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ content */}
-      <section className="relative z-10 bg-[#ffffff] px-4 py-12 sm:px-6 sm:py-16 md:py-20 text-[#18181b] lg:px-8 border-t border-black/5">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-            <div className="rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/5 bg-[#fafaf7] p-5 sm:p-8 shadow-sm md:p-10">
-              <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
-                Gut informiert
-              </p>
-
-              <h2 className="mt-4 text-3xl font-black tracking-tight text-[#18181b] md:text-4xl">
-                Gut informiert vor der Anfrage.
-              </h2>
-
-              <p className="mt-4 max-w-2xl text-lg leading-8 text-black/60">
-                Je mehr Informationen wir haben, desto schneller können wir Ihr
-                Anliegen einschätzen. Hier finden Sie die häufigsten Fragen
-                übersichtlich geordnet.
-              </p>
-
-              <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {quickTopics.map((topic) => (
-                  <div
-                    key={topic}
-                    className="rounded-3xl border border-black/5 bg-[#ffffff] p-5 shadow-sm"
-                  >
-                    <p className="text-lg font-black text-[#18181b]">{topic}</p>
-                    <p className="mt-2 text-sm leading-6 text-black/55">
-                      Schnell erklärt und direkt beantwortet.
-                    </p>
-                  </div>
-                ))}
+      {/* ── ANFRAGE SEKTION ── */}
+      <section id="anfrage-formular" className="py-16 sm:py-24 bg-slate-900 text-white scroll-mt-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-amber-400/10 px-3 py-1 text-xs font-bold text-amber-300">
+                <span>📍</span>
+                <span>Standort: Ergoldinger Str. 15, 84030 Landshut</span>
               </div>
-            </div>
 
-            <div className="rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white p-8 shadow-md md:p-10">
-              <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
-                Schnellkontakt
-              </p>
-
-              <h2 className="mt-4 text-3xl font-black tracking-tight text-[#18181b] md:text-4xl">
-                Lieber direkt fragen?
+              <h2 className="mt-4 text-3xl sm:text-4xl font-black text-white">
+                Noch Fragen offen?
               </h2>
 
-              <p className="mt-4 text-lg leading-8 text-black/60">
-                Wenn Sie keine passende Antwort finden, helfen wir persönlich
-                weiter — schnell, direkt und unkompliziert.
+              <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
+                Rufen Sie uns einfach an. Wir beraten Sie persönlich und beantworten alle
+                Ihre Fragen direkt am Telefon.
               </p>
 
-              <div className="mt-8 grid gap-4">
+              <div className="mt-6 rounded-2xl border border-slate-700 bg-slate-800/80 p-5">
+                <p className="text-xs font-bold text-amber-400 uppercase tracking-wider">
+                  Direkter Draht
+                </p>
                 <a
                   href={phoneHref}
-                  className="group rounded-xl sm:rounded-xl sm:rounded-[1.4rem] border border-black/5 bg-[#fafaf7] p-5 transition hover:-translate-y-1 hover:border-[#f6c21a]/40 hover:bg-[#f6c21a]/10"
+                  className="mt-1 inline-flex items-center gap-2 text-xl font-black text-white hover:text-amber-400 transition"
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f6c21a] text-2xl font-black text-black shadow-sm transition group-hover:rotate-6">
-                      ☎
-                    </div>
-
-                    <div>
-                      <p className="text-sm font-black uppercase tracking-[0.2em] text-[#b28a00]">
-                        Direkt anrufen
-                      </p>
-                      <p className="mt-1 text-xl font-black text-black">
-                        {phone}
-                      </p>
-                      <p className="mt-2 text-sm leading-6 text-black/60">
-                        Ideal für schnelle Rückfragen und direkte Abstimmung.
-                      </p>
-                    </div>
-                  </div>
+                  <span>📞</span>
+                  <span>{phone}</span>
                 </a>
-
-                <a
-                  href={`mailto:${email}`}
-                  className="group rounded-xl sm:rounded-xl sm:rounded-[1.4rem] border border-black/5 bg-[#fafaf7] p-5 transition hover:-translate-y-1 hover:border-[#f6c21a]/40 hover:bg-[#f6c21a]/10"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f6c21a] text-2xl font-black text-black shadow-sm transition group-hover:rotate-6">
-                      ✉
-                    </div>
-
-                    <div>
-                      <p className="text-sm font-black uppercase tracking-[0.2em] text-[#b28a00]">
-                        E-Mail schreiben
-                      </p>
-                      <p className="mt-1 text-xl font-black text-black">
-                        {email}
-                      </p>
-                      <p className="mt-2 text-sm leading-6 text-black/60">
-                        Perfekt für ausführlichere Anfragen und Fotos.
-                      </p>
-                    </div>
-                  </div>
-                </a>
-
-                <Link
-                  href="/kontakt"
-                  className="glow-button w-full rounded-full px-6 py-4 text-center font-black text-black shadow-lg sm:w-auto"
-                >
-                  Direktanfrage senden
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-14 grid gap-8 lg:grid-cols-2">
-            <div className="rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/5 bg-[#fafaf7] p-6 shadow-sm md:p-8">
-              <div className="mb-8">
-                <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
-                  Gruppe 1
-                </p>
-                <h3 className="mt-3 text-3xl font-black tracking-tight text-[#18181b]">
-                  Fragen zu Umzug & Service
-                </h3>
-              </div>
-
-              <div className="grid gap-4">
-                {faqGroupOne.map((faq, index) => (
-                  <details
-                    key={faq.question}
-                    className="group overflow-hidden rounded-[1.6rem] border border-black/5 bg-[#ffffff] transition shadow-sm hover:shadow-md"
-                  >
-                    <summary className="flex cursor-pointer list-none items-start justify-between gap-5 p-5">
-                      <div className="flex gap-4">
-                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#f6c21a] text-sm font-black text-black">
-                          {String(index + 1).padStart(2, "0")}
-                        </div>
-
-                        <h4 className="text-lg font-black leading-7 text-[#18181b]">
-                          {faq.question}
-                        </h4>
-                      </div>
-
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-black/5 text-2xl font-light text-black transition group-open:rotate-45 group-open:bg-[#f6c21a]">
-                        +
-                      </span>
-                    </summary>
-
-                    <div className="border-t border-black/5 px-5 pb-5 pt-4 bg-[#fafaf7]">
-                      <p className="leading-7 text-black/65 sm:pl-[60px]">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  </details>
-                ))}
               </div>
             </div>
 
-            <div className="rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/5 bg-[#fafaf7] p-6 shadow-sm md:p-8">
-              <div className="mb-8">
-                <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
-                  Gruppe 2
-                </p>
-                <h3 className="mt-3 text-3xl font-black tracking-tight text-[#18181b]">
-                  Fragen zu Anfrage & Entrümpelung
-                </h3>
-              </div>
-
-              <div className="grid gap-4">
-                {faqGroupTwo.map((faq, index) => (
-                  <details
-                    key={faq.question}
-                    className="group overflow-hidden rounded-[1.6rem] border border-black/5 bg-[#ffffff] transition shadow-sm hover:shadow-md"
-                  >
-                    <summary className="flex cursor-pointer list-none items-start justify-between gap-5 p-5">
-                      <div className="flex gap-4">
-                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#f6c21a] text-sm font-black text-black">
-                          {String(index + 7).padStart(2, "0")}
-                        </div>
-
-                        <h4 className="text-lg font-black leading-7 text-[#18181b]">
-                          {faq.question}
-                        </h4>
-                      </div>
-
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-black/5 text-2xl font-light text-black transition group-open:rotate-45 group-open:bg-[#f6c21a]">
-                        +
-                      </span>
-                    </summary>
-
-                    <div className="border-t border-black/5 px-5 pb-5 pt-4 bg-[#fafaf7]">
-                      <p className="leading-7 text-black/65 sm:pl-[60px]">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  </details>
-                ))}
+            <div className="rounded-2xl border border-slate-700 bg-white p-6 sm:p-8 text-slate-900 shadow-2xl">
+              <h3 className="text-xl font-black text-slate-900">
+                Unverbindlich anfragen
+              </h3>
+              <p className="mt-1 text-xs text-slate-500">
+                In 2 Minuten ausgefüllt – 100% unverbindlich.
+              </p>
+              <div className="mt-5">
+                <ContactForm />
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to action */}
-      <section className="relative z-10 overflow-hidden bg-[#fafaf7] px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 border-t border-black/5">
-        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white p-5 sm:p-8 shadow-lg md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
-          <div>
-            <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
-              Noch Fragen?
-            </p>
-
-            <h2 className="mt-4 max-w-3xl text-3xl font-black tracking-tight text-[#18181b] md:text-5xl lg:text-6xl">
-              Wir helfen persönlich weiter.
-            </h2>
-
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-black/60">
-              Schreiben Sie kurz, worum es geht. Wir melden uns schnell zurück
-              und klären den passenden Ablauf.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <a
-              href={phoneHref}
-              className="glow-button w-full rounded-full px-8 py-4 text-center font-black text-black shadow-lg sm:w-auto"
-            >
-              {phone}
-            </a>
-
-            <Link
-              href="/kontakt"
-              className="w-full rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 sm:w-auto"
-            >
-              Kontaktformular öffnen
-            </Link>
           </div>
         </div>
       </section>

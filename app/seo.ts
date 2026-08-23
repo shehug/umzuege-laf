@@ -155,6 +155,7 @@ export const seoPages = {
       "Umzug Bayern",
       "Umzug lange Strecke",
     ],
+    image: `${siteUrl}/images/services/Transport.jpg`,
   },
 
   expressumzug: {

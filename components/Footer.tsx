@@ -12,7 +12,7 @@ const links = [
   { label: "Umzug Landshut", href: "/umzug-landshut" },
   { label: "Leistungen", href: "/leistungen" },
   { label: "Über uns", href: "/ueber-uns" },
-  { label: "FAQ", href: "/faq" },
+  { label: "Häufige Fragen (FAQ)", href: "/faq" },
   { label: "Kontakt", href: "/kontakt" },
 ];
 
@@ -23,42 +23,42 @@ const services = [
   { label: "Wohnungsauflösung Landshut", href: "/wohnungsaufloesung-landshut" },
   { label: "Möbelmontage Landshut", href: "/umzuege/moebelmontage" },
   { label: "Einpackservice Landshut", href: "/umzuege/einpackservice" },
-  { label: "Fernumzug Landshut", href: "/umzuege/fernumzug" },
-  { label: "Expressumzug Landshut", href: "/umzuege/expressumzug" },
-  { label: "Sperrmüllentsorgung Landshut", href: "/entruempelung/sperrmuellentsorgung" },
+  { label: "Fernumzug", href: "/umzuege/fernumzug" },
+  { label: "Expressumzug", href: "/umzuege/expressumzug" },
+  { label: "Sperrmüllentsorgung", href: "/entruempelung/sperrmuellentsorgung" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 border-t border-black/5 bg-[#fafaf7] px-5 py-16 text-[#18181b] lg:px-8">
+    <footer className="border-t border-slate-200 bg-slate-950 text-white px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
           <div>
-            <Link href="/" className="inline-flex items-center gap-4">
-              <div className="relative h-12 w-32 sm:h-20 sm:w-48">
+            <Link href="/" className="inline-flex items-center">
+              <div className="relative h-12 w-32 sm:h-14 sm:w-40">
                 <Image
                   src="/images/logo/laf-logo.png"
                   alt="Umzüge LAF Logo"
                   fill
-                  sizes="(max-width: 640px) 128px, 192px"
+                  sizes="(max-width: 640px) 128px, 160px"
                   className="object-contain"
                 />
               </div>
             </Link>
 
-            <p className="mt-6 max-w-sm text-sm leading-7 text-black/65">
-              Umzüge LAF ist Ihr Umzugsunternehmen in Landshut für Privatumzug,
-              Firmenumzug, Entrümpelung, Wohnungsauflösung, Möbelmontage und
-              Einpackservice in Landshut und Umgebung.
+            <p className="mt-5 max-w-sm text-xs sm:text-sm leading-relaxed text-slate-400">
+              Umzüge LAF ist Ihr zuverlässiges Umzugsunternehmen in Landshut für Privatumzug,
+              Firmenumzug, Möbelmontage, Einpackservice und Entrümpelung.
             </p>
 
-            <div className="mt-6 flex flex-col gap-2 text-sm font-bold text-black/75">
+            <div className="mt-5 text-xs sm:text-sm font-semibold text-slate-300">
               <a
                 href="https://maps.google.com/?q=Ergoldinger+Str.+15,+84030+Landshut"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition hover:text-[#b28a00] underline-offset-2 hover:underline"
+                className="hover:text-amber-400 transition"
               >
+                <p className="font-bold text-white">Standort:</p>
                 <p>Ergoldinger Str. 15</p>
                 <p>84030 Landshut</p>
               </a>
@@ -66,16 +66,15 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-black uppercase tracking-[0.25em] text-[#b28a00]">
+            <h3 className="text-xs font-black uppercase tracking-wider text-amber-400">
               Navigation
             </h3>
-
-            <div className="mt-6 grid gap-3">
+            <div className="mt-4 grid gap-2.5">
               {links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-black/70 transition hover:text-[#b28a00]"
+                  className="text-xs sm:text-sm text-slate-400 hover:text-white transition"
                 >
                   {link.label}
                 </Link>
@@ -84,16 +83,15 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-black uppercase tracking-[0.25em] text-[#b28a00]">
+            <h3 className="text-xs font-black uppercase tracking-wider text-amber-400">
               Leistungen
             </h3>
-
-            <div className="mt-6 grid gap-3">
+            <div className="mt-4 grid gap-2.5">
               {services.map((service) => (
                 <Link
                   key={service.href}
                   href={service.href}
-                  className="text-sm font-medium text-black/70 transition hover:text-[#b28a00]"
+                  className="text-xs sm:text-sm text-slate-400 hover:text-white transition"
                 >
                   {service.label}
                 </Link>
@@ -102,60 +100,50 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-black uppercase tracking-[0.25em] text-[#b28a00]">
-              Kontakt
+            <h3 className="text-xs font-black uppercase tracking-wider text-amber-400">
+              Kontakt & Beratung
             </h3>
-
-            <div className="mt-6 grid gap-3">
+            <div className="mt-4 grid gap-2.5">
               <TrackedLink
                 href={phoneHref}
                 tracking="phone"
                 trackingLocation="Footer"
-                className="glow-button rounded-full px-6 py-3 text-center text-sm font-black text-black shadow-md"
+                className="flex items-center justify-center gap-2 rounded-xl bg-[#f59e0b] py-3 text-center text-xs sm:text-sm font-black text-slate-950 shadow-sm transition hover:bg-amber-400"
               >
-                {phone}
+                <span>📞</span>
+                <span>{phone}</span>
               </TrackedLink>
 
               <TrackedLink
                 href={`mailto:${email}`}
                 tracking="email"
                 trackingLocation="Footer"
-                className="rounded-full border border-black/15 bg-white px-6 py-3 text-center text-sm font-black text-black shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10"
+                className="flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900 py-3 text-center text-xs sm:text-sm font-bold text-slate-200 transition hover:bg-slate-800"
               >
-                {email}
+                <span>✉️</span>
+                <span>{email}</span>
               </TrackedLink>
             </div>
 
-            <div className="mt-8 rounded-3xl border border-black/5 bg-white p-5 shadow-sm">
-              <p className="text-sm font-black text-[#18181b]">Schnell anfragen</p>
-              <p className="mt-2 text-sm leading-6 text-black/60">
-                Für Umzug Landshut, Entrümpelung Landshut oder Möbelmontage einfach kurz melden.
-              </p>
+            <div className="mt-5 rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-xs text-slate-400">
+              <p className="font-bold text-white">Öffnungszeiten:</p>
+              <p className="mt-1">Mo – Sa: 08:00 – 18:00 Uhr</p>
+              <p>Sonntag: Geschlossen</p>
             </div>
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-4 border-t border-black/5 pt-6 text-sm text-black/50 md:flex-row md:items-center md:justify-between">
-          <p>
-            © {new Date().getFullYear()} Umzüge LAF. Alle Rechte vorbehalten.
-          </p>
+        <div className="mt-12 flex flex-col gap-4 border-t border-slate-800 pt-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
+          <p>© {new Date().getFullYear()} Umzüge LAF · Alle Rechte vorbehalten.</p>
 
-          <div className="flex flex-wrap gap-5">
-            <Link href="/impressum" className="transition hover:text-[#b28a00]">
+          <div className="flex flex-wrap gap-4">
+            <Link href="/impressum" className="hover:text-slate-300 transition">
               Impressum
             </Link>
-
-            <Link
-              href="/datenschutz"
-              className="transition hover:text-[#b28a00]"
-            >
+            <Link href="/datenschutz" className="hover:text-slate-300 transition">
               Datenschutz
             </Link>
-
-            <Link
-              href="/admin/login"
-              className="transition hover:text-[#b28a00]"
-            >
+            <Link href="/admin/login" className="hover:text-slate-300 transition">
               Admin
             </Link>
           </div>

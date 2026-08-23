@@ -3,21 +3,21 @@ import Link from "next/link";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import LocalSeoLinks from "../../components/LocalSeoLinks";
+import ContactForm from "../../components/ContactForm";
 import { createSeoMetadata, seoPages } from "../seo";
 
 export const metadata = createSeoMetadata(seoPages.leistungen);
 
 const phone = "0162 900 75 65";
 const phoneHref = "tel:+491629007565";
-const email = "info@umzuege-laf.de";
 
 const mainServices = [
   {
     title: "Privatumzug",
-    text: "Wir planen und begleiten Ihren privaten Umzug zuverlässig — vom sicheren Transport bis zur Möbelmontage.",
+    text: "Wir planen und begleiten Ihren privaten Wohnungsumzug zuverlässig — vom sicheren Transport bis zur Möbelmontage.",
     href: "/privatumzug-landshut",
     image: "/images/services/privatumzug.jpg",
-    tag: "Privat",
+    tag: "Beliebt",
   },
   {
     title: "Firmenumzug",
@@ -27,8 +27,8 @@ const mainServices = [
     tag: "Gewerbe",
   },
   {
-    title: "Entrümpelung",
-    text: "Wohnungen, Keller, Dachböden, Garagen und Gewerbeflächen werden sauber geräumt und besenrein übergeben.",
+    title: "Entrümpelung & Räumung",
+    text: "Wohnungen, Keller, Dachböden, Garagen und Gewerbeflächen sauber geräumt und besenrein übergeben.",
     href: "/entruempelung-landshut",
     image: "/images/services/entruempelung.jpg",
     tag: "Räumung",
@@ -37,178 +37,137 @@ const mainServices = [
 
 const additionalServices = [
   {
-    title: "Einpackservice",
-    text: "Auf Wunsch übernehmen wir das sorgfältige Verpacken Ihrer Gegenstände.",
-    href: "/umzuege/einpackservice",
-  },
-  {
     title: "Möbelmontage",
-    text: "Abbau, Transport und Aufbau Ihrer Möbel — sauber und zuverlässig.",
+    text: "Fachgerechter Abbau, Transport und sicherer Wiederaufbau Ihrer Schränke & Betten.",
     href: "/umzuege/moebelmontage",
   },
   {
+    title: "Einpackservice",
+    text: "Sorgfältiges und transportsicheres Verpacken von Geschirr, Kleidung und Hausrat.",
+    href: "/umzuege/einpackservice",
+  },
+  {
     title: "Fernumzug",
-    text: "Umzüge über größere Distanzen mit klarer Planung und sicherem Transport.",
+    text: "Zuverlässige Umzüge bayern- und deutschlandweit mit garantierter Termintreue.",
     href: "/umzuege/fernumzug",
   },
   {
     title: "Expressumzug",
-    text: "Wenn es schnell gehen muss, unterstützen wir kurzfristig und organisiert.",
+    text: "Schnelle Umzugshilfe bei kurzfristigen oder dringenden Terminen in Landshut.",
     href: "/umzuege/expressumzug",
   },
   {
     title: "Lagerung",
-    text: "Zwischenlagerung für Möbel, Kartons oder einzelne Gegenstände.",
+    text: "Sichere und trockene Zwischenlagerung für Möbel und Kartons nach Bedarf.",
     href: "/umzuege/lagerung",
   },
   {
     title: "Sperrmüllentsorgung",
-    text: "Fachgerechte Entsorgung von Sperrmüll im Rahmen Ihrer Räumung.",
+    text: "Fachgerechte und zertifizierte Entsorgung von Altmöbeln und Sperrgut.",
     href: "/entruempelung/sperrmuellentsorgung",
   },
 ];
 
-const steps = [
-  "Kostenlose Anfrage senden",
-  "Bedarf und Umfang klären",
-  "Transparentes Angebot erhalten",
-  "Termin planen und durchführen",
-];
-
 export default function LeistungenPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#fafaf7] text-[#18181b]">
-      {/* Background orbs and grids */}
-      <div className="pointer-events-none fixed inset-0 z-0">
-        <div className="laf-grid absolute inset-0 opacity-40" />
-        <div className="laf-noise absolute inset-0 opacity-[0.03]" />
-        <div className="laf-orb laf-orb-one" />
-        <div className="laf-orb laf-orb-two" />
-        <div className="laf-orb laf-orb-three" />
-      </div>
-
+    <main className="min-h-screen bg-white text-slate-900">
       <Header />
 
-      {/* Hero Section */}
-      <section className="relative z-10 overflow-hidden px-5 pb-16 pt-32 sm:pb-24 sm:pt-40 lg:px-8">
-        <div className="absolute inset-0">
+      {/* ── HERO ── */}
+      <section className="relative overflow-hidden bg-slate-950 pt-28 pb-16 text-white sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28">
+        <div className="absolute inset-0 z-0 opacity-60">
           <Image
             src="/images/services/umzuege-laf-1.jpg"
             alt="Umzüge LAF Leistungen"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-cover object-center sm:object-right"
           />
-
-          <div className="absolute inset-0 bg-white/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#fafaf7]/98 via-[#fafaf7]/90 to-[#fafaf7]/40 sm:to-[#fafaf7]/16" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#fafaf7] via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.15),transparent_34%)]" />
         </div>
+        <div className="absolute inset-0 z-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/30 sm:to-transparent" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/40" />
 
-        <div className="relative mx-auto flex min-h-[50vh] max-w-7xl items-center">
-          <div className="max-w-4xl">
-            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#f6c21a] bg-[#f6c21a]/10 px-4 py-2 text-xs font-black uppercase tracking-wider text-[#b28a00] sm:text-sm">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f6c21a] opacity-75" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#f6c21a]" />
-              </span>
-              Leistungen von Umzüge LAF
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-400/10 px-3.5 py-1.5 text-xs font-extrabold text-amber-300">
+              <span>★ Leistungsübersicht ·</span>
+              <span>Umzüge LAF Landshut</span>
             </div>
 
-            <h1 className="max-w-5xl text-[2.5rem] font-black leading-[1.15] tracking-tight text-[#18181b] min-[390px]:text-[2.85rem] sm:text-6xl md:text-7xl lg:text-8xl">
-              Umzüge, Entrümpelung und Service aus einer Hand.
+            <h1 className="text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.15]">
+              Unsere Leistungen für Ihren Umzug.<br />
+              <span className="text-amber-400">Alles aus einer Hand.</span>
             </h1>
 
-            <p className="mt-5 max-w-2xl text-[16px] leading-7 text-black/75 sm:mt-7 sm:text-lg sm:leading-8 md:text-xl">
-              Umzüge LAF unterstützt Sie in Landshut und Umgebung mit
-              zuverlässiger Planung, sauberer Ausführung und persönlicher
-              Betreuung.
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+              Von der ersten Kartonlieferung bis zur besenreinen Übergabe: Wir bieten
+              Ihnen alle Umzugs-, Montage- und Entrümpelungsleistungen transparent zum Festpreis.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
-              <Link
-                href="/kontakt"
-                className="glow-button w-full rounded-full px-8 py-4 text-center font-black text-black shadow-lg sm:w-auto"
-              >
-                Kostenlos anfragen
-              </Link>
-
               <a
                 href={phoneHref}
-                className="w-full rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 sm:w-auto"
+                className="flex items-center justify-center gap-2.5 rounded-full bg-[#f59e0b] px-7 py-4 text-center text-base font-black text-slate-950 shadow-lg transition hover:bg-amber-400 active:scale-98"
               >
-                Direkt anrufen
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span>Direkt anrufen: {phone}</span>
+              </a>
+
+              <a
+                href="#anfrage-formular"
+                className="flex items-center justify-center rounded-full border-2 border-slate-600 bg-slate-800/80 px-7 py-4 text-center text-base font-bold text-white transition hover:border-slate-400 hover:bg-slate-700 active:scale-98"
+              >
+                Kostenlos anfragen →
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Main Services */}
-      <section className="relative z-10 bg-[#ffffff] px-4 py-12 sm:px-6 sm:py-16 md:py-20 text-black lg:px-8 border-t border-black/5">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <div>
-              <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
-                Hauptleistungen
-              </p>
-
-              <h2 className="mt-4 text-3xl font-black tracking-tight text-[#18181b] md:text-5xl lg:text-6xl">
-                Die wichtigsten Leistungen auf einen Blick.
-              </h2>
-            </div>
-
-            <p className="max-w-md text-lg leading-8 text-black/60">
-              Jede Leistung wird klar geplant, sauber umgesetzt und persönlich
-              begleitet.
+      {/* ── HAUPT-LEISTUNGEN ── */}
+      <section className="py-16 sm:py-24 bg-white border-b border-slate-200">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
+              Kernbereiche
             </p>
+            <h2 className="mt-2 text-2xl sm:text-4xl font-black tracking-tight text-slate-900">
+              Unsere Hauptleistungen im Überblick
+            </h2>
           </div>
 
-          <div className="grid gap-7 md:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {mainServices.map((service) => (
               <Link
                 key={service.href}
                 href={service.href}
-                className="group relative overflow-hidden rounded-2xl sm:rounded-2xl sm:rounded-[2rem] bg-white shadow-md border border-black/5 transition duration-500 hover:-translate-y-3 hover:shadow-lg"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-amber-400 hover:shadow-lg"
               >
-                <div className="relative h-[430px] overflow-hidden">
+                <div className="relative h-48 w-full overflow-hidden bg-slate-100">
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition duration-700 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    quality={80}
+                    className="object-cover transition duration-300 group-hover:scale-105"
                   />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/35 to-transparent" />
-                  
-                  <div className="absolute left-5 top-5 rounded-full border border-white/10 bg-black/45 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-[#f6c21a] backdrop-blur-xl">
+                  <div className="absolute top-3 left-3 rounded-md bg-slate-900/80 px-2.5 py-1 text-[11px] font-bold text-amber-300 backdrop-blur-sm">
                     {service.tag}
                   </div>
+                </div>
 
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="rounded-xl sm:rounded-[1.4rem] border border-white/10 bg-black/45 p-6 backdrop-blur-md text-white">
-                      <h3 className="text-2xl font-black">
-                        {service.title}
-                      </h3>
-
-                      <p className="mt-3 min-h-[112px] leading-7 text-white/80">
-                        {service.text}
-                      </p>
-
-                      <div className="mt-6 flex items-center justify-between">
-                        <span className="font-black text-[#f6c21a]">
-                          Mehr erfahren
-                        </span>
-
-                        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#f6c21a] text-xl font-black text-black transition group-hover:rotate-[-25deg]">
-                          →
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="text-lg font-black text-slate-900 group-hover:text-[#b45309] transition">
+                    {service.title}
+                  </h3>
+                  <p className="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed flex-1">
+                    {service.text}
+                  </p>
+                  <p className="mt-4 text-xs font-extrabold text-[#b45309]">Mehr erfahren →</p>
                 </div>
               </Link>
             ))}
@@ -216,124 +175,82 @@ export default function LeistungenPage() {
         </div>
       </section>
 
-      {/* Additional Services */}
-      <section className="relative z-10 bg-[#fafaf7] px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 border-t border-black/5">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-            <div>
-              <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
-                Zusatzservice
-              </p>
+      {/* ── ZUSATZLEISTUNGEN ── */}
+      <section className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
+              Zusatzservices
+            </p>
+            <h2 className="mt-2 text-2xl sm:text-3xl font-black tracking-tight text-slate-900">
+              Flexible Bausteine für Ihren Umzug
+            </h2>
+          </div>
 
-              <h2 className="mt-4 text-3xl font-black tracking-tight text-[#18181b] md:text-5xl lg:text-6xl">
-                Mehr Service, weniger Stress.
-              </h2>
-
-              <p className="mt-6 text-lg leading-8 text-[#18181b]/70">
-                Neben klassischen Umzügen übernimmt Umzüge LAF auch Verpackung,
-                Montage, Lagerung, Expressumzüge und Entsorgung.
-              </p>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {additionalServices.map((service) => (
-                <Link
-                  key={service.href}
-                  href={service.href}
-                  className="group rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white p-6 shadow-sm hover:shadow-md transition duration-300"
-                >
-                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black transition group-hover:rotate-6">
-                    →
-                  </div>
-
-                  <h3 className="text-xl font-black text-[#18181b]">
-                    {service.title}
-                  </h3>
-
-                  <p className="mt-3 leading-7 text-black/60">
-                    {service.text}
-                  </p>
-                </Link>
-              ))}
-            </div>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {additionalServices.map((service) => (
+              <Link
+                key={service.href}
+                href={service.href}
+                className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-amber-400 hover:shadow-md"
+              >
+                <h3 className="text-base font-black text-slate-900 group-hover:text-[#b45309]">
+                  {service.title}
+                </h3>
+                <p className="mt-2 text-xs text-slate-600 leading-relaxed">
+                  {service.text}
+                </p>
+                <p className="mt-3 text-xs font-black text-[#b45309]">Mehr erfahren →</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="relative z-10 bg-[#ffffff] px-4 py-12 sm:px-6 sm:py-16 md:py-20 text-black lg:px-8 border-t border-black/5">
-        <div className="mx-auto max-w-7xl">
+      {/* ── ANFRAGE SEKTION ── */}
+      <section id="anfrage-formular" className="py-16 sm:py-24 bg-slate-900 text-white scroll-mt-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
-              <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
-                Ablauf
-              </p>
+              <div className="inline-flex items-center gap-2 rounded-full bg-amber-400/10 px-3 py-1 text-xs font-bold text-amber-300">
+                <span>📍</span>
+                <span>Standort: Ergoldinger Str. 15, 84030 Landshut</span>
+              </div>
 
-              <h2 className="mt-4 text-3xl font-black tracking-tight text-[#18181b] md:text-5xl lg:text-6xl">
-                So einfach läuft Ihre Anfrage.
+              <h2 className="mt-4 text-3xl sm:text-4xl font-black text-white">
+                Unverbindliches Festpreis-Angebot anfordern
               </h2>
 
-              <p className="mt-6 text-lg leading-8 text-black/65">
-                Ein guter Umzug braucht klare Kommunikation. Deshalb ist der
-                Ablauf bei Umzüge LAF einfach, transparent und persönlich.
+              <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
+                Teilen Sie uns einfach Ihre Umzugsdaten mit. Wir beraten Sie persönlich
+                und erstellen ein faires, transparentes Angebot.
               </p>
-            </div>
 
-            <div className="grid gap-4">
-              {steps.map((step, index) => (
-                <div
-                  key={step}
-                  className="flex items-center gap-5 rounded-2xl sm:rounded-[2rem] border border-black/5 bg-[#fafaf7] p-5 shadow-sm"
+              <div className="mt-6 rounded-2xl border border-slate-700 bg-slate-800/80 p-5">
+                <p className="text-xs font-bold text-amber-400 uppercase tracking-wider">
+                  Direkter Ansprechpartner
+                </p>
+                <a
+                  href={phoneHref}
+                  className="mt-1 inline-flex items-center gap-2 text-xl font-black text-white hover:text-amber-400 transition"
                 >
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black">
-                    {index + 1}
-                  </div>
-
-                  <div>
-                    <h3 className="text-xl font-black text-[#18181b]">{step}</h3>
-                    <p className="mt-1 text-sm leading-6 text-black/55">
-                      Schnell, klar und ohne unnötige Umwege.
-                    </p>
-                  </div>
-                </div>
-              ))}
+                  <span>📞</span>
+                  <span>{phone}</span>
+                </a>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Call to action */}
-      <section className="relative z-10 overflow-hidden bg-[#fafaf7] px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 border-t border-black/5">
-        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white p-5 sm:p-8 shadow-lg md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
-          <div>
-            <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
-              Angebot
-            </p>
-
-            <h2 className="mt-4 max-w-3xl text-3xl font-black tracking-tight text-[#18181b] md:text-5xl lg:text-6xl">
-              Welche Leistung brauchen Sie?
-            </h2>
-
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-[#18181b]/70">
-              Schreiben Sie kurz, worum es geht. Wir melden uns schnell zurück
-              und klären den passenden Ablauf.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <a
-              href={phoneHref}
-              className="glow-button w-full rounded-full px-8 py-4 text-center font-black text-black shadow-lg sm:w-auto"
-            >
-              {phone}
-            </a>
-
-            <a
-              href={`mailto:${email}`}
-              className="w-full rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 sm:w-auto"
-            >
-              E-Mail schreiben
-            </a>
+            <div className="rounded-2xl border border-slate-700 bg-white p-6 sm:p-8 text-slate-900 shadow-2xl">
+              <h3 className="text-xl font-black text-slate-900">
+                Online-Anfrage starten
+              </h3>
+              <p className="mt-1 text-xs text-slate-500">
+                Kostenlos und in 2 Minuten ausgefüllt.
+              </p>
+              <div className="mt-5">
+                <ContactForm />
+              </div>
+            </div>
           </div>
         </div>
       </section>

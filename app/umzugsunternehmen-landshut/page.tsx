@@ -27,7 +27,6 @@ export const metadata = createSeoMetadata({
 
 const phone = "0162 900 75 65";
 const phoneHref = "tel:+491629007565";
-const email = "info@umzuege-laf.de";
 
 const services = [
   {
@@ -41,11 +40,6 @@ const services = [
     href: "/firmenumzug-landshut",
   },
   {
-    title: "Entrümpelung Landshut",
-    text: "Wohnung, Keller, Garage, Dachboden oder Gewerbefläche zuverlässig räumen und entsorgen lassen.",
-    href: "/entruempelung-landshut",
-  },
-  {
     title: "Möbelmontage Landshut",
     text: "Möbel abbauen, sicher transportieren und am Zielort fachgerecht wieder aufbauen lassen.",
     href: "/umzuege/moebelmontage",
@@ -54,6 +48,11 @@ const services = [
     title: "Einpackservice Landshut",
     text: "Kartons, Geschirr, Bücher, Kleidung und empfindliche Gegenstände sorgfältig verpacken lassen.",
     href: "/umzuege/einpackservice",
+  },
+  {
+    title: "Entrümpelung Landshut",
+    text: "Wohnung, Keller, Garage, Dachboden oder Gewerbefläche zuverlässig räumen und entsorgen lassen.",
+    href: "/entruempelung-landshut",
   },
   {
     title: "Sperrmüllentsorgung Landshut",
@@ -118,12 +117,7 @@ function FaqJsonLd() {
 
 export default function UmzugsunternehmenLandshutPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#fafaf7] text-[#18181b]">
-      {/* Background grid */}
-      <div className="pointer-events-none fixed inset-0 z-0">
-        <div className="laf-grid absolute inset-0 opacity-30" />
-      </div>
-
+    <main className="min-h-screen bg-white text-slate-900">
       <Header />
 
       <BreadcrumbJsonLd
@@ -142,106 +136,111 @@ export default function UmzugsunternehmenLandshutPage() {
 
       <FaqJsonLd />
 
-      {/* Hero Section */}
-      <section className="relative min-h-[auto] overflow-hidden px-4 pb-12 pt-28 sm:min-h-[85vh] sm:px-6 sm:pb-20 sm:pt-36 lg:px-8">
-        <div className="absolute inset-0">
+      {/* ── HERO SECTION ── */}
+      <section className="relative overflow-hidden bg-slate-950 pt-28 pb-16 text-white sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28">
+        <div className="absolute inset-0 z-0 opacity-60">
           <Image
             src="/images/hero/hero-umzug-landshut.jpg"
             alt="Umzugsunternehmen Landshut - Umzüge LAF"
             fill
             priority
+            fetchPriority="high"
             sizes="100vw"
-            quality={75}
-            className="object-cover object-center"
+            quality={85}
+            className="object-cover object-center sm:object-right"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#fafaf7]/98 via-[#fafaf7]/85 to-[#fafaf7]/30 sm:to-[#fafaf7]/15" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#fafaf7]/60 via-transparent to-[#fafaf7]" />
         </div>
+        <div className="absolute inset-0 z-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/30 sm:to-transparent" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/40" />
 
-        <div className="relative mx-auto flex max-w-7xl items-center sm:min-h-[65vh]">
-          <div className="max-w-4xl">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#f6c21a] bg-[#f6c21a]/10 px-3.5 py-1.5 text-xs font-black text-[#b28a00] shadow-sm sm:mb-6 sm:px-4 sm:py-2 sm:text-sm">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f6c21a] opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#f6c21a]" />
-              </span>
-              Umzüge LAF · Umzugsunternehmen Landshut
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-400/10 px-3.5 py-1.5 text-xs font-extrabold text-amber-300">
+              <span>★ 4.9 / 5 Sterne ·</span>
+              <span>Umzugsunternehmen Landshut</span>
             </div>
 
-            <h1 className="text-[1.95rem] font-black leading-[1.12] tracking-tight text-[#18181b] min-[380px]:text-[2.35rem] sm:text-5xl md:text-6xl lg:text-7xl">
-              Umzugsunternehmen Landshut.
-              <span className="gradient-text block">Zuverlässig umziehen.</span>
-              Mit LAF.
+            <h1 className="text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.15]">
+              Umzugsunternehmen Landshut.<br />
+              <span className="text-amber-400">Zuverlässig umziehen mit LAF.</span>
             </h1>
 
-            <p className="mt-4 max-w-2xl text-sm leading-6 text-[#18181b]/80 sm:mt-6 sm:text-lg sm:leading-8 md:text-xl">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
               Umzüge LAF unterstützt Privatkunden, Firmen und Haushalte in Landshut
               mit klarer Planung, sicherem Transport, Möbelmontage, Einpackservice,
-              Entrümpelung und persönlicher Beratung.
+              Entrümpelung und persönlicher Festpreis-Beratung.
             </p>
 
-            <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:gap-4">
-              <a
-                href="#anfrage-formular"
-                className="glow-button w-full rounded-full px-5 py-3.5 text-center text-sm font-black text-black shadow-md sm:w-auto sm:px-8 sm:py-4 sm:text-base"
-              >
-                Kostenlos anfragen
-              </a>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
               <a
                 href={phoneHref}
-                className="w-full rounded-full border border-black/15 bg-white px-5 py-3.5 text-center text-sm font-black text-black shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 sm:w-auto sm:px-8 sm:py-4 sm:text-base"
+                className="flex items-center justify-center gap-2.5 rounded-full bg-[#f59e0b] px-7 py-4 text-center text-base font-black text-slate-950 shadow-lg transition hover:bg-amber-400 active:scale-98"
               >
-                Direkt anrufen: {phone}
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span>Direkt anrufen: {phone}</span>
+              </a>
+
+              <a
+                href="#anfrage-formular"
+                className="flex items-center justify-center rounded-full border-2 border-slate-600 bg-slate-800/80 px-7 py-4 text-center text-base font-bold text-white transition hover:border-slate-400 hover:bg-slate-700 active:scale-98"
+              >
+                Kostenlos anfragen →
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services List Section */}
-      <section className="border-t border-black/5 bg-[#ffffff] px-4 py-14 text-black sm:px-6 sm:py-20 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-xs font-black uppercase tracking-[0.25em] text-[#b28a00] sm:text-sm">
-            Umzüge in Landshut
-          </p>
-          <h2 className="mt-3 max-w-4xl text-2xl font-black tracking-tight text-[#18181b] sm:text-4xl md:text-5xl">
-            Ihr Umzugspartner für Privat-, Firmen- und Objektumzüge.
-          </h2>
-          <p className="mt-4 max-w-4xl text-sm leading-6 text-black/60 sm:mt-6 sm:text-base sm:leading-8">
-            Ein Umzug in Landshut soll gut geplant, sauber ausgeführt und zuverlässig
-            abgeschlossen werden. Genau darauf ist Umzüge LAF ausgerichtet. Wir
-            besprechen vorab Umfang, Etagen, Zugang, Parkmöglichkeiten, Möbelmontage
-            und besondere Gegenstände.
-          </p>
+      {/* ── SERVICES LIST SECTION ── */}
+      <section className="py-16 sm:py-24 bg-white border-b border-slate-200">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
+              Umzüge in Landshut
+            </p>
+            <h2 className="mt-2 text-2xl sm:text-4xl font-black tracking-tight text-slate-900">
+              Ihr Partner für Privat-, Firmen- und Objektumzüge
+            </h2>
+            <p className="mt-3 text-sm text-slate-600 leading-relaxed">
+              Ein Umzug in Landshut soll gut geplant, sauber ausgeführt und zuverlässig
+              abgeschlossen werden. Genau darauf ist Umzüge LAF ausgerichtet.
+            </p>
+          </div>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <Link
                 key={service.href}
                 href={service.href}
-                className="group rounded-2xl border border-black/5 bg-[#fafaf7] p-5 shadow-sm transition duration-300 hover:shadow-md sm:rounded-3xl sm:p-7"
+                className="group rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm transition hover:border-amber-400 hover:bg-white hover:shadow-md"
               >
-                <h3 className="text-lg font-black text-[#18181b] sm:text-xl">{service.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-black/60 sm:mt-3">{service.text}</p>
-                <p className="mt-4 text-sm font-black text-[#b28a00] sm:mt-6">Mehr erfahren →</p>
+                <h3 className="text-lg font-black text-slate-900 group-hover:text-[#b45309]">
+                  {service.title}
+                </h3>
+                <p className="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  {service.text}
+                </p>
+                <p className="mt-4 text-xs font-extrabold text-[#b45309]">Mehr erfahren →</p>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Areas Section */}
-      <section className="border-t border-black/5 bg-[#fafaf7] px-4 py-14 lg:px-8 sm:py-20">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-12">
+      {/* ── AREAS SECTION ── */}
+      <section className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-8">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.25em] text-[#b28a00] sm:text-sm">
+            <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
               Einsatzgebiet
             </p>
-            <h2 className="mt-3 text-2xl font-black tracking-tight text-[#18181b] sm:text-4xl">
-              Lokal in Landshut und Umgebung unterwegs.
+            <h2 className="mt-2 text-2xl sm:text-3xl font-black tracking-tight text-slate-900">
+              Lokal in Landshut und Umgebung unterwegs
             </h2>
-            <p className="mt-3 text-sm leading-6 text-[#18181b]/70 sm:mt-4 sm:text-base sm:leading-7">
-              Kurze Wege, persönliche Abstimmung und Ortskenntnis helfen bei der
+            <p className="mt-3 text-sm text-slate-600 leading-relaxed">
+              Kurze Wege, persönliche Abstimmung und beste Ortskenntnis helfen bei der
               Planung. Wir unterstützen Umzüge in Landshut und im gesamten Umland.
             </p>
           </div>
@@ -250,69 +249,79 @@ export default function UmzugsunternehmenLandshutPage() {
             {areas.map((area) => (
               <div
                 key={area}
-                className="rounded-2xl border border-black/5 bg-white p-3.5 text-xs font-black text-black shadow-sm sm:rounded-3xl sm:p-5 sm:text-sm"
+                className="rounded-xl border border-slate-200 bg-white p-3.5 text-xs sm:text-sm font-bold text-slate-800 shadow-sm"
               >
-                ✓ {area}
+                <span className="text-amber-500 font-black">✓</span> {area}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQs and Contact Form Section */}
-      <section className="border-t border-black/5 bg-[#ffffff] px-4 py-14 text-black sm:px-6 sm:py-20 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-xs font-black uppercase tracking-[0.25em] text-[#b28a00] sm:text-sm">
-            Häufige Fragen
-          </p>
-          <h2 className="mt-3 text-2xl font-black tracking-tight text-[#18181b] sm:text-4xl">
-            Fragen zum Umzugsunternehmen in Landshut.
-          </h2>
+      {/* ── FAQ & ANFRAGE SEKTION ── */}
+      <section className="py-16 sm:py-24 bg-slate-900 text-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-16">
+            <p className="text-xs font-black uppercase tracking-widest text-amber-400">
+              Häufige Fragen
+            </p>
+            <h2 className="mt-2 text-2xl sm:text-3xl font-black text-white">
+              Fragen zum Umzugsunternehmen in Landshut
+            </h2>
 
-          <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5">
-            {faqs.map((item) => (
-              <div key={item.q} className="rounded-2xl border border-black/5 bg-[#fafaf7] p-5 shadow-sm sm:rounded-3xl sm:p-7">
-                <h3 className="text-base font-black text-[#18181b] sm:text-lg">{item.q}</h3>
-                <p className="mt-2 text-sm leading-6 text-black/60 sm:mt-3">{item.a}</p>
-              </div>
-            ))}
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {faqs.map((item) => (
+                <div
+                  key={item.q}
+                  className="rounded-2xl border border-slate-800 bg-slate-800/60 p-5 shadow-sm"
+                >
+                  <h3 className="text-sm sm:text-base font-black text-white">{item.q}</h3>
+                  <p className="mt-2 text-xs sm:text-sm leading-relaxed text-slate-300">{item.a}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="mt-14 grid gap-10 sm:mt-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+          <div id="anfrage-formular" className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center scroll-mt-20">
             <div>
-              <h2 className="text-2xl font-black text-[#18181b] sm:text-3xl">Umzug in Landshut geplant?</h2>
-              <p className="mt-3 text-sm leading-6 text-black/60 sm:mt-4 sm:text-base sm:leading-7">
+              <div className="inline-flex items-center gap-2 rounded-full bg-amber-400/10 px-3 py-1 text-xs font-bold text-amber-300">
+                <span>📍</span>
+                <span>Standort: Ergoldinger Str. 15, 84030 Landshut</span>
+              </div>
+
+              <h2 className="mt-4 text-3xl sm:text-4xl font-black text-white">
+                Umzug in Landshut geplant?
+              </h2>
+
+              <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
                 Senden Sie uns Ihre Anfrage oder rufen Sie direkt an. Wir klären
                 Umfang, Termin und Ablauf persönlich mit Ihnen.
               </p>
-              
-              <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:gap-4">
+
+              <div className="mt-6 rounded-2xl border border-slate-700 bg-slate-800/80 p-5">
+                <p className="text-xs font-bold text-amber-400 uppercase tracking-wider">
+                  Telefonische Beratung
+                </p>
                 <a
                   href={phoneHref}
-                  className="glow-button w-full rounded-full px-6 py-3.5 text-center text-sm font-black text-black shadow-md sm:w-auto sm:px-8 sm:py-4 sm:text-base"
+                  className="mt-1 inline-flex items-center gap-2 text-xl font-black text-white hover:text-amber-400 transition"
                 >
-                  Jetzt anrufen: {phone}
-                </a>
-
-                <a
-                  href={`mailto:${email}`}
-                  className="w-full rounded-full border border-black/15 bg-white px-6 py-3.5 text-center text-sm font-black text-black shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 sm:w-auto sm:px-8 sm:py-4 sm:text-base"
-                >
-                  E-Mail schreiben
+                  <span>📞</span>
+                  <span>{phone}</span>
                 </a>
               </div>
             </div>
 
-            <div id="anfrage-formular" className="scroll-mt-24">
-              <div className="mb-4">
-                <p className="text-xs font-black uppercase tracking-[0.2em] text-[#b28a00] sm:text-sm">
-                  Direktanfrage
-                </p>
-                <h3 className="mt-1 text-xl font-black text-[#18181b] sm:text-2xl">
-                  Kostenloses Angebot anfordern
-                </h3>
+            <div className="rounded-2xl border border-slate-700 bg-white p-6 sm:p-8 text-slate-900 shadow-2xl">
+              <h3 className="text-xl font-black text-slate-900">
+                Kostenloses Angebot anfordern
+              </h3>
+              <p className="mt-1 text-xs text-slate-500">
+                In 2 Minuten ausgefüllt – 100% unverbindlich.
+              </p>
+              <div className="mt-5">
+                <ContactForm />
               </div>
-              <ContactForm />
             </div>
           </div>
         </div>

@@ -1,433 +1,50 @@
-import Image from "next/image";
-import Link from "next/link";
-import Header from "../../../components/Header";
-import Footer from "../../../components/Footer";
-import LocalSeoLinks from "../../../components/LocalSeoLinks";
 import { createSeoMetadata, seoPages } from "../../seo";
-import ServiceJsonLd from "../../../components/ServiceJsonLd";
-import BreadcrumbJsonLd from "../../../components/BreadcrumbJsonLd";
+import LocalSeoLanding from "../../../components/LocalSeoLanding";
 
 export const metadata = createSeoMetadata(seoPages.haushaltsaufloesung);
 
-const phone = "0162 900 75 65";
-const phoneHref = "tel:+491629007565";
-const email = "info@umzuege-laf.de";
-
-const benefits = [
-  {
-    title: "Komplett organisiert",
-    text: "Wir unterstützen bei der vollständigen Haushaltsauflösung — von Möbeln über Hausrat bis zu Nebenräumen.",
-  },
-  {
-    title: "Diskret & respektvoll",
-    text: "Gerade bei persönlichen oder sensiblen Situationen arbeiten wir ruhig, zuverlässig und mit dem nötigen Feingefühl.",
-  },
-  {
-    title: "Weniger Belastung",
-    text: "Sie müssen sich nicht selbst um Sortieren, Tragen, Räumen und Abtransport kümmern.",
-  },
-  {
-    title: "Saubere Übergabe",
-    text: "Nach Absprache hinterlassen wir die Räume ordentlich und bereit für Übergabe, Verkauf oder Renovierung.",
-  },
-];
-
-const process = [
-  {
-    title: "Anfrage stellen",
-    text: "Sie nennen uns Adresse, Objektgröße, Situation und den gewünschten Zeitraum.",
-  },
-  {
-    title: "Umfang besprechen",
-    text: "Wir klären Räume, Möbel, Hausrat, Keller, Dachboden, Garage und besondere Anforderungen.",
-  },
-  {
-    title: "Ablauf planen",
-    text: "Die Haushaltsauflösung wird strukturiert vorbereitet, damit Räumung und Abtransport sauber ablaufen.",
-  },
-  {
-    title: "Haushalt auflösen",
-    text: "Unser Team räumt zuverlässig, organisiert und mit Blick auf eine ordentliche Übergabe.",
-  },
-];
-
-const included = [
-  "Haushaltsauflösung",
-  "Wohnung räumen",
-  "Haus räumen",
-  "Möbel abtransportieren",
-  "Hausrat entfernen",
-  "Keller & Dachboden",
-  "Garage & Nebenräume",
-  "besenreine Übergabe",
-];
-
-const checklist = [
-  "Adresse des Objekts",
-  "Wohnung oder Haus?",
-  "ungefähre Größe",
-  "betroffene Räume",
-  "Etage, Aufzug und Zugang",
-  "gewünschter Zeitraum",
-];
-
 export default function HaushaltsaufloesungPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#fafaf7] text-[#18181b]">
-      <div className="pointer-events-none fixed inset-0 z-0">
-        <div className="laf-grid absolute inset-0 opacity-25" />
-        <div className="laf-noise absolute inset-0 opacity-[0.05]" />
-        <div className="laf-orb laf-orb-one" />
-        <div className="laf-orb laf-orb-two" />
-        <div className="laf-orb laf-orb-three" />
-      </div>
-
-      <Header />
-
-<BreadcrumbJsonLd
-  items={[
-    { name: "Startseite", path: "/" },
-    { name: "Entrümpelung", path: "/entruempelung" },
-    {
-      name: "Haushaltsauflösung",
-      path: "/entruempelung/haushaltsaufloesung",
-    },
-  ]}
-/>
-
-<ServiceJsonLd
-  name="Haushaltsauflösung Landshut"
-  description="Haushaltsauflösung in Landshut mit Umzüge LAF. Komplette Haushalte, Wohnungen, Häuser, Keller und Nebenräume zuverlässig räumen lassen."
-  path="/entruempelung/haushaltsaufloesung"
-  serviceType="Haushaltsauflösung"
-/>
-
-      <section className="relative z-10 min-h-[auto] overflow-hidden px-5 pb-12 pt-28 sm:min-h-[90vh] sm:pb-20 sm:pt-40 lg:px-8">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/services/ent4.jpg"
-            alt="Haushaltsauflösung von Umzüge LAF in Landshut"
-            fill
-            priority
-            sizes="100vw"
-            quality={75}
-            className="object-cover object-center"
-          />
-
-          <div className="absolute inset-0 bg-white/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#fafaf7]/92 via-[#fafaf7]/60 to-[#fafaf7]/16" />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/15 via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#fafaf7] via-[#fafaf7]/20 to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.32),transparent_34%)]" />
-        </div>
-
-        <div className="relative mx-auto flex max-w-7xl items-center sm:min-h-[72vh]">
-          <div className="max-w-4xl">
-            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-[#f6c21a]/40 bg-white/20 px-4 py-2 text-sm font-black text-[#f6c21a] shadow-[0_0_40px_rgba(246,194,26,0.16)] backdrop-blur-xl">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f6c21a] opacity-75" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#f6c21a]" />
-              </span>
-              Haushaltsauflösung in Landshut & Umgebung
-            </div>
-
-            <h1 className="max-w-5xl text-[2.35rem] font-black leading-[1.15] tracking-[-0.045em] text-[#18181b] min-[390px]:text-5xl min-[390px]:leading-[1.14] md:text-7xl lg:text-8xl">
-              Haushalt auflösen.
-              <span className="gradient-text block">Sorgfältig geplant.</span>
-              Spürbar entlastet.
-            </h1>
-
-            <p className="mt-5 max-w-2xl text-[15px] leading-6 text-black/75 drop-shadow sm:mt-7 sm:text-lg sm:leading-8 md:text-xl">
-              Ob Wohnung, Haus oder kompletter Nachlass: Umzüge LAF übernimmt
-              Haushaltsauflösungen zuverlässig, diskret und strukturiert — von
-              der Räumung bis zur sauberen Übergabe.
-            </p>
-
-            <div className="mt-7 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
-              <Link
-                href="/kontakt"
-                className="glow-button rounded-full px-6 py-3.5 text-center text-sm font-black text-black sm:px-8 sm:py-4 sm:text-base"
-              >
-                Haushaltsauflösung anfragen
-              </Link>
-
-              <a
-                href={phoneHref}
-                className="rounded-full border border-white/25 bg-white/15 px-6 py-3.5 text-center text-sm font-black text-[#18181b] backdrop-blur-xl transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/15 hover:text-[#f6c21a] sm:px-8 sm:py-4 sm:text-base"
-              >
-                Direkt anrufen
-              </a>
-            </div>
-
-            <div className="hidden max-w-3xl gap-4 sm:mt-12 sm:grid sm:grid-cols-3">
-              {["Räumen", "Sortieren", "Übergeben"].map((item) => (
-                <div
-                  key={item}
-                  className="premium-border rounded-3xl bg-white border border-black/5 p-5 shadow-sm"
-                >
-                  <p className="text-xl font-black text-[#b28a00]">{item}</p>
-                  <p className="mt-2 text-sm leading-6 text-black/60">
-                    respektvoll geplant und sauber umgesetzt
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="relative z-10 overflow-hidden bg-[#f7f7f2] px-4 py-10 sm:px-6 sm:py-14 md:py-16 sm:py-28 text-black lg:px-8">
-        <div className="absolute -left-32 top-20 h-72 w-72 rounded-full bg-[#f6c21a]/25 blur-3xl" />
-        <div className="absolute -right-32 bottom-20 h-72 w-72 rounded-full bg-black/10 blur-3xl" />
-
-        <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div>
-            <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
-              Haushaltsauflösung
-            </p>
-
-            <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] md:text-6xl">
-              Wenn ein kompletter Haushalt geräumt werden muss.
-            </h2>
-
-            <p className="mt-6 text-lg leading-8 text-black/65">
-              Eine Haushaltsauflösung ist oft mit viel Organisation verbunden.
-              Möbel, persönliche Gegenstände, Hausrat, Keller, Dachboden und
-              Nebenräume müssen sinnvoll geplant werden. Wir übernehmen den
-              Ablauf zuverlässig und mit dem nötigen Feingefühl.
-            </p>
-
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
-              {included.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-4 rounded-3xl border border-black/10 bg-white p-5 shadow-sm"
-                >
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#f6c21a] font-black text-black">
-                    ✓
-                  </div>
-                  <p className="font-black">{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="relative overflow-hidden rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] bg-white border border-black/5 shadow-md">
-            <div className="relative h-[380px] sm:h-[360px] sm:h-[340px] sm:h-[320px] sm:h-[380px] md:h-[420px] md:h-[480px] md:h-[560px]">
-              <Image
-                src="/images/services/ent1.jpg"
-                alt="Haushaltsauflösung und Entrümpelung mit Umzüge LAF"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                quality={75}
-                className="object-cover"
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.24),transparent_36%)]" />
-
-              <div className="absolute bottom-4 left-4 right-4 rounded-[1.4rem] border border-black/5 bg-black/65 p-4 text-white backdrop-blur-xl sm:bottom-6 sm:left-6 sm:right-6 sm:rounded-xl sm:rounded-xl sm:rounded-[1.4rem] sm:p-6">
-                <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
-                  Komplettservice
-                </p>
-                <h3 className="mt-3 text-2xl font-black sm:text-3xl">
-                  Haushalt räumen, Gegenstände bewegen und Räume vorbereiten.
-                </h3>
-                <p className="mt-3 leading-7 text-white/80">
-                  Wir achten auf einen geordneten Ablauf, sichere Durchführung
-                  und eine Übergabe nach Absprache.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="relative z-10 bg-[#fafaf7] px-4 py-10 sm:px-6 sm:py-14 md:py-16 sm:py-28 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-14 max-w-3xl">
-            <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
-              Vorteile
-            </p>
-
-            <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] md:text-6xl">
-              Haushaltsauflösung mit Struktur, Ruhe und Erfahrung.
-            </h2>
-
-            <p className="mt-6 text-lg leading-8 text-black/60">
-              Gerade bei kompletten Haushalten ist ein klarer Ablauf wichtig.
-              Unser Team unterstützt Sie zuverlässig und nimmt Ihnen die
-              körperliche und organisatorische Belastung ab.
-            </p>
-          </div>
-
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {benefits.map((benefit, index) => (
-              <div
-                key={benefit.title}
-                className="premium-border group rounded-2xl sm:rounded-[2rem] bg-white shadow-sm border border-black/5 p-6 backdrop-blur-xl transition hover:-translate-y-2 hover:bg-white/[0.07]"
-              >
-                <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black transition group-hover:rotate-6 group-hover:scale-110">
-                  0{index + 1}
-                </div>
-
-                <h3 className="text-2xl font-black text-[#18181b]">
-                  {benefit.title}
-                </h3>
-
-                <p className="mt-4 leading-7 text-black/60">
-                  {benefit.text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="relative z-10 bg-[#f7f7f2] px-4 py-10 sm:px-6 sm:py-14 md:py-16 sm:py-28 text-black lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div>
-            <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
-              Ablauf
-            </p>
-
-            <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] md:text-6xl">
-              So läuft Ihre Haushaltsauflösung ab.
-            </h2>
-
-            <p className="mt-6 text-lg leading-8 text-black/65">
-              Wir stimmen die Haushaltsauflösung individuell ab — passend zu
-              Objektgröße, Zugang, Umfang und gewünschtem Termin.
-            </p>
-          </div>
-
-          <div className="grid gap-4">
-            {process.map((step, index) => (
-              <div
-                key={step.title}
-                className="flex gap-5 rounded-2xl sm:rounded-[2rem] border border-black/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-[0_25px_70px_rgba(0,0,0,0.10)]"
-              >
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black">
-                  {index + 1}
-                </div>
-
-                <div>
-                  <h3 className="text-2xl font-black">{step.title}</h3>
-                  <p className="mt-2 leading-7 text-black/60">{step.text}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="relative z-10 bg-[#fafaf7] px-4 py-10 sm:px-6 sm:py-14 md:py-16 sm:py-28 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-          <div>
-            <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
-              Anfrage vorbereiten
-            </p>
-
-            <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] md:text-6xl">
-              Diese Informationen helfen für ein schnelles Angebot.
-            </h2>
-
-            <p className="mt-6 text-lg leading-8 text-black/60">
-              Je genauer Ihre Angaben sind, desto besser können wir Aufwand,
-              Teamgröße, Fahrzeuge und Zeitbedarf einschätzen.
-            </p>
-
-            <div className="mt-7 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
-              <Link
-                href="/kontakt"
-                className="glow-button rounded-full px-6 py-3.5 text-center text-sm font-black text-black sm:px-8 sm:py-4 sm:text-base"
-              >
-                Kontaktformular öffnen
-              </Link>
-
-              <a
-                href={phoneHref}
-                className="rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:text-[#b28a00]"
-              >
-                {phone}
-              </a>
-            </div>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            {checklist.map((item) => (
-              <div
-                key={item}
-                className="premium-border rounded-2xl sm:rounded-[2rem] bg-white shadow-sm border border-black/5 p-6 backdrop-blur-xl"
-              >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black">
-                  ✓
-                </div>
-
-                <p className="text-lg font-black text-[#18181b]">{item}</p>
-                <p className="mt-2 text-sm leading-6 text-black/55">
-                  Hilft uns bei der genauen Planung Ihrer Haushaltsauflösung.
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="relative z-10 overflow-hidden bg-[#f7f7f2] px-4 py-10 sm:px-6 sm:py-14 md:py-16 sm:py-28 text-black lg:px-8">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] bg-white border border-black/5 shadow-lg">
-          <div className="grid lg:grid-cols-[1fr_0.9fr]">
-            <div className="relative min-h-[460px]">
-              <Image
-                src="/images/services/ent4.jpg"
-                alt="Haushaltsauflösung Landshut mit Umzüge LAF"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                quality={75}
-                className="object-cover"
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/10 to-black/85" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(246,194,26,0.24),transparent_35%)]" />
-            </div>
-
-            <div className="flex flex-col justify-center p-8 text-[#18181b] md:p-12">
-              <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
-                Angebot sichern
-              </p>
-
-              <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] md:text-6xl">
-                Planen Sie Ihre Haushaltsauflösung mit LAF.
-              </h2>
-
-              <p className="mt-6 text-lg leading-8 text-black/60">
-                Schreiben Sie kurz, welches Objekt aufgelöst werden soll und
-                wann die Räumung gewünscht ist. Wir melden uns schnell zurück
-                und klären den passenden Ablauf.
-              </p>
-
-              <div className="mt-7 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
-                <Link
-                  href="/kontakt"
-                  className="glow-button rounded-full px-6 py-3.5 text-center text-sm font-black text-black sm:px-8 sm:py-4 sm:text-base"
-                >
-                  Haushaltsauflösung anfragen
-                </Link>
-
-                <a
-                  href={`mailto:${email}`}
-                  className="rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:text-[#b28a00]"
-                >
-                  E-Mail schreiben
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <LocalSeoLinks />
-      <Footer />
-    </main>
+    <LocalSeoLanding
+      breadcrumbName="Haushaltsauflösung Landshut"
+      path="/entruempelung/haushaltsaufloesung"
+      serviceName="Haushaltsauflösung Landshut"
+      serviceType="Haushaltsauflösung"
+      serviceDescription="Haushaltsauflösung in Landshut mit Umzüge LAF. Diskret, pietätvoll, sauber und besenrein für Wohnungen und Häuser."
+      badge="Diskret & Zuverlässig"
+      h1Top="Haushaltsauflösung Landshut."
+      h1Highlight="Diskret, respektvoll & besenrein."
+      h1Bottom="Komplett organisiert."
+      intro="Haushaltsauflösung oder Nachlassregelung? Umzüge LAF unterstützt Sie in Landshut mit Feingefühl, transparenter Planung und einer vollständigen, besenreinen Räumung."
+      image="/images/services/entruempelung.jpg"
+      imageAlt="Haushaltsauflösung von Umzüge LAF in Landshut"
+      sectionKicker="Wohnungs- & Hausauflösung"
+      sectionTitle="Zuverlässige Entlastung in jeder Lebenslage."
+      sectionText="Eine Haushaltsauflösung ist oft mit emotionalen oder zeitlichen Belastungen verbunden. Wir nehmen Ihnen die schwere Arbeit komplett ab: Vom Sortieren und Tragen über den Abtransport bis zur besenreinen Übergabe."
+      benefits={[
+        "Diskrete & respektvolle Durchführung",
+        "Komplette Räumung inkl. Keller & Speicher",
+        "Besenreine Übergabe für Eigentümer & Makler",
+        "Transparenter Festpreis ohne Überraschungen",
+        "Kostenlose Besichtigung vor Ort",
+        "Fachgerechte & zertifizierte Entsorgung",
+      ]}
+      steps={[
+        { title: "Kostenlose Besichtigung", text: "Wir besichtigen das Objekt vor Ort in Landshut und besprechen alle Details." },
+        { title: "Verbindlicher Festpreis", text: "Sie erhalten ein transparentes Komplettangebot inklusive aller Nebenkosten." },
+        { title: "Sorgfältige Räumung", text: "Unser Team räumt Möbel, Hausrat, Textilien und Sperrmüll zügig und sauber aus." },
+        { title: "Besenreine Übergabe", text: "Alle Räume werden gründlich ausgefegt und übergabebereit übergeben." },
+      ]}
+      relatedServices={[
+        { title: "Entrümpelung Landshut", text: "Hauptseite für alle Entrümpelungsdienste.", href: "/entruempelung-landshut" },
+        { title: "Kellerentrümpelung", text: "Kellerräume und Abteile sauber räumen lassen.", href: "/entruempelung/kellerentruempelung" },
+        { title: "Privatumzug Landshut", text: "Umzug in eine neue Wohnung oder Seniorenresidenz.", href: "/privatumzug-landshut" },
+      ]}
+      faqs={[
+        { q: "Wie schnell kann eine Haushaltsauflösung starten?", a: "Nach einer kurzen Vor-Ort-Besichtigung können wir oft innerhalb weniger Tage beginnen." },
+        { q: "Werden Wertgegenstände berücksichtigt?", a: "Ja, alle Gegenstände, die Sie behalten oder verkaufen möchten, werden vorab gesichert." },
+        { q: "Muss ich am Räumungstag selbst vor Ort sein?", a: "Nein, Sie können uns einfach den Schlüssel übergeben und kommen am Ende zur gemeinsamen Abnahme." },
+      ]}
+    />
   );
 }

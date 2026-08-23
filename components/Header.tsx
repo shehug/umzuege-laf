@@ -5,16 +5,16 @@ import Link from "next/link";
 import { useState } from "react";
 import TrackedLink from "@/components/TrackedLink";
 
+const phone = "0162 900 75 65";
 const phoneHref = "tel:+491629007565";
 
 const navItems = [
   { label: "Startseite", href: "/" },
   {
-    label: "Umzugsunternehmen",
+    label: "Umzüge",
     href: "/umzugsunternehmen-landshut",
     children: [
-      { label: "Umzugsunternehmen", href: "/umzugsunternehmen-landshut" },
-      { label: "Umzug", href: "/umzug-landshut" },
+      { label: "Umzugsunternehmen Landshut", href: "/umzugsunternehmen-landshut" },
       { label: "Privatumzug", href: "/privatumzug-landshut" },
       { label: "Firmenumzug", href: "/firmenumzug-landshut" },
       { label: "Fernumzug", href: "/umzuege/fernumzug" },
@@ -25,13 +25,10 @@ const navItems = [
     label: "Entrümpelung",
     href: "/entruempelung-landshut",
     children: [
-      { label: "Entrümpelung", href: "/entruempelung-landshut" },
+      { label: "Entrümpelung Landshut", href: "/entruempelung-landshut" },
       { label: "Wohnungsauflösung", href: "/wohnungsaufloesung-landshut" },
       { label: "Haushaltsauflösung", href: "/haushaltsaufloesung-landshut" },
       { label: "Kellerentrümpelung", href: "/entruempelung/kellerentruempelung" },
-      { label: "Dachbodenentrümpelung", href: "/entruempelung/dachbodenentruempelung" },
-      { label: "Garagenentrümpelung", href: "/entruempelung/garagenentruempelung" },
-      { label: "Büroentrümpelung", href: "/entruempelung/bueroentruempelung" },
       { label: "Sperrmüllentsorgung", href: "/entruempelung/sperrmuellentsorgung" },
     ],
   },
@@ -43,29 +40,12 @@ const navItems = [
       { label: "Möbelmontage", href: "/umzuege/moebelmontage" },
       { label: "Einpackservice", href: "/umzuege/einpackservice" },
       { label: "Lagerung", href: "/umzuege/lagerung" },
-      { label: "FAQ", href: "/faq" },
+      { label: "Häufige Fragen (FAQ)", href: "/faq" },
     ],
   },
   { label: "Über uns", href: "/ueber-uns" },
   { label: "Kontakt", href: "/kontakt" },
 ];
-
-function PhoneIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      className="h-4 w-4 sm:h-5 sm:w-5"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 19a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.77.59 2.61a2 2 0 0 1-.45 2.11L8.09 9.55a16 16 0 0 0 6.36 6.36l1.11-1.11a2 2 0 0 1 2.11-.45c.84.27 1.71.47 2.61.59A2 2 0 0 1 22 16.92z" />
-    </svg>
-  );
-}
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -77,10 +57,11 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed left-0 top-0 z-50 w-full border-b border-black/10 bg-white/95 shadow-[0_10px_30px_rgba(0,0,0,0.06)] backdrop-blur-2xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-3.5 py-3 sm:px-6 sm:py-4 lg:px-8">
-          <Link href="/" className="group flex items-center">
-            <div className="relative h-10 w-28 transition group-hover:scale-105 sm:h-13 sm:w-36">
+      <header className="fixed left-0 top-0 z-50 w-full border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur-md">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
+            <div className="relative h-10 w-28 sm:h-12 sm:w-36 transition hover:opacity-90">
               <Image
                 src="/images/logo/laf-logo.png"
                 alt="Umzüge LAF Logo"
@@ -98,39 +79,33 @@ export default function Header() {
               <div key={item.href} className="group relative">
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-bold text-black/70 transition hover:bg-black/[0.04] hover:text-[#b28a00]"
+                  className="flex items-center gap-1 rounded-lg px-3.5 py-2 text-[14px] font-bold text-slate-700 transition hover:bg-slate-100 hover:text-slate-900"
                 >
                   {item.label}
                   {item.children && (
-                    <span className="text-[10px] transition group-hover:rotate-180">
-                      ▾
-                    </span>
+                    <svg
+                      className="h-3.5 w-3.5 text-slate-400 transition group-hover:rotate-180"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+                    </svg>
                   )}
                 </Link>
 
                 {item.children && (
-                  <div className="invisible absolute left-1/2 top-full w-[300px] -translate-x-1/2 pt-3 opacity-0 transition duration-200 group-hover:visible group-hover:opacity-100">
-                    <div className="overflow-hidden rounded-2xl border border-black/10 bg-white p-3 shadow-[0_20px_60px_rgba(0,0,0,0.15)]">
-                      <div className="mb-2 rounded-xl bg-[#f6c21a]/15 px-3.5 py-2.5">
-                        <p className="text-[11px] font-black uppercase tracking-[0.2em] text-[#b28a00]">
-                          {item.label}
-                        </p>
-                        <p className="mt-0.5 text-xs font-bold text-black/60">
-                          Alle Leistungen im Überblick
-                        </p>
-                      </div>
-
-                      <div className="grid gap-1">
+                  <div className="invisible absolute left-1/2 top-full w-[260px] -translate-x-1/2 pt-2 opacity-0 transition duration-150 group-hover:visible group-hover:opacity-100">
+                    <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-xl">
+                      <div className="grid gap-0.5">
                         {item.children.map((child) => (
                           <Link
                             key={child.href}
                             href={child.href}
-                            className="group/item flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-black text-black transition hover:bg-[#f6c21a] hover:text-black"
+                            className="flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-[#fffbeb] hover:text-[#b45309]"
                           >
                             <span>{child.label}</span>
-                            <span className="transition group-hover/item:translate-x-1 text-xs">
-                              →
-                            </span>
+                            <span className="text-xs text-slate-400">→</span>
                           </Link>
                         ))}
                       </div>
@@ -147,45 +122,42 @@ export default function Header() {
               href={phoneHref}
               tracking="phone"
               trackingLocation="Header"
-              aria-label="Umzüge LAF anrufen"
-              title="Umzüge LAF anrufen"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-black/15 bg-white text-black shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a] sm:h-11 sm:w-11"
+              className="flex items-center gap-2 rounded-full bg-[#f59e0b] px-4 py-2 text-xs font-black text-slate-900 shadow-sm transition hover:bg-[#d97706] hover:text-white sm:px-5 sm:py-2.5 sm:text-sm"
             >
-              <PhoneIcon />
+              <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <span className="hidden min-[480px]:inline">{phone}</span>
+              <span className="min-[480px]:hidden">Anrufen</span>
             </TrackedLink>
 
             <Link
               href="/kontakt"
-              className="hidden rounded-full bg-[#f6c21a] px-4 py-2 text-xs font-black text-black shadow-[0_0_20px_rgba(246,194,26,0.3)] transition hover:bg-black hover:text-white min-[380px]:inline-flex sm:px-5 sm:py-2.5 sm:text-sm"
+              className="hidden rounded-full border border-slate-300 bg-slate-900 px-4 py-2 text-xs font-bold text-white shadow-sm transition hover:bg-slate-800 sm:inline-flex sm:px-5 sm:py-2.5 sm:text-sm"
             >
-              Anfrage
+              Angebot
             </Link>
 
+            {/* Mobile Hamburger */}
             <button
               onClick={() => setOpen(true)}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-black/15 bg-black/[0.04] text-black backdrop-blur-xl transition hover:border-[#f6c21a] hover:bg-[#f6c21a] sm:h-11 sm:w-11 lg:hidden"
+              className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 text-slate-700 transition hover:bg-slate-100 lg:hidden"
               aria-label="Menü öffnen"
             >
-              <span className="relative h-3.5 w-4.5">
-                <span className="absolute left-0 top-0 h-0.5 w-4.5 rounded-full bg-current" />
-                <span className="absolute left-0 top-1.5 h-0.5 w-4.5 rounded-full bg-current" />
-                <span className="absolute left-0 top-3 h-0.5 w-4.5 rounded-full bg-current" />
-              </span>
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
             </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile Accordion Drawer */}
+      {/* Mobile Drawer */}
       {open && (
-        <div className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-md lg:hidden">
-          <div className="absolute inset-x-2 top-2 max-h-[calc(100vh-1rem)] overflow-y-auto rounded-3xl border border-black/10 bg-white shadow-2xl sm:inset-x-4 sm:top-4">
-            <div className="sticky top-0 z-10 flex items-center justify-between border-b border-black/10 bg-white p-4">
-              <Link
-                href="/"
-                onClick={() => setOpen(false)}
-                className="flex items-center gap-2"
-              >
+        <div className="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-sm lg:hidden">
+          <div className="absolute inset-x-2 top-2 max-h-[calc(100vh-1rem)] overflow-y-auto rounded-2xl border border-slate-200 bg-white shadow-2xl">
+            <div className="sticky top-0 z-10 flex items-center justify-between border-b border-slate-100 bg-white p-4">
+              <Link href="/" onClick={() => setOpen(false)} className="flex items-center">
                 <div className="relative h-10 w-28">
                   <Image
                     src="/images/logo/laf-logo.png"
@@ -199,42 +171,39 @@ export default function Header() {
 
               <button
                 onClick={() => setOpen(false)}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-black/15 bg-black/[0.03] text-xl font-light text-black transition hover:bg-[#f6c21a]"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-lg font-bold text-slate-700 transition hover:bg-slate-200"
                 aria-label="Menü schließen"
               >
-                ×
+                ✕
               </button>
             </div>
 
-            <nav className="grid gap-2 p-3 sm:p-4">
+            <nav className="grid gap-1.5 p-3">
               {navItems.map((item) => (
-                <div
-                  key={item.href}
-                  className="overflow-hidden rounded-2xl border border-black/10 bg-[#fafaf7]"
-                >
+                <div key={item.href} className="overflow-hidden rounded-xl border border-slate-100 bg-slate-50">
                   {item.children ? (
                     <div>
                       <button
                         onClick={() => toggleCategory(item.label)}
-                        className="flex w-full items-center justify-between px-4 py-3.5 text-left text-base font-black text-black transition hover:bg-[#f6c21a]/10"
+                        className="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-extrabold text-slate-800 transition hover:bg-slate-100"
                       >
                         <span>{item.label}</span>
-                        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-black/5 text-xs font-bold">
+                        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-200 text-xs font-bold">
                           {expandedCategory === item.label ? "−" : "+"}
                         </span>
                       </button>
 
                       {expandedCategory === item.label && (
-                        <div className="grid gap-1 border-t border-black/10 bg-white p-2">
+                        <div className="grid gap-1 border-t border-slate-100 bg-white p-2">
                           {item.children.map((child) => (
                             <Link
                               key={child.href}
                               href={child.href}
                               onClick={() => setOpen(false)}
-                              className="flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-bold text-black/75 transition hover:bg-[#f6c21a] hover:text-black"
+                              className="flex items-center justify-between rounded-lg px-3.5 py-2.5 text-xs font-bold text-slate-700 transition hover:bg-[#fffbeb] hover:text-[#b45309]"
                             >
                               <span>{child.label}</span>
-                              <span className="text-xs">→</span>
+                              <span className="text-xs text-slate-400">→</span>
                             </Link>
                           ))}
                         </div>
@@ -244,36 +213,33 @@ export default function Header() {
                     <Link
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className="flex items-center justify-between px-4 py-3.5 text-base font-black text-black transition hover:bg-[#f6c21a]/15"
+                      className="flex items-center justify-between px-4 py-3 text-sm font-extrabold text-slate-800 transition hover:bg-slate-100"
                     >
                       <span>{item.label}</span>
-                      <span className="text-xs text-black/40">→</span>
+                      <span className="text-xs text-slate-400">→</span>
                     </Link>
                   )}
                 </div>
               ))}
             </nav>
 
-            <div className="grid grid-cols-2 gap-2 border-t border-black/10 p-4">
+            <div className="grid grid-cols-2 gap-2 border-t border-slate-100 p-4">
               <TrackedLink
                 href={phoneHref}
                 tracking="phone"
                 trackingLocation="Mobile Menü"
                 onClick={() => setOpen(false)}
-                aria-label="Umzüge LAF anrufen"
-                title="Umzüge LAF anrufen"
-                className="flex items-center justify-center gap-2 rounded-2xl bg-[#f6c21a] py-3 text-sm font-black text-black shadow-md"
+                className="flex items-center justify-center gap-2 rounded-xl bg-[#f59e0b] py-3 text-center text-sm font-extrabold text-slate-900 shadow-sm"
               >
-                <PhoneIcon />
-                <span>Anrufen</span>
+                <span>📞 Anrufen</span>
               </TrackedLink>
 
               <Link
                 href="/kontakt"
                 onClick={() => setOpen(false)}
-                className="flex items-center justify-center rounded-2xl border border-black/15 bg-white py-3 text-sm font-black text-black shadow-sm"
+                className="flex items-center justify-center rounded-xl bg-slate-900 py-3 text-center text-sm font-extrabold text-white shadow-sm"
               >
-                Angebot
+                Angebot anfordern
               </Link>
             </div>
           </div>

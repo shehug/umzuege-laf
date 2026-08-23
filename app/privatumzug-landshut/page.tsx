@@ -9,9 +9,9 @@ import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata = createSeoMetadata({
-  title: "Privatumzug Landshut | Umzüge LAF – Wohnungsumzug & Hausumzug",
+  title: "Privatumzug Landshut » Stressfrei & zum Festpreis | Umzüge LAF",
   description:
-    "Privatumzug in Landshut mit Umzüge LAF: Wohnungsumzug, Hausumzug, Möbeltransport, Möbelmontage, Einpackservice und persönliche Planung.",
+    "Privatumzug in Landshut mit Umzüge LAF: Wohnungsumzug, Hausumzug, Möbeltransport, Möbelmontage, Einpackservice und persönliche Planung zum Festpreis.",
   path: "/privatumzug-landshut",
   keywords: [
     "Privatumzug Landshut",
@@ -29,64 +29,49 @@ const phoneHref = "tel:+491629007565";
 const benefits = [
   {
     title: "Sorgfältiger Transport",
-    text: "Möbel, Kartons and persönliche Gegenstände werden sicher und vorsichtig bewegt.",
+    text: "Möbel, Kartons und persönliche Gegenstände werden sicher und vorsichtig transportiert.",
   },
   {
-    title: "Klare Planung",
-    text: "Wir klären Etagen, Strecke, Umfang, Montage und Zeitfenster vorab sauber ab.",
+    title: "Verlässliche Festpreise",
+    text: "Wir klären Etagen, Umfang, Montage und Zeitfenster vorab sauber ab – ohne versteckte Kosten.",
   },
   {
-    title: "Persönlicher Kontakt",
-    text: "Sie haben einen direkten Ansprechpartner und keine anonyme Abwicklung.",
+    title: "Persönlicher Ansprechpartner",
+    text: "Sie sprechen direkt mit uns und haben eine feste Bezugsperson vor Ort.",
   },
   {
-    title: "Flexible Unterstützung",
-    text: "Auf Wunsch mit Einpackservice, Möbelmontage, Tragehilfe und Entsorgung.",
+    title: "Flexible Zusatzleistungen",
+    text: "Auf Wunsch mit Einpackservice, Möbelmontage, Küchenabbau und Entsorgung.",
   },
 ];
 
 const process = [
   {
     title: "Anfrage senden",
-    text: "Sie teilen uns Startort, Zielort, Terminwunsch und den ungefähren Umfang mit.",
+    text: "Startort, Zielort, Terminwunsch und ungefähren Umfang mitteilen.",
   },
   {
-    title: "Umfang klären",
-    text: "Wir besprechen Etage, Aufzug, Parkmöglichkeiten, Möbelmontage und besondere Gegenstände.",
+    title: "Festpreis erhalten",
+    text: "Wir besprechen Etagen, Aufzug und Montage und erstellen Ihr Festpreis-Angebot.",
   },
   {
-    title: "Umzug planen",
-    text: "Sie erhalten eine klare Einschätzung und wir stimmen den Ablauf mit Ihnen ab.",
-  },
-  {
-    title: "Sicher umziehen",
-    text: "Unser Team transportiert Ihre Möbel und Kartons zuverlässig an den neuen Wohnort.",
+    title: "Pünktlich umziehen",
+    text: "Unser eingespieltes Team transportiert Ihre Möbel zuverlässig an den neuen Wohnort.",
   },
 ];
 
 const included = [
-  "Wohnungsumzug",
-  "Hausumzug",
-  "Möbeltransport",
-  "Tragearbeiten",
-  "Möbelmontage",
-  "Einpackservice",
-  "Kartons & Verpackung",
-  "Kurzfristige Umzüge nach Absprache",
-];
-
-const checklist = [
-  "Startadresse und Zieladresse",
-  "Etage und Aufzug vorhanden?",
-  "gewünschter Umzugstermin",
-  "ungefähre Anzahl der Kartons",
-  "größere Möbelstücke",
-  "Möbelmontage gewünscht?",
+  "Wohnungsumzug & Hausumzug",
+  "Möbeltransport & Tragearbeiten",
+  "Fachgerechte Möbelmontage",
+  "Einpackservice & Schutzverpackung",
+  "Kurzfristige Termine nach Absprache",
+  "Volle Transportversicherung",
 ];
 
 export default function PrivatumzugLandshutPage() {
   return (
-    <main className="min-h-screen bg-[#fafaf7] text-[#18181b] overflow-hidden">
+    <main className="min-h-screen bg-white text-slate-900">
       <Header />
 
       <BreadcrumbJsonLd
@@ -103,242 +88,179 @@ export default function PrivatumzugLandshutPage() {
         serviceType="Privatumzug"
       />
 
-      <section className="relative overflow-hidden px-5 pb-16 pt-32 sm:pb-24 sm:pt-40 lg:px-8">
-        <div className="absolute inset-0">
+      {/* ── HERO ── */}
+      <section className="relative overflow-hidden bg-slate-950 pt-28 pb-16 text-white sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28">
+        <div className="absolute inset-0 z-0 opacity-60">
           <Image
             src="/images/services/PU1.jpg"
             alt="Umzüge LAF Privatumzug in Landshut"
             fill
             priority
-            className="object-cover object-center"
+            className="object-cover object-center sm:object-right"
           />
-          <div className="absolute inset-0 bg-white/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#fafaf7]/98 via-[#fafaf7]/90 to-[#fafaf7]/40 sm:to-[#fafaf7]/20" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#fafaf7] via-transparent to-transparent" />
         </div>
+        <div className="absolute inset-0 z-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/30 sm:to-transparent" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/40" />
 
-        <div className="relative mx-auto flex min-h-[50vh] max-w-7xl items-center">
-          <div className="max-w-4xl">
-            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#f6c21a] bg-[#f6c21a]/10 px-4 py-2 text-xs font-black uppercase tracking-wider text-[#b28a00] sm:text-sm">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f6c21a] opacity-75" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#f6c21a]" />
-              </span>
-              Privatumzug in Landshut & Umgebung
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-400/10 px-3.5 py-1.5 text-xs font-extrabold text-amber-300">
+              <span>★ 4.9 / 5 Sterne ·</span>
+              <span>Privatumzug Landshut & Umgebung</span>
             </div>
 
-            <h1 className="max-w-5xl text-[2.5rem] font-black leading-[1.15] tracking-tight text-[#18181b] min-[390px]:text-[2.85rem] sm:text-6xl md:text-7xl lg:text-8xl">
-              Privat umziehen.
-              <span className="gradient-text block">Ohne Stress.</span>
-              Mit LAF.
+            <h1 className="text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.15]">
+              Privat umziehen in Landshut.<br />
+              <span className="text-amber-400">Stressfrei & zum Festpreis.</span>
             </h1>
 
-            <p className="mt-5 max-w-2xl text-[16px] leading-7 text-black/75 sm:mt-7 sm:text-lg sm:leading-8 md:text-xl">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
               Ob Wohnung, Haus oder einzelner Möbeltransport: Umzüge LAF plant
               Ihren Privatumzug zuverlässig, sorgfältig und persönlich — von
-              der ersten Anfrage bis zum letzten Möbelstück.
+              der ersten Kiste bis zum fertigen Aufbau.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
               <a
-                href="#anfrage-formular"
-                className="glow-button w-full rounded-full px-8 py-4 text-center font-black text-black shadow-lg sm:w-auto"
+                href={phoneHref}
+                className="flex items-center justify-center gap-2.5 rounded-full bg-[#f59e0b] px-7 py-4 text-center text-base font-black text-slate-950 shadow-lg transition hover:bg-amber-400 active:scale-98"
               >
-                Privatumzug anfragen
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span>Direkt anrufen: {phone}</span>
               </a>
 
               <a
-                href={phoneHref}
-                className="w-full rounded-full border border-black/15 bg-white px-8 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 sm:w-auto"
+                href="#anfrage-formular"
+                className="flex items-center justify-center rounded-full border-2 border-slate-600 bg-slate-800/80 px-7 py-4 text-center text-base font-bold text-white transition hover:border-slate-400 hover:bg-slate-700 active:scale-98"
               >
-                Direkt anrufen: {phone}
+                Kostenlos anfragen →
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="relative bg-[#ffffff] px-4 py-12 sm:px-6 sm:py-16 md:py-20 text-black lg:px-8 border-t border-black/5">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div>
-            <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
-              Privatumzug
+      {/* ── VORTEILE ── */}
+      <section className="py-16 sm:py-24 bg-white border-b border-slate-200">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
+              Ihre Vorteile
             </p>
-
-            <h2 className="mt-4 text-3xl font-black tracking-tight text-[#18181b] md:text-5xl lg:text-6xl">
-              Ihr Zuhause zieht um — wir kümmern uns um den Ablauf.
+            <h2 className="mt-2 text-2xl sm:text-4xl font-black tracking-tight text-slate-900">
+              Warum Kunden ihren Privatumzug mit uns machen
             </h2>
+          </div>
 
-            <p className="mt-6 text-lg leading-8 text-black/60">
-              Ein privater Umzug bedeutet Organisation, Zeitdruck und viele
-              kleine Details. Wir helfen Ihnen dabei, den Überblick zu behalten:
-              mit klarer Planung, zuverlässigem Team und sorgfältigem Transport.
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {benefits.map((b) => (
+              <div
+                key={b.title}
+                className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
+              >
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100 text-sm font-black text-amber-800">
+                  ✓
+                </div>
+                <h3 className="mt-4 text-base font-black text-slate-900">{b.title}</h3>
+                <p className="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">{b.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── LEISTUNGSUMFANG ── */}
+      <section className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
+          <div>
+            <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
+              Leistungsumfang
+            </p>
+            <h2 className="mt-2 text-2xl sm:text-3xl font-black tracking-tight text-slate-900">
+              Alles aus einer Hand für Ihr neues Zuhause
+            </h2>
+            <p className="mt-3 text-sm text-slate-600 leading-relaxed">
+              Wir stimmen den Service genau auf Ihre Bedürfnisse ab. Sie entscheiden,
+              welche Aufgaben Sie abgeben möchten.
             </p>
 
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
               {included.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-4 rounded-3xl border border-black/5 bg-[#fafaf7] p-5 shadow-sm"
-                >
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#f6c21a] font-black text-black">
-                    ✓
-                  </div>
-                  <p className="font-black text-[#18181b]">{item}</p>
+                <div key={item} className="flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white p-3.5 shadow-sm text-xs sm:text-sm font-bold text-slate-800">
+                  <span className="text-amber-500 font-black">✓</span>
+                  <span>{item}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] bg-white shadow-xl border border-black/5">
-            <div className="relative h-[340px] sm:h-[320px] sm:h-[380px] md:h-[420px] md:h-[480px]">
-              <Image
-                src="/images/services/PU1.jpg"
-                alt="Privatumzug mit Umzüge LAF"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 rounded-xl sm:rounded-xl sm:rounded-[1.4rem] border border-white/10 bg-black/50 p-6 text-white backdrop-blur-md">
-                <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
-                  Sorgfältig
-                </p>
-                <h3 className="mt-2 text-2xl font-black">
-                  Möbel und Kartons in guten Händen.
-                </h3>
-                <p className="mt-2 text-sm leading-6 text-white/80">
-                  Wir achten auf sicheren Transport, saubere Kommunikation und
-                  zuverlässige Durchführung.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="relative bg-[#fafaf7] px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 border-t border-black/5">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-14 max-w-3xl">
-            <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
-              Vorteile
-            </p>
-
-            <h2 className="mt-4 text-3xl font-black tracking-tight text-[#18181b] md:text-5xl lg:text-6xl">
-              Warum Ihren Privatumzug mit LAF planen?
-            </h2>
-
-            <p className="mt-6 text-lg leading-8 text-black/60">
-              Wir verbinden persönliche Betreuung mit strukturierter
-              Umsetzung. So wird Ihr Umzug planbarer, ruhiger und sauberer.
-            </p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {benefits.map((benefit, index) => (
-              <div
-                key={benefit.title}
-                className="group rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white p-6 shadow-sm hover:shadow-md transition duration-300"
-              >
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black transition group-hover:rotate-6">
-                  0{index + 1}
-                </div>
-
-                <h3 className="text-2xl font-black text-[#18181b]">
-                  {benefit.title}
-                </h3>
-
-                <p className="mt-3 leading-7 text-black/65">
-                  {benefit.text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="relative bg-[#ffffff] px-4 py-12 sm:px-6 sm:py-16 md:py-20 text-black lg:px-8 border-t border-black/5">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div>
-            <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
-              Ablauf
-            </p>
-
-            <h2 className="mt-4 text-3xl font-black tracking-tight text-[#18181b] md:text-5xl lg:text-6xl">
-              So läuft Ihr Privatumzug ab.
-            </h2>
-
-            <p className="mt-6 text-lg leading-8 text-black/60">
-              Ein guter Umzug beginnt nicht am Umzugstag, sondern bei der
-              richtigen Vorbereitung. Deshalb stimmen wir die wichtigsten Punkte
-              vorher mit Ihnen ab.
-            </p>
-          </div>
-
-          <div className="grid gap-4">
-            {process.map((step, index) => (
-              <div
-                key={step.title}
-                className="flex gap-5 rounded-2xl sm:rounded-[2rem] border border-black/5 bg-[#fafaf7] p-6 shadow-sm"
-              >
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black">
-                  {index + 1}
-                </div>
-
-                <div>
-                  <h3 className="text-2xl font-black text-[#18181b]">{step.title}</h3>
-                  <p className="mt-2 leading-7 text-black/60">{step.text}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="relative bg-[#fafaf7] px-4 py-12 sm:px-6 sm:py-16 md:py-20 lg:px-8 border-t border-black/5">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_1fr] lg:items-start">
-          <div>
-            <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
-              Anfrage vorbereiten
-            </p>
-
-            <h2 className="mt-4 text-3xl font-black tracking-tight text-[#18181b] md:text-5xl lg:text-6xl">
-              Diese Infos helfen für eine schnelle Einschätzung.
-            </h2>
-
-            <p className="mt-6 text-lg leading-8 text-[#18181b]/70">
-              Je genauer die Anfrage ist, desto schneller können wir den Umfang
-              einschätzen und den passenden Ablauf planen.
-            </p>
-
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {checklist.map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white p-6 shadow-sm"
-                >
-                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-[#f6c21a] text-xl font-black text-black">
-                    ✓
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
+            <h3 className="text-lg font-black text-slate-900">
+              In 3 Schritten zu Ihrem Privatumzug
+            </h3>
+            <div className="mt-6 grid gap-4">
+              {process.map((p, i) => (
+                <div key={p.title} className="flex gap-4">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-sm font-black text-amber-800">
+                    {i + 1}
                   </div>
-
-                  <p className="text-lg font-black text-[#18181b]">{item}</p>
-                  <p className="mt-1 text-sm leading-6 text-black/55">
-                    Hilft uns bei der genauen Planung Ihres Umzugs.
-                  </p>
+                  <div>
+                    <h4 className="text-sm font-black text-slate-900">{p.title}</h4>
+                    <p className="mt-1 text-xs text-slate-600 leading-relaxed">{p.text}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
+        </div>
+      </section>
 
-          <div id="anfrage-formular" className="scroll-mt-24">
-            <div className="mb-5">
-              <p className="text-sm font-black uppercase tracking-[0.25em] text-[#b28a00]">
-                Direktanfrage
+      {/* ── ANFRAGE SEKTION ── */}
+      <section id="anfrage-formular" className="py-16 sm:py-24 bg-slate-900 text-white scroll-mt-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-amber-400/10 px-3 py-1 text-xs font-bold text-amber-300">
+                <span>📍</span>
+                <span>Standort: Ergoldinger Str. 15, 84030 Landshut</span>
+              </div>
+
+              <h2 className="mt-4 text-3xl sm:text-4xl font-black text-white">
+                Privatumzug kostenlos anfragen
+              </h2>
+
+              <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
+                Rufen Sie uns direkt an oder füllen Sie das kurze Formular aus. Wir
+                melden uns umgehend mit einem verbindlichen Festpreis-Angebot bei Ihnen.
               </p>
-              <h3 className="mt-2 text-2xl font-black text-[#18181b]">
-                Kostenloses Angebot anfordern
-              </h3>
+
+              <div className="mt-6 rounded-2xl border border-slate-700 bg-slate-800/80 p-5">
+                <p className="text-xs font-bold text-amber-400 uppercase tracking-wider">
+                  Telefonische Beratung
+                </p>
+                <a
+                  href={phoneHref}
+                  className="mt-1 inline-flex items-center gap-2 text-xl font-black text-white hover:text-amber-400 transition"
+                >
+                  <span>📞</span>
+                  <span>{phone}</span>
+                </a>
+              </div>
             </div>
-            <ContactForm />
+
+            <div className="rounded-2xl border border-slate-700 bg-white p-6 sm:p-8 text-slate-900 shadow-2xl">
+              <h3 className="text-xl font-black text-slate-900">
+                Online-Anfrage für Privatumzug
+              </h3>
+              <p className="mt-1 text-xs text-slate-500">
+                In 2 Minuten ausgefüllt – 100% unverbindlich.
+              </p>
+              <div className="mt-5">
+                <ContactForm />
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -91,7 +91,7 @@ export default function LocalSeoLanding({
   faqs,
 }: LocalSeoLandingProps) {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#fafaf7] text-[#18181b]">
+    <main className="min-h-screen bg-white text-slate-900">
       <Header />
 
       <BreadcrumbJsonLd
@@ -110,9 +110,9 @@ export default function LocalSeoLanding({
 
       <FaqJsonLd faqs={faqs} />
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden px-4 pb-14 pt-28 sm:px-6 sm:pb-20 sm:pt-36 lg:px-8">
-        <div className="absolute inset-0">
+      {/* ── HERO SECTION ── */}
+      <section className="relative overflow-hidden bg-slate-950 pt-28 pb-16 text-white sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28">
+        <div className="absolute inset-0 z-0 opacity-60">
           <Image
             src={image}
             alt={imageAlt}
@@ -120,93 +120,93 @@ export default function LocalSeoLanding({
             priority
             fetchPriority="high"
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-cover object-center sm:object-right"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#fafaf7]/98 via-[#fafaf7]/85 to-[#fafaf7]/20 sm:to-[#fafaf7]/10" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#fafaf7]/60 via-transparent to-[#fafaf7]" />
         </div>
+        <div className="absolute inset-0 z-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/30 sm:to-transparent" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/40" />
 
-        <div className="relative mx-auto flex min-h-[45vh] max-w-7xl items-center">
-          <div className="max-w-4xl">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#f6c21a] bg-[#f6c21a]/10 px-3.5 py-1.5 text-xs font-black uppercase tracking-wider text-[#b28a00] sm:mb-6 sm:px-4 sm:py-2 sm:text-sm">
-              <span className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f6c21a] opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#f6c21a] sm:h-2.5 sm:w-2.5" />
-              </span>
-              {badge}
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-400/10 px-3.5 py-1.5 text-xs font-extrabold text-amber-300">
+              <span>★ 4.9 / 5 Bewertung ·</span>
+              <span>{badge}</span>
             </div>
 
-            <h1 className="text-[1.9rem] font-black leading-[1.12] tracking-tight text-[#18181b] min-[380px]:text-[2.2rem] sm:text-5xl md:text-6xl lg:text-7xl">
-              {h1Top}
-              <span className="gradient-text block">{h1Highlight}</span>
+            <h1 className="text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.15]">
+              {h1Top}{" "}
+              <span className="text-amber-400">{h1Highlight}</span>{" "}
               {h1Bottom}
             </h1>
 
-            <p className="mt-4 max-w-2xl text-base leading-7 text-black/75 sm:mt-7 sm:text-lg sm:leading-8 md:text-xl">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
               {intro}
             </p>
 
-            <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:gap-4">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
               <a
-                href="#anfrage-formular"
-                className="glow-button w-full rounded-full px-6 py-3.5 text-center text-sm font-black text-black shadow-md sm:px-8 sm:py-4 sm:text-base sm:w-auto"
+                href={phoneHref}
+                className="flex items-center justify-center gap-2.5 rounded-full bg-[#f59e0b] px-7 py-4 text-center text-base font-black text-slate-950 shadow-lg transition hover:bg-amber-400 active:scale-98"
               >
-                Kostenlos anfragen
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span>Direkt anrufen: {phone}</span>
               </a>
 
               <a
-                href={phoneHref}
-                className="w-full rounded-full border border-black/15 bg-white px-6 py-3.5 text-center text-sm font-black text-black shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 sm:px-8 sm:py-4 sm:text-base sm:w-auto"
+                href="#anfrage-formular"
+                className="flex items-center justify-center rounded-full border-2 border-slate-600 bg-slate-800/80 px-7 py-4 text-center text-base font-bold text-white transition hover:border-slate-400 hover:bg-slate-700 active:scale-98"
               >
-                Direkt anrufen: {phone}
+                Kostenlos anfragen →
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="relative bg-[#ffffff] px-4 py-14 text-black sm:px-6 sm:py-20 lg:px-8 border-t border-black/5">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+      {/* ── VORTEILE & DETAILS ── */}
+      <section className="py-16 sm:py-24 bg-white border-b border-slate-200">
+        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_0.9fr] lg:items-center lg:px-8">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-[#b28a00] sm:text-sm sm:tracking-[0.25em]">
+            <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
               {sectionKicker}
             </p>
 
-            <h2 className="mt-3 text-2xl font-black tracking-tight text-[#18181b] sm:mt-4 sm:text-4xl md:text-5xl lg:text-6xl">
+            <h2 className="mt-2 text-2xl sm:text-4xl font-black tracking-tight text-slate-900">
               {sectionTitle}
             </h2>
 
-            <p className="mt-4 text-base leading-7 text-black/60 sm:mt-6 sm:text-lg sm:leading-8">
+            <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-600">
               {sectionText}
             </p>
 
-            <div className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-4">
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
               {benefits.map((item) => (
                 <div
                   key={item}
-                  className="flex items-center gap-3.5 rounded-2xl border border-black/5 bg-[#fafaf7] p-4 shadow-sm sm:rounded-3xl sm:p-5"
+                  className="flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 p-3.5 shadow-sm sm:p-4"
                 >
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#f6c21a] text-sm font-black text-black sm:h-11 sm:w-11 sm:rounded-2xl">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-amber-100 text-xs font-black text-amber-800">
                     ✓
                   </span>
-                  <p className="text-sm font-black text-[#18181b] sm:text-base">{item}</p>
+                  <p className="text-xs sm:text-sm font-bold text-slate-800">{item}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-2xl bg-white shadow-lg border border-black/5 sm:rounded-[2.2rem] sm:shadow-xl">
-            <div className="relative h-[360px] sm:h-[480px]">
+          <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-xl">
+            <div className="relative h-[320px] sm:h-[420px]">
               <Image src={image} alt={imageAlt} fill className="object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
-              <div className="absolute bottom-3 left-3 right-3 rounded-xl border border-white/10 bg-black/55 p-4 text-white backdrop-blur-md sm:bottom-6 sm:left-6 sm:right-6 sm:rounded-[1.7rem] sm:p-6">
-                <h3 className="text-lg font-black sm:text-2xl">
-                  Persönlich geplant. Sauber umgesetzt.
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/20 bg-slate-900/80 p-5 text-white backdrop-blur-md">
+                <h3 className="text-base font-black sm:text-lg">
+                  Persönlich geplant. Zuverlässig umgesetzt.
                 </h3>
-                <p className="mt-1.5 text-xs leading-5 text-white/80 sm:mt-2 sm:text-sm sm:leading-6">
-                  Umzüge LAF unterstützt Kunden in Landshut und Umgebung mit
-                  klarer Abstimmung, zuverlässigem Team und fairer Planung.
+                <p className="mt-1 text-xs text-slate-300 leading-relaxed">
+                  Umzüge LAF unterstützt Sie in Landshut und Umgebung mit klarer
+                  Abstimmung, geschultem Team und fairer Festpreis-Kalkulation.
                 </p>
               </div>
             </div>
@@ -214,119 +214,133 @@ export default function LocalSeoLanding({
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="relative bg-[#fafaf7] px-4 py-14 sm:px-6 sm:py-20 lg:px-8 border-t border-black/5">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-[#b28a00] sm:text-sm sm:tracking-[0.25em]">
-            Ablauf
-          </p>
+      {/* ── 4-SCHRITTE ABLAUF ── */}
+      <section className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto">
+            <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
+              Ablauf
+            </p>
+            <h2 className="mt-2 text-2xl sm:text-4xl font-black tracking-tight text-slate-900">
+              So einfach funktioniert die Zusammenarbeit
+            </h2>
+          </div>
 
-          <h2 className="mt-3 text-2xl font-black tracking-tight text-[#18181b] sm:mt-4 sm:text-4xl md:text-5xl lg:text-6xl">
-            So läuft die Zusammenarbeit mit Umzüge LAF ab.
-          </h2>
-
-          <div className="mt-8 grid gap-4 sm:mt-12 sm:grid-cols-2 lg:grid-cols-4 sm:gap-6">
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, index) => (
               <div
                 key={step.title}
-                className="group rounded-2xl border border-black/5 bg-white p-5 shadow-sm hover:shadow-md transition duration-300 sm:rounded-[2rem] sm:p-6"
+                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
               >
-                <div className="mb-4 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#f6c21a] text-lg font-black text-black sm:mb-6 sm:h-14 sm:w-14 sm:rounded-2xl sm:text-xl">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-amber-100 text-sm font-black text-amber-800">
                   {index + 1}
                 </div>
-                <h3 className="text-xl font-black text-[#18181b] sm:text-2xl">{step.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-black/60 sm:mt-3 sm:text-base sm:leading-7">{step.text}</p>
+                <h3 className="mt-3 text-base font-black text-slate-900">{step.title}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600">{step.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Related Services */}
-      <section className="relative bg-[#ffffff] px-4 py-14 text-black sm:px-6 sm:py-20 lg:px-8 border-t border-black/5">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-[#b28a00] sm:text-sm sm:tracking-[0.25em]">
-            Weitere Leistungen
-          </p>
-
-          <h2 className="mt-3 text-2xl font-black tracking-tight text-[#18181b] sm:mt-4 sm:text-4xl md:text-5xl lg:text-6xl">
-            Passende Leistungen rund um Umzug und Entrümpelung.
-          </h2>
-
-          <div className="mt-8 grid gap-4 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6">
-            {relatedServices.map((service) => (
-              <Link
-                key={service.href}
-                href={service.href}
-                className="rounded-2xl border border-black/5 bg-[#fafaf7] p-5 shadow-sm transition duration-300 hover:shadow-md sm:rounded-[2rem] sm:p-7"
-              >
-                <h3 className="text-xl font-black text-[#18181b] sm:text-2xl">{service.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-black/60 sm:mt-3 sm:text-base sm:leading-7">{service.text}</p>
-                <p className="mt-4 text-sm font-black text-[#b28a00] sm:mt-6 sm:text-base">Mehr erfahren →</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ & Form Section */}
-      <section className="relative bg-[#fafaf7] px-4 py-14 sm:px-6 sm:py-20 lg:px-8 border-t border-black/5">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-[#b28a00] sm:text-sm sm:tracking-[0.25em]">
-            Häufige Fragen
-          </p>
-
-          <h2 className="mt-3 text-2xl font-black tracking-tight text-[#18181b] sm:mt-4 sm:text-4xl md:text-5xl lg:text-6xl">
-            Fragen zu {breadcrumbName}.
-          </h2>
-
-          <div className="mt-8 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5">
-            {faqs.map((item) => (
-              <div
-                key={item.q}
-                className="rounded-2xl border border-black/5 bg-white p-5 shadow-sm sm:rounded-[2rem] sm:p-7"
-              >
-                <h3 className="text-lg font-black text-[#18181b] sm:text-xl">{item.q}</h3>
-                <p className="mt-2 text-sm leading-6 text-black/60 sm:mt-3 sm:text-base sm:leading-7">{item.a}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-14 grid gap-10 sm:mt-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-            <div>
-              <h2 className="text-2xl font-black text-[#18181b] sm:text-3xl">Umzug in Landshut geplant?</h2>
-              <p className="mt-3 text-sm leading-6 text-black/60 sm:mt-4 sm:text-base sm:leading-7">
-                Senden Sie uns Ihre Anfrage oder rufen Sie direkt an. Wir klären
-                Umfang, Termin und Ablauf persönlich mit Ihnen.
+      {/* ── PASSENDE WEITERE LEISTUNGEN ── */}
+      {relatedServices && relatedServices.length > 0 && (
+        <section className="py-16 sm:py-20 bg-white border-b border-slate-200">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl">
+              <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
+                Weitere Services
               </p>
-              
-              <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:gap-4">
+              <h2 className="mt-2 text-2xl sm:text-3xl font-black tracking-tight text-slate-900">
+                Passende Leistungen rund um Umzug & Räumung
+              </h2>
+            </div>
+
+            <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {relatedServices.map((service) => (
+                <Link
+                  key={service.href}
+                  href={service.href}
+                  className="group rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm transition hover:border-amber-400 hover:bg-white hover:shadow-md"
+                >
+                  <h3 className="text-base font-black text-slate-900 group-hover:text-[#b45309]">
+                    {service.title}
+                  </h3>
+                  <p className="mt-2 text-xs text-slate-600 leading-relaxed">{service.text}</p>
+                  <p className="mt-3 text-xs font-black text-[#b45309]">Mehr erfahren →</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── FAQ & ANFRAGE SEKTION ── */}
+      <section className="py-16 sm:py-24 bg-slate-900 text-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {faqs && faqs.length > 0 && (
+            <div className="mb-16">
+              <p className="text-xs font-black uppercase tracking-widest text-amber-400">
+                Fragen & Antworten
+              </p>
+              <h2 className="mt-2 text-2xl sm:text-3xl font-black text-white">
+                Häufige Fragen zu {breadcrumbName}
+              </h2>
+
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                {faqs.map((item) => (
+                  <div
+                    key={item.q}
+                    className="rounded-2xl border border-slate-800 bg-slate-800/60 p-5 shadow-sm"
+                  >
+                    <h3 className="text-sm sm:text-base font-black text-white">{item.q}</h3>
+                    <p className="mt-2 text-xs sm:text-sm leading-relaxed text-slate-300">{item.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div id="anfrage-formular" className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center scroll-mt-20">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-amber-400/10 px-3 py-1 text-xs font-bold text-amber-300">
+                <span>📍</span>
+                <span>Standort: Ergoldinger Str. 15, 84030 Landshut</span>
+              </div>
+
+              <h2 className="mt-4 text-3xl sm:text-4xl font-black text-white">
+                Jetzt kostenloses Angebot anfordern
+              </h2>
+
+              <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
+                Rufen Sie uns direkt an oder senden Sie uns Ihre Eckdaten. Wir
+                erstellen Ihnen kurzfristig ein transparentes Festpreis-Angebot.
+              </p>
+
+              <div className="mt-6 rounded-2xl border border-slate-700 bg-slate-800/80 p-5">
+                <p className="text-xs font-bold text-amber-400 uppercase tracking-wider">
+                  Telefonisch anfragen
+                </p>
                 <a
                   href={phoneHref}
-                  className="glow-button w-full rounded-full px-6 py-3.5 text-center text-sm font-black text-black shadow-md sm:px-8 sm:py-4 sm:text-base sm:w-auto"
+                  className="mt-1 inline-flex items-center gap-2 text-xl font-black text-white hover:text-amber-400 transition"
                 >
-                  Direkt anrufen: {phone}
-                </a>
-
-                <a
-                  href={`mailto:info@umzuege-laf.de`}
-                  className="w-full rounded-full border border-black/15 bg-white px-6 py-3.5 text-center text-sm font-black text-black shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 sm:px-8 sm:py-4 sm:text-base sm:w-auto"
-                >
-                  E-Mail schreiben
+                  <span>📞</span>
+                  <span>{phone}</span>
                 </a>
               </div>
             </div>
 
-            <div id="anfrage-formular" className="scroll-mt-24">
-              <div className="mb-4">
-                <p className="text-xs font-black uppercase tracking-[0.2em] text-[#b28a00] sm:text-sm">
-                  Direktanfrage
-                </p>
-                <h3 className="mt-1 text-xl font-black text-[#18181b] sm:text-2xl">
-                  Kostenloses Angebot anfordern
-                </h3>
+            <div className="rounded-2xl border border-slate-700 bg-white p-6 sm:p-8 text-slate-900 shadow-2xl">
+              <h3 className="text-xl font-black text-slate-900">
+                Online-Anfrage senden
+              </h3>
+              <p className="mt-1 text-xs text-slate-500">
+                In 2 Minuten ausgefüllt – 100% unverbindlich.
+              </p>
+              <div className="mt-5">
+                <ContactForm />
               </div>
-              <ContactForm />
             </div>
           </div>
         </div>

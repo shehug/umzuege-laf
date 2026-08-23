@@ -4,6 +4,7 @@ import FloatingWhatsApp from "../components/FloatingWhatsApp";
 import CookieConsent from "../components/CookieConsent";
 import SeoJsonLd from "../components/SeoJsonLd";
 import GoogleTagManager from "../components/GoogleTagManager";
+import StickyMobileBar from "../components/StickyMobileBar";
 
 const siteUrl = "https://umzuegelandshut.de";
 
@@ -90,7 +91,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#fafaf7",
+  themeColor: "#0f172a",
 };
 
 export default function RootLayout({
@@ -100,19 +101,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body>
+      <body className="pb-16 md:pb-0 font-sans antialiased text-slate-900 bg-white selection:bg-amber-400 selection:text-slate-950">
         <GoogleTagManager />
         <SeoJsonLd />
         {children}
         <FloatingWhatsApp />
+        <StickyMobileBar />
         <CookieConsent />
       </body>
     </html>

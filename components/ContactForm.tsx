@@ -6,9 +6,9 @@ import { trackContactFormSubmit } from "@/lib/gtmEvents";
 const requestTypes = [
   "Privatumzug",
   "Firmenumzug",
-  "Entrümpelung",
   "Möbelmontage",
   "Einpackservice",
+  "Entrümpelung",
   "Sonstige Anfrage",
 ];
 
@@ -59,140 +59,132 @@ export default function ContactForm() {
       trackContactFormSubmit("Kontaktseite");
 
       setStatus("success");
-      setStatusMessage("Ihre Anfrage wurde erfolgreich gesendet.");
+      setStatusMessage("Vielen Dank! Ihre Anfrage ist eingegangen. Wir melden uns in Kürze mit Ihrem Angebot.");
       form.reset();
     } catch {
       setStatus("error");
       setStatusMessage(
-        "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+        "Es ist ein Fehler aufgetreten. Bitte rufen Sie uns einfach direkt unter 0162 900 75 65 an."
       );
     }
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="relative overflow-hidden rounded-2xl border border-black/10 bg-white p-4.5 shadow-[0_20px_60px_rgba(0,0,0,0.08)] sm:rounded-[2.2rem] sm:p-7 md:p-8"
-    >
-      <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[#f6c21a]/25 blur-3xl" />
-
-      <div className="relative">
-        <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
-          <div>
-            <label className="mb-1.5 block text-xs font-black text-black sm:mb-2 sm:text-sm">
-              Name *
-            </label>
-            <input
-              name="name"
-              type="text"
-              required
-              placeholder="Ihr Name"
-              className="w-full rounded-xl border border-black/10 bg-[#f7f7f2] px-4 py-3 text-sm text-black outline-none transition placeholder:text-black/35 focus:border-[#f6c21a] focus:bg-white focus:ring-4 focus:ring-[#f6c21a]/20 sm:rounded-2xl sm:px-5 sm:py-4 sm:text-base"
-            />
-          </div>
-
-          <div>
-            <label className="mb-1.5 block text-xs font-black text-black sm:mb-2 sm:text-sm">
-              Telefon *
-            </label>
-            <input
-              name="phone"
-              type="tel"
-              required
-              placeholder="Ihre Telefonnummer"
-              className="w-full rounded-xl border border-black/10 bg-[#f7f7f2] px-4 py-3 text-sm text-black outline-none transition placeholder:text-black/35 focus:border-[#f6c21a] focus:bg-white focus:ring-4 focus:ring-[#f6c21a]/20 sm:rounded-2xl sm:px-5 sm:py-4 sm:text-base"
-            />
-          </div>
-
-          <div>
-            <label className="mb-1.5 block text-xs font-black text-black sm:mb-2 sm:text-sm">
-              E-Mail
-            </label>
-            <input
-              name="email"
-              type="email"
-              placeholder="Ihre E-Mail"
-              className="w-full rounded-xl border border-black/10 bg-[#f7f7f2] px-4 py-3 text-sm text-black outline-none transition placeholder:text-black/35 focus:border-[#f6c21a] focus:bg-white focus:ring-4 focus:ring-[#f6c21a]/20 sm:rounded-2xl sm:px-5 sm:py-4 sm:text-base"
-            />
-          </div>
-
-          <div>
-            <label className="mb-1.5 block text-xs font-black text-black sm:mb-2 sm:text-sm">
-              Anfrageart
-            </label>
-            <select
-              name="requestType"
-              className="w-full rounded-xl border border-black/10 bg-[#f7f7f2] px-4 py-3 text-sm text-black outline-none transition focus:border-[#f6c21a] focus:bg-white focus:ring-4 focus:ring-[#f6c21a]/20 sm:rounded-2xl sm:px-5 sm:py-4 sm:text-base"
-            >
-              {requestTypes.map((type) => (
-                <option key={type}>{type}</option>
-              ))}
-            </select>
-          </div>
-
-          <div>
-            <label className="mb-1.5 block text-xs font-black text-black sm:mb-2 sm:text-sm">
-              Startort
-            </label>
-            <input
-              name="startLocation"
-              type="text"
-              placeholder="z. B. Landshut"
-              className="w-full rounded-xl border border-black/10 bg-[#f7f7f2] px-4 py-3 text-sm text-black outline-none transition placeholder:text-black/35 focus:border-[#f6c21a] focus:bg-white focus:ring-4 focus:ring-[#f6c21a]/20 sm:rounded-2xl sm:px-5 sm:py-4 sm:text-base"
-            />
-          </div>
-
-          <div>
-            <label className="mb-1.5 block text-xs font-black text-black sm:mb-2 sm:text-sm">
-              Zielort
-            </label>
-            <input
-              name="targetLocation"
-              type="text"
-              placeholder="z. B. München"
-              className="w-full rounded-xl border border-black/10 bg-[#f7f7f2] px-4 py-3 text-sm text-black outline-none transition placeholder:text-black/35 focus:border-[#f6c21a] focus:bg-white focus:ring-4 focus:ring-[#f6c21a]/20 sm:rounded-2xl sm:px-5 sm:py-4 sm:text-base"
-            />
-          </div>
-        </div>
-
-        <div className="mt-4 sm:mt-5">
-          <label className="mb-1.5 block text-xs font-black text-black sm:mb-2 sm:text-sm">
-            Nachricht *
+    <form onSubmit={handleSubmit} className="w-full">
+      <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
+        <div>
+          <label className="mb-1 block text-xs font-bold text-slate-800">
+            Ihr Name *
           </label>
-          <textarea
-            name="message"
+          <input
+            name="name"
+            type="text"
             required
-            rows={5}
-            placeholder="Beschreiben Sie kurz Ihr Anliegen, gewünschtes Datum, Etage, Möbelumfang oder besondere Hinweise."
-            className="w-full resize-none rounded-xl border border-black/10 bg-[#f7f7f2] px-4 py-3 text-sm text-black outline-none transition placeholder:text-black/35 focus:border-[#f6c21a] focus:bg-white focus:ring-4 focus:ring-[#f6c21a]/20 sm:rounded-2xl sm:px-5 sm:py-4 sm:text-base"
+            placeholder="z. B. Max Mustermann"
+            className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
           />
         </div>
 
-        {statusMessage && (
-          <div
-            className={`mt-4 rounded-xl p-3.5 text-xs font-bold sm:mt-5 sm:rounded-2xl sm:p-4 sm:text-sm ${
-              status === "success"
-                ? "bg-green-100 text-green-800"
-                : "bg-red-100 text-red-800"
-            }`}
-          >
-            {statusMessage}
-          </div>
-        )}
-
-        <div className="mt-5 grid gap-3 sm:mt-6 sm:grid-cols-[1fr_auto] sm:items-center">
-          <p className="text-xs leading-5 text-black/50 sm:text-sm">
-            Pflichtfelder sind mit * markiert.
-          </p>
-
-          <button
-            type="submit"
-            disabled={status === "loading"}
-            className="w-full rounded-full bg-[#f6c21a] px-6 py-3.5 text-center text-sm font-black text-black shadow-[0_15px_40px_rgba(246,194,26,0.25)] transition hover:-translate-y-1 hover:bg-black hover:text-white active:scale-95 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:px-8 sm:py-4 sm:text-base"
-          >
-            {status === "loading" ? "Wird gesendet..." : "Anfrage senden"}
-          </button>
+        <div>
+          <label className="mb-1 block text-xs font-bold text-slate-800">
+            Telefonnummer *
+          </label>
+          <input
+            name="phone"
+            type="tel"
+            required
+            placeholder="z. B. 0170 1234567"
+            className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
+          />
         </div>
+
+        <div>
+          <label className="mb-1 block text-xs font-bold text-slate-800">
+            E-Mail-Adresse
+          </label>
+          <input
+            name="email"
+            type="email"
+            placeholder="ihre.mail@beispiel.de"
+            className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
+          />
+        </div>
+
+        <div>
+          <label className="mb-1 block text-xs font-bold text-slate-800">
+            Art der Leistung
+          </label>
+          <select
+            name="requestType"
+            className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
+          >
+            {requestTypes.map((type) => (
+              <option key={type}>{type}</option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <label className="mb-1 block text-xs font-bold text-slate-800">
+            Von (Startort / Etage)
+          </label>
+          <input
+            name="startLocation"
+            type="text"
+            placeholder="z. B. Landshut, 2. OG"
+            className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
+          />
+        </div>
+
+        <div>
+          <label className="mb-1 block text-xs font-bold text-slate-800">
+            Nach (Zielort / Etage)
+          </label>
+          <input
+            name="targetLocation"
+            type="text"
+            placeholder="z. B. Ergolding, EG"
+            className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
+          />
+        </div>
+      </div>
+
+      <div className="mt-3.5 sm:mt-4">
+        <label className="mb-1 block text-xs font-bold text-slate-800">
+          Ihre Nachricht / Details (optional)
+        </label>
+        <textarea
+          name="message"
+          rows={3}
+          placeholder="Gewünschter Termin, besondere Möbel, Aufzug vorhanden etc."
+          className="w-full resize-none rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
+        />
+      </div>
+
+      {statusMessage && (
+        <div
+          className={`mt-4 rounded-xl p-3.5 text-xs font-bold sm:p-4 sm:text-sm ${
+            status === "success"
+              ? "bg-green-50 border border-green-200 text-green-800"
+              : "bg-red-50 border border-red-200 text-red-800"
+          }`}
+        >
+          {statusMessage}
+        </div>
+      )}
+
+      <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <p className="text-[11px] text-slate-500">
+          🔒 100% kostenlos & unverbindlich.
+        </p>
+
+        <button
+          type="submit"
+          disabled={status === "loading"}
+          className="w-full sm:w-auto rounded-xl bg-[#f59e0b] px-7 py-3.5 text-center text-sm font-black text-slate-950 shadow-md transition hover:bg-[#d97706] hover:text-white active:scale-95 disabled:opacity-60"
+        >
+          {status === "loading" ? "Wird gesendet..." : "Angebot jetzt anfordern →"}
+        </button>
       </div>
     </form>
   );

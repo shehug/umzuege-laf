@@ -69,77 +69,74 @@ export default function LocalSeoLinks() {
   return (
     <section
       aria-label="Lokale Leistungen von Umzüge LAF in Landshut"
-      className="relative z-10 border-t border-black/5 bg-[#fafaf7] px-5 py-16 text-[#18181b] lg:px-8"
+      className="border-t border-slate-200 bg-slate-50 px-4 py-16 text-slate-900 sm:px-6 lg:px-8"
     >
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_1.3fr]">
         <div>
-          <p className="text-sm font-black uppercase tracking-[0.25em] text-[#b28a00]">
+          <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
             Umzüge LAF in Landshut
           </p>
 
-          <h2 className="mt-4 text-3xl font-black tracking-tight text-[#18181b] md:text-4xl">
-            Umzug, Entrümpelung und Möbelmontage in Landshut.
+          <h2 className="mt-2 text-2xl sm:text-3xl font-black tracking-tight text-slate-900">
+            Umzug, Entrümpelung & Montage in Ihrer Region
           </h2>
 
-          <p className="mt-5 max-w-xl leading-7 text-black/60">
+          <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">
             Umzüge LAF unterstützt Privatkunden, Firmen und Haushalte in
             Landshut und Umgebung mit Umzug, Transport, Möbelmontage,
             Einpackservice, Entrümpelung und Sperrmüllentsorgung.
           </p>
+
+          <div className="mt-6">
+            <p className="text-xs font-bold text-slate-700">Einsatzgebiet:</p>
+            <div className="mt-2 flex flex-wrap gap-1.5">
+              {areas.map((a) => (
+                <span
+                  key={a}
+                  className="rounded-md border border-slate-200 bg-white px-2.5 py-1 text-[11px] font-semibold text-slate-700"
+                >
+                  ✓ {a}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-8 sm:grid-cols-2">
           <div>
-            <h3 className="text-lg font-black text-[#b28a00]">
-              Wichtige Seiten
+            <h3 className="text-xs font-black uppercase tracking-wider text-[#d97706]">
+              Umzugsdienste
             </h3>
 
-            <div className="mt-5 grid gap-3">
+            <div className="mt-4 grid gap-2">
               {primaryLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="rounded-2xl border border-black/5 bg-white px-5 py-4 font-bold text-[#18181b] shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 hover:text-[#b28a00]"
+                  className="text-xs sm:text-sm font-semibold text-slate-700 transition hover:text-[#b45309]"
                 >
-                  {link.title}
+                  {link.title} →
                 </Link>
               ))}
             </div>
           </div>
 
           <div>
-            <h3 className="text-lg font-black text-[#b28a00]">
-              Weitere Leistungen
+            <h3 className="text-xs font-black uppercase tracking-wider text-[#d97706]">
+              Montage & Räumung
             </h3>
 
-            <div className="mt-5 grid gap-3">
+            <div className="mt-4 grid gap-2">
               {serviceLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="rounded-2xl border border-black/5 bg-white px-5 py-4 font-bold text-[#18181b] shadow-sm transition hover:border-[#f6c21a] hover:bg-[#f6c21a]/10 hover:text-[#b28a00]"
+                  className="text-xs sm:text-sm font-semibold text-slate-700 transition hover:text-[#b45309]"
                 >
-                  {link.title}
+                  {link.title} →
                 </Link>
               ))}
             </div>
-          </div>
-        </div>
-
-        <div className="lg:col-span-2">
-          <h3 className="text-lg font-black text-[#b28a00]">
-            Einsatzgebiet
-          </h3>
-
-          <div className="mt-5 flex flex-wrap gap-3">
-            {areas.map((area) => (
-              <span
-                key={area}
-                className="rounded-full border border-black/5 bg-white px-5 py-3 text-sm font-bold text-black/75 shadow-sm"
-              >
-                {area}
-              </span>
-            ))}
           </div>
         </div>
       </div>
