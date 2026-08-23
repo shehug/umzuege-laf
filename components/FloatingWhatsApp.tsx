@@ -15,7 +15,7 @@ export default function FloatingWhatsApp() {
       tracking="whatsapp"
       trackingLocation="WhatsApp Floating Button"
       aria-label="WhatsApp Kontakt"
-      className="fixed bottom-6 right-6 z-[90] flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_0_35px_rgba(37,211,102,0.45)] transition hover:-translate-y-1 hover:scale-110 active:scale-95"
+      className="hidden md:flex fixed bottom-6 right-6 z-[90] h-16 w-16 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_0_35px_rgba(37,211,102,0.45)] transition hover:-translate-y-1 hover:scale-110 active:scale-95"
     >
       <svg
         viewBox="0 0 32 32"
