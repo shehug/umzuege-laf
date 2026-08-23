@@ -9,17 +9,17 @@ const whatsappHref = "https://wa.me/491629007565?text=Hallo%20Umz%C3%BCge%20LAF%
 
 export default function StickyMobileBar() {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white/95 px-2 py-2.5 backdrop-blur-md shadow-[0_-4px_25px_rgba(0,0,0,0.12)] md:hidden">
+    <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white/95 px-2 py-1.5 backdrop-blur-md shadow-[0_-2px_15px_rgba(0,0,0,0.08)] md:hidden">
       <div className="mx-auto grid grid-cols-3 gap-1.5 max-w-lg">
         {/* 1. Anrufen */}
         <TrackedLink
           href={phoneHref}
           tracking="phone"
           trackingLocation="StickyMobileBar_Call"
-          className="flex flex-col sm:flex-row items-center justify-center gap-1 rounded-xl bg-[#f59e0b] py-2.5 px-2 text-center text-xs font-black text-[#0f172a] shadow-sm transition active:scale-95 hover:bg-amber-400"
+          className="flex items-center justify-center gap-1 rounded-lg bg-[#f59e0b] py-2 px-1 text-center text-[11px] min-[380px]:text-[12px] font-black text-[#0f172a] shadow-xs transition active:scale-95 hover:bg-amber-400"
         >
           <svg
-            className="h-4 w-4 shrink-0"
+            className="h-3.5 w-3.5 shrink-0"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -39,11 +39,11 @@ export default function StickyMobileBar() {
           href={whatsappHref}
           tracking="whatsapp"
           trackingLocation="StickyMobileBar_WhatsApp"
-          className="flex flex-col sm:flex-row items-center justify-center gap-1 rounded-xl bg-[#25D366] py-2.5 px-2 text-center text-xs font-black text-white shadow-sm transition active:scale-95 hover:bg-green-600"
+          className="flex items-center justify-center gap-1 rounded-lg bg-[#25D366] py-2 px-1 text-center text-[11px] min-[380px]:text-[12px] font-black text-white shadow-xs transition active:scale-95 hover:bg-green-600"
         >
           <svg
             viewBox="0 0 32 32"
-            className="h-4 w-4 shrink-0"
+            className="h-3.5 w-3.5 shrink-0"
             fill="currentColor"
             aria-hidden="true"
           >
@@ -55,7 +55,7 @@ export default function StickyMobileBar() {
         {/* 3. Angebot */}
         <Link
           href="/kontakt#anfrageformular"
-          className="flex flex-col sm:flex-row items-center justify-center gap-1 rounded-xl bg-slate-900 py-2.5 px-2 text-center text-xs font-black text-white shadow-sm transition active:scale-95 hover:bg-slate-800"
+          className="flex items-center justify-center gap-1 rounded-lg bg-slate-900 py-2 px-1 text-center text-[11px] min-[380px]:text-[12px] font-black text-white shadow-xs transition active:scale-95 hover:bg-slate-800"
         >
           <span className="truncate">Angebot</span>
           <span className="text-amber-400">→</span>

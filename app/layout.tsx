@@ -101,7 +101,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de">
-      <body className="pb-16 md:pb-0 font-sans antialiased text-slate-900 bg-white selection:bg-amber-400 selection:text-slate-950">
+      <body className="pb-12 md:pb-0 font-sans antialiased text-slate-900 bg-white selection:bg-amber-400 selection:text-slate-950">
         <GoogleTagManager />
         <SeoJsonLd />
         {children}
