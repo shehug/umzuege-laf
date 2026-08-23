@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
   title: {
-    default: "Umzüge Landshut | Umzugsunternehmen & Entrümpelung – LAF",
+    default: "Umzüge Landshut | Umzugsunternehmen LAF » Schnell & Fair",
     template: "%s | Umzüge Landshut",
   },
 

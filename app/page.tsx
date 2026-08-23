@@ -77,17 +77,17 @@ export default function Home() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f6c21a] opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-[#f6c21a]" />
               </span>
-              Umzugsunternehmen · Landshut
+              Umzüge & Umzugsunternehmen · Landshut
             </div>
 
             <h1 className="text-[2.1rem] font-black leading-[1.12] tracking-tight text-[#18181b] min-[390px]:text-[2.4rem] sm:text-5xl lg:text-6xl">
-              Umzug in Landshut —<br />
-              <span className="gradient-text">persönlich, fair und zuverlässig.</span>
+              Umzugsunternehmen Landshut.<br />
+              <span className="gradient-text">Umzüge ohne Stress mit LAF.</span>
             </h1>
 
             <p className="mt-5 max-w-lg text-[15px] leading-7 text-[#18181b]/70 sm:text-lg sm:leading-8">
-              Umzüge LAF übernimmt Ihren Privatumzug, Firmenumzug oder Ihre Entrümpelung in
-              Landshut und Umgebung. Direkt, unkompliziert, mit persönlichem Ansprechpartner.
+              Umzüge LAF ist Ihr zuverlässiges Umzugsunternehmen in Landshut für Privatumzug,
+              Firmenumzug, Möbelmontage und Einpackservice. Persönlich geplant, transparent und stressfrei.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:gap-4">
