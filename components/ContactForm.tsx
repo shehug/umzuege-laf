@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { trackContactFormSubmit } from "@/lib/gtmEvents";
 
 const requestTypes = [
@@ -13,6 +14,7 @@ const requestTypes = [
 ];
 
 export default function ContactForm() {
+  const router = useRouter();
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle"
   );
@@ -31,7 +33,7 @@ export default function ContactForm() {
       requestType: formData.get("requestType"),
       startLocation: formData.get("startLocation"),
       targetLocation: formData.get("targetLocation"),
-      message: formData.get("message"),
+      message: formData.get("message") || "Anfrage über Schnellformular",
     };
 
     setStatus("loading");
@@ -56,11 +58,16 @@ export default function ContactForm() {
         return;
       }
 
-      trackContactFormSubmit("Kontaktseite");
+      trackContactFormSubmit("Website_Formular");
 
       setStatus("success");
-      setStatusMessage("Vielen Dank! Ihre Anfrage ist eingegangen. Wir melden uns in Kürze mit Ihrem Angebot.");
+      setStatusMessage("Vielen Dank! Ihre Anfrage wird weitergeleitet...");
       form.reset();
+
+      // Redirect to thank you page
+      setTimeout(() => {
+        router.push("/danke");
+      }, 500);
     } catch {
       setStatus("error");
       setStatusMessage(
@@ -159,6 +166,12 @@ export default function ContactForm() {
           placeholder="Gewünschter Termin, besondere Möbel, Aufzug vorhanden etc."
           className="w-full resize-none rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
         />
+      </div>
+
+      {/* Response Promise Banner */}
+      <div className="mt-3.5 flex items-center gap-2 rounded-lg bg-amber-50 border border-amber-200/80 px-3 py-2 text-xs font-bold text-amber-900">
+        <span className="text-sm">⏱️</span>
+        <span>Antwort-Garantie: Rückmeldung innerhalb von 4 Stunden (Mo–Sa)</span>
       </div>
 
       {statusMessage && (

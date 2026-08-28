@@ -6,6 +6,7 @@ import LocalSeoLinks from "../../components/LocalSeoLinks";
 import ServiceJsonLd from "../../components/ServiceJsonLd";
 import BreadcrumbJsonLd from "../../components/BreadcrumbJsonLd";
 import ContactForm from "../../components/ContactForm";
+import GoogleReviews from "../../components/GoogleReviews";
 import { createSeoMetadata } from "../seo";
 
 export const metadata = createSeoMetadata({
@@ -228,6 +229,9 @@ export default function UmzugsunternehmenLandshutPage() {
           </div>
         </div>
       </section>
+
+      {/* ── KUNDENBEWERTUNGEN ── */}
+      <GoogleReviews />
 
       {/* ── AREAS SECTION ── */}
       <section className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">

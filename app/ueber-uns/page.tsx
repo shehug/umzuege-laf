@@ -4,6 +4,8 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import LocalSeoLinks from "../../components/LocalSeoLinks";
 import ContactForm from "../../components/ContactForm";
+import GoogleReviews from "../../components/GoogleReviews";
+import GoogleMapLocation from "../../components/GoogleMapLocation";
 import { createSeoMetadata, seoPages } from "../seo";
 
 export const metadata = createSeoMetadata(seoPages.ueberUns);
@@ -25,7 +27,7 @@ const values = [
   {
     icon: "👤",
     title: "Persönlicher Kontakt",
-    text: "Bei Umzüge LAF haben Sie einen direkten Ansprechpartner und keine anonyme Callcenter-Abwicklung.",
+    text: "Bei Umzüge LAF haben Sie einen direkten Ansprechpartner vor Ort und keine anonyme Callcenter-Abwicklung.",
   },
   {
     icon: "💶",
@@ -44,7 +46,7 @@ export default function UeberUnsPage() {
         <div className="absolute inset-0 z-0 opacity-60">
           <Image
             src="/images/services/umzuege-laf-1.jpg"
-            alt="Umzüge LAF Team und Service"
+            alt="Umzüge LAF Team und Service Landshut"
             fill
             priority
             sizes="100vw"
@@ -117,10 +119,13 @@ export default function UeberUnsPage() {
         </div>
       </section>
 
-      {/* ── ANFRAGE SEKTION ── */}
+      {/* ── KUNDENSTIMMEN ── */}
+      <GoogleReviews />
+
+      {/* ── STANDORT & ANFRAGE SEKTION ── */}
       <section id="anfrage-formular" className="py-16 sm:py-24 bg-slate-900 text-white scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full bg-amber-400/10 px-3 py-1 text-xs font-bold text-amber-300">
                 <span>📍</span>
@@ -133,20 +138,11 @@ export default function UeberUnsPage() {
 
               <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
                 Rufen Sie uns unverbindlich an oder fordern Sie online ein Festpreis-Angebot
-                für Ihren nächsten Umzug an.
+                für Ihren nächsten Umzug an. Rückmeldung garantiert innerhalb von 4 Stunden.
               </p>
 
-              <div className="mt-6 rounded-2xl border border-slate-700 bg-slate-800/80 p-5">
-                <p className="text-xs font-bold text-amber-400 uppercase tracking-wider">
-                  Telefonische Beratung
-                </p>
-                <a
-                  href={phoneHref}
-                  className="mt-1 inline-flex items-center gap-2 text-xl font-black text-white hover:text-amber-400 transition"
-                >
-                  <span>📞</span>
-                  <span>{phone}</span>
-                </a>
+              <div className="mt-6">
+                <GoogleMapLocation />
               </div>
             </div>
 
@@ -155,7 +151,7 @@ export default function UeberUnsPage() {
                 Online-Anfrage starten
               </h3>
               <p className="mt-1 text-xs text-slate-500">
-                In 2 Minuten ausgefüllt – 100% unverbindlich.
+                In 2 Minuten ausgefüllt – Antwort innerhalb von 4 Stunden.
               </p>
               <div className="mt-5">
                 <ContactForm />

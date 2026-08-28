@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import LocalSeoLinks from "../components/LocalSeoLinks";
-import ContactForm from "../components/ContactForm";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import LocalSeoLinks from "@/components/LocalSeoLinks";
+import ContactForm from "@/components/ContactForm";
+import GoogleReviews from "@/components/GoogleReviews";
 import { createSeoMetadata, seoPages } from "./seo";
 
 export const metadata = createSeoMetadata(seoPages.home);
@@ -13,53 +14,53 @@ const phoneHref = "tel:+491629007565";
 
 const trustPillars = [
   {
-    icon: "🛡️",
-    title: "Festpreis-Garantie",
-    text: "Klare, transparente Preise ohne versteckte Nachforderungen.",
+    title: "Garantierter Festpreis",
+    desc: "Keine versteckten Gebühren oder Nachforderungen am Umzugstag.",
+    icon: "💶",
   },
   {
-    icon: "⭐",
-    title: "4.9 Sterne Bewertung",
-    text: "Höchste Kundenzufriedenheit bei privaten und gewerblichen Umzügen.",
-  },
-  {
-    icon: "📍",
-    title: "Aus Landshut",
-    text: "Regionales Team mit langjähriger Erfahrung in Landshut & Umgebung.",
-  },
-  {
-    icon: "🚚",
     title: "Voll versichert",
-    text: "Ihre Möbel und Wertgegenstände sind bei jedem Transport geschützt.",
+    desc: "Ihre Möbel & Wertsachen sind während des gesamten Transports optimal geschützt.",
+    icon: "🛡️",
+  },
+  {
+    title: "Regional aus Landshut",
+    desc: "Direkte Erreichbarkeit, ortskundiges Team und kostenlose Vor-Ort-Besichtigung.",
+    icon: "📍",
+  },
+  {
+    title: "Antwort in 4 Stunden",
+    desc: "Verbindliches Angebot innerhalb von 4 Stunden nach Ihrer Anfrage.",
+    icon: "⏱️",
   },
 ];
 
 const mainServices = [
   {
-    title: "Privatumzug",
+    title: "Privatumzug Landshut",
     badge: "Beliebt",
-    text: "Wohnungs- & Hausumzüge in Landshut. Zuverlässig, sauber und stressfrei von A nach B.",
+    text: "Stressfreier Wohnungsumzug oder Hausumzug mit Einpackservice, Möbeltransport und Montage.",
     href: "/privatumzug-landshut",
     image: "/images/services/privatumzug.jpg",
   },
   {
-    title: "Firmenumzug",
+    title: "Firmenumzug Landshut",
     badge: "Gewerbe",
-    text: "Strukturierte Büroumzüge & Betriebsumzüge mit minimaler Ausfallzeit für Ihr Unternehmen.",
+    text: "Strukturierte Büroumzüge, Praxisumzüge und Gewerbeumzüge mit minimaler Ausfallzeit.",
     href: "/firmenumzug-landshut",
     image: "/images/services/firmenumzug.jpg",
   },
   {
-    title: "Möbelmontage & Einpackservice",
-    badge: "Komfort",
-    text: "Fachgerechter Ab- und Aufbau Ihrer Schränke und Küchen sowie sicheres Verpacken.",
+    title: "Möbelmontage",
+    badge: "Handwerk",
+    text: "Fachgerechter Abbau, sicherer Transport und stabiler Wiederaufbau aller Möbel.",
     href: "/umzuege/moebelmontage",
     image: "/images/services/Montage.jpg",
   },
   {
     title: "Entrümpelung & Räumung",
-    badge: "Service",
-    text: "Wohnungsauflösungen, Keller- und Speicherräumung sowie fachgerechte Entsorgung.",
+    badge: "Besenrein",
+    text: "Wohnungsauflösungen, Keller, Dachböden und Sperrmüllentsorgung schnell und sauber.",
     href: "/entruempelung-landshut",
     image: "/images/services/entruempelung.jpg",
   },
@@ -74,7 +75,7 @@ const steps = [
   {
     num: "2",
     title: "Verbindliches Festpreis-Angebot",
-    text: "Sie erhalten schnell ein transparentes, faires Angebot ohne versteckte Zusatzkosten.",
+    text: "Sie erhalten innerhalb von 4 Stunden ein transparentes, faires Angebot ohne versteckte Kosten.",
   },
   {
     num: "3",
@@ -86,19 +87,27 @@ const steps = [
 const homeFaqs = [
   {
     q: "Was kostet ein Umzug in Landshut mit Umzüge LAF?",
-    a: "Die Kosten richten sich nach Wohnungsgröße, Etage, Entfernung und gewünschten Zusatzleistungen (z. B. Montage oder Einpackservice). Wir berechnen transparente, faire Festpreise.",
+    a: "Die Kosten richten sich nach Wohnungsgröße, Etage, Entfernung und gewünschten Zusatzleistungen (z. B. Montage oder Einpackservice). Nach Erhalt Ihrer Eckdaten erstellen wir einen verbindlichen Festpreis ohne Nachforderungen.",
+  },
+  {
+    q: "Wie schnell erhalte ich mein Umzugsangebot?",
+    a: "Wir garantieren Ihnen eine persönliche Rückmeldung und ein transparentes Angebot innerhalb von maximal 4 Stunden während unserer Geschäftszeiten (Mo–Sa: 08:00 – 18:00 Uhr).",
   },
   {
     q: "Sind meine Möbel beim Transport versichert?",
-    a: "Ja, alle Transporte und Umzugsarbeiten sind selbstverständlich vollumfänglich nach gesetzlichen Standards versichert.",
+    a: "Ja, alle Transporte, Tragearbeiten und Montageservices sind selbstverständlich vollumfänglich nach gesetzlichen deutschen Transportstandards versichert.",
   },
   {
     q: "Sind auch kurzfristige Umzugstermine möglich?",
-    a: "Ja! Durch unsere flexible Teamplanung in Landshut können wir oft auch kurzfristige oder dringende Umzüge kurzfristig realisieren.",
+    a: "Ja! Durch unsere flexible Teamplanung in Landshut können wir oft auch kurzfristige oder dringende Express-Umzüge innerhalb von 24–48 Stunden realisieren.",
   },
   {
-    q: "Übernehmen Sie auch die Möbelmontage?",
-    a: "Ja, unser Team baut Ihre Möbel, Betten und Schränke fachgerecht ab und baut sie am Zielort wieder stabil auf.",
+    q: "Übernehmen Sie auch Möbelmontage und Küchenabbau?",
+    a: "Ja, unser Team baut Ihre Schränke, Betten, Regale und Möbel fachgerecht ab und baut sie am Zielort wieder stabil auf.",
+  },
+  {
+    q: "Kombinieren Sie Umzug auch mit Entrümpelung oder Sperrmüll?",
+    a: "Ja, wir können nicht mehr benötigte Altmöbel, Kellerabteile oder Sperrmüll direkt im Rahmen Ihres Umzugs fachgerecht entsorgen.",
   },
 ];
 
@@ -139,11 +148,12 @@ export default function Home() {
               </h1>
 
               <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
-                Ihr erfahrenes Umzugsteam aus Landshut für Privatumzug, Firmenumzug,
-                Möbelmontage und Einpackservice. Zuverlässig, pünktlich und ohne versteckte Kosten.
+                Ihr erfahrenes Umzugsteam für Landshut & Umgebung. Wir übernehmen
+                Privatumzüge, Firmenumzüge, Möbelmontage, Einpackservice und Entrümpelungen
+                — zuverlässig, pünktlich und fair.
               </p>
 
-              {/* Action Buttons */}
+              {/* CTAs */}
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
                 <a
                   href={phoneHref}
@@ -152,7 +162,7 @@ export default function Home() {
                   <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  <span>Jetzt anrufen: {phone}</span>
+                  <span>Direkt anrufen: {phone}</span>
                 </a>
 
                 <a
@@ -163,117 +173,132 @@ export default function Home() {
                 </a>
               </div>
 
-              {/* Quick check points */}
-              <div className="mt-8 grid grid-cols-2 gap-3 text-xs sm:text-sm font-semibold text-slate-300 max-w-lg">
-                <div className="flex items-center gap-2">
-                  <span className="text-amber-400 font-black">✓</span> 100% Festpreis-Garantie
+              {/* Mini Trust Checklist */}
+              <div className="mt-8 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs sm:text-sm font-semibold text-slate-300">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-amber-400 font-black">✓</span>
+                  <span>Kostenlose Besichtigung</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-amber-400 font-black">✓</span> Voll versichert
+                <div className="flex items-center gap-1.5">
+                  <span className="text-amber-400 font-black">✓</span>
+                  <span>Transparenter Festpreis</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-amber-400 font-black">✓</span> Schnelle Rückmeldung
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-amber-400 font-black">✓</span> Team aus Landshut
+                <div className="flex items-center gap-1.5">
+                  <span className="text-amber-400 font-black">✓</span>
+                  <span>Antwort in 4 Std.</span>
                 </div>
               </div>
             </div>
 
-            {/* Right Card: Quick Form Teaser for Desktop */}
-            <div className="hidden lg:block rounded-2xl border border-slate-700/80 bg-slate-900/90 p-7 shadow-2xl backdrop-blur-md">
-              <p className="text-xs font-black uppercase tracking-wider text-amber-400">
-                In 2 Minuten
-              </p>
-              <h3 className="mt-1 text-2xl font-black text-white">
-                Festpreis-Angebot anfordern
-              </h3>
-              <p className="mt-2 text-sm text-slate-300">
-                Kostenlos und 100% unverbindlich für Ihren Umzug in Landshut.
-              </p>
-              <div className="mt-5">
-                <ContactForm />
+            {/* Quick Hero Card */}
+            <div className="hidden lg:block rounded-2xl border border-slate-800 bg-slate-900/90 p-8 shadow-2xl backdrop-blur-md">
+              <div className="flex items-center justify-between border-b border-slate-800 pb-5">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-wider text-amber-400">
+                    Kunden-Zufriedenheit
+                  </p>
+                  <p className="mt-1 text-2xl font-black text-white">4.9 von 5.0 Sternen</p>
+                </div>
+                <div className="flex text-amber-400 text-lg">★★★★★</div>
+              </div>
+
+              <div className="mt-6 space-y-4 text-sm text-slate-300">
+                <div className="flex items-start gap-3">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-xs font-bold text-emerald-400">
+                    ✓
+                  </span>
+                  <p><strong className="text-white">Pünktlich & Zuverlässig:</strong> Feste Termine ohne Verzögerungen.</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-xs font-bold text-emerald-400">
+                    ✓
+                  </span>
+                  <p><strong className="text-white">Sorgfältiges Tragen:</strong> Schutzdecken & Spanngurte für jedes Möbelstück.</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-xs font-bold text-emerald-400">
+                    ✓
+                  </span>
+                  <p><strong className="text-white">Alles aus einer Hand:</strong> Transport, Montage & Entsorgung.</p>
+                </div>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-slate-800">
+                <a
+                  href="#direktanfrage"
+                  className="block w-full rounded-xl bg-amber-400 py-3.5 text-center text-sm font-black text-slate-950 transition hover:bg-amber-300 shadow-md"
+                >
+                  Unverbindliches Angebot anfordern →
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── TRUST PILLARS (4 SÄULEN) ── */}
+      {/* ── 4 TRUST PILLARS ── */}
       <section className="relative z-20 -mt-6 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-4 sm:gap-4">
-          {trustPillars.map((pillar) => (
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {trustPillars.map((p) => (
             <div
-              key={pillar.title}
-              className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5 transition hover:border-amber-400 hover:shadow-md"
+              key={p.title}
+              className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm hover:border-amber-400 hover:shadow-md transition duration-200"
             >
-              <div className="text-2xl sm:text-3xl">{pillar.icon}</div>
-              <h2 className="mt-2 text-sm sm:text-base font-black text-slate-900">
-                {pillar.title}
-              </h2>
-              <p className="mt-1 text-xs text-slate-600 leading-relaxed">
-                {pillar.text}
-              </p>
+              <div className="text-2xl">{p.icon}</div>
+              <h2 className="mt-3 text-base font-black text-slate-900">{p.title}</h2>
+              <p className="mt-1.5 text-xs sm:text-sm text-slate-600 leading-relaxed">{p.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ── 3-SCHRITTE ABLAUF ── */}
-      <section className="py-16 sm:py-20 bg-slate-50 border-y border-slate-200 mt-16 sm:mt-20">
+      {/* ── 3-STEP PROCESS ── */}
+      <section className="py-16 sm:py-24 bg-slate-50 border-b border-slate-200 mt-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
             <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
-              Ablauf
+              Einfacher Ablauf
             </p>
             <h2 className="mt-2 text-2xl sm:text-4xl font-black tracking-tight text-slate-900">
               In 3 Schritten zu Ihrem stressfreien Umzug
             </h2>
             <p className="mt-3 text-sm sm:text-base text-slate-600">
-              Einfach, strukturiert und vollkommen transparent von der ersten Minute an.
+              Klar, transparent und ohne komplizierten Papierkram.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {steps.map((step) => (
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            {steps.map((s) => (
               <div
-                key={step.num}
-                className="relative rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+                key={s.num}
+                className="relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-100 text-lg font-black text-amber-700">
-                  {step.num}
+                <div>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-100 text-base font-black text-amber-800">
+                    {s.num}
+                  </div>
+                  <h3 className="mt-5 text-lg font-black text-slate-900">{s.title}</h3>
+                  <p className="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">{s.text}</p>
                 </div>
-                <h3 className="mt-4 text-lg font-black text-slate-900">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                  {step.text}
-                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── LEISTUNGEN ── */}
-      <section className="py-16 sm:py-24 bg-white">
+      {/* ── LEISTUNGEN GRID ── */}
+      <section className="py-16 sm:py-24 bg-white border-b border-slate-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <div>
-              <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
-                Unsere Leistungen
-              </p>
-              <h2 className="mt-2 text-2xl sm:text-4xl font-black tracking-tight text-slate-900">
-                Alles für Ihren Umzug in Landshut
-              </h2>
-            </div>
-            <Link
-              href="/leistungen"
-              className="inline-flex items-center gap-1.5 text-sm font-bold text-[#b45309] hover:underline"
-            >
-              <span>Alle Leistungen im Überblick</span>
-              <span>→</span>
-            </Link>
+          <div className="max-w-2xl">
+            <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
+              Unsere Leistungen
+            </p>
+            <h2 className="mt-2 text-2xl sm:text-4xl font-black tracking-tight text-slate-900">
+              Professionelle Umzugsservices in Landshut
+            </h2>
+            <p className="mt-3 text-sm sm:text-base text-slate-600">
+              Wählen Sie den passenden Service für Ihr Vorhaben:
+            </p>
           </div>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -314,6 +339,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── ECHTE KUNDENBEWERTUNGEN VOM GOOGLE PROFIL ── */}
+      <GoogleReviews />
+
       {/* ── DIREKTANFRAGE FORMULAR SEKTION ── */}
       <section id="direktanfrage" className="py-16 sm:py-24 bg-slate-900 text-white scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -330,7 +358,7 @@ export default function Home() {
 
               <p className="mt-4 text-base text-slate-300 leading-relaxed">
                 Ob 1-Zimmer-Wohnung, Einfamilienhaus oder Büro: Teilen Sie uns kurz
-                Ihre Eckdaten mit. Wir melden uns umgehend mit einem fairen Festpreis bei Ihnen.
+                Ihre Eckdaten mit. Wir melden uns innerhalb von 4 Stunden mit einem fairen Festpreis bei Ihnen.
               </p>
 
               <div className="mt-8 rounded-2xl border border-slate-700 bg-slate-800/60 p-6">
@@ -365,7 +393,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FAQ SEKTION ── */}
+      {/* ── FAQ SEKTION (6 FAQs) ── */}
       <section className="py-16 sm:py-24 bg-white border-t border-slate-200">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
@@ -381,7 +409,7 @@ export default function Home() {
             {homeFaqs.map((faq) => (
               <div
                 key={faq.q}
-                className="rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:p-6 shadow-sm"
+                className="rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:p-6 shadow-sm hover:border-amber-400/60 transition"
               >
                 <h3 className="text-base font-black text-slate-900">
                   {faq.q}

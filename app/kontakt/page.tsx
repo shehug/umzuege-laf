@@ -3,6 +3,7 @@ import Footer from "../../components/Footer";
 import LocalSeoLinks from "../../components/LocalSeoLinks";
 import ContactForm from "../../components/ContactForm";
 import TrackedLink from "../../components/TrackedLink";
+import GoogleMapLocation from "../../components/GoogleMapLocation";
 import { createSeoMetadata, seoPages } from "../seo";
 
 export const metadata = createSeoMetadata(seoPages.kontakt);
@@ -12,11 +13,10 @@ const phoneHref = "tel:+491629007565";
 const whatsappHref = "https://wa.me/491629007565?text=Hallo%20Umz%C3%BCge%20LAF%2C%20ich%20m%C3%B6chte%20ein%20unverbindliches%20Angebot%20anfragen.";
 const email = "info@umzuege-laf.de";
 const emailHref = "mailto:info@umzuege-laf.de";
-const address = "Ergoldinger Str. 15, 84030 Landshut";
 
 const trustBadges = [
-  { title: "100% Kostenlos", desc: "Unverbindliches Angebot ohne Risiko" },
-  { title: "Schnelle Rückmeldung", desc: "Zügige Antwort auf Ihre Anfrage" },
+  { title: "100% Kostenlos", desc: "Unverbindliches Festpreis-Angebot" },
+  { title: "Antwort in 4 Std.", desc: "Garantierte Rückmeldung Mo–Sa" },
   { title: "Festpreis-Garantie", desc: "Transparente Preise ohne Überraschungen" },
   { title: "Persönlich in Landshut", desc: "Direkte Beratung & Vor-Ort-Besichtigung" },
 ];
@@ -125,41 +125,29 @@ export default function KontaktPage() {
         </div>
       </section>
 
-      {/* ── FORMULAR & STANDORT ── */}
+      {/* ── FORMULAR & STANDORT MIT GOOGLE MAPS ── */}
       <section className="py-16 sm:py-24 bg-slate-50 border-t border-slate-200 mt-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
               <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
-                Standort Landshut
+                Standort & Route
               </p>
               <h2 className="mt-2 text-2xl sm:text-3xl font-black text-slate-900">
                 Vor Ort in Landshut & Region
               </h2>
 
               <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-                Unser Firmensitz befindet sich in der Ergoldinger Straße. Wir
-                führen Umzüge und Räumungen in ganz Landshut und den umliegenden
-                Gemeinden durch.
+                Unser Firmensitz befindet sich in der Ergoldinger Straße 15 in Landshut.
+                Wir führen Umzüge, Transporte und Räumungen in ganz Landshut und dem Umland durch.
               </p>
 
-              <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-                  Adresse
-                </p>
-                <p className="mt-1 text-base font-black text-slate-900">{address}</p>
-                <a
-                  href="https://maps.google.com/?q=Ergoldinger+Str.+15,+84030+Landshut"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-[#b45309] hover:underline"
-                >
-                  <span>In Google Maps öffnen</span>
-                  <span>→</span>
-                </a>
+              {/* Google Maps Location Embed */}
+              <div className="mt-6">
+                <GoogleMapLocation />
               </div>
 
-              <div className="mt-8 grid grid-cols-2 gap-3">
+              <div className="mt-6 grid grid-cols-2 gap-3">
                 {trustBadges.map((b) => (
                   <div key={b.title} className="rounded-xl border border-slate-200 bg-white p-3.5 shadow-sm">
                     <p className="text-xs font-black text-slate-900">{b.title}</p>
@@ -174,7 +162,7 @@ export default function KontaktPage() {
                 Online-Anfrageformular
               </h3>
               <p className="mt-1 text-xs text-slate-500">
-                Füllen Sie kurz die wichtigsten Eckdaten aus. Wir melden uns umgehend.
+                Füllen Sie kurz die wichtigsten Eckdaten aus. Wir melden uns innerhalb von 4 Stunden.
               </p>
               <div className="mt-5">
                 <ContactForm />
