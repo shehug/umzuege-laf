@@ -4,6 +4,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import LocalSeoLinks from "../../components/LocalSeoLinks";
 import ContactForm from "../../components/ContactForm";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import { createSeoMetadata, seoPages } from "../seo";
 
 export const metadata = createSeoMetadata(seoPages.leistungen);
@@ -90,6 +91,8 @@ export default function LeistungenPage() {
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
+            <Breadcrumbs items={[{ label: "Leistungen" }]} />
+
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-400/10 px-3.5 py-1.5 text-xs font-extrabold text-amber-300">
               <span>★ Leistungsübersicht ·</span>
               <span>Umzüge LAF Landshut</span>

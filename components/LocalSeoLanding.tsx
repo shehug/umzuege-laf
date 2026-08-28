@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "./Header";
 import Footer from "./Footer";
 import BreadcrumbJsonLd from "./BreadcrumbJsonLd";
+import Breadcrumbs, { BreadcrumbItem } from "./Breadcrumbs";
 import ServiceJsonLd from "./ServiceJsonLd";
 import ContactForm from "./ContactForm";
 
@@ -90,16 +91,36 @@ export default function LocalSeoLanding({
   relatedServices,
   faqs,
 }: LocalSeoLandingProps) {
+  let visualBreadcrumbs: BreadcrumbItem[] = [];
+  if (path.startsWith("/umzuege/")) {
+    visualBreadcrumbs = [
+      { label: "Umzüge", href: "/umzuege" },
+      { label: breadcrumbName },
+    ];
+  } else if (path.startsWith("/entruempelung/")) {
+    visualBreadcrumbs = [
+      { label: "Entrümpelung", href: "/entruempelung-landshut" },
+      { label: breadcrumbName },
+    ];
+  } else if (path.includes("umzug")) {
+    visualBreadcrumbs = [
+      { label: "Leistungen", href: "/leistungen" },
+      { label: breadcrumbName },
+    ];
+  } else {
+    visualBreadcrumbs = [{ label: breadcrumbName }];
+  }
+
+  const jsonLdItems = [
+    { name: "Startseite", path: "/" },
+    ...visualBreadcrumbs.map((b) => ({ name: b.label, path: b.href || path })),
+  ];
+
   return (
     <main className="min-h-screen bg-white text-slate-900">
       <Header />
 
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Startseite", path: "/" },
-          { name: breadcrumbName, path },
-        ]}
-      />
+      <BreadcrumbJsonLd items={jsonLdItems} />
 
       <ServiceJsonLd
         name={serviceName}
@@ -128,6 +149,9 @@ export default function LocalSeoLanding({
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
+            {/* Visual Breadcrumbs */}
+            <Breadcrumbs items={visualBreadcrumbs} />
+
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-400/10 px-3.5 py-1.5 text-xs font-extrabold text-amber-300">
               <span>★ 4.9 / 5 Bewertung ·</span>
               <span>{badge}</span>

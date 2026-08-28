@@ -3,6 +3,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import LocalSeoLinks from "../../components/LocalSeoLinks";
 import ContactForm from "../../components/ContactForm";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import { createSeoMetadata, seoPages } from "../seo";
 
 export const metadata = createSeoMetadata(seoPages.faq);
@@ -17,7 +18,7 @@ const allFaqs = [
   },
   {
     q: "Wie schnell kann ich ein Angebot erhalten?",
-    a: "In der Regel innerhalb weniger Stunden! Nennen Sie uns einfach Startadresse, Zieladresse, Etage, gewünschtes Datum und den ungefähren Umfang über unser Online-Formular oder telefonisch.",
+    a: "In der Regel innerhalb von maximal 4 Stunden! Nennen Sie uns einfach Startadresse, Zieladresse, Etage, gewünschtes Datum und den ungefähren Umfang über unser Online-Formular oder telefonisch.",
   },
   {
     q: "Bietet Umzüge LAF auch kurzfristige Umzüge an?",
@@ -52,7 +53,9 @@ export default function FAQPage() {
 
       {/* ── HERO ── */}
       <section className="bg-slate-900 pt-28 pb-16 text-white sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-24 border-b border-slate-800">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+          <Breadcrumbs items={[{ label: "FAQ" }]} />
+
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-400/10 px-3.5 py-1.5 text-xs font-extrabold text-amber-300">
             <span>★ Häufige Fragen & Antworten</span>
           </div>

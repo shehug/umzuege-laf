@@ -6,6 +6,7 @@ import LocalSeoLinks from "@/components/LocalSeoLinks";
 import { createSeoMetadata } from "../seo";
 import ServiceJsonLd from "@/components/ServiceJsonLd";
 import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata = createSeoMetadata({
@@ -121,6 +122,13 @@ export default function EntruempelungLandshutPage() {
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
+            <Breadcrumbs
+              items={[
+                { label: "Leistungen", href: "/leistungen" },
+                { label: "Entrümpelung Landshut" },
+              ]}
+            />
+
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-400/10 px-3.5 py-1.5 text-xs font-extrabold text-amber-300">
               <span>★ Besenrein & Fair ·</span>
               <span>Entrümpelung Landshut & Umgebung</span>
