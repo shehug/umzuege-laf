@@ -23,10 +23,10 @@ export async function POST(request: Request) {
 
     const smtpHost = process.env.SMTP_HOST || "smtp.hostinger.com";
     const smtpPort = Number(process.env.SMTP_PORT || 465);
-    const smtpUser = process.env.SMTP_USER || "info@umzuegelandshut.de";
-    const smtpPass = process.env.SMTP_PASS;
-    const recipient = process.env.CONTACT_TO || "info@umzuegelandshut.de";
-    const sender = process.env.SMTP_FROM || `"Umzüge LAF Website" <${smtpUser}>`;
+    const smtpUser = process.env.SMTP_USER || "info@umzuege-laf.de";
+    const smtpPass = process.env.SMTP_PASS || "8xP*tJ,>U2*#5;jr";
+    const recipient = process.env.CONTACT_TO || "info@umzuege-laf.de";
+    const sender = process.env.SMTP_FROM || `"Umzüge LAF" <${smtpUser}>`;
 
     if (smtpPass) {
       const transporter = nodemailer.createTransport({
@@ -84,16 +84,6 @@ Nachricht:
 ${message || "Keine Angabe"}
         `,
       });
-    } else {
-      console.log("SMTP_PASS nicht konfiguriert. Anfrage empfangen:", {
-        name,
-        phone,
-        email,
-        requestType,
-        startLocation,
-        targetLocation,
-        message,
-      });
     }
 
     return Response.json({
@@ -106,7 +96,7 @@ ${message || "Keine Angabe"}
     return Response.json(
       {
         success: false,
-        message: "Die Anfrage konnte nicht gesendet werden. Bitte rufen Sie uns direkt an.",
+        message: "Die Anfrage konnte nicht gesendet werden. Bitte rufen Sie uns direkt unter 0162 900 75 65 an.",
       },
       { status: 500 }
     );

@@ -5,7 +5,6 @@ import Footer from "../../components/Footer";
 import LocalSeoLinks from "../../components/LocalSeoLinks";
 import ContactForm from "../../components/ContactForm";
 import GoogleReviews from "../../components/GoogleReviews";
-import GoogleMapLocation from "../../components/GoogleMapLocation";
 import { createSeoMetadata, seoPages } from "../seo";
 
 export const metadata = createSeoMetadata(seoPages.ueberUns);
@@ -70,7 +69,7 @@ export default function UeberUnsPage() {
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
               Umzüge LAF steht für saubere Handwerksqualität, persönliche Betreuung
               und faire Preise. Wir sind kein anonymer Großkonzern, sondern ein engagiertes
-              Team direkt vor Ort.
+              Team direkt vor Ort in Landshut.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
@@ -122,10 +121,10 @@ export default function UeberUnsPage() {
       {/* ── KUNDENSTIMMEN ── */}
       <GoogleReviews />
 
-      {/* ── STANDORT & ANFRAGE SEKTION ── */}
+      {/* ── ANFRAGE SEKTION ── */}
       <section id="anfrage-formular" className="py-16 sm:py-24 bg-slate-900 text-white scroll-mt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full bg-amber-400/10 px-3 py-1 text-xs font-bold text-amber-300">
                 <span>📍</span>
@@ -141,8 +140,20 @@ export default function UeberUnsPage() {
                 für Ihren nächsten Umzug an. Rückmeldung garantiert innerhalb von 4 Stunden.
               </p>
 
-              <div className="mt-6">
-                <GoogleMapLocation />
+              <div className="mt-6 rounded-2xl border border-slate-700 bg-slate-800/80 p-5">
+                <p className="text-xs font-bold text-amber-400 uppercase tracking-wider">
+                  Telefonische Beratung
+                </p>
+                <a
+                  href={phoneHref}
+                  className="mt-1 inline-flex items-center gap-2 text-xl font-black text-white hover:text-amber-400 transition"
+                >
+                  <span>📞</span>
+                  <span>{phone}</span>
+                </a>
+                <p className="mt-2 text-xs text-slate-400">
+                  Ergoldinger Str. 15, 84030 Landshut · Mo–Sa: 08:00 – 18:00 Uhr
+                </p>
               </div>
             </div>
 
