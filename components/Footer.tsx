@@ -74,7 +74,7 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-xs sm:text-sm text-slate-400 hover:text-white transition"
+                  className="text-xs sm:text-sm text-slate-300 hover:text-white transition"
                 >
                   {link.label}
                 </Link>
@@ -91,7 +91,7 @@ export default function Footer() {
                 <Link
                   key={service.href}
                   href={service.href}
-                  className="text-xs sm:text-sm text-slate-400 hover:text-white transition"
+                  className="text-xs sm:text-sm text-slate-300 hover:text-white transition"
                 >
                   {service.label}
                 </Link>

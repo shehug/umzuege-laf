@@ -80,96 +80,104 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="w-full">
       <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
         <div>
-          <label className="mb-1 block text-xs font-bold text-slate-800">
+          <label htmlFor="contact-name" className="mb-1 block text-xs font-bold text-slate-900">
             Ihr Name *
           </label>
           <input
+            id="contact-name"
             name="name"
             type="text"
             required
             placeholder="z. B. Max Mustermann"
-            className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
+            className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
           />
         </div>
 
         <div>
-          <label className="mb-1 block text-xs font-bold text-slate-800">
+          <label htmlFor="contact-phone" className="mb-1 block text-xs font-bold text-slate-900">
             Telefonnummer *
           </label>
           <input
+            id="contact-phone"
             name="phone"
             type="tel"
             required
             placeholder="z. B. 0170 1234567"
-            className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
+            className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
           />
         </div>
 
         <div>
-          <label className="mb-1 block text-xs font-bold text-slate-800">
+          <label htmlFor="contact-email" className="mb-1 block text-xs font-bold text-slate-900">
             E-Mail-Adresse
           </label>
           <input
+            id="contact-email"
             name="email"
             type="email"
             placeholder="ihre.mail@beispiel.de"
-            className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
+            className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
           />
         </div>
 
         <div>
-          <label className="mb-1 block text-xs font-bold text-slate-800">
+          <label htmlFor="contact-requestType" className="mb-1 block text-xs font-bold text-slate-900">
             Art der Leistung
           </label>
           <select
+            id="contact-requestType"
             name="requestType"
+            aria-label="Art der Leistung"
             className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
           >
             {requestTypes.map((type) => (
-              <option key={type}>{type}</option>
+              <option key={type} value={type}>{type}</option>
             ))}
           </select>
         </div>
 
         <div>
-          <label className="mb-1 block text-xs font-bold text-slate-800">
+          <label htmlFor="contact-startLocation" className="mb-1 block text-xs font-bold text-slate-900">
             Von (Startort / Etage)
           </label>
           <input
+            id="contact-startLocation"
             name="startLocation"
             type="text"
             placeholder="z. B. Landshut, 2. OG"
-            className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
+            className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
           />
         </div>
 
         <div>
-          <label className="mb-1 block text-xs font-bold text-slate-800">
+          <label htmlFor="contact-targetLocation" className="mb-1 block text-xs font-bold text-slate-900">
             Nach (Zielort / Etage)
           </label>
           <input
+            id="contact-targetLocation"
             name="targetLocation"
             type="text"
             placeholder="z. B. Ergolding, EG"
-            className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
+            className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
           />
         </div>
       </div>
 
       <div className="mt-3.5 sm:mt-4">
-        <label className="mb-1 block text-xs font-bold text-slate-800">
+        <label htmlFor="contact-message" className="mb-1 block text-xs font-bold text-slate-900">
           Ihre Nachricht / Details (optional)
         </label>
         <textarea
+          id="contact-message"
           name="message"
           rows={3}
           placeholder="Gewünschter Termin, besondere Möbel, Aufzug vorhanden etc."
-          className="w-full resize-none rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
+          className="w-full resize-none rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
         />
       </div>
 
       {/* Response Promise Banner */}
-      <div className="mt-3.5 flex items-center gap-2 rounded-lg bg-amber-50 border border-amber-200/80 px-3 py-2 text-xs font-bold text-amber-900">
+      <div className="mt-3.5 flex items-center gap-2 rounded-lg bg-amber-50 border border-amber-300 px-3 py-2 text-xs font-bold text-amber-950">
         <span className="text-sm">⏱️</span>
         <span>Antwort-Garantie: Rückmeldung innerhalb von 4 Stunden (Mo–Sa)</span>
       </div>
@@ -178,8 +186,8 @@ export default function ContactForm() {
         <div
           className={`mt-4 rounded-xl p-3.5 text-xs font-bold sm:p-4 sm:text-sm ${
             status === "success"
-              ? "bg-green-50 border border-green-200 text-green-800"
-              : "bg-red-50 border border-red-200 text-red-800"
+              ? "bg-green-50 border border-green-300 text-green-950"
+              : "bg-red-50 border border-red-300 text-red-950"
           }`}
         >
           {statusMessage}
@@ -187,7 +195,7 @@ export default function ContactForm() {
       )}
 
       <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-        <p className="text-[11px] text-slate-500">
+        <p className="text-[11px] text-slate-600 font-medium">
           🔒 100% kostenlos & unverbindlich.
         </p>
 

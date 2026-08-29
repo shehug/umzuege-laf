@@ -6,13 +6,13 @@ const GOOGLE_ADS_TAG_ID = "AW-11459071355";
 export default function GoogleTagManager() {
   return (
     <>
-      {/* Google Ads Global Tag Script */}
+      {/* Google Ads Global Tag Script - lazyOnload to keep mobile main-thread super fast */}
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_TAG_ID}`}
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
 
-      <Script id="google-ads-gtag-init" strategy="afterInteractive">
+      <Script id="google-ads-gtag-init" strategy="lazyOnload">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -31,8 +31,8 @@ export default function GoogleTagManager() {
         `}
       </Script>
 
-      {/* Google Tag Manager Script */}
-      <Script id="google-tag-manager" strategy="afterInteractive">
+      {/* Google Tag Manager Script - lazyOnload */}
+      <Script id="google-tag-manager" strategy="lazyOnload">
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({
           'gtm.start': new Date().getTime(),event:'gtm.js'
