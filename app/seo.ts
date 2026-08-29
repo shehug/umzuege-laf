@@ -213,11 +213,12 @@ export const seoPages = {
   entruempelung: {
     title: "Entrümpelung Landshut » Schnell & Besenrein | Umzüge LAF",
     description:
-      "★ 5.0 Sterne Entrümpelung in Landshut: Wohnungsentrümpelung, Keller, Haushaltsauflösung & Sperrmüll. Festpreis, besenrein & fair. Jetzt anfragen!",
+      "★ 5.0 Sterne Entrümpelung in Landshut: Wohnungsentrümpelung, Keller, Haushaltsauflösung, Umzugsentrümpelung & Sperrmüll. Festpreis, besenrein & fair. Jetzt anfragen!",
     path: "/entruempelung-landshut",
     keywords: [
       "Entrümpelung Landshut",
       "Entrümpelungsfirma Landshut",
+      "Umzugsentrümpelung Landshut",
       "Wohnung entrümpeln Landshut",
     ],
   },
@@ -287,14 +288,17 @@ export const seoPages = {
   },
 
   bueroentruempelung: {
-    title: "Büroentrümpelung Landshut | Büro & Gewerbe räumen",
+    title: "Büroentrümpelung & Gewerbeentrümpelung Landshut » Umzüge LAF",
     description:
-      "Büroentrümpelung in Landshut mit Umzüge LAF: Büromöbel, Akten, Kartons, Technik und Gewerbeflächen strukturiert räumen lassen.",
+      "★ 5.0 Sterne Büroentrümpelung & Gewerbeentrümpelung in Landshut: Schnelle, diskrete Räumung von Büros, Praxen & Gewerbeflächen. Festpreis & besenrein!",
     path: "/entruempelung/bueroentruempelung",
     keywords: [
       "Büroentrümpelung Landshut",
+      "Gewerbeentrümpelung Landshut",
       "Büro räumen Landshut",
       "Gewerbefläche entrümpeln Landshut",
+      "Gewerberäumung Landshut",
+      "Büroauflösung Landshut",
     ],
     image: `${siteUrl}/images/services/ent3.jpg`,
   },
