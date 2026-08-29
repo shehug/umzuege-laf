@@ -133,7 +133,7 @@ export default function KontaktPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
-              <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
+              <p className="text-xs font-black uppercase tracking-widest text-[#b45309]">
                 Standort & Route
               </p>
               <h2 className="mt-2 text-2xl sm:text-3xl font-black text-slate-900">

@@ -125,7 +125,8 @@ export default function Home() {
             fill
             priority
             fetchPriority="high"
-            sizes="100vw"
+            quality={70}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 1200px"
             className="object-cover object-center sm:object-right"
           />
         </div>
@@ -256,7 +257,7 @@ export default function Home() {
       <section className="py-16 sm:py-24 bg-slate-50 border-b border-slate-200 mt-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
-            <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
+            <p className="text-xs font-black uppercase tracking-widest text-[#b45309]">
               Einfacher Ablauf
             </p>
             <h2 className="mt-2 text-2xl sm:text-4xl font-black tracking-tight text-slate-900">
@@ -290,7 +291,7 @@ export default function Home() {
       <section className="py-16 sm:py-24 bg-white border-b border-slate-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
+            <p className="text-xs font-black uppercase tracking-widest text-[#b45309]">
               Unsere Leistungen
             </p>
             <h2 className="mt-2 text-2xl sm:text-4xl font-black tracking-tight text-slate-900">
@@ -397,7 +398,7 @@ export default function Home() {
       <section className="py-16 sm:py-24 bg-white border-t border-slate-200">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
-            <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
+            <p className="text-xs font-black uppercase tracking-widest text-[#b45309]">
               Fragen & Antworten
             </p>
             <h2 className="mt-2 text-2xl sm:text-4xl font-black tracking-tight text-slate-900">

@@ -1,57 +1,100 @@
-import Script from "next/script";
+"use client";
+
+import { useEffect } from "react";
 
 const GTM_ID = "GTM-55B3P6B6";
 const GOOGLE_ADS_TAG_ID = "AW-11459071355";
 
+declare global {
+  interface Window {
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 export default function GoogleTagManager() {
+  useEffect(() => {
+    // Setup dataLayer and stub gtag immediately
+    window.dataLayer = window.dataLayer || [];
+    function gtag(...args: unknown[]) {
+      if (window.dataLayer) {
+        window.dataLayer.push(args);
+      }
+    }
+    window.gtag = gtag;
+
+    gtag("js", new Date());
+    gtag("consent", "default", {
+      ad_storage: "granted",
+      analytics_storage: "granted",
+      ad_user_data: "granted",
+      ad_personalization: "granted",
+      functionality_storage: "granted",
+      security_storage: "granted",
+    });
+    gtag("config", GOOGLE_ADS_TAG_ID);
+
+    let loaded = false;
+    function loadScripts() {
+      if (loaded) return;
+      loaded = true;
+
+      // 1. Google Ads Tag
+      const adsScript = document.createElement("script");
+      adsScript.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_TAG_ID}`;
+      adsScript.async = true;
+      document.head.appendChild(adsScript);
+
+      // 2. Google Tag Manager
+      const win = window as unknown as Record<string, unknown[]>;
+      win["dataLayer"] = win["dataLayer"] || [];
+      win["dataLayer"].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+
+      const gtmScript = document.createElement("script");
+      gtmScript.async = true;
+      gtmScript.src = `https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`;
+      const firstScript = document.getElementsByTagName("script")[0];
+      if (firstScript && firstScript.parentNode) {
+        firstScript.parentNode.insertBefore(gtmScript, firstScript);
+      } else {
+        document.head.appendChild(gtmScript);
+      }
+
+      // Cleanup event listeners
+      window.removeEventListener("scroll", loadScripts);
+      window.removeEventListener("touchstart", loadScripts);
+      window.removeEventListener("mousemove", loadScripts);
+      window.removeEventListener("keydown", loadScripts);
+      window.removeEventListener("click", loadScripts);
+    }
+
+    // Trigger on first user interaction or fallback after 3.5s
+    window.addEventListener("scroll", loadScripts, { passive: true });
+    window.addEventListener("touchstart", loadScripts, { passive: true });
+    window.addEventListener("mousemove", loadScripts, { passive: true });
+    window.addEventListener("keydown", loadScripts, { passive: true });
+    window.addEventListener("click", loadScripts, { passive: true });
+
+    const timeout = setTimeout(loadScripts, 3500);
+
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener("scroll", loadScripts);
+      window.removeEventListener("touchstart", loadScripts);
+      window.removeEventListener("mousemove", loadScripts);
+      window.removeEventListener("keydown", loadScripts);
+      window.removeEventListener("click", loadScripts);
+    };
+  }, []);
+
   return (
-    <>
-      {/* Google Ads Global Tag Script - lazyOnload to keep mobile main-thread super fast */}
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_TAG_ID}`}
-        strategy="lazyOnload"
+    <noscript>
+      <iframe
+        src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+        height="0"
+        width="0"
+        style={{ display: "none", visibility: "hidden" }}
       />
-
-      <Script id="google-ads-gtag-init" strategy="lazyOnload">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('consent', 'default', {
-            'ad_storage': 'granted',
-            'analytics_storage': 'granted',
-            'ad_user_data': 'granted',
-            'ad_personalization': 'granted',
-            'functionality_storage': 'granted',
-            'security_storage': 'granted'
-          });
-
-          gtag('config', '${GOOGLE_ADS_TAG_ID}');
-        `}
-      </Script>
-
-      {/* Google Tag Manager Script - lazyOnload */}
-      <Script id="google-tag-manager" strategy="lazyOnload">
-        {`
-          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({
-          'gtm.start': new Date().getTime(),event:'gtm.js'
-          });var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-          j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-          f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','${GTM_ID}');
-        `}
-      </Script>
-
-      <noscript>
-        <iframe
-          src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-          height="0"
-          width="0"
-          style={{ display: "none", visibility: "hidden" }}
-        />
-      </noscript>
-    </>
+    </noscript>
   );
 }

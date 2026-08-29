@@ -133,17 +133,17 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-slate-800 pt-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
+        <div className="mt-12 flex flex-col gap-4 border-t border-slate-800 pt-6 text-xs text-slate-400 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Umzüge LAF · Alle Rechte vorbehalten.</p>
 
           <div className="flex flex-wrap gap-4">
-            <Link href="/impressum" className="hover:text-slate-300 transition">
+            <Link href="/impressum" className="hover:text-white transition">
               Impressum
             </Link>
-            <Link href="/datenschutz" className="hover:text-slate-300 transition">
+            <Link href="/datenschutz" className="hover:text-white transition">
               Datenschutz
             </Link>
-            <Link href="/admin/login" className="hover:text-slate-300 transition">
+            <Link href="/admin/login" className="hover:text-white transition">
               Admin
             </Link>
           </div>

@@ -73,7 +73,7 @@ export default function LocalSeoLinks() {
     >
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_1.3fr]">
         <div>
-          <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
+          <p className="text-xs font-black uppercase tracking-widest text-[#b45309]">
             Umzüge LAF in Landshut
           </p>
 
@@ -104,7 +104,7 @@ export default function LocalSeoLinks() {
 
         <div className="grid gap-8 sm:grid-cols-2">
           <div>
-            <h3 className="text-xs font-black uppercase tracking-wider text-[#d97706]">
+            <h3 className="text-xs font-black uppercase tracking-wider text-[#b45309]">
               Umzugsdienste
             </h3>
 
@@ -122,7 +122,7 @@ export default function LocalSeoLinks() {
           </div>
 
           <div>
-            <h3 className="text-xs font-black uppercase tracking-wider text-[#d97706]">
+            <h3 className="text-xs font-black uppercase tracking-wider text-[#b45309]">
               Montage & Räumung
             </h3>
 

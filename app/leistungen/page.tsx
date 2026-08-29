@@ -134,7 +134,7 @@ export default function LeistungenPage() {
       <section className="py-16 sm:py-24 bg-white border-b border-slate-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
+            <p className="text-xs font-black uppercase tracking-widest text-[#b45309]">
               Kernbereiche
             </p>
             <h2 className="mt-2 text-2xl sm:text-4xl font-black tracking-tight text-slate-900">
@@ -182,7 +182,7 @@ export default function LeistungenPage() {
       <section className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <p className="text-xs font-black uppercase tracking-widest text-[#d97706]">
+            <p className="text-xs font-black uppercase tracking-widest text-[#b45309]">
               Zusatzservices
             </p>
             <h2 className="mt-2 text-2xl sm:text-3xl font-black tracking-tight text-slate-900">
