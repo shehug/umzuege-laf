@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import { createSeoMetadata, seoPages } from "../seo";
 
 export const metadata = createSeoMetadata(seoPages.datenschutz);
@@ -11,275 +12,139 @@ const email = "info@umzuege-laf.de";
 
 const privacySections = [
   {
-    title: "1. Verantwortlicher",
+    title: "1. Verantwortliche Stelle für den Datenschutz",
     text: [
-      "Verantwortlich für die Datenverarbeitung auf dieser Website ist:",
-      "Umzüge LAF, Fahri Kalludra, Ergoldinger Str. 15, 84030 Landshut",
-      "Telefon: 0162 900 75 65",
-      "E-Mail: info@umzuege-laf.de",
+      "Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) und anderer nationaler Datenschutzgesetze ist:",
+      "Umzüge LAF\nInhaber: Fahri Kalludra\nErgoldinger Str. 15\n84030 Landshut\nDeutschland",
+      `Telefon: ${phone}\nE-Mail: ${email}`,
     ],
   },
   {
     title: "2. Allgemeine Hinweise zur Datenverarbeitung",
     text: [
-      "Wir verarbeiten personenbezogene Daten nur, soweit dies zur Bereitstellung dieser Website, zur Bearbeitung von Anfragen oder zur Kommunikation mit Interessenten und Kunden erforderlich ist.",
-      "Personenbezogene Daten sind alle Informationen, mit denen Sie persönlich identifiziert werden können, zum Beispiel Name, Telefonnummer, E-Mail-Adresse oder Angaben aus einer Anfrage.",
+      "Wir verarbeiten personenbezogene Daten unserer Nutzer grundsätzlich nur, soweit dies zur Bereitstellung einer funktionsfähigen Website sowie unserer Inhalte und Leistungen (wie Umzüge, Montage, Transport und Entrümpelung) erforderlich ist.",
+      "Die Verarbeitung personenbezogener Daten erfolgt regelmäßig nur nach Einwilligung des Nutzers. Eine Ausnahme gilt in solchen Fällen, in denen eine vorherige Einholung einer Einwilligung aus tatsächlichen Gründen nicht möglich ist und die Verarbeitung der Daten durch gesetzliche Vorschriften gestattet ist.",
     ],
   },
   {
-    title: "3. Zugriffsdaten und Server-Logfiles",
+    title: "3. Hosting & SSL-/TLS-Verschlüsselung",
     text: [
-      "Beim Besuch dieser Website können durch den Hostinganbieter automatisch technische Zugriffsdaten verarbeitet werden. Dazu können IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seiten, Browsertyp, Betriebssystem und Referrer-URL gehören.",
-      "Die Verarbeitung erfolgt, um die Website technisch bereitzustellen, Stabilität und Sicherheit zu gewährleisten und Missbrauch zu verhindern.",
-      "Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt im sicheren und zuverlässigen Betrieb der Website.",
+      "Diese Website wird bei einem externen Dienstleister (Hostinger International Ltd.) gehostet. Personenbezogene Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Hierzu können u. a. IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten gehören.",
+      "Der Einsatz des Hosters erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).",
+      "Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL-/TLS-Verschlüsselung (HTTPS). Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://“ auf „https://“ wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.",
     ],
   },
   {
-    title: "4. Hosting",
+    title: "4. Kontaktaufnahme per E-Mail, Telefon oder Kontaktformular (SMTP)",
     text: [
-      "Diese Website wird bei einem externen Hostinganbieter betrieben. Beim Aufruf der Website verarbeitet der Hostinganbieter technische Daten, die für den Betrieb und die Sicherheit der Website erforderlich sind.",
-      "Nach aktuellem Stand wird die Website über Hostinger gehostet.",
-      "Mit dem Hostinganbieter sollte ein Vertrag zur Auftragsverarbeitung bestehen, sofern personenbezogene Daten im Auftrag verarbeitet werden.",
+      "Wenn Sie uns per Kontaktformular, Telefon oder E-Mail Anfragen zukommen lassen, werden Ihre Angaben inklusive der von Ihnen dort angegebenen Kontaktdaten (Name, Telefonnummer, E-Mail-Adresse, Auszugsort, Einzugsort, Termin und Details) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.",
+      "Die Übermittlung des Online-Formulars erfolgt verschlüsselt über unsere eigene gesicherte Serverschnittstelle via SMTP über den Mailserver unseres Hosters info@umzuege-laf.de.",
+      "Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags oder zur Durchführung vorvertraglicher Maßnahmen (wie die Erstellung eines Umzugsangebots) zusammenhängt. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO).",
+      "Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Gesetzliche Aufbewahrungsfristen bleiben unberührt.",
     ],
   },
   {
-    title: "5. Kontaktaufnahme per Telefon, E-Mail oder Kontaktformular",
+    title: "5. WhatsApp Business Kontakt",
     text: [
-      "Wenn Sie uns per Telefon, E-Mail oder über das Kontaktformular kontaktieren, verarbeiten wir die von Ihnen übermittelten Angaben zur Bearbeitung Ihrer Anfrage.",
-      "Dazu können insbesondere Name, Telefonnummer, E-Mail-Adresse, Start- und Zieladresse, gewünschter Termin, Nachrichtentext und weitere freiwillige Angaben gehören.",
-      "Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, soweit die Anfrage der Durchführung vorvertraglicher Maßnahmen oder eines Vertrags dient. In anderen Fällen erfolgt die Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO aufgrund unseres berechtigten Interesses an der Bearbeitung von Anfragen.",
+      "Wir bieten Ihnen die Möglichkeit, über den Messenger-Dienst WhatsApp mit uns in Kontakt zu treten. Anbieter ist die WhatsApp Ireland Limited, 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland.",
+      "Wenn Sie mit uns über WhatsApp kommunizieren, wird Ihre Telefonnummer und der Kommunikationsinhalt an WhatsApp übermittelt und von WhatsApp gespeichert. Bitte beachten Sie, dass die Kommunikation Ende-zu-Ende-verschlüsselt ist, WhatsApp jedoch Metadaten zur Kommunikation verarbeitet.",
+      "Die Nutzung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) durch aktives Klicken auf den WhatsApp-Button oder zur Anbahnung/Durchführung eines Vertragsverhältnisses (Art. 6 Abs. 1 lit. b DSGVO).",
     ],
   },
   {
-    title: "6. Mailto-Formular",
+    title: "6. Google Maps",
     text: [
-      "Das Kontaktformular auf dieser Website ist derzeit als Mailto-Formular umgesetzt. Beim Absenden wird Ihr E-Mail-Programm geöffnet und die Anfrage wird über Ihr eigenes E-Mail-Programm versendet.",
-      "Die Daten werden dabei nicht automatisch über einen eigenen Website-Server verschickt, sondern über Ihr E-Mail-Programm verarbeitet.",
-      "Bitte beachten Sie, dass die Übertragung per E-Mail je nach Anbieter nicht vollständig verschlüsselt sein kann.",
+      "Diese Website nutzt den Kartendienst Google Maps. Anbieter ist die Google Ireland Limited („Google“), Gordon House, Barrow Street, Dublin 4, Irland.",
+      "Zur Nutzung der Funktionen von Google Maps ist es notwendig, Ihre IP-Adresse zu speichern. Diese Informationen werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. Wir haben keinen Einfluss auf diese Datenübertragung.",
+      "Die Nutzung von Google Maps erfolgt im Interesse einer ansprechenden Darstellung unseres Unternehmensstandorts (Ergoldinger Str. 15, 84030 Landshut) und einer leichten Auffindbarkeit unserer Geschäftsadresse. Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO.",
     ],
   },
   {
-    title: "7. Speicherdauer",
+    title: "7. Google Tag Manager & Google Ads Conversion-Tracking",
     text: [
-      "Wir speichern personenbezogene Daten nur so lange, wie dies für die Bearbeitung Ihrer Anfrage, zur Vertragserfüllung oder aufgrund gesetzlicher Aufbewahrungspflichten erforderlich ist.",
-      "Anfragedaten werden gelöscht, sobald sie für den jeweiligen Zweck nicht mehr erforderlich sind, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.",
+      "Wir nutzen auf unserer Website den Google Tag Manager und Google Ads der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.",
+      "Der Google Tag Manager ist eine Lösung, mit der Website-Tags über eine Oberfläche verwaltet werden können. Der Tag Manager selbst (der die Tags implementiert) verarbeitet keine personenbezogenen Daten der Nutzer und setzt keine Cookies. Er sorgt lediglich für die Auslösung anderer Tags.",
+      "Google Ads Conversion-Tracking ermöglicht es uns zu erfassen, wenn ein Nutzer über eine geschaltete Google-Anzeige auf unsere Website gelangt ist und eine Aktion (z. B. Absenden des Kontaktformulars oder Klick auf die Telefonnummer) ausgeführt hat.",
+      "Die Nutzung von Google Ads erfolgt ausschließlich auf Grundlage Ihrer ausdrücklichen Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG über unseren Cookie-Consent-Banner. Sie können diese Einwilligung jederzeit über die Cookie-Einstellungen oder durch Löschen Ihrer Browser-Cookies widerrufen.",
     ],
   },
   {
-    title: "8. Weitergabe von Daten",
+    title: "8. Ihre Rechte als betroffene Person",
     text: [
-      "Eine Weitergabe personenbezogener Daten an Dritte erfolgt nur, wenn dies zur Bearbeitung Ihrer Anfrage, zur Durchführung eines Vertrags, aufgrund gesetzlicher Pflichten oder auf Grundlage Ihrer Einwilligung erforderlich ist.",
-      "Eine Weitergabe zu Werbezwecken findet nicht statt.",
+      "Sie haben nach der DSGVO jederzeit folgende Rechte gegenüber dem Verantwortlichen:",
+      "• Recht auf Auskunft (Art. 15 DSGVO): Sie können Auskunft über Ihre von uns verarbeiteten personenbezogenen Daten verlangen.",
+      "• Recht auf Berichtigung (Art. 16 DSGVO): Sie können die unverzügliche Berichtigung unrichtiger Daten verlangen.",
+      "• Recht auf Löschung (Art. 17 DSGVO): Sie können die Löschung Ihrer bei uns gespeicherten Daten verlangen.",
+      "• Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO): Sie können die Einschränkung der Verarbeitung verlangen.",
+      "• Recht auf Datenübertragbarkeit (Art. 20 DSGVO): Sie können Ihre Daten in einem strukturierten, gängigen und maschinenlesbaren Format erhalten.",
+      "• Recht auf Widerruf erteilter Einwilligungen (Art. 7 Abs. 3 DSGVO): Sie können eine erteilte Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen.",
+      "• Recht auf Beschwerde bei einer Aufsichtsbehörde (Art. 77 DSGVO): Sie haben das Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde, z. B. dem Bayerischen Landesamt für Datenschutzaufsicht (BayLDA).",
     ],
   },
   {
-    title: "9. Cookies und Tracking",
+    title: "9. Aktualität und Änderung dieser Datenschutzerklärung",
     text: [
-      "Nach aktuellem Stand verwendet diese Website keine Tracking- oder Marketing-Cookies und keine Analyse-Tools wie Google Analytics.",
-      "Sollten später Cookies, Analyse-Tools, Karten, externe Schriftarten oder andere Drittanbieter-Dienste eingebunden werden, muss diese Datenschutzerklärung entsprechend erweitert werden.",
-    ],
-  },
-  {
-    title: "10. Ihre Rechte",
-    text: [
-      "Sie haben im Rahmen der gesetzlichen Vorgaben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch gegen bestimmte Verarbeitungen.",
-      "Außerdem haben Sie das Recht, eine erteilte Einwilligung jederzeit mit Wirkung für die Zukunft zu widerrufen.",
-      "Sie haben zudem das Recht, sich bei einer zuständigen Datenschutzaufsichtsbehörde zu beschweren.",
-    ],
-  },
-  {
-    title: "11. SSL-/TLS-Verschlüsselung",
-    text: [
-      "Diese Website sollte aus Sicherheitsgründen und zum Schutz vertraulicher Inhalte über eine SSL-/TLS-Verschlüsselung bereitgestellt werden.",
-      "Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers mit „https://“ beginnt.",
-    ],
-  },
-  {
-    title: "12. Änderung dieser Datenschutzerklärung",
-    text: [
-      "Wir behalten uns vor, diese Datenschutzerklärung anzupassen, wenn sich technische, rechtliche oder organisatorische Änderungen ergeben.",
-      "Stand dieser Datenschutzerklärung: Mai 2026.",
+      "Diese Datenschutzerklärung ist aktuell gültig und hat den Stand August 2026.",
+      "Durch die Weiterentwicklung unserer Website oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung anzupassen.",
     ],
   },
 ];
 
 export default function DatenschutzPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#fafaf7] text-[#18181b]">
-      <div className="pointer-events-none fixed inset-0 z-0">
-        <div className="laf-grid absolute inset-0 opacity-25" />
-        <div className="laf-noise absolute inset-0 opacity-[0.05]" />
-        <div className="laf-orb laf-orb-one" />
-        <div className="laf-orb laf-orb-two" />
-      </div>
-
+    <main className="min-h-screen bg-slate-950 text-white">
       <Header />
 
-      <section className="relative z-10 overflow-hidden px-5 pb-20 pt-40 lg:px-8">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.26),transparent_34%)]" />
-        <div className="absolute left-1/2 top-20 h-96 w-96 -translate-x-1/2 rounded-full bg-white/20 blur-3xl" />
+      <div className="mx-auto max-w-5xl px-4 pt-32 pb-20 sm:px-6 lg:px-8">
+        <Breadcrumbs items={[{ label: "Datenschutz" }]} />
 
-        <div className="relative mx-auto max-w-7xl">
-          <div className="max-w-4xl">
-            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-[#f6c21a]/35 bg-[#f6c21a]/10 px-4 py-2 text-sm font-black text-[#f6c21a] shadow-[0_0_40px_rgba(246,194,26,0.16)] backdrop-blur-xl">
-              Datenschutz & Transparenz
-            </div>
-
-            <h1 className="max-w-5xl text-5xl font-black leading-[1.14] tracking-[-0.06em] md:text-7xl lg:text-8xl">
-              Datenschutz
-              <span className="gradient-text block">Umzüge LAF</span>
-            </h1>
-
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-black/65 md:text-xl">
-              Informationen darüber, welche personenbezogenen Daten beim Besuch
-              dieser Website und bei Kontaktaufnahme verarbeitet werden.
-            </p>
-
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="/kontakt"
-                className="glow-button rounded-full px-8 py-4 text-center font-black text-black"
-              >
-                Kontakt aufnehmen
-              </Link>
-
-              <a
-                href={phoneHref}
-                className="rounded-full border border-black/10 bg-white/[0.04] px-8 py-4 text-center font-black text-[#18181b] backdrop-blur-xl transition hover:border-[#f6c21a] hover:text-[#f6c21a]"
-              >
-                Direkt anrufen
-              </a>
-            </div>
-          </div>
+        <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-3.5 py-1.5 text-xs font-bold text-amber-400">
+          <span>🛡️</span>
+          <span>DSGVO-konform</span>
         </div>
-      </section>
 
-      <section className="relative z-10 bg-[#f7f7f2] px-4 py-14 sm:px-6 sm:py-20 md:py-24 text-black lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
-          <aside className="sticky top-32 rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/10 bg-white p-5 sm:p-8 shadow-[0_25px_80px_rgba(0,0,0,0.08)]">
-            <p className="font-black uppercase tracking-[0.25em] text-[#b28a00]">
-              Überblick
-            </p>
+        <h1 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-5xl">
+          Datenschutzerklärung
+        </h1>
 
-            <h2 className="mt-4 text-4xl font-black tracking-[-0.05em]">
-              Ihre Daten, klar erklärt.
-            </h2>
+        <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-300 max-w-3xl">
+          Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Nachfolgend
+          informieren wir Sie ausführlich über die Erhebung, Verarbeitung und Nutzung
+          personenbezogener Daten auf der Website von Umzüge LAF.
+        </p>
 
-            <p className="mt-6 text-lg leading-8 text-black/65">
-              Diese Datenschutzerklärung beschreibt die Verarbeitung von Daten
-              bei Websitebesuch, Hosting und Kontaktaufnahme.
-            </p>
-
-            <div className="mt-8 grid gap-3">
-              <a
-                href={phoneHref}
-                className="rounded-full bg-[#f6c21a] px-6 py-4 text-center font-black text-black transition hover:bg-black hover:text-white"
-              >
-                {phone}
-              </a>
-
-              <a
-                href={`mailto:${email}`}
-                className="rounded-full border border-black/15 px-6 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:bg-[#f6c21a]"
-              >
-                E-Mail schreiben
-              </a>
-
-              <Link
-                href="/impressum"
-                className="rounded-full border border-black/15 px-6 py-4 text-center font-black text-black transition hover:border-[#f6c21a] hover:bg-[#f6c21a]"
-              >
-                Impressum öffnen
-              </Link>
-            </div>
-
-            <div className="mt-8 rounded-xl sm:rounded-xl sm:rounded-[1.4rem] border border-black/10 bg-[#f7f7f2] p-5">
-              <p className="font-black text-black">Hinweis</p>
-              <p className="mt-2 text-sm leading-6 text-black/55">
-                Wenn später Tools wie Google Maps, Analytics, Fonts, WhatsApp
-                Widgets oder Cookies eingebunden werden, muss diese Seite
-                erweitert werden.
-              </p>
-            </div>
-          </aside>
-
-          <div className="grid gap-5">
-            {privacySections.map((section) => (
-              <section
-                key={section.title}
-                className="rounded-2xl sm:rounded-[2rem] border border-black/10 bg-white p-6 shadow-sm md:p-8"
-              >
-                <h2 className="text-2xl font-black tracking-[-0.03em] text-black md:text-3xl">
-                  {section.title}
-                </h2>
-
-                <div className="mt-5 grid gap-4">
-                  {section.text.map((paragraph) => (
-                    <p
-                      key={paragraph}
-                      className="text-base leading-8 text-black/65"
-                    >
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
-              </section>
-            ))}
-
-            <section className="rounded-2xl sm:rounded-[2rem] border border-black/10 bg-white border border-black/5 p-6 text-[#18181b] shadow-sm md:p-8">
-              <h2 className="text-3xl font-black tracking-[-0.03em] text-[#18181b]">
-                Kontakt zum Datenschutz
+        <div className="mt-12 space-y-10">
+          {privacySections.map((sec) => (
+            <section
+              key={sec.title}
+              className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8 backdrop-blur-sm"
+            >
+              <h2 className="text-xl sm:text-2xl font-black text-amber-400">
+                {sec.title}
               </h2>
-
-              <p className="mt-5 leading-8 text-black/60">
-                Für Fragen zur Verarbeitung personenbezogener Daten können Sie
-                sich jederzeit an uns wenden.
-              </p>
-
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                <a
-                  href={phoneHref}
-                  className="rounded-full bg-[#f6c21a] px-6 py-4 text-center font-black text-black transition hover:bg-white"
-                >
-                  {phone}
-                </a>
-
-                <a
-                  href={`mailto:${email}`}
-                  className="rounded-full border border-black/10 px-6 py-4 text-center font-black text-[#18181b] transition hover:border-[#f6c21a] hover:text-[#f6c21a]"
-                >
-                  {email}
-                </a>
+              <div className="mt-4 space-y-3 text-xs sm:text-sm leading-relaxed text-slate-300 whitespace-pre-line">
+                {sec.text.map((p, idx) => (
+                  <p key={idx}>{p}</p>
+                ))}
               </div>
             </section>
-          </div>
+          ))}
         </div>
-      </section>
 
-      <section className="relative z-10 overflow-hidden bg-[#fafaf7] px-4 py-14 sm:px-6 sm:py-20 md:py-24 lg:px-8">
-        <div className="relative mx-auto grid max-w-7xl gap-10 rounded-2xl sm:rounded-2xl sm:rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white shadow-sm border border-black/5 p-8 backdrop-blur-xl md:p-12 lg:grid-cols-[1fr_auto] lg:items-center">
-          <div>
-            <p className="font-black uppercase tracking-[0.25em] text-[#f6c21a]">
-              Rechtliches
-            </p>
-
-            <h2 className="mt-4 max-w-3xl text-4xl font-black tracking-[-0.05em] md:text-6xl">
-              Angaben zum Anbieter ansehen.
-            </h2>
-
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-black/60">
-              Die Angaben zum verantwortlichen Anbieter finden Sie im Impressum.
-            </p>
-          </div>
-
-          <Link
-            href="/impressum"
-            className="rounded-full bg-[#f6c21a] px-8 py-4 text-center font-black text-black transition hover:bg-white"
-          >
-            Impressum öffnen
-          </Link>
+        <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/40 p-6 text-center text-xs text-slate-400">
+          <p>
+            Haben Sie Fragen zum Datenschutz bei Umzüge LAF? Kontaktieren Sie uns direkt unter{" "}
+            <a href={`mailto:${email}`} className="text-amber-400 hover:underline">
+              {email}
+            </a>{" "}
+            oder telefonisch unter{" "}
+            <a href={phoneHref} className="text-amber-400 hover:underline">
+              {phone}
+            </a>
+            .
+          </p>
         </div>
-      </section>
+      </div>
 
       <Footer />
     </main>

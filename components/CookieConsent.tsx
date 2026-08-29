@@ -81,43 +81,47 @@ export default function CookieConsent() {
   if (!visible) return null;
 
   return (
-    <div className="fixed inset-x-4 bottom-4 z-[120] mx-auto max-w-5xl rounded-[2rem] border border-white/10 bg-[#050505]/95 p-5 text-white shadow-[0_30px_120px_rgba(0,0,0,0.45)] backdrop-blur-2xl md:p-6">
+    <div
+      role="dialog"
+      aria-label="Cookie- und Datenschutzeinstellungen"
+      className="fixed inset-x-4 bottom-4 z-[120] mx-auto max-w-5xl rounded-2xl border border-slate-700 bg-slate-950/95 p-5 text-white shadow-2xl backdrop-blur-xl md:p-6"
+    >
       <div className="grid gap-5 md:grid-cols-[1fr_auto] md:items-center">
         <div>
-          <p className="text-sm font-black uppercase tracking-[0.25em] text-[#f6c21a]">
-            Cookies & Tracking
-          </p>
+          <div className="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-xs font-black uppercase tracking-wider text-amber-400">
+            <span>🛡️</span>
+            <span>Datenschutz & Cookies</span>
+          </div>
 
-          <h3 className="mt-2 text-2xl font-black">
-            Wir nutzen Cookies für Analyse und Werbung.
+          <h3 className="mt-2 text-xl sm:text-2xl font-black text-white">
+            Ihre Privatsphäre ist uns wichtig
           </h3>
 
-          <p className="mt-3 max-w-3xl text-sm leading-6 text-white/65">
-            Mit Ihrer Zustimmung verwenden wir Google Tag Manager, Google
-            Analytics und Google Ads, um Anfragen zu messen und unsere Website
-            zu verbessern. Sie können die Nutzung ablehnen oder später über den
-            Browser ändern.
+          <p className="mt-2.5 max-w-3xl text-xs sm:text-sm leading-relaxed text-slate-300">
+            Wir verwenden Cookies und externe Dienste (wie Google Ads, Google Tag Manager & Google Maps), 
+            um Anfragen sicher abzuwickeln, Statistiken zu erheben und Ihnen die Anfahrtskarte nach Landshut 
+            anzuzeigen. Sie können Ihre Einwilligung jederzeit in unserer Datenschutzerklärung widerrufen.
           </p>
 
           <Link
             href="/datenschutz"
-            className="mt-3 inline-flex text-sm font-bold text-[#f6c21a] underline underline-offset-4"
+            className="mt-3 inline-flex text-xs sm:text-sm font-bold text-amber-400 underline underline-offset-4 hover:text-amber-300 transition"
           >
-            Datenschutzerklärung ansehen
+            Zur Datenschutzerklärung →
           </Link>
         </div>
 
-        <div className="flex flex-col gap-3 sm:flex-row md:flex-col">
+        <div className="flex flex-col gap-2.5 sm:flex-row md:flex-col shrink-0">
           <button
             onClick={handleAccept}
-            className="rounded-full bg-[#f6c21a] px-6 py-3 text-sm font-black text-black shadow-[0_0_30px_rgba(246,194,26,0.35)] transition hover:scale-105 hover:bg-white"
+            className="rounded-xl bg-[#f59e0b] px-6 py-3 text-center text-xs sm:text-sm font-black text-slate-950 shadow-md transition hover:bg-amber-400 active:scale-95"
           >
             Alle akzeptieren
           </button>
 
           <button
             onClick={handleReject}
-            className="rounded-full border border-white/15 px-6 py-3 text-sm font-black text-white transition hover:border-[#f6c21a] hover:text-[#f6c21a]"
+            className="rounded-xl border border-slate-700 bg-slate-800/80 px-6 py-3 text-center text-xs sm:text-sm font-bold text-slate-200 transition hover:border-slate-500 hover:bg-slate-700 active:scale-95"
           >
             Nur notwendige
           </button>
