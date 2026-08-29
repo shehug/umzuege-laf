@@ -13,7 +13,7 @@ import { createSeoMetadata } from "../seo";
 export const metadata = createSeoMetadata({
   title: "Umzugsunternehmen Landshut » Schnell & Fair | Umzüge LAF",
   description:
-    "★ 4.9 Sterne Umzugsunternehmen in Landshut für Privatumzug, Firmenumzug, Möbelmontage, Einpackservice & Entrümpelung. Jetzt kostenloses Angebot anfordern!",
+    "★ 5.0 Sterne Umzugsunternehmen in Landshut für Privatumzug, Firmenumzug, Möbelmontage, Einpackservice & Entrümpelung. Jetzt kostenloses Angebot anfordern!",
   path: "/umzugsunternehmen-landshut",
   keywords: [
     "Umzugsunternehmen Landshut",
@@ -164,7 +164,7 @@ export default function UmzugsunternehmenLandshutPage() {
             />
 
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-400/10 px-3.5 py-1.5 text-xs font-extrabold text-amber-300">
-              <span>★ 4.9 / 5 Sterne ·</span>
+              <span>★ 5.0 / 5 Sterne ·</span>
               <span>Umzugsunternehmen Landshut</span>
             </div>
 

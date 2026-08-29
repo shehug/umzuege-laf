@@ -139,7 +139,7 @@ export default function Home() {
               {/* Trust Tag */}
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-400/10 px-3.5 py-1.5 text-xs font-extrabold text-amber-300">
                 <span className="flex text-amber-400">★★★★★</span>
-                <span>4.9 / 5 Google Bewertung · Landshut</span>
+                <span>5.0 / 5.0 Google Bewertung · Landshut</span>
               </div>
 
               <h1 className="text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.15]">
@@ -197,7 +197,7 @@ export default function Home() {
                   <p className="text-xs font-bold uppercase tracking-wider text-amber-400">
                     Kunden-Zufriedenheit
                   </p>
-                  <p className="mt-1 text-2xl font-black text-white">4.9 von 5.0 Sternen</p>
+                  <p className="mt-1 text-2xl font-black text-white">5.0 von 5.0 Sternen</p>
                 </div>
                 <div className="flex text-amber-400 text-lg">★★★★★</div>
               </div>

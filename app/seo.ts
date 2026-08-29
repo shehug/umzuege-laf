@@ -80,7 +80,7 @@ export const seoPages = {
   home: {
     title: "Umzüge Landshut | Umzugsunternehmen LAF » Schnell & Fair",
     description:
-      "★ 4.9 Sterne für Umzüge in Landshut: Ihr Umzugsunternehmen für Privatumzug, Firmenumzug & Montage. 100% Festpreis-Garantie & kostenloses Angebot in 2 Min.!",
+      "★ 5.0 Sterne für Umzüge in Landshut: Ihr Umzugsunternehmen für Privatumzug, Firmenumzug & Montage. 100% Festpreis-Garantie & kostenloses Angebot in 2 Min.!",
     path: "/",
     keywords: [
       "Umzüge Landshut",
@@ -95,7 +95,7 @@ export const seoPages = {
   leistungen: {
     title: "Leistungen | Umzüge, Entrümpelung & Montage in Landshut",
     description:
-      "★ 4.9 Sterne Service: Umzüge, Entrümpelung, Haushaltsauflösung, Möbelmontage & Einpackservice in Landshut & Umgebung. Jetzt unverbindlich anfragen!",
+      "★ 5.0 Sterne Service: Umzüge, Entrümpelung, Haushaltsauflösung, Möbelmontage & Einpackservice in Landshut & Umgebung. Jetzt unverbindlich anfragen!",
     path: "/leistungen",
     keywords: [
       "Umzugsleistungen Landshut",
@@ -213,7 +213,7 @@ export const seoPages = {
   entruempelung: {
     title: "Entrümpelung Landshut » Schnell & Besenrein | Umzüge LAF",
     description:
-      "★ 4.9 Sterne Entrümpelung in Landshut: Wohnungsentrümpelung, Keller, Haushaltsauflösung & Sperrmüll. Festpreis, besenrein & fair. Jetzt anfragen!",
+      "★ 5.0 Sterne Entrümpelung in Landshut: Wohnungsentrümpelung, Keller, Haushaltsauflösung & Sperrmüll. Festpreis, besenrein & fair. Jetzt anfragen!",
     path: "/entruempelung-landshut",
     keywords: [
       "Entrümpelung Landshut",

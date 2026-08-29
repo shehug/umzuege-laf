@@ -45,14 +45,14 @@ export default function GoogleReviews() {
               Echte Kundenstimmen aus Landshut & Region
             </h2>
             <p className="mt-2 text-sm sm:text-base text-slate-400 max-w-2xl">
-              Über 99% zufriedene Kunden. Lesen Sie, was Kunden über unsere Pünktlichkeit,
+              100% zufriedene Kunden. Lesen Sie, was Kunden über unsere Pünktlichkeit,
               Sorgfalt und faire Festpreise sagen.
             </p>
           </div>
 
           <div className="rounded-2xl border border-slate-700 bg-slate-800/90 p-4 sm:p-5 text-center shrink-0">
             <div className="flex items-center justify-center gap-1.5 text-amber-400 text-lg sm:text-xl font-black">
-              <span>★ 4.9</span>
+              <span>★ 5.0</span>
               <span className="text-xs font-normal text-slate-400">/ 5.0</span>
             </div>
             <div className="flex justify-center text-amber-400 text-sm mt-0.5">★★★★★</div>

@@ -153,7 +153,7 @@ export default function LocalSeoLanding({
             <Breadcrumbs items={visualBreadcrumbs} />
 
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-400/10 px-3.5 py-1.5 text-xs font-extrabold text-amber-300">
-              <span>★ 4.9 / 5 Bewertung ·</span>
+              <span>★ 5.0 / 5 Bewertung ·</span>
               <span>{badge}</span>
             </div>
 
