@@ -144,12 +144,12 @@ export default function Home() {
               </div>
 
               <h1 className="text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.15]">
-                Umzugsunternehmen Landshut.<br />
-                <span className="text-amber-400">Stressfrei & zum Festpreis.</span>
+                Umzugsunternehmen & Umzugsfirma Landshut.<br />
+                <span className="text-amber-400">Stressfreie Umzüge zum Festpreis.</span>
               </h1>
 
               <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
-                Ihr erfahrenes Umzugsteam für Landshut & Umgebung. Wir übernehmen
+                Ihr erfahrenes Umzugsunternehmen und Ihre zuverlässige Umzugsfirma für Umzüge in Landshut & Region. Wir übernehmen
                 Privatumzüge, Firmenumzüge, Möbelmontage, Einpackservice und Entrümpelungen
                 — zuverlässig, pünktlich und fair.
               </p>
@@ -388,6 +388,47 @@ export default function Home() {
               </p>
               <div className="mt-6">
                 <ContactForm />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SEO AUTHORITY SECTION: UMZUGSFIRMA & UMZÜGE LANDSHUT ── */}
+      <section className="py-16 sm:py-24 bg-slate-50 border-t border-slate-200">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="text-xs font-black uppercase tracking-widest text-[#b45309]">
+                Ihre Umzugsfirma in Landshut
+              </p>
+              <h2 className="mt-2 text-2xl sm:text-4xl font-black tracking-tight text-slate-900 leading-tight">
+                Warum Umzüge LAF Ihr Partner für Umzüge in Landshut ist
+              </h2>
+              <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-600">
+                Als etabliertes <strong>Umzugsunternehmen in Landshut</strong> und professionelle <strong>Umzugsfirma</strong> begleiten wir Privatpersonen, Familien und Unternehmen bei jedem Schritt ihres Wohnungs- oder Standortwechsels. Ob innerhalb von Landshut (z. B. Nikola, Wolfgang, Achdorf, Peter & Paul) oder in den Nachbarlandkreis (Ergolding, Altdorf, Essenbach, Kumhausen, Vilsbiburg, Moosburg) — wir garantieren höchste Sorgfalt.
+              </p>
+              <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-600">
+                Neben klassischen <strong>Umzügen in Landshut</strong> übernehmen unsere geschulten Möbelpacker auch den fachgerechten Ab- und Aufbau Ihrer Schränke und Küchen sowie die umweltgerechte <strong>Entrümpelung und Sperrmüllentsorgung</strong>.
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <h3 className="text-base font-black text-slate-900">100% Festpreis-Garantie</h3>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600">Verbindliche Angebote ohne Nachverhandlungen oder versteckte Extrakosten.</p>
+              </div>
+              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <h3 className="text-base font-black text-slate-900">Vollversichert & Sicher</h3>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600">Transport- und Betriebshaftpflichtschutz für all Ihre wertvollen Möbel und Kartons.</p>
+              </div>
+              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <h3 className="text-base font-black text-slate-900">Möbelmontage & Packservice</h3>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600">Fachgerechter Ab- und Aufbau sowie Bereitstellung von Schutzmaterial.</p>
+              </div>
+              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <h3 className="text-base font-black text-slate-900">Express & Spontantermine</h3>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600">Schnelle Rückmeldung innerhalb von 4 Stunden und flexible Terminvergabe.</p>
               </div>
             </div>
           </div>

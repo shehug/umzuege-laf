@@ -2,15 +2,16 @@ import { createSeoMetadata } from "../seo";
 import LocalSeoLanding from "../../components/LocalSeoLanding";
 
 export const metadata = createSeoMetadata({
-  title: "Umzug Landshut | Umzüge LAF – privat & gewerblich umziehen",
+  title: "Umzug Landshut » Ihre zuverlässige Umzugsfirma | Umzüge LAF",
   description:
-    "Umzug in Landshut geplant? Umzüge LAF unterstützt bei Privatumzug, Firmenumzug, Möbelmontage, Einpackservice, Transport und Entrümpelung.",
+    "★ 5.0 Sterne für Ihren Umzug in Landshut: Ihre Umzugsfirma & Ihr Umzugsunternehmen für Privatumzug, Firmenumzug, Montage & Entrümpelung. Jetzt Festpreis-Angebot anfordern!",
   path: "/umzug-landshut",
   keywords: [
     "Umzug Landshut",
     "Umzüge Landshut",
-    "Umzugsunternehmen Landshut",
     "Umzugsfirma Landshut",
+    "Umzugsunternehmen Landshut",
+    "Umzugsservice Landshut",
     "Wohnungsumzug Landshut",
     "Firmenumzug Landshut",
     "Möbeltransport Landshut",
@@ -25,30 +26,30 @@ export default function UmzugLandshutPage() {
       path="/umzug-landshut"
       serviceName="Umzug Landshut"
       serviceType="Umzug"
-      serviceDescription="Umzüge LAF unterstützt private und gewerbliche Umzüge in Landshut mit Planung, Transport, Möbelmontage, Einpackservice und Entrümpelung."
-      badge="Umzug in Landshut & Umgebung"
+      serviceDescription="Umzüge LAF ist Ihre professionelle Umzugsfirma in Landshut für Privatumzug, Firmenumzug, Möbelmontage, Einpackservice und Entrümpelung."
+      badge="Ihre 5.0 Sterne Umzugsfirma"
       h1Top="Umzug Landshut."
-      h1Highlight="Klar geplant."
-      h1Bottom="Sicher umgesetzt."
-      intro="Ob Wohnungsumzug, Hausumzug, Firmenumzug oder Möbeltransport: Umzüge LAF plant und begleitet Ihren Umzug in Landshut zuverlässig, persönlich und sauber."
+      h1Highlight="Ihre erfahrene Umzugsfirma."
+      h1Bottom="Stressfrei & zum Festpreis."
+      intro="Ob Wohnungsumzug, Hausumzug, Firmenumzug oder Möbeltransport: Als zuverlässige Umzugsfirma in Landshut plant und begleitet Umzüge LAF Ihren Umzug pünktlich, versichert und mit transparenter Festpreis-Garantie."
       image="/images/hero/hero-umzug-landshut.jpg"
-      imageAlt="Umzug Landshut mit Umzüge LAF"
-      sectionKicker="Umzug planen"
-      sectionTitle="Ein guter Umzug beginnt mit klarer Vorbereitung."
-      sectionText="Ein Umzug in Landshut bringt viele Fragen mit sich: Wie viele Kartons werden benötigt? Muss ein Schrank demontiert werden? Gibt es einen Aufzug? Wo kann der Transporter stehen? Umzüge LAF klärt diese Punkte vorab und plant den Ablauf passend zu Ihrem Bedarf."
+      imageAlt="Umzugsfirma für Umzug in Landshut - Umzüge LAF"
+      sectionKicker="Umzugsfirma Landshut"
+      sectionTitle="Stressfreie Umzüge mit Ihrer lokalen Umzugsfirma."
+      sectionText="Ein Umzug in Landshut bringt viele Fragen mit sich: Wie viele Umzugskartons werden benötigt? Müssen Schränke demontiert werden? Wo kann der Transporter halten? Als erfahrene Umzugsfirma und Umzugsunternehmen in Landshut klären wir alle Details vorab und sorgen für einen reibungslosen Ablauf von Haustür zu Haustür."
       benefits={[
-        "Persönliche Planung",
-        "Privat- und Firmenumzüge",
-        "Möbelmontage möglich",
-        "Einpackservice auf Wunsch",
-        "Entrümpelung kombinierbar",
-        "Landshut & Umgebung",
+        "100% Festpreis-Garantie ohne Überraschungen",
+        "Privatumzüge & Firmenumzüge in Landshut & Region",
+        "Fachgerechte Möbelmontage & Küchenabbau",
+        "Sorgfältiger Einpackservice auf Wunsch",
+        "Umzug & Entrümpelung aus einer Hand",
+        "Vollkaskoversichert & pünktlich",
       ]}
       steps={[
-        { title: "Anfrage stellen", text: "Sie nennen Startadresse, Zieladresse, Terminwunsch, Etage und Umfang." },
-        { title: "Umzug planen", text: "Wir klären Zugang, Parkmöglichkeiten, Möbelmontage, Kartons und besondere Gegenstände." },
-        { title: "Sicher transportieren", text: "Unser Team transportiert Möbel, Kartons und Hausrat sorgfältig zum Zielort." },
-        { title: "Sauber abschließen", text: "Auf Wunsch mit Möbelaufbau, Entsorgung, Entrümpelung oder weiteren Zusatzleistungen." },
+        { title: "Kostenlose Anfrage stellen", text: "Sie nennen Startadresse, Zieladresse, Terminwunsch, Etage und Umfang." },
+        { title: "Festpreis-Angebot erhalten", text: "Wir kalkulieren transparent und verbindlich inklusive aller gewünschten Leistungen." },
+        { title: "Sorgfältiger Transport", text: "Unsere geschulten Möbelpacker transportieren Ihre Möbel und Kartons geschützt ins neue Zuhause." },
+        { title: "Aufbau & besenreine Übergabe", text: "Auf Wunsch mit Möbelmontage, Lampenanschluss und Entsorgung alter Möbel." },
       ]}
       relatedServices={[
         { title: "Umzugsunternehmen Landshut", text: "Zentrale Leistungsseite für Umzug, Transport, Montage und Entrümpelung.", href: "/umzugsunternehmen-landshut" },
@@ -57,10 +58,10 @@ export default function UmzugLandshutPage() {
         { title: "Entrümpelung Landshut", text: "Umzug und Entrümpelung bei Bedarf kombinieren.", href: "/entruempelung-landshut" },
       ]}
       faqs={[
-        { q: "Was kostet ein Umzug in Landshut?", a: "Die Kosten hängen von Umfang, Entfernung, Etage, Kartonanzahl, Möbelmontage und Zusatzleistungen ab. Nach den wichtigsten Angaben kann Umzüge LAF ein transparentes Angebot erstellen." },
-        { q: "Kann ich kurzfristig einen Umzug in Landshut anfragen?", a: "Ja, kurzfristige Umzüge sind je nach Verfügbarkeit möglich. Am schnellsten geht es telefonisch mit Startadresse, Zieladresse, Etage und gewünschtem Termin." },
-        { q: "Übernimmt Umzüge LAF auch Möbelmontage?", a: "Ja, Möbel können auf Wunsch abgebaut, transportiert und am Zielort wieder aufgebaut werden." },
-        { q: "Kann ein Umzug mit Entrümpelung kombiniert werden?", a: "Ja, Umzug und Entrümpelung können kombiniert werden, zum Beispiel bei Wohnungswechsel, Haushaltsauflösung oder Sperrmüllentsorgung." },
+        { q: "Was kostet ein Umzug mit einer Umzugsfirma in Landshut?", a: "Die Kosten hängen von Wohnungsgröße, Etage, Entfernung und Zusatzleistungen wie Möbelmontage ab. Bei Umzüge LAF erhalten Sie nach einer kurzen Besichtigung ein verbindliches Festpreis-Angebot." },
+        { q: "Kann ich kurzfristig einen Umzug in Landshut anfragen?", a: "Ja, wir bieten auch Express- und kurzfristige Umzüge an. Rufen Sie uns am besten direkt unter 0162 900 75 65 an." },
+        { q: "Sind meine Möbel während des Umzugs versichert?", a: "Ja, alle Transporte und Umzugsarbeiten von Umzüge LAF sind vollständig gewerblich haftpflicht- und transportversichert." },
+        { q: "Kann ein Umzug mit Entrümpelung kombiniert werden?", a: "Ja, Umzug und Entrümpelung aus einer Hand ist eine unserer Spezialitäten – ideal bei Haushaltsauflösungen oder Wohnungswechsel." },
       ]}
     />
   );
