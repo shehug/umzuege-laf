@@ -2,6 +2,13 @@ import Link from "next/link";
 
 const reviews = [
   {
+    name: "Andreae Redeniem",
+    location: "Landshut & Umgebung",
+    date: "Neu · vor kurzem",
+    rating: 5,
+    text: "Sehr nette Truppe! Gutes Angebot, unkomplizierte Abwicklung und netter Kontakt. Schnell und fleißig! Absolut weiterzuempfehlen!",
+  },
+  {
     name: "Michael B.",
     location: "Landshut (Wohnungsumzug)",
     date: "vor 2 Wochen",
