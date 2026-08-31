@@ -29,13 +29,6 @@ const reviews = [
     rating: 5,
     text: "Wir haben unseren Gewerbeumzug und die Entrümpelung der alten Räume mit Umzüge LAF gemacht. Strukturierte Planung, keine Ausfallzeiten und besenreine Übergabe. Großes Lob an Herrn Kalludra und sein Team.",
   },
-  {
-    name: "Familie Mayer",
-    location: "Altdorf b. Landshut (Hausumzug)",
-    date: "vor 3 Monaten",
-    rating: 5,
-    text: "Von der Vorabbesichtigung über die Bereitstellung von Kartons bis zum Einzug ins neue Haus lief alles reibungslos. Sehr saubere und vorsichtige Arbeitsweise. 5 von 5 Sternen!",
-  },
 ];
 
 export default function GoogleReviews() {
