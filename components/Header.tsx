@@ -241,6 +241,18 @@ export default function Header() {
               >
                 Angebot anfordern
               </Link>
+
+              <TrackedLink
+                href="https://cal.com/fahrush-kalludra-2scjtx-besichtigung"
+                target="_blank"
+                rel="noopener noreferrer"
+                tracking="booking"
+                trackingLocation="Mobile Menü Cal.com"
+                onClick={() => setOpen(false)}
+                className="col-span-2 flex items-center justify-center gap-2 rounded-xl border border-amber-400 bg-amber-50/70 py-3 text-center text-sm font-black text-slate-900 shadow-sm transition hover:bg-amber-100"
+              >
+                <span>📅 Besichtigung online buchen</span>
+              </TrackedLink>
             </div>
           </div>
         </div>

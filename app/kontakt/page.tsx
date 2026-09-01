@@ -14,6 +14,7 @@ const phoneHref = "tel:+491629007565";
 const whatsappHref = "https://wa.me/491629007565?text=Hallo%20Umz%C3%BCge%20LAF%2C%20ich%20m%C3%B6chte%20ein%20unverbindliches%20Angebot%20anfragen.";
 const email = "info@umzuege-laf.de";
 const emailHref = "mailto:info@umzuege-laf.de";
+const calBookingHref = "https://cal.com/fahrush-kalludra-2scjtx-besichtigung";
 
 const trustBadges = [
   { title: "100% Kostenlos", desc: "Unverbindliches Festpreis-Angebot" },
@@ -33,7 +34,7 @@ export default function KontaktPage() {
           <Breadcrumbs items={[{ label: "Kontakt" }]} />
 
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-400/10 px-3.5 py-1.5 text-xs font-extrabold text-amber-300">
-            <span>★ Kontakt & Beratung · Landshut</span>
+            <span>★ Kontakt & Vor-Ort-Termin · Landshut</span>
           </div>
 
           <h1 className="text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.15]">
@@ -42,15 +43,15 @@ export default function KontaktPage() {
           </h1>
 
           <p className="mt-4 max-w-2xl mx-auto text-base text-slate-300 sm:text-lg leading-relaxed">
-            Wählen Sie den Kontaktweg, der für Sie am bequemsten ist: Telefon, WhatsApp
-            oder unser 2-Minuten-Anfrageformular.
+            Wählen Sie den Kontaktweg, der für Sie am bequemsten ist: Telefon, WhatsApp, 
+            unser Online-Terminkalender oder das 2-Minuten-Anfrageformular.
           </p>
         </div>
       </section>
 
-      {/* ── 3 KONTAKT-KACHELN ── */}
+      {/* ── 4 KONTAKT-KACHELN INKLUSIVE CAL.COM TERMINBUCHUNG ── */}
       <section className="relative z-20 -mt-8 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {/* Telefon */}
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col justify-between hover:border-amber-400 hover:shadow-md transition">
             <div>
@@ -60,7 +61,7 @@ export default function KontaktPage() {
                   Am schnellsten
                 </span>
               </div>
-              <h2 className="mt-4 text-lg font-black text-slate-900">Direkt anrufen</h2>
+              <h2 className="mt-4 text-base sm:text-lg font-black text-slate-900">Direkt anrufen</h2>
               <p className="mt-1 text-xs text-slate-600">
                 Mo–Sa: 08:00 – 18:00 Uhr erreichbar
               </p>
@@ -69,7 +70,7 @@ export default function KontaktPage() {
             <TrackedLink
               href={phoneHref}
               tracking="phone"
-              trackingLocation="Kontaktseite Kachel 1"
+              trackingLocation="Kontaktseite Kachel Telefon"
               className="mt-5 flex items-center justify-center gap-2 rounded-xl bg-[#f59e0b] py-3 text-center text-xs sm:text-sm font-black text-slate-950 shadow-sm transition hover:bg-amber-400"
             >
               Jetzt anrufen
@@ -85,7 +86,7 @@ export default function KontaktPage() {
                   Sehr beliebt
                 </span>
               </div>
-              <h2 className="mt-4 text-lg font-black text-slate-900">WhatsApp Chat</h2>
+              <h2 className="mt-4 text-base sm:text-lg font-black text-slate-900">WhatsApp Chat</h2>
               <p className="mt-1 text-xs text-slate-600">
                 Ideal, um Fotos von Räumen & Möbeln zu senden
               </p>
@@ -94,10 +95,40 @@ export default function KontaktPage() {
             <TrackedLink
               href={whatsappHref}
               tracking="whatsapp"
-              trackingLocation="Kontaktseite Kachel 2"
+              trackingLocation="Kontaktseite Kachel WhatsApp"
               className="mt-5 flex items-center justify-center gap-2 rounded-xl bg-[#25D366] py-3 text-center text-xs sm:text-sm font-black text-white shadow-sm transition hover:bg-green-600"
             >
               WhatsApp öffnen
+            </TrackedLink>
+          </div>
+
+          {/* Cal.com Vor-Ort-Besichtigung buchen */}
+          <div className="rounded-2xl border-2 border-amber-400 bg-amber-50/40 p-6 shadow-sm flex flex-col justify-between hover:shadow-md transition relative">
+            <div className="absolute -top-3 right-4 rounded-full bg-amber-400 px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-slate-950 shadow-sm">
+              Empfohlen
+            </div>
+            <div>
+              <div className="flex items-center justify-between">
+                <span className="rounded-lg bg-amber-200 p-2.5 text-xl">📅</span>
+                <span className="rounded-full bg-amber-100 px-2.5 py-1 text-[11px] font-bold text-amber-900">
+                  Online-Kalender
+                </span>
+              </div>
+              <h2 className="mt-4 text-base sm:text-lg font-black text-slate-900">Besichtigung buchen</h2>
+              <p className="mt-1 text-xs text-slate-600 leading-relaxed">
+                Wunschtermin für kostenlose Vor-Ort-Besichtigung wählen
+              </p>
+              <p className="mt-3 text-xs font-bold text-[#b45309]">100% kostenlos & unverbindlich</p>
+            </div>
+            <TrackedLink
+              href={calBookingHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              tracking="booking"
+              trackingLocation="Kontaktseite Kachel Cal.com"
+              className="mt-5 flex items-center justify-center gap-2 rounded-xl bg-slate-900 py-3 text-center text-xs sm:text-sm font-black text-white shadow-sm transition hover:bg-slate-800"
+            >
+              Termin online wählen →
             </TrackedLink>
           </div>
 
@@ -110,17 +141,17 @@ export default function KontaktPage() {
                   Schriftlich
                 </span>
               </div>
-              <h2 className="mt-4 text-lg font-black text-slate-900">E-Mail schreiben</h2>
+              <h2 className="mt-4 text-base sm:text-lg font-black text-slate-900">E-Mail schreiben</h2>
               <p className="mt-1 text-xs text-slate-600">
                 Für Dokumente, Grundrisse & Listen
               </p>
-              <p className="mt-3 text-sm font-bold text-slate-900">{email}</p>
+              <p className="mt-3 text-sm font-bold text-slate-900 truncate">{email}</p>
             </div>
             <TrackedLink
               href={emailHref}
               tracking="email"
-              trackingLocation="Kontaktseite Kachel 3"
-              className="mt-5 flex items-center justify-center gap-2 rounded-xl bg-slate-900 py-3 text-center text-xs sm:text-sm font-black text-white shadow-sm transition hover:bg-slate-800"
+              trackingLocation="Kontaktseite Kachel E-Mail"
+              className="mt-5 flex items-center justify-center gap-2 rounded-xl bg-slate-100 py-3 text-center text-xs sm:text-sm font-bold text-slate-800 transition hover:bg-slate-200"
             >
               E-Mail senden
             </TrackedLink>
@@ -128,8 +159,45 @@ export default function KontaktPage() {
         </div>
       </section>
 
+      {/* ── INTERAKTIVER CAL.COM VOR-ORT-BESICHTIGUNG BANNER ── */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12">
+        <div className="rounded-3xl border border-amber-400/50 bg-gradient-to-r from-slate-900 via-slate-900 to-slate-800 p-6 sm:p-10 text-white shadow-xl flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1 text-xs font-bold text-amber-300">
+              <span>📅</span>
+              <span>Kostenlose Vor-Ort-Besichtigung</span>
+            </div>
+            <h2 className="mt-3 text-2xl sm:text-3xl font-black text-white">
+              Wunschtermin direkt online im Kalender buchen
+            </h2>
+            <p className="mt-2 text-sm text-slate-300 leading-relaxed">
+              Herr Kalludra kommt persönlich bei Ihnen vorbei, erfasst das genaue Umzugsvolumen und bespricht alle Details (Möbelmontage, Packservice, Halteverbotszone). Im Anschluss erhalten Sie sofort Ihr verbindliches Festpreisangebot.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-4 text-xs font-semibold text-amber-300">
+              <span>✓ 100% kostenlos</span>
+              <span>✓ Schnelle Terminauswahl</span>
+              <span>✓ Festpreis-Garantie</span>
+            </div>
+          </div>
+
+          <div className="shrink-0">
+            <TrackedLink
+              href={calBookingHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              tracking="booking"
+              trackingLocation="Kontaktseite Banner Cal.com"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#f59e0b] px-8 py-4 text-center text-sm sm:text-base font-black text-slate-950 shadow-lg transition hover:bg-amber-400 active:scale-95"
+            >
+              <span>Wunschtermin jetzt buchen</span>
+              <span>→</span>
+            </TrackedLink>
+          </div>
+        </div>
+      </section>
+
       {/* ── FORMULAR & STANDORT MIT GOOGLE MAPS ── */}
-      <section className="py-16 sm:py-24 bg-slate-50 border-t border-slate-200 mt-16">
+      <section className="py-16 sm:py-24 bg-slate-50 border-t border-slate-200 mt-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>

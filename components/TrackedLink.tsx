@@ -2,12 +2,13 @@
 
 import type { AnchorHTMLAttributes, MouseEvent, ReactNode } from "react";
 import {
+  trackBookingClick,
   trackEmailClick,
   trackPhoneClick,
   trackWhatsappClick,
 } from "@/lib/gtmEvents";
 
-type TrackingType = "phone" | "whatsapp" | "email";
+type TrackingType = "phone" | "whatsapp" | "email" | "booking";
 
 type TrackedLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   tracking: TrackingType;
@@ -33,6 +34,10 @@ export default function TrackedLink({
 
     if (tracking === "email") {
       trackEmailClick(trackingLocation);
+    }
+
+    if (tracking === "booking") {
+      trackBookingClick(trackingLocation);
     }
 
     onClick?.(event);

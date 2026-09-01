@@ -38,6 +38,13 @@ export function trackEmailClick(location: string) {
   });
 }
 
+export function trackBookingClick(location: string) {
+  pushGtmEvent("booking_click", {
+    click_location: location,
+    service: "Vor-Ort-Besichtigung",
+  });
+}
+
 export function trackContactFormSubmit(location: string) {
   pushGtmEvent("contact_form_submit", {
     form_location: location,

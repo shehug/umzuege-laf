@@ -377,6 +377,23 @@ export default function Home() {
                   Mo–Sa: 08:00 – 18:00 Uhr erreichbar
                 </p>
               </div>
+
+              <div className="mt-4 rounded-2xl border border-amber-400/40 bg-amber-400/10 p-6">
+                <p className="text-xs font-black uppercase tracking-wider text-amber-300">
+                  📅 Vor-Ort-Besichtigung online buchen
+                </p>
+                <p className="mt-1.5 text-xs text-slate-300 leading-relaxed">
+                  Möchten Sie lieber direkt einen festen Termin vereinbaren? Wählen Sie Ihren Wunschtermin in 30 Sekunden im Online-Kalender.
+                </p>
+                <a
+                  href="https://cal.com/fahrush-kalludra-2scjtx-besichtigung"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3.5 inline-flex items-center gap-2 rounded-xl bg-[#f59e0b] px-5 py-2.5 text-xs font-black text-slate-950 transition hover:bg-amber-400"
+                >
+                  <span>Termin im Kalender wählen →</span>
+                </a>
+              </div>
             </div>
 
             <div className="rounded-2xl border border-slate-700 bg-white p-6 sm:p-8 text-slate-900 shadow-2xl">
