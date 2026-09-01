@@ -6,6 +6,7 @@ import TrackedLink from "../../components/TrackedLink";
 import GoogleMapLocation from "../../components/GoogleMapLocation";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import BookingCalendar from "../../components/BookingCalendar";
+import ScrollToButton from "../../components/ScrollToButton";
 import { createSeoMetadata, seoPages } from "../seo";
 
 export const metadata = createSeoMetadata(seoPages.kontakt);
@@ -121,12 +122,12 @@ export default function KontaktPage() {
               </p>
               <p className="mt-3 text-xs font-bold text-[#b45309]">100% kostenlos & unverbindlich</p>
             </div>
-            <a
-              href="#termin-kalender"
+            <ScrollToButton
+              targetId="termin-kalender"
               className="mt-5 flex items-center justify-center gap-2 rounded-xl bg-slate-900 py-3 text-center text-xs sm:text-sm font-black text-white shadow-sm transition hover:bg-slate-800"
             >
               Termin unten wählen ↓
-            </a>
+            </ScrollToButton>
           </div>
 
           {/* E-Mail */}
