@@ -386,7 +386,7 @@ export default function Home() {
                   Möchten Sie lieber direkt einen festen Termin vereinbaren? Wählen Sie Ihren Wunschtermin in 30 Sekunden im Online-Kalender.
                 </p>
                 <a
-                  href="https://cal.com/fahrush-kalludra-2scjtx-besichtigung"
+                  href="https://cal.com/fahrush-kalludra-2scjtx/termin"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-3.5 inline-flex items-center gap-2 rounded-xl bg-[#f59e0b] px-5 py-2.5 text-xs font-black text-slate-950 transition hover:bg-amber-400"

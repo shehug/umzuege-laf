@@ -42,7 +42,7 @@ export default function BookingCalendar() {
 
       <div className="w-full min-h-[620px] rounded-2xl overflow-hidden bg-slate-950/60 border border-slate-800">
         <Cal
-          calLink="fahrush-kalludra-2scjtx-besichtigung"
+          calLink="fahrush-kalludra-2scjtx/termin"
           style={{ width: "100%", height: "100%", minHeight: "620px" }}
           config={{ layout: "month_view", theme: "dark" }}
         />

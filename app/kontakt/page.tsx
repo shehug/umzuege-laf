@@ -16,7 +16,7 @@ const phoneHref = "tel:+491629007565";
 const whatsappHref = "https://wa.me/491629007565?text=Hallo%20Umz%C3%BCge%20LAF%2C%20ich%20m%C3%B6chte%20ein%20unverbindliches%20Angebot%20anfragen.";
 const email = "info@umzuege-laf.de";
 const emailHref = "mailto:info@umzuege-laf.de";
-const calBookingHref = "https://cal.com/fahrush-kalludra-2scjtx-besichtigung";
+const calBookingHref = "https://cal.com/fahrush-kalludra-2scjtx/termin";
 
 const trustBadges = [
   { title: "100% Kostenlos", desc: "Unverbindliches Festpreis-Angebot" },
