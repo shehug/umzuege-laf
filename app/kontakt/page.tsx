@@ -5,6 +5,7 @@ import ContactForm from "../../components/ContactForm";
 import TrackedLink from "../../components/TrackedLink";
 import GoogleMapLocation from "../../components/GoogleMapLocation";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import BookingCalendar from "../../components/BookingCalendar";
 import { createSeoMetadata, seoPages } from "../seo";
 
 export const metadata = createSeoMetadata(seoPages.kontakt);
@@ -49,7 +50,7 @@ export default function KontaktPage() {
         </div>
       </section>
 
-      {/* ── 4 KONTAKT-KACHELN INKLUSIVE CAL.COM TERMINBUCHUNG ── */}
+      {/* ── 4 KONTAKT-KACHELN ── */}
       <section className="relative z-20 -mt-8 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {/* Telefon */}
@@ -120,16 +121,12 @@ export default function KontaktPage() {
               </p>
               <p className="mt-3 text-xs font-bold text-[#b45309]">100% kostenlos & unverbindlich</p>
             </div>
-            <TrackedLink
-              href={calBookingHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              tracking="booking"
-              trackingLocation="Kontaktseite Kachel Cal.com"
+            <a
+              href="#termin-kalender"
               className="mt-5 flex items-center justify-center gap-2 rounded-xl bg-slate-900 py-3 text-center text-xs sm:text-sm font-black text-white shadow-sm transition hover:bg-slate-800"
             >
-              Termin online wählen →
-            </TrackedLink>
+              Termin unten wählen ↓
+            </a>
           </div>
 
           {/* E-Mail */}
@@ -159,45 +156,13 @@ export default function KontaktPage() {
         </div>
       </section>
 
-      {/* ── INTERAKTIVER CAL.COM VOR-ORT-BESICHTIGUNG BANNER ── */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12">
-        <div className="rounded-3xl border border-amber-400/50 bg-gradient-to-r from-slate-900 via-slate-900 to-slate-800 p-6 sm:p-10 text-white shadow-xl flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1 text-xs font-bold text-amber-300">
-              <span>📅</span>
-              <span>Kostenlose Vor-Ort-Besichtigung</span>
-            </div>
-            <h2 className="mt-3 text-2xl sm:text-3xl font-black text-white">
-              Wunschtermin direkt online im Kalender buchen
-            </h2>
-            <p className="mt-2 text-sm text-slate-300 leading-relaxed">
-              Herr Kalludra kommt persönlich bei Ihnen vorbei, erfasst das genaue Umzugsvolumen und bespricht alle Details (Möbelmontage, Packservice, Halteverbotszone). Im Anschluss erhalten Sie sofort Ihr verbindliches Festpreisangebot.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-4 text-xs font-semibold text-amber-300">
-              <span>✓ 100% kostenlos</span>
-              <span>✓ Schnelle Terminauswahl</span>
-              <span>✓ Festpreis-Garantie</span>
-            </div>
-          </div>
-
-          <div className="shrink-0">
-            <TrackedLink
-              href={calBookingHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              tracking="booking"
-              trackingLocation="Kontaktseite Banner Cal.com"
-              className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#f59e0b] px-8 py-4 text-center text-sm sm:text-base font-black text-slate-950 shadow-lg transition hover:bg-amber-400 active:scale-95"
-            >
-              <span>Wunschtermin jetzt buchen</span>
-              <span>→</span>
-            </TrackedLink>
-          </div>
-        </div>
+      {/* ── EINGEBETTETER INTERAKTIVER CAL.COM KALENDER ── */}
+      <section id="termin-kalender" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12 scroll-mt-24">
+        <BookingCalendar />
       </section>
 
       {/* ── FORMULAR & STANDORT MIT GOOGLE MAPS ── */}
-      <section className="py-16 sm:py-24 bg-slate-50 border-t border-slate-200 mt-12">
+      <section className="py-16 sm:py-24 bg-slate-50 border-t border-slate-200 mt-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
