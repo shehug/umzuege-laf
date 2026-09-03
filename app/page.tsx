@@ -140,18 +140,18 @@ export default function Home() {
               {/* Trust Tag */}
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-400/10 px-3.5 py-1.5 text-xs font-extrabold text-amber-300">
                 <span className="flex text-amber-400">★★★★★</span>
-                <span>5.0 / 5.0 Google Bewertung · Umzüge Landshut</span>
+                <span>5.0 / 5.0 Google Bewertung · Landshut</span>
               </div>
 
               <h1 className="text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.15]">
-                Umzüge Landshut.<br />
-                <span className="text-amber-400">Ihre zuverlässige Umzugsfirma.</span>
+                Umzugsunternehmen & Umzugsfirma Landshut.<br />
+                <span className="text-amber-400">Stressfreie Umzüge zum Festpreis.</span>
               </h1>
 
               <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
-                Ihr erfahrenes Team für Umzüge in Landshut & Region. Als professionelle Umzugsfirma übernehmen wir
+                Ihr erfahrenes Umzugsunternehmen und Ihre zuverlässige Umzugsfirma für Umzüge in Landshut & Region. Wir übernehmen
                 Privatumzüge, Firmenumzüge, Möbelmontage, Einpackservice und Entrümpelungen
-                — zuverlässig, pünktlich und zum Festpreis.
+                — zuverlässig, pünktlich und fair.
               </p>
 
               {/* CTAs */}
