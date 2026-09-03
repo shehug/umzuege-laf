@@ -31,6 +31,31 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/expressumzug",
+        destination: "/umzuege/expressumzug",
+        permanent: true,
+      },
+      {
+        source: "/fernumzug",
+        destination: "/umzuege/fernumzug",
+        permanent: true,
+      },
+      {
+        source: "/moebelmontage",
+        destination: "/umzuege/moebelmontage",
+        permanent: true,
+      },
+      {
+        source: "/einpackservice",
+        destination: "/umzuege/einpackservice",
+        permanent: true,
+      },
+      {
+        source: "/lagerung",
+        destination: "/umzuege/lagerung",
+        permanent: true,
+      },
+      {
         source: "/umzuege/privatumzug",
         destination: "/privatumzug-landshut",
         permanent: true,
@@ -48,6 +73,16 @@ const nextConfig = {
       {
         source: "/umzugsunternehmen",
         destination: "/umzugsunternehmen-landshut",
+        permanent: true,
+      },
+      {
+        source: "/haushaltaufloesung-landshut",
+        destination: "/entruempelung/haushaltsaufloesung",
+        permanent: true,
+      },
+      {
+        source: "/haushaltsaufloesung-landshut",
+        destination: "/entruempelung/haushaltsaufloesung",
         permanent: true,
       },
     ];
