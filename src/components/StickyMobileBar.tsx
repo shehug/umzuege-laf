@@ -39,7 +39,7 @@ export default function StickyMobileBar() {
           href={whatsappHref}
           tracking="whatsapp"
           trackingLocation="StickyMobileBar_WhatsApp"
-          className="flex items-center justify-center gap-1 rounded-lg bg-[#25D366] py-2 px-1 text-center text-[11px] min-[380px]:text-[12px] font-black text-white shadow-xs transition active:scale-95 hover:bg-green-600"
+          className="flex items-center justify-center gap-1 rounded-lg bg-[#25D366] py-2 px-1 text-center text-[11px] min-[380px]:text-[12px] font-black text-[#0f172a] shadow-xs transition active:scale-95 hover:bg-green-600"
         >
           <svg
             viewBox="0 0 32 32"

@@ -121,7 +121,7 @@ export default function CookieConsent() {
 
           <button
             onClick={handleReject}
-            className="rounded-xl border border-slate-700 bg-slate-800/80 px-6 py-3 text-center text-xs sm:text-sm font-bold text-slate-200 transition hover:border-slate-500 hover:bg-slate-700 active:scale-95"
+            className="rounded-xl border border-slate-500 bg-slate-800 px-6 py-3 text-center text-xs sm:text-sm font-bold text-white transition hover:border-slate-400 hover:bg-slate-700 active:scale-95"
           >
             Nur notwendige
           </button>

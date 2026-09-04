@@ -64,6 +64,8 @@ const {
   faqs = [],
 } = Astro.props;
 
+const webpImage = image.replace(/\.(jpe?g|png)$/i, ".webp");
+
 const phone = "0162 900 75 65";
 const phoneHref = "tel:+491629007565";
 
@@ -128,15 +130,18 @@ const faqSchema = {
   {/* ── HERO SECTION ── */}
   <section class="relative overflow-hidden bg-slate-950 pt-28 pb-16 text-white sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28">
     <div class="absolute inset-0 z-0 opacity-60">
-      <img
-        src={image}
-        alt={imageAlt}
-        loading="eager"
-        fetchpriority="high"
-        decoding="async"
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 1200px"
-        class="h-full w-full object-cover object-center sm:object-right"
-      />
+      <picture style="display: contents;">
+        <source srcset={webpImage} type="image/webp" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 1200px" />
+        <img
+          src={image}
+          alt={imageAlt}
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 1200px"
+          class="h-full w-full object-cover object-center sm:object-right"
+        />
+      </picture>
     </div>
     <div class="absolute inset-0 z-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/30 sm:to-transparent"></div>
     <div class="absolute inset-0 z-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/40"></div>
@@ -215,7 +220,10 @@ const faqSchema = {
 
       <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-xl">
         <div class="relative h-[320px] sm:h-[420px]">
-          <img src={image} alt={imageAlt} class="h-full w-full object-cover" />
+          <picture style="display: contents;">
+            <source srcset={webpImage} type="image/webp" />
+            <img src={image} alt={imageAlt} loading="lazy" decoding="async" class="h-full w-full object-cover" />
+          </picture>
           <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
           <div class="absolute bottom-4 left-4 right-4 rounded-xl border border-white/20 bg-slate-900/80 p-5 text-white backdrop-blur-md">
             <h3 class="text-base font-black sm:text-lg">
