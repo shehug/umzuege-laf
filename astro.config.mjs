@@ -10,6 +10,9 @@ export default defineConfig({
   adapter: node({
     mode: 'standalone',
   }),
+  build: {
+    inlineStylesheets: 'always',
+  },
   server: {
     host: true,
     port: 3213,

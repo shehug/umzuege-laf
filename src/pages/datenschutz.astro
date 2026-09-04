@@ -1,6 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/Header";
+import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { createSeoMetadata, seoPages } from "@/lib/seo";
@@ -101,7 +101,7 @@ const meta = createSeoMetadata(seoPages.datenschutz);
   noIndex={meta.noIndex}
 >
   <main class="min-h-screen bg-slate-950 text-white">
-      <Header client:load />
+      <Header />
 
       <div class="mx-auto max-w-5xl px-4 pt-32 pb-20 sm:px-6 lg:px-8">
         <Breadcrumbs items={[{ label: "Datenschutz" }]} />

@@ -1,6 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/Header";
+import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { createSeoMetadata, seoPages } from "@/lib/seo";
@@ -29,7 +29,7 @@ const meta = createSeoMetadata(seoPages.impressum);
         <div class="laf-orb laf-orb-two" />
       </div>
 
-      <Header client:load />
+      <Header />
 
       <section class="relative z-10 px-5 pb-20 pt-40 lg:px-8">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(246,194,26,0.26),transparent_34%)]" />

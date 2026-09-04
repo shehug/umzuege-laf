@@ -1,10 +1,10 @@
 ---
 import '../styles/globals.css';
-import FloatingWhatsApp from '../components/FloatingWhatsApp';
-import CookieConsent from '../components/CookieConsent';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 import SeoJsonLd from '../components/SeoJsonLd';
-import GoogleTagManager from '../components/GoogleTagManager';
-import StickyMobileBar from '../components/StickyMobileBar';
+import GoogleTagManager from '../components/GoogleTagManager.astro';
+import StickyMobileBar from '../components/StickyMobileBar.astro';
 
 interface Props {
   title?: string;
@@ -77,10 +77,29 @@ const keywordsString = Array.isArray(keywords) ? keywords.join(", ") : keywords;
     <SeoJsonLd />
   </head>
   <body class="pb-12 md:pb-0 font-sans antialiased text-slate-900 bg-white selection:bg-amber-400 selection:text-slate-950">
-    <GoogleTagManager client:load />
+    <GoogleTagManager />
     <slot />
-    <FloatingWhatsApp client:idle />
-    <StickyMobileBar client:load />
-    <CookieConsent client:idle />
+    <FloatingWhatsApp />
+    <StickyMobileBar />
+    <CookieConsent />
+
+    <script is:inline>
+      document.addEventListener('click', function(e) {
+        var target = e.target.closest('a[data-track]');
+        if (!target) return;
+        var type = target.getAttribute('data-track');
+        var loc = target.getAttribute('data-track-loc') || '';
+        window.dataLayer = window.dataLayer || [];
+        if (type === 'phone') {
+          window.dataLayer.push({ event: 'phone_click', click_location: loc, phone_number: '+491629007565' });
+        } else if (type === 'whatsapp') {
+          window.dataLayer.push({ event: 'whatsapp_click', click_location: loc, phone_number: '+491629007565' });
+        } else if (type === 'email') {
+          window.dataLayer.push({ event: 'email_click', click_location: loc, email: 'info@umzuege-laf.de' });
+        } else if (type === 'booking') {
+          window.dataLayer.push({ event: 'booking_click', click_location: loc, service: 'Vor-Ort-Besichtigung' });
+        }
+      });
+    </script>
   </body>
 </html>

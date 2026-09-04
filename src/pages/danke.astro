@@ -1,6 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/Header";
+import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { createSeoMetadata, seoPages } from "@/lib/seo";
@@ -26,7 +26,7 @@ const phone = "0162 900 75 65";
   noIndex={meta.noIndex}
 >
   <main class="min-h-screen bg-white text-slate-900 flex flex-col justify-between">
-      <Header client:load />
+      <Header />
 
       <section class="relative overflow-hidden bg-slate-950 pt-36 pb-20 text-white sm:pt-44 sm:pb-28 flex-1 flex items-center">
         <div class="absolute inset-0 z-0 bg-gradient-to-b from-slate-900/60 to-slate-950" />
