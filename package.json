@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev --port 3213",
-    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build && node -e \"const fs=require('fs'); ['.next','out','build'].forEach(d => { if(!fs.existsSync(d)) fs.cpSync('dist', d, {recursive: true}); });\"",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build && cp server.js dist/server.js && mkdir -p dist/nodejs && cp server.js dist/nodejs/server.js && node -e \"const fs=require('fs'); ['.next','out','build'].forEach(d => { if(!fs.existsSync(d)) fs.cpSync('dist', d, {recursive: true}); });\"",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview --port 3213",
     "start": "node ./dist/server/entry.mjs"
   },
