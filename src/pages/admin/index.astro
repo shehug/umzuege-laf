@@ -1,0 +1,25 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { ADMIN_COOKIE_NAME, verifyAdminToken } from "@/lib/adminAuth";
+import { readSiteContent } from "@/lib/siteContent";
+import AdminContentEditor from "@/components/AdminContentEditor";
+
+export const prerender = false;
+
+const token = Astro.cookies.get(ADMIN_COOKIE_NAME)?.value;
+const session = verifyAdminToken(token);
+
+if (!session) {
+  return Astro.redirect("/admin/login");
+}
+
+const content = await readSiteContent();
+---
+
+<Layout title="Admin Dashboard | Umzüge LAF" noIndex={true}>
+  <main class="min-h-screen bg-[#f7f7f2] px-4 py-14 sm:px-6 sm:py-20 md:py-24 lg:px-8">
+    <div class="mx-auto max-w-5xl">
+      <AdminContentEditor client:load initialContent={content} />
+    </div>
+  </main>
+</Layout>

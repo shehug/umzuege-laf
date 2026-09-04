@@ -1,0 +1,159 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { createSeoMetadata, seoPages } from "@/lib/seo";
+
+const phone = "0162 900 75 65";
+const phoneHref = "tel:+491629007565";
+const email = "info@umzuege-laf.de";
+
+const privacySections = [
+  {
+    title: "1. Verantwortliche Stelle für den Datenschutz",
+    text: [
+      "Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) und anderer nationaler Datenschutzgesetze ist:",
+      "Umzüge LAF\nInhaber: Fahri Kalludra\nErgoldinger Str. 15\n84030 Landshut\nDeutschland",
+      `Telefon: ${phone}\nE-Mail: ${email}`,
+    ],
+  },
+  {
+    title: "2. Allgemeine Hinweise zur Datenverarbeitung",
+    text: [
+      "Wir verarbeiten personenbezogene Daten unserer Nutzer grundsätzlich nur, soweit dies zur Bereitstellung einer funktionsfähigen Website sowie unserer Inhalte und Leistungen (wie Umzüge, Montage, Transport und Entrümpelung) erforderlich ist.",
+      "Die Verarbeitung personenbezogener Daten erfolgt regelmäßig nur nach Einwilligung des Nutzers. Eine Ausnahme gilt in solchen Fällen, in denen eine vorherige Einholung einer Einwilligung aus tatsächlichen Gründen nicht möglich ist und die Verarbeitung der Daten durch gesetzliche Vorschriften gestattet ist.",
+    ],
+  },
+  {
+    title: "3. Hosting & SSL-/TLS-Verschlüsselung",
+    text: [
+      "Diese Website wird bei einem externen Dienstleister (Hostinger International Ltd.) gehostet. Personenbezogene Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Hierzu können u. a. IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten gehören.",
+      "Der Einsatz des Hosters erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).",
+      "Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL-/TLS-Verschlüsselung (HTTPS). Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://“ auf „https://“ wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.",
+    ],
+  },
+  {
+    title: "4. Kontaktaufnahme per E-Mail, Telefon oder Kontaktformular (SMTP)",
+    text: [
+      "Wenn Sie uns per Kontaktformular, Telefon oder E-Mail Anfragen zukommen lassen, werden Ihre Angaben inklusive der von Ihnen dort angegebenen Kontaktdaten (Name, Telefonnummer, E-Mail-Adresse, Auszugsort, Einzugsort, Termin und Details) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.",
+      "Die Übermittlung des Online-Formulars erfolgt verschlüsselt über unsere eigene gesicherte Serverschnittstelle via SMTP über den Mailserver unseres Hosters info@umzuege-laf.de.",
+      "Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags oder zur Durchführung vorvertraglicher Maßnahmen (wie die Erstellung eines Umzugsangebots) zusammenhängt. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO).",
+      "Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Gesetzliche Aufbewahrungsfristen bleiben unberührt.",
+    ],
+  },
+  {
+    title: "5. WhatsApp Business Kontakt",
+    text: [
+      "Wir bieten Ihnen die Möglichkeit, über den Messenger-Dienst WhatsApp mit uns in Kontakt zu treten. Anbieter ist die WhatsApp Ireland Limited, 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland.",
+      "Wenn Sie mit uns über WhatsApp kommunizieren, wird Ihre Telefonnummer und der Kommunikationsinhalt an WhatsApp übermittelt und von WhatsApp gespeichert. Bitte beachten Sie, dass die Kommunikation Ende-zu-Ende-verschlüsselt ist, WhatsApp jedoch Metadaten zur Kommunikation verarbeitet.",
+      "Die Nutzung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) durch aktives Klicken auf den WhatsApp-Button oder zur Anbahnung/Durchführung eines Vertragsverhältnisses (Art. 6 Abs. 1 lit. b DSGVO).",
+    ],
+  },
+  {
+    title: "6. Google Maps",
+    text: [
+      "Diese Website nutzt den Kartendienst Google Maps. Anbieter ist die Google Ireland Limited („Google“), Gordon House, Barrow Street, Dublin 4, Irland.",
+      "Zur Nutzung der Funktionen von Google Maps ist es notwendig, Ihre IP-Adresse zu speichern. Diese Informationen werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. Wir haben keinen Einfluss auf diese Datenübertragung.",
+      "Die Nutzung von Google Maps erfolgt im Interesse einer ansprechenden Darstellung unseres Unternehmensstandorts (Ergoldinger Str. 15, 84030 Landshut) und einer leichten Auffindbarkeit unserer Geschäftsadresse. Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO.",
+    ],
+  },
+  {
+    title: "7. Google Tag Manager & Google Ads Conversion-Tracking",
+    text: [
+      "Wir nutzen auf unserer Website den Google Tag Manager und Google Ads der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.",
+      "Der Google Tag Manager ist eine Lösung, mit der Website-Tags über eine Oberfläche verwaltet werden können. Der Tag Manager selbst (der die Tags implementiert) verarbeitet keine personenbezogenen Daten der Nutzer und setzt keine Cookies. Er sorgt lediglich für die Auslösung anderer Tags.",
+      "Google Ads Conversion-Tracking ermöglicht es uns zu erfassen, wenn ein Nutzer über eine geschaltete Google-Anzeige auf unsere Website gelangt ist und eine Aktion (z. B. Absenden des Kontaktformulars oder Klick auf die Telefonnummer) ausgeführt hat.",
+      "Die Nutzung von Google Ads erfolgt ausschließlich auf Grundlage Ihrer ausdrücklichen Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG über unseren Cookie-Consent-Banner. Sie können diese Einwilligung jederzeit über die Cookie-Einstellungen oder durch Löschen Ihrer Browser-Cookies widerrufen.",
+    ],
+  },
+  {
+    title: "8. Ihre Rechte als betroffene Person",
+    text: [
+      "Sie haben nach der DSGVO jederzeit folgende Rechte gegenüber dem Verantwortlichen:",
+      "• Recht auf Auskunft (Art. 15 DSGVO): Sie können Auskunft über Ihre von uns verarbeiteten personenbezogenen Daten verlangen.",
+      "• Recht auf Berichtigung (Art. 16 DSGVO): Sie können die unverzügliche Berichtigung unrichtiger Daten verlangen.",
+      "• Recht auf Löschung (Art. 17 DSGVO): Sie können die Löschung Ihrer bei uns gespeicherten Daten verlangen.",
+      "• Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO): Sie können die Einschränkung der Verarbeitung verlangen.",
+      "• Recht auf Datenübertragbarkeit (Art. 20 DSGVO): Sie können Ihre Daten in einem strukturierten, gängigen und maschinenlesbaren Format erhalten.",
+      "• Recht auf Widerruf erteilter Einwilligungen (Art. 7 Abs. 3 DSGVO): Sie können eine erteilte Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen.",
+      "• Recht auf Beschwerde bei einer Aufsichtsbehörde (Art. 77 DSGVO): Sie haben das Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde, z. B. dem Bayerischen Landesamt für Datenschutzaufsicht (BayLDA).",
+    ],
+  },
+  {
+    title: "9. Aktualität und Änderung dieser Datenschutzerklärung",
+    text: [
+      "Diese Datenschutzerklärung ist aktuell gültig und hat den Stand August 2026.",
+      "Durch die Weiterentwicklung unserer Website oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung anzupassen.",
+    ],
+  },
+];
+const meta = createSeoMetadata(seoPages.datenschutz);
+
+---
+
+<Layout
+  title={meta.title}
+  description={meta.description}
+  keywords={meta.keywords}
+  canonical={meta.canonical}
+  image={meta.image}
+  noIndex={meta.noIndex}
+>
+  <main class="min-h-screen bg-slate-950 text-white">
+      <Header client:load />
+
+      <div class="mx-auto max-w-5xl px-4 pt-32 pb-20 sm:px-6 lg:px-8">
+        <Breadcrumbs items={[{ label: "Datenschutz" }]} />
+
+        <div class="mt-4 inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-3.5 py-1.5 text-xs font-bold text-amber-400">
+          <span>🛡️</span>
+          <span>DSGVO-konform</span>
+        </div>
+
+        <h1 class="mt-4 text-3xl font-black tracking-tight text-white sm:text-5xl">
+          Datenschutzerklärung
+        </h1>
+
+        <p class="mt-4 text-sm sm:text-base leading-relaxed text-slate-300 max-w-3xl">
+          Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Nachfolgend
+          informieren wir Sie ausführlich über die Erhebung, Verarbeitung und Nutzung
+          personenbezogener Daten auf der Website von Umzüge LAF.
+        </p>
+
+        <div class="mt-12 space-y-10">
+          {privacySections.map((sec) => (
+            <section
+              key={sec.title}
+              class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8 backdrop-blur-sm"
+            >
+              <h2 class="text-xl sm:text-2xl font-black text-amber-400">
+                {sec.title}
+              </h2>
+              <div class="mt-4 space-y-3 text-xs sm:text-sm leading-relaxed text-slate-300 whitespace-pre-line">
+                {sec.text.map((p, idx) => (
+                  <p key={idx}>{p}</p>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+
+        <div class="mt-12 rounded-2xl border border-slate-800 bg-slate-900/40 p-6 text-center text-xs text-slate-400">
+          <p>
+            Haben Sie Fragen zum Datenschutz bei Umzüge LAF? Kontaktieren Sie uns direkt unter{" "}
+            <a href={`mailto:${email}`} class="text-amber-400 hover:underline">
+              {email}
+            </a>{" "}
+            oder telefonisch unter{" "}
+            <a href={phoneHref} class="text-amber-400 hover:underline">
+              {phone}
+            </a>
+            .
+          </p>
+        </div>
+      </div>
+
+      <Footer />
+    </main>
+</Layout>

@@ -1,0 +1,58 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import LocalSeoLanding from "@/components/LocalSeoLanding.astro";
+import { createSeoMetadata, seoPages } from "@/lib/seo";
+
+const meta = createSeoMetadata(seoPages.fernumzug);
+---
+
+<Layout
+  title={meta.title}
+  description={meta.description}
+  keywords={meta.keywords}
+  canonical={meta.canonical}
+  image={meta.image}
+  noIndex={meta.noIndex}
+>
+  <LocalSeoLanding
+      breadcrumbName="Fernumzug Landshut"
+      path="/umzuege/fernumzug"
+      serviceName="Fernumzug Landshut"
+      serviceType="Fernumzug"
+      serviceDescription="Fernumzug ab Landshut mit Umzüge LAF. Zuverlässige Planung, sicherer Transport, Termintreue und transparente Festpreise."
+      badge="Bayern- & Deutschlandweit"
+      h1Top="Fernumzug ab Landshut."
+      h1Highlight="Sicher & termintreu."
+      h1Bottom="Deutschlandweit."
+      intro="Umzug in eine andere Stadt oder ein anderes Bundesland? Umzüge LAF bringt Ihr Hab und Gut sicher, pünktlich und zum garantierten Festpreis an Ihren neuen Wohnort."
+      image="/images/services/Transport.jpg"
+      imageAlt="Fernumzug mit Umzüge LAF"
+      sectionKicker="Überregionale Umzüge"
+      sectionTitle="Zuverlässige Planung für lange Strecken."
+      sectionText="Bei einem Fernumzug müssen Zeitplan, Routenführung und Beladung perfekt aufeinander abgestimmt sein. Wir sorgen für eine reibungslose Logistik, sichere Ladungssicherung und eine termingenaue Ankunft am Zielort."
+      benefits={[
+        "Feste Terminzusage ohne Verzögerung",
+        "Transparente Festpreise inklusive Maut & Benzin",
+        "Sichere Ladungssicherung auf langen Strecken",
+        "Möbelmontage am Zielort möglich",
+        "Vollständige Transportversicherung",
+        "Erfahrene Fernfahrer",
+      ]}
+      steps={[
+        { title: "Strecke & Umfang erfassen", text: "Sie nennen uns Start- und Zielort sowie den ungefähren Umfang des Umzugsguts." },
+        { title: "Festpreisangebot erhalten", text: "Wir kalkulieren Fahrzeit, Ladekapazität und Kilometer transparent ohne Nachforderungen." },
+        { title: "Verladung & Transport", text: "Unser Team belädt den Transporter sorgfältig und fährt direkt zum Zielort." },
+        { title: "Entladung & Montage", text: "Am neuen Wohnort tragen wir alles in die Wunschräume und bauen Möbel auf Wunsch auf." },
+      ]}
+      relatedServices={[
+        { title: "Privatumzug Landshut", text: "Klassischer Wohnungsumzug in Landshut und Umgebung.", href: "/privatumzug-landshut" },
+        { title: "Möbelmontage", text: "Fachgerechter Abbau und Aufbau Ihrer Möbel.", href: "/umzuege/moebelmontage" },
+        { title: "Einpackservice", text: "Sorgfältiges Verpacken vor dem Transport.", href: "/umzuege/einpackservice" },
+      ]}
+      faqs={[
+        { q: "Wie wird ein Fernumzug preislich berechnet?", a: "Wir kalkulieren einen transparenten Festpreis auf Basis der Entfernung (Kilometer), des Volumens und eventueller Zusatzleistungen wie Montage." },
+        { q: "Fahren Sie auch ins Ausland?", a: "Ja, nach Absprache führen wir auch Umzüge ins europäische Ausland (z. B. Österreich, Schweiz) durch." },
+        { q: "Wann kommt das Umzugsgut an?", a: "Bei Standard-Distanzen in Deutschland erfolgt die Ankunft und Entladung in der Regel am selben oder am Folgetag nach fester Absprache." },
+      ]}
+    />
+</Layout>

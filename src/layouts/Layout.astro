@@ -1,0 +1,86 @@
+---
+import '../styles/globals.css';
+import FloatingWhatsApp from '../components/FloatingWhatsApp';
+import CookieConsent from '../components/CookieConsent';
+import SeoJsonLd from '../components/SeoJsonLd';
+import GoogleTagManager from '../components/GoogleTagManager';
+import StickyMobileBar from '../components/StickyMobileBar';
+
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string[] | string;
+  canonical?: string;
+  image?: string;
+  noIndex?: boolean;
+  ogType?: string;
+}
+
+const siteUrl = "https://umzuegelandshut.de";
+const defaultTitle = "Umzüge Landshut | Umzugsunternehmen LAF » Schnell & Fair";
+const defaultDescription = "Umzüge LAF ist Ihr zuverlässiges Umzugsunternehmen in Landshut für Privatumzug, Firmenumzug, Entrümpelung, Haushaltsauflösung, Möbelmontage, Einpackservice und Sperrmüllentsorgung.";
+const defaultImage = `${siteUrl}/images/logo/laf-logo.png`;
+
+const {
+  title = defaultTitle,
+  description = defaultDescription,
+  keywords,
+  canonical = Astro.url.pathname,
+  image = defaultImage,
+  noIndex = false,
+  ogType = "website",
+} = Astro.props;
+
+const canonicalUrl = canonical.startsWith("http") ? canonical : `${siteUrl}${canonical}`;
+const imageUrl = image.startsWith("http") ? image : `${siteUrl}${image}`;
+const keywordsString = Array.isArray(keywords) ? keywords.join(", ") : keywords;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {keywordsString && <meta name="keywords" content={keywordsString} />}
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="Umzüge LAF" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageUrl} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+
+    <!-- Robots -->
+    {noIndex ? (
+      <meta name="robots" content="noindex, nofollow" />
+    ) : (
+      <>
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+      </>
+    )}
+
+    <SeoJsonLd />
+  </head>
+  <body class="pb-12 md:pb-0 font-sans antialiased text-slate-900 bg-white selection:bg-amber-400 selection:text-slate-950">
+    <GoogleTagManager client:load />
+    <slot />
+    <FloatingWhatsApp client:idle />
+    <StickyMobileBar client:load />
+    <CookieConsent client:idle />
+  </body>
+</html>

@@ -1,0 +1,58 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import LocalSeoLanding from "@/components/LocalSeoLanding.astro";
+import { createSeoMetadata, seoPages } from "@/lib/seo";
+
+const meta = createSeoMetadata(seoPages.bueroentruempelung);
+---
+
+<Layout
+  title={meta.title}
+  description={meta.description}
+  keywords={meta.keywords}
+  canonical={meta.canonical}
+  image={meta.image}
+  noIndex={meta.noIndex}
+>
+  <LocalSeoLanding
+      breadcrumbName="Büroentrümpelung Landshut"
+      path="/entruempelung/bueroentruempelung"
+      serviceName="Büroentrümpelung Landshut"
+      serviceType="Büroentrümpelung"
+      serviceDescription="Büroentrümpelung und Gewerberäumung in Landshut mit Umzüge LAF. Schnelle und diskrete Räumung von Büros, Praxen und Gewerbeflächen."
+      badge="Gewerberäumung Landshut"
+      h1Top="Büroentrümpelung Landshut."
+      h1Highlight="Schnell, diskret & besenrein."
+      h1Bottom="Für Firmen & Gewerbe."
+      intro="Büroauflösung, Standortwechsel oder Praxisräumung? Umzüge LAF räumt Gewerbeflächen in Landshut professionell leer, demontiert Büromöbel und übergibt die Räume besenrein."
+      image="/images/services/GU1.jpg"
+      imageAlt="Büroentrümpelung von Umzüge LAF in Landshut"
+      sectionKicker="Gewerberäumung"
+      sectionTitle="Strukturierte Räumung ohne Betriebsunterbrechung."
+      sectionText="Bei gewerblichen Flächen zählen Schnelligkeit, Termintreue und eine diskrete Abwicklung. Wir räumen Schreibtische, Schränke, Altakten und Elektronikschrott termingerecht aus Ihren Geschäftsräumen."
+      benefits={[
+        "Diskrete & termingerechte Gewerberäumung",
+        "Demontage von Schreibtischen & Trennwänden",
+        "Fachgerechte Entsorgung von Elektroschrott",
+        "Besenreine Übergabe an Vermieter",
+        "Verbindlicher Festpreis mit Rechnung & MwSt.",
+        "Wochenendräumung nach Absprache möglich",
+      ]}
+      steps={[
+        { title: "Gewerbefläche besprechen", text: "Wir erfassen Quadratmeter, Möbelanzahl, Etage und den gewünschten Zeitplan." },
+        { title: "Festpreisangebot erhalten", text: "Sie erhalten ein transparentes Angebot inklusive aller Entsorgungsnachweise." },
+        { title: "Strukturierte Räumung", text: "Unser Team baut Möbel ab und transportiert alles zügig nach draußen." },
+        { title: "Besenreine Übergabe", text: "Alle Büroflächen werden besenrein übergeben." },
+      ]}
+      relatedServices={[
+        { title: "Firmenumzug Landshut", text: "Büroumzug und Gewerbeumzug mit Möbelmontage.", href: "/firmenumzug-landshut" },
+        { title: "Entrümpelung Landshut", text: "Hauptseite für alle Entrümpelungsdienste.", href: "/entruempelung-landshut" },
+        { title: "Sperrmüllentsorgung", text: "Abholung von Büromöbeln & Großteilen.", href: "/entruempelung/sperrmuellentsorgung" },
+      ]}
+      faqs={[
+        { q: "Können alte Akten datenschutzkonform entsorgt werden?", a: "Ja, wir bieten auf Wunsch zertifizierte Aktenvernichtung nach DSGVO-Standards mit Vernichtungsnachweis." },
+        { q: "Räumen Sie auch am Wochenende?", a: "Ja, für Firmenkunden bieten wir Räumungen auch freitags abends oder samstags an." },
+        { q: "Erhalten wir eine ordentliche Firmenrechnung mit MwSt.?", a: "Selbstverständlich erhalten Sie eine vollständige Rechnung mit ausgewiesener Mehrwertsteuer für Ihre Buchhaltung." },
+      ]}
+    />
+</Layout>
