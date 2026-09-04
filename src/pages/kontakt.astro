@@ -3,14 +3,12 @@ import Layout from "@/layouts/Layout.astro";
 import Image from "@/components/ui/Image";
 import { createSeoMetadata, seoPages } from "@/lib/seo";
 import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer";
+import Footer from "@/components/Footer.astro";
 import LocalSeoLinks from "@/components/LocalSeoLinks";
 import ContactForm from "@/components/ContactForm";
-import TrackedLink from "@/components/TrackedLink";
 import GoogleMapLocation from "@/components/GoogleMapLocation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import BookingCalendar from "@/components/BookingCalendar";
-import ScrollToButton from "@/components/ScrollToButton";
 
 const phone = "0162 900 75 65";
 const phoneHref = "tel:+491629007565";
@@ -81,14 +79,14 @@ const meta = createSeoMetadata(seoPages.kontakt);
               </p>
               <p class="mt-3 text-base font-black text-slate-900">{phone}</p>
             </div>
-            <TrackedLink
+            <a
               href={phoneHref}
-              tracking="phone"
-              trackingLocation="Kontaktseite Kachel Telefon"
+              data-track="phone"
+              data-track-loc="Kontaktseite Kachel Telefon"
               class="mt-5 flex items-center justify-center gap-2 rounded-xl bg-[#f59e0b] py-3 text-center text-xs sm:text-sm font-black text-slate-950 shadow-sm transition hover:bg-amber-400"
             >
               Jetzt anrufen
-            </TrackedLink>
+            </a>
           </div>
 
           {/* WhatsApp */}
@@ -106,14 +104,14 @@ const meta = createSeoMetadata(seoPages.kontakt);
               </p>
               <p class="mt-3 text-base font-black text-slate-900">Per Chat anfragen</p>
             </div>
-            <TrackedLink
+            <a
               href={whatsappHref}
-              tracking="whatsapp"
-              trackingLocation="Kontaktseite Kachel WhatsApp"
+              data-track="whatsapp"
+              data-track-loc="Kontaktseite Kachel WhatsApp"
               class="mt-5 flex items-center justify-center gap-2 rounded-xl bg-[#25D366] py-3 text-center text-xs sm:text-sm font-black text-white shadow-sm transition hover:bg-green-600"
             >
               WhatsApp öffnen
-            </TrackedLink>
+            </a>
           </div>
 
           {/* Cal.com Vor-Ort-Besichtigung buchen */}
@@ -134,12 +132,12 @@ const meta = createSeoMetadata(seoPages.kontakt);
               </p>
               <p class="mt-3 text-xs font-bold text-[#b45309]">100% kostenlos & unverbindlich</p>
             </div>
-            <ScrollToButton client:visible
-              targetId="termin-kalender"
+            <a
+              href="#termin-kalender"
               class="mt-5 flex items-center justify-center gap-2 rounded-xl bg-slate-900 py-3 text-center text-xs sm:text-sm font-black text-white shadow-sm transition hover:bg-slate-800"
             >
               Termin unten wählen ↓
-            </ScrollToButton>
+            </a>
           </div>
 
           {/* E-Mail */}
@@ -157,14 +155,14 @@ const meta = createSeoMetadata(seoPages.kontakt);
               </p>
               <p class="mt-3 text-sm font-bold text-slate-900 truncate">{email}</p>
             </div>
-            <TrackedLink
+            <a
               href={emailHref}
-              tracking="email"
-              trackingLocation="Kontaktseite Kachel E-Mail"
+              data-track="email"
+              data-track-loc="Kontaktseite Kachel E-Mail"
               class="mt-5 flex items-center justify-center gap-2 rounded-xl bg-slate-100 py-3 text-center text-xs sm:text-sm font-bold text-slate-800 transition hover:bg-slate-200"
             >
               E-Mail senden
-            </TrackedLink>
+            </a>
           </div>
         </div>
       </section>

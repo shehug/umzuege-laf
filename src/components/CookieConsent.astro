@@ -75,6 +75,9 @@
           security_storage: "granted",
         });
         window.dataLayer.push({ event: "cookie_consent_accepted" });
+        try {
+          window.dispatchEvent(new CustomEvent("laf_cookie_consent_accepted"));
+        } catch (e) {}
       } else {
         window.gtag("consent", "update", {
           ad_storage: "denied",
