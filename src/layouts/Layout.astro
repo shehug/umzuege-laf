@@ -14,6 +14,7 @@ interface Props {
   image?: string;
   noIndex?: boolean;
   ogType?: string;
+  googleSiteVerification?: string;
 }
 
 const siteUrl = "https://umzuegelandshut.de";
@@ -29,6 +30,7 @@ const {
   image = defaultImage,
   noIndex = false,
   ogType = "website",
+  googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION,
 } = Astro.props;
 
 const canonicalUrl = canonical.startsWith("http") ? canonical : `${siteUrl}${canonical}`;
@@ -72,6 +74,10 @@ const keywordsString = Array.isArray(keywords) ? keywords.join(", ") : keywords;
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       </>
+    )}
+
+    {googleSiteVerification && (
+      <meta name="google-site-verification" content={googleSiteVerification} />
     )}
 
     <SeoJsonLd />

@@ -25,6 +25,13 @@ const phone = "0162 900 75 65";
   image={meta.image}
   noIndex={meta.noIndex}
 >
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'lead_form_submitted',
+      conversion_type: 'contact_form_lead'
+    });
+  </script>
   <main class="min-h-screen bg-white text-slate-900 flex flex-col justify-between">
       <Header />
 
