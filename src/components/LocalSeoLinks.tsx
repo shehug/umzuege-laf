@@ -111,9 +111,9 @@ export default function LocalSeoLinks() {
 
         <div className="grid gap-8 sm:grid-cols-2">
           <div>
-            <h3 className="text-xs font-black uppercase tracking-wider text-[#b45309]">
+            <p className="text-xs font-black uppercase tracking-wider text-[#b45309]">
               Umzugsdienste
-            </h3>
+            </p>
 
             <div className="mt-4 grid gap-2">
               {primaryLinks.map((link) => (
@@ -129,9 +129,9 @@ export default function LocalSeoLinks() {
           </div>
 
           <div>
-            <h3 className="text-xs font-black uppercase tracking-wider text-[#b45309]">
+            <p className="text-xs font-black uppercase tracking-wider text-[#b45309]">
               Montage & Räumung
-            </h3>
+            </p>
 
             <div className="mt-4 grid gap-2">
               {serviceLinks.map((link) => (
