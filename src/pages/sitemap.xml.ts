@@ -11,6 +11,7 @@ const routes = [
   { path: "/firmenumzug-landshut", priority: "0.95", changeFrequency: "weekly" },
   { path: "/entruempelung-landshut", priority: "0.95", changeFrequency: "weekly" },
   { path: "/wohnungsaufloesung-landshut", priority: "0.9", changeFrequency: "weekly" },
+  { path: "/haushaltsaufloesung-landshut", priority: "0.9", changeFrequency: "weekly" },
   { path: "/umzugsunternehmen-landshut", priority: "1.0", changeFrequency: "weekly" },
   { path: "/leistungen", priority: "0.95", changeFrequency: "monthly" },
   { path: "/umzuege", priority: "0.95", changeFrequency: "monthly" },
