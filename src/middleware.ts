@@ -8,7 +8,7 @@ const REDIRECT_HOSTS = new Set([
   "www.umzuege-laf.de",
 ]);
 
-export const onRequest = defineMiddleware((context, next) => {
+export const onRequest = defineMiddleware(async (context, next) => {
   const host = context.request.headers.get("host")?.toLowerCase().split(":")[0] ?? "";
 
   if (REDIRECT_HOSTS.has(host)) {
@@ -19,5 +19,20 @@ export const onRequest = defineMiddleware((context, next) => {
     return context.redirect(redirectUrl.toString(), 301);
   }
 
-  return next();
+  const response = await next();
+
+  // Security Headers
+  response.headers.set(
+    "Strict-Transport-Security",
+    "max-age=31536000; includeSubDomains; preload"
+  );
+  response.headers.set("X-Content-Type-Options", "nosniff");
+  response.headers.set("X-Frame-Options", "SAMEORIGIN");
+  response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+  response.headers.set(
+    "Permissions-Policy",
+    "camera=(), microphone=(), geolocation=(self)"
+  );
+
+  return response;
 });
