@@ -7,6 +7,7 @@ import path from 'path';
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
+  compressHTML: true,
   adapter: node({
     mode: 'standalone',
   }),
