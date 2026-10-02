@@ -2,9 +2,10 @@
 const GTM_ID = "GTM-55B3P6B6";
 const GOOGLE_ADS_TAG_ID = "AW-11459071355";
 const PHONE_CONVERSION_ID = "AW-11459071355/T9IRCKfPmu8cEPuajtgq";
+const GA_MEASUREMENT_ID = "G-D0SM1RWDY";
 ---
 
-<script is:inline define:vars={{ GTM_ID, GOOGLE_ADS_TAG_ID, PHONE_CONVERSION_ID }}>
+<script is:inline define:vars={{ GTM_ID, GOOGLE_ADS_TAG_ID, PHONE_CONVERSION_ID, GA_MEASUREMENT_ID }}>
   window.dataLayer = window.dataLayer || [];
   function gtag() {
     window.dataLayer.push(arguments);
@@ -30,6 +31,7 @@ const PHONE_CONVERSION_ID = "AW-11459071355/T9IRCKfPmu8cEPuajtgq";
     security_storage: "granted",
   });
   gtag("config", GOOGLE_ADS_TAG_ID);
+  gtag("config", GA_MEASUREMENT_ID);
   gtag("config", PHONE_CONVERSION_ID, {
     phone_conversion_number: "+491629007565",
   });
