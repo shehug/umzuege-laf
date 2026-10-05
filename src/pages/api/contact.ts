@@ -31,17 +31,6 @@ export const POST: APIRoute = async ({ request }) => {
     const recipient = process.env.CONTACT_TO || "info@umzuege-laf.de";
     const sender = process.env.SMTP_FROM || `"Umzüge LAF" <${smtpUser}>`;
 
-    if (!smtpPass) {
-      console.error("SMTP_PASS ist nicht in der Umgebung konfiguriert.");
-      return new Response(
-        JSON.stringify({
-          success: false,
-          message: "E-Mail-Dienst vorübergehend nicht konfiguriert. Bitte rufen Sie uns direkt unter 0162 900 75 65 an.",
-        }),
-        { status: 500, headers: { "Content-Type": "application/json" } }
-      );
-    }
-
     const escapeHtml = (str: string) =>
       str
         .replace(/&/g, "&amp;")
@@ -57,6 +46,35 @@ export const POST: APIRoute = async ({ request }) => {
     const safeStartLocation = startLocation ? escapeHtml(String(startLocation)) : "Nicht angegeben";
     const safeTargetLocation = targetLocation ? escapeHtml(String(targetLocation)) : "Nicht angegeben";
     const safeMessage = message ? escapeHtml(String(message)).replace(/\n/g, "<br />") : "Keine zusätzliche Nachricht angegeben.";
+
+    if (!smtpPass) {
+      console.log("[DEV / LOCAL TEST] Neue Kontaktanfrage eingegangen:", {
+        safeName,
+        safePhone,
+        safeEmail,
+        safeRequestType,
+        safeStartLocation,
+        safeTargetLocation,
+      });
+
+      if (process.env.NODE_ENV === "production" && !import.meta.env.DEV) {
+        return new Response(
+          JSON.stringify({
+            success: false,
+            message: "E-Mail-Dienst vorübergehend nicht konfiguriert. Bitte rufen Sie uns direkt unter 0162 900 75 65 an.",
+          }),
+          { status: 500, headers: { "Content-Type": "application/json" } }
+        );
+      }
+
+      return new Response(
+        JSON.stringify({
+          success: true,
+          message: "Vielen Dank! Ihre Anfrage wurde empfangen.",
+        }),
+        { status: 200, headers: { "Content-Type": "application/json" } }
+      );
+    }
 
     const transporter = nodemailer.createTransport({
       host: smtpHost,

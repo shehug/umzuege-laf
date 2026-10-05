@@ -7,7 +7,10 @@ const baseUrl = "https://umzuegelandshut.de";
 const routes = [
   { path: "", priority: "1.0", changeFrequency: "weekly" },
   { path: "/umzug-landshut", priority: "1.0", changeFrequency: "weekly" },
+  { path: "/umzugskosten-landshut", priority: "1.0", changeFrequency: "weekly" },
   { path: "/privatumzug-landshut", priority: "0.95", changeFrequency: "weekly" },
+  { path: "/seniorenumzug-landshut", priority: "0.95", changeFrequency: "weekly" },
+  { path: "/kleintransporte-landshut", priority: "0.95", changeFrequency: "weekly" },
   { path: "/firmenumzug-landshut", priority: "0.95", changeFrequency: "weekly" },
   { path: "/entruempelung-landshut", priority: "0.95", changeFrequency: "weekly" },
   { path: "/wohnungsaufloesung-landshut", priority: "0.9", changeFrequency: "weekly" },

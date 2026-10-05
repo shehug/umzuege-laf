@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { trackContactFormSubmit } from "@/lib/gtmEvents";
 
 const requestTypes = [
   "Privatumzug",
+  "Seniorenumzug",
+  "Kleintransport",
   "Firmenumzug",
   "Möbelmontage",
   "Einpackservice",
@@ -14,7 +15,6 @@ const requestTypes = [
 ];
 
 export default function ContactForm() {
-  const router = useRouter();
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle"
   );

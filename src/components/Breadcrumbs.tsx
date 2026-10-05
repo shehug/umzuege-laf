@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export type BreadcrumbItem = {
   label: string;
   href?: string;
@@ -18,14 +16,14 @@ export default function Breadcrumbs({ items, theme = "dark" }: BreadcrumbsProps)
       aria-label="Breadcrumb"
       className="mb-4 flex items-center flex-wrap gap-1.5 text-xs font-medium"
     >
-      <Link
+      <a
         href="/"
         className={`transition hover:underline ${
           isDark ? "text-slate-300 hover:text-white" : "text-slate-500 hover:text-slate-900"
         }`}
       >
         Startseite
-      </Link>
+      </a>
 
       {items.map((item, index) => {
         const isLast = index === items.length - 1;
@@ -40,14 +38,14 @@ export default function Breadcrumbs({ items, theme = "dark" }: BreadcrumbsProps)
             </span>
 
             {item.href && !isLast ? (
-              <Link
+              <a
                 href={item.href}
                 className={`transition hover:underline ${
                   isDark ? "text-slate-300 hover:text-white" : "text-slate-500 hover:text-slate-900"
                 }`}
               >
                 {item.label}
-              </Link>
+              </a>
             ) : (
               <span
                 className={`font-bold ${

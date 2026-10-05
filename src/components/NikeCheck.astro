@@ -1,0 +1,84 @@
+---
+interface Props {
+  class?: string;
+  delay?: string;
+  size?: "sm" | "md" | "lg";
+}
+
+const { class: className = "", delay = "0s", size = "md" } = Astro.props;
+
+const sizeClass = {
+  sm: "h-3.5 w-3.5",
+  md: "h-4 w-4 sm:h-4.5 sm:w-4.5",
+  lg: "h-5 w-5 sm:h-6 sm:w-6",
+}[size];
+---
+
+<span
+  class:list={[
+    "inline-flex items-center justify-center text-amber-400 shrink-0 select-none",
+    className
+  ]}
+>
+  <svg
+    class:list={["nike-check-svg", sizeClass]}
+    style={`animation-delay: ${delay};`}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <path
+      d="M3.5 13 C 5.2 14.8, 7.5 17.5, 9.2 19 C 13 13.5, 17 8, 21.5 4.5"
+      stroke="currentColor"
+      stroke-width="3.2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="nike-check-path"
+      style={`animation-delay: ${delay};`}
+    />
+  </svg>
+</span>
+
+<style>
+  .nike-check-svg {
+    display: inline-block;
+    vertical-align: middle;
+    transform-origin: center;
+    animation: nikePulse 3s ease-in-out infinite;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+  }
+
+  :global(.group:hover) .nike-check-svg {
+    transform: scale(1.25);
+    filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.95));
+  }
+
+  .nike-check-path {
+    stroke-dasharray: 40;
+    stroke-dashoffset: 40;
+    animation: nikeDraw 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes nikeDraw {
+    0% {
+      stroke-dashoffset: 40;
+      opacity: 0.1;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+  }
+
+  @keyframes nikePulse {
+    0%, 100% {
+      transform: scale(1);
+      filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.35));
+    }
+    50% {
+      transform: scale(1.15);
+      filter: drop-shadow(0 0 7px rgba(251, 191, 36, 0.85));
+    }
+  }
+</style>

@@ -1,0 +1,368 @@
+﻿SEO-Audit & Wettbewerbsanalyse: Umzüge LAF (umzuegelandshut.de)
+Fokus: Lokale Dominanz Landshut & Umland (2026/2027)
+1. Die 5 wichtigsten SEO-Konkurrenten in Landshut
+1. Umzugsunternehmen Landshut (umzugsunternehmen-landshut.de)
+2. Umzüge Taubenthaler GmbH
+3. Sepp Umzüge
+4. Bärenkraft Umzüge
+5. Aufleger-Innung Spedition
+(Hinweis: RS Service ist ein weiterer lokaler Mitbewerber, SEO-seitig derzeit jedoch deutlich schwächer.)
+2. Wettbewerber-Analyse im Detail
+Wettbewerber 1: Umzugsunternehmen Landshut (umzugsunternehmen-landshut.de)
+* Bewertung / Status: 5,0 Sterne | Aktuell stärkster SEO-Mitbewerber.
+* Keyword-Abdeckung: 10/10. Sehr aggressive Platzierung lokaler Keywords (Umzugsunternehmen Landshut, Umzug Landshut, Umzugsfirma Landshut, Entrümpelung, Fernumzug, Möbelmontage, Einpackservice, Halteverbotszone, Lagerung).
+* Preistransparenz: Aggressive Darstellung ab 199 € sowie Richtpreise für Transport, Kartons, Lagerung.
+* H1-Struktur: "Professionelle Umzüge in Landshut – günstig und stressfrei erleben mit Umzugsunternehmen Landshut aus Landshut" (SEO-aggressiv, stilistisch plump).
+* Schwäche: Keyword-Stuffing, unnatürliche Redundanz, holprige Texte.
+Wettbewerber 2: Umzüge Taubenthaler GmbH
+* Bewertung / Status: 5,0 Sterne | Hohes Kundenvertrauen durch über 45 Jahre Markterfahrung.
+* H1-Struktur: "Günstige Preise und top Leistungen!" (SEO-technisch schwach; Subline: "Das beste Umzugsunternehmen mit über 45 Jahren Erfahrung").
+* Stärken: Vertrauen / Historie: 10/10. SEO-Score: ca. 6,5/10.
+* Chance für LAF: Durch moderne UX, klare Struktur und Keyword-Abdeckung leicht zu übertreffen.
+Wettbewerber 3: Sepp Umzüge
+* Bewertung / Status: 5,0 Sterne | Kompakte Seite, fokussierte Leistungsstruktur.
+* H1-Struktur: "Sepp Umzüge Landshut" (Sublines: "Ihr kompetenter Partner", "Sicher, stressfrei, günstig ins neue Heim").
+* Stärken & Schwächen: Klare Struktur, kein überladener Content, jedoch geringe Content-Tiefe im Vergleich zu LAF.
+Wettbewerber 4: Bärenkraft Umzüge
+* Bewertung / Status: 5,0 Sterne | Moderner Auftritt mit Ratgeber-/Blogbereich und FAQs.
+* H1-Struktur: "Ihr Umzug in starken Händen"
+* Stärken: Starkes Content-Marketing (Umzugstipps, Checklisten, FAQs), Festpreis-Garantie, gute UX.
+Wettbewerber 5: Aufleger - Innung Speditions- & Möbeltransport GmbH
+* Bewertung / Status: 4,7 Sterne | Klassischer Traditionsbetrieb mit AMÖ-Zertifizierung.
+* H1-Struktur: "Aufleger-Innung Spedition"
+* Stärken & Schwächen: Hohe Autorität und Verbandszugehörigkeit, Nische Seniorenumzug explizit besetzt; schwache technische UX und veralteter Webauftritt.
+3. IST-Analyse: Umzüge LAF (umzuegelandshut.de)
+* Aktuelle H1: "Umzüge Landshut. Stressfrei & zuverlässig zum Festpreis." (Exzellent & SEO-optimiert).
+* Core-Keywords: Umzug Landshut, Umzugsunternehmen Landshut, Umzugsfirma Landshut, Privatumzug Landshut, Firmenumzug Landshut, Fernumzug, Expressumzug, Möbelmontage.
+* Sekundär-Keywords: Entrümpelung Landshut, Wohnungsauflösung, Haushaltsauflösung, Kellerentrümpelung, Sperrmüllentsorgung, Einpackservice, Lagerung.
+* Lokales Einzugsgebiet: Landshut, Ergolding, Altdorf, Essenbach, Kumhausen, Vilsbiburg, Moosburg, Landkreis Landshut.
+* USPs: Transparenter Festpreis, Rückmeldung in 4 Std., kostenlose Besichtigung, voll versichert, regional, Express-/Spontantermine.
+4. Keyword-Benchmark: LAF vs. Wettbewerb
+5. Qualitativer Wettbewerbs-Index (SEO, Content, Vertrauen, UX)
+Leistung / Keyword
+	LAF-Status
+	Konkurrenz
+	Umzug Landshut
+	Sehr stark
+	Sehr stark
+	Umzugsunternehmen Landshut
+	Sehr stark
+	Sehr stark
+	Umzugsfirma Landshut
+	Stark
+	Stark
+	Privat- / Firmenumzug Landshut
+	Stark
+	Stark
+	Möbelmontage Landshut
+	Stark
+	Sehr stark
+	Entrümpelung / Wohnungsauflösung
+	Stark
+	Sehr stark
+	Seniorenumzug
+	Lücke (Gelb)
+	Sehr stark (Aufleger u.a.)
+	Kleintransport / Möbeltaxi
+	Lücke (Gelb)
+	Sehr stark (Wettbewerber 1)
+	Halteverbotszone
+	Lücke (Gelb)
+	Sehr stark
+	Klaviertransport
+	Fehlt (Rot)
+	Stark (falls angeboten)
+	Umzugskosten / Preise Landshut
+	Lücke (Gelb)
+	Stark (Preistabellen vorhanden)
+	Zimmergrößen (1-, 2-, 3-Zimmer)
+	Fehlt (Rot)
+	Vorhanden
+	Umzug Checkliste / Tipps
+	Lücke (Gelb)
+	Vorhanden (Bärenkraft)
+	Umzugskostenrechner
+	Fehlt (Rot)
+	Kaum besetzt
+	6. Ziel-Seitenarchitektur für LAF
+Platz
+	Anbieter
+	SEO
+	Content
+	Vertrauen
+	UX
+	Gesamt
+	1
+	LAF (umzuegelandshut.de)
+	9.0
+	8.5
+	9.0
+	9.0
+	8.9
+	2
+	Umzugsunternehmen Landshut
+	9.5
+	9.5
+	7.5
+	6.5
+	8.3
+	3
+	Bärenkraft
+	8.0
+	8.0
+	8.5
+	8.5
+	8.3
+	4
+	Taubenthaler
+	6.5
+	7.5
+	9.5
+	7.0
+	7.6
+	5
+	Sepp
+	6.5
+	6.5
+	8.5
+	7.5
+	7.3
+	6
+	Aufleger-Innung
+	5.5
+	5.5
+	10.0
+	5.0
+	6.5
+	* / (Startseite): "Umzüge Landshut – stressfrei & zuverlässig zum Festpreis"
+   * /umzug-landshut/
+   * /umzugsunternehmen-landshut/
+   * /privatumzug-landshut/
+   * /expressumzug-landshut//firmenumzug-landshut/
+   * /fernumzug-landshut/
+   * /seniorenumzug-landshut/ [NEU - Priorität 1]
+   * /kleintransporte-landshut/ [NEU - Priorität 1]
+   * /moebeltaxi-landshut/ [NEU - Priorität 1]
+   * /moebelmontage-landshut/
+   * /einpackservice-landshut/
+   * /umzugskosten-landshut/ [NEU - Priorität 1: Preis-Hub]
+   * /umzugshelfer-landshut/ [NEU - Priorität 2]
+   * /halteverbotszone-landshut/ [NEU - Priorität 2]
+   * /klaviertransport-landshut/ [NEU - Nur falls im Leistungsportfolio]
+   * /entruempelung-landshut/
+   * /wohnungsaufloesung-landshut/
+   * /haushaltsaufloesung-landshut/
+   * /kellerentruempelung-landshut/
+   * /sperrmuellentsorgung-landshut/
+   * /lagerung-landshut/
+   * /ratgeber/
+      * /was-kostet-ein-umzug/
+      * /umzugscheckliste/
+      * /umzugskartons-richtig-packen/
+      * /umzugshelfer-wie-viele/
+      * /umzug-landshut-tipps/
+7. Strategischer Umsetzungsplan (Phasen 1 - 4)
+Phase 1: Schließen kritischer SEO-Lücken (High-Intent Service-Pages)
+* Landingpage /umzugskosten-landshut/ mit realistischen Richtpreisen / Preisbeispielen (1-, 2-, 3-Zimmer, Haus).
+* Landingpage /seniorenumzug-landshut/ mit emotionalem Fokus, Entlastung und Full-Service.
+* Landingpages /kleintransporte-landshut/ & /moebeltaxi-landshut/ für schnelle Spontananfragen.
+* Landingpages /halteverbotszone-landshut/ und /umzugshelfer-landshut/.
+Phase 2: Informationsvorsprung & Topical Authority
+* Aufbau des /ratgeber/-Clusters mit Checklisten, Packtipps und Kostenrechnern.
+* Strukturierte Schema.org-Auszeichnungen (MovingCompany, FAQPage, Service, BreadcrumbList).
+Phase 3: Local SEO & Google Business Profile
+* Gezielte Abdeckung und interne Verlinkung für Umlandgemeinden: Ergolding, Altdorf, Essenbach, Kumhausen, Vilsbiburg, Moosburg, Rottenburg.
+* Optimierung des Google Unternehmensprofils mit regelmäßigen Beiträgen, Leistungs-Updates und Rezensionsmanagement.
+Phase 4: Conversion-Rate-Optimierung (CRO)
+* Interaktiver Festpreis-Anfrage-Funnel (Lead-Konfigurator).
+* Echte Vor-Ort-Bilder aus Landshut, Kundenstimmen und Trust-Badges (Versicherungsschutz, Festpreis-Garantie).
+
+
+LAF SEO Masterplan 2026/27 für Google Antigravity
+1. KEYWORD-MASTERPLAN & SILOING
+Das Siloing strukturiert die Website-Architektur in klare, semantische Themencluster, um maximale Relevanz und Topical Authority aufzubauen:
+* Cluster 1: Umzugsservice Core (Transaktional)
+   * Primary Keyword: Umzugsunternehmen Landshut, Umzug Landshut
+   * Secondary Keywords: Umzugsfirma Landshut, Privatumzug Landshut, Firmenumzug Landshut, Expressumzug Landshut, Fernumzug Landshut
+   * LSI Keywords: Möbeltransporteur, Umzugshelfer, Fachkräfte, LKW Mieten, Transportversicherung, Landshut Umland
+   * Search Intent: Transaktional / Commercial Investigation
+* Cluster 2: Spezial- & Zusatzleistungen (High Intent)
+   * Primary Keyword: Seniorenumzug Landshut, Kleintransporte Landshut, Möbeltaxi Landshut
+   * Secondary Keywords: Möbelmontage Landshut, Einpackservice Landshut, Halteverbotszone Landshut, Umzugshelfer buchen
+   * LSI Keywords: Seniorengerecht, Seniorenhilfe, Halteverbot beantragen, Küchenmontage, Express-Transport
+   * Search Intent: Transaktional
+* Cluster 3: Entrümpelung & Auflösung (Transaktional)
+   * Primary Keyword: Entrümpelung Landshut, Wohnungsauflösung Landshut
+   * Secondary Keywords: Haushaltsauflösung Landshut, Kellerentrümpelung Landshut, Sperrmüllentsorgung Landshut, Lagerung Landshut
+   * LSI Keywords: Besenrein, Wertanrechnung, Diskretion, Räumung, Fachgerechte Entsorgung
+   * Search Intent: Transaktional
+* Cluster 4: Preis-Hub & Ratgeber (Informational / Intent Hub)
+   * Primary Keyword: Umzugskosten Landshut, Was kostet ein Umzug in Landshut
+   * Secondary Keywords: Umzugscheckliste Landshut, Umzugskartons packen, Umzugstipps Landshut
+   * LSI Keywords: Festpreis-Garantie, Stundensatz, Richtwerte, Quadratmeterpreis, Kostenvoranschlag
+   * Search Intent: Informational & Commercial Evaluation
+2. DETAILLIERTE URL-, META- & HEADLINE-ARCHITEKTUR
+* Startseite (Core Hub)
+   * Slug: /
+   * Meta-Title: Umzugsunternehmen Landshut | Umzüge LAF – Festpreis & Top Service (58 Zeichen)
+   * Meta-Description: Ihr zuverlässiges Umzugsunternehmen in Landshut & Umland. Transparente Festpreise, kostenlose Besichtigung & Express-Service. Jetzt Angebot anfordern! (151 Zeichen)
+   * H1: Umzüge Landshut: Stressfrei & Zuverlässig zum Festpreis
+   * H2-Gliederung: Unsere Umzugsleistungen in Landshut | Warum Umzüge LAF? Ihre Vorteile im Überblick | Transparente Kosten ohne versteckte Gebühren | Kundenstimmen aus Landshut & Region | Häufige Fragen (FAQ)
+   * Content-Länge: ca. 1.800 Wörter
+   * Schema.org: MovingCompany, LocalBusiness, FAQPage
+* Preis-Hub Page
+   * Slug: /umzugskosten-landshut/
+   * Meta-Title: Umzugskosten Landshut 2026/27 » Richtpreise & Rechner | LAF (59 Zeichen)
+   * Meta-Description: Was kostet ein Umzug in Landshut? Echte Richtpreise für 1- bis 4-Zimmer-Wohnungen & Häuser. Keine versteckten Kosten. Hier Festpreis berechnen! (148 Zeichen)
+   * H1: Umzugskosten in Landshut: Transparente Preise & Richtwerte
+   * H2-Gliederung: Übersicht: Was kostet ein Umzug in Landshut? | Preistabelle nach Wohnungsgröße | Welche Faktoren beeinflussen die Umzugskosten? | Zusatzleistungen & Abrechnungsmodelle | Angebot mit Festpreis-Garantie anfordern
+   * Content-Länge: ca. 2.200 Wörter
+   * Schema.org: Service, FAQPage, BreadcrumbList
+* Spezialseite: Seniorenumzug
+   * Slug: /seniorenumzug-landshut/
+   * Meta-Title: Seniorenumzug Landshut | Einfühlsam, Sicher & Full-Service | LAF (59 Zeichen)
+   * Meta-Description: Seniorenumzüge in Landshut mit Rundum-Sorglos-Service: Einpacken, Demontage, Entsorgung & stressfreier Einzug. Jetzt liebevolle Beratung buchen! (150 Zeichen)
+   * H1: Seniorenumzug Landshut – Entlastung & Service von A bis Z
+   * H2-Gliederung: Der Full-Service Seniorenumzug in Landshut | Unser Leistungsversprechen für Senioren & Angehörige | Einpackdienst, Möbelmontage & Entsorgung aus einer Hand | Ablauf eines begleiteten Umzugs | Kostenfreie Beratung vereinbaren
+   * Content-Länge: ca. 1.500 Wörter
+   * Schema.org: Service, BreadcrumbList
+* Spezialseite: Kleintransporte & Möbeltaxi
+   * Slug: /kleintransporte-landshut/
+   * Meta-Title: Kleintransporte & Möbeltaxi Landshut | Schnell & Günstig | LAF (58 Zeichen)
+   * Meta-Description: Spontane Kleintransporte & Möbeltaxi in Landshut. EinzeIstücke, IKEA-Abholung & Express-Lieferung sofort verfügbar. Jetzt günstig anfragen! (146 Zeichen)
+   * H1: Kleintransporte & Möbeltaxi in Landshut und Umgebung
+   * H2-Gliederung: Schnelle Hilfe für EinzeIstücke & Einkäufe | Möbeltaxi für Möbelhäuser & Kleinanzeigen | Preistransparenz bei Kleintransporten | Sofort-Anfrage für Express-Möbeltransport
+   * Content-Länge: ca. 1.200 Wörter
+   * Schema.org: Service, BreadcrumbList
+3. DEEP-DIVE BLUEPRINT: /umzugskosten-landshut/
+Um absolute Transparenz zu gewährleisten und Fake-Lockangebote der Konkurrenz (z.B. "ab 199 €" ohne Leistung) zu entlarven, etabliert dieser Blueprint einen realistischen Preiskorridor für Landshut:
+Wohnungsgröße
+	Volumen (ca.)
+	Basis-Umzug (Nahbereich)
+	Full-Service (inkl. Montage & Packen)
+	1-Zimmer (30-40 m²)
+	10 - 15 m³
+	350 € - 550 €
+	650 € - 950 €
+	2-Zimmer (50-65 m²)
+	15 - 25 m³
+	550 € - 850 €
+	950 € - 1.450 €
+	3-Zimmer (70-90 m²)
+	25 - 35 m³
+	850 € - 1.250 €
+	1.450 € - 2.100 €
+	4-Zimmer (95-120 m²)
+	35 - 50 m³
+	1.250 € - 1.750 €
+	2.100 € - 2.950 €
+	Einfamilienhaus (>130 m²)
+	50 - 80+ m³
+	ab 1.750 €
+	ab 2.950 €
+	Zusatzkosten & Einzelleistungen (Transparente Aufschlüsselung):
+* Halteverbotszone Landshut: ca. 120 € - 160 € (inkl. behördlicher Genehmigung & Schilderaufstellung)
+* Möbelmontage / Küchenmontage: 45 € - 60 € pro Stunde / Monteur
+* Einpackservice (Material & Zeit): 3,50 € - 5,00 € pro Karton
+* Stockwerkszuschlag ohne Aufzug: ca. 50 € - 100 € pro Etage (ab 2. OG)
+4. LOCAL SEO & GOOGLE UNTERNEHMENSPROFIL (GBP)
+* GBP-Primärkategorie: Moving Company (Umzugsunternehmen)
+* GBP-Sekundärkategorien: Moving and Storage Service, House Clearance Service, Transportation Service
+* NAP-Konsistenz (Name, Address, Phone): Abrechnungssicheres Standardformat auf allen Unterseiten, Footer, Impressum und Branchenbuch-Einträgen (Gelbe Seiten, Das Örtliche, MeineStadt, Kauperts, ProvenExpert).
+* Geotargeting Landshut & Umland: Explizite Einbindung der Einzugsgebiete: Ergolding, Altdorf, Essenbach, Kumhausen, Vilsbiburg, Moosburg an der Isar, Rottenburg an der Laaber.
+* Lokales Review-Management: Automatisierter SMS/E-Mail-Prozess 24h nach Umzugsende mit direktem Review-Link. Ziel: 15+ neue 5-Sterne-Bewertungen pro Monat mit regionalen Keywords in den Rezensionstexten.
+5. TECHNICAL SEO, CORE WEB VITALS & STRUCTURED DATA
+Core Web Vitals Ziel-Benchmarks: LCP < 1.5s, CLS = 0, INP < 100ms. Nutzung moderner Formate (WebP/AVIF), kritisches CSS inline und Caching via CDN.
+Vollständiges Schema.org JSON-LD Snippet (MovingCompany & FAQ):
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MovingCompany",
+      "@id": "https://umzuegelandshut.de/#organization",
+      "name": "Umzüge LAF",
+      "url": "https://umzuegelandshut.de/",
+      "logo": "https://umzuegelandshut.de/assets/logo.png",
+      "telephone": "+49 871 1234567",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Musterstraße 12",
+        "addressLocality": "Landshut",
+        "postalCode": "84028",
+        "addressCountry": "DE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 48.5369,
+        "longitude": 12.1522
+      },
+      "areaServed": ["Landshut", "Ergolding", "Altdorf", "Essenbach", "Kumhausen", "Vilsbiburg", "Moosburg"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wie viel kostet ein Umzug in Landshut?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die Kosten für einen Umzug in Landshut beginnen bei ca. 350 € für eine 1-Zimmer-Wohnung und liegen je nach Aufwand und Zusatzleistungen bei 850 € bis 2.100 € für eine 3-Zimmer-Wohnung."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bietet Umzüge LAF eine Festpreis-Garantie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, nach einer kostenlosen Erstbesichtigung (vor Ort oder digital) erhalten Sie ein verbindliches Festpreisangebot ohne versteckte Zusatzkosten."
+          }
+        }
+      ]
+    }
+  ]
+}
+6. E-E-A-T, TRUST & CONVERSION-OPTIMIERUNG (CRO)
+* Lead-Funnel-Architektur: 3-Schritte-Konfigurator (Wohnungsgröße -> Zusatzleistungen -> Kontaktdaten & Wunschtermin) mit Live-Anzeige der geschätzten Kubikmeterzahl.
+* 4h-Antwortgarantie: Prominente Badge im Hero-Bereich („Angebot innerhalb von 4 Stunden – garantiert“).
+* Echte Einsatzbilder & Team-E-E-A-T: Keine generischen Stockfotos. Einsatz von echten Teamfotos vor Landshuter Wahrzeichen (Martinskirche, Burg Trausnitz) und Fuhrpark-Bildern zur Abhebung von Fake-Vermittlern.
+* Anti-Doorway & Anti-Stuffing-Regeln: Vermeidung von reinen Keyword-Wüstenseiten. Jede Ortsunterseite muss mindestens 60% einzigartigen Content mit spezifischen lokalen Gegebenheiten (z.B. Altstadt-Zufahrt Landshut) bieten.
+7. MONATLICHER CONTROLLING- UND MONITORING-PLAN
+* KPIs: Organischer Traffic, Ranking Positionen (Focus Top 3 für "Umzug Landshut", "Umzugsunternehmen Landshut"), Conversion-Rate des Funnels, Anzahl qualifizierter Leads.
+* Tool-Stack: Google Search Console, Google Analytics 4, Local Rank Tracker (GBP Grid-Tracking).
+* Sprint-Plan (Monat 1 - 4):
+   * Monat 1: Technical Cleanup, Core Web Vitals, Live-Schaltung Landingpages /umzugskosten-landshut/ und /seniorenumzug-landshut/.
+   * Monat 2: GBP-Optimierung, Erstellung der Unterseiten Kleintransporte, Möbeltaxi, Halteverbotszone.
+   * Monat 3: Ratgeber-Cluster (/ratgeber/was-kostet-ein-umzug, /umzugscheckliste), Aufsetzen des automatisierten Review-Funnels.
+   * Monat 4: CRO-A/B-Testing der Lead-Formulare, Ausbau der Umland-Landingpages (Ergolding, Altdorf, Moosburg).
+8. GOOGLE ANTIGRAVITY MASTER-PROMPT FOR IDE / AI
+Kopieren Sie diesen Prompt direkt in Ihre Entwicklungs-Umgebung oder KI-Code-Editor:
+PROMPT FOR GOOGLE ANTIGRAVITY / IDE CODE GENERATION:
+--------------------------------------------------
+Act as a Principal Frontend Engineer & SEO Specialist. Your task is to generate the complete production-ready HTML5 page for the target URL `/umzugskosten-landshut/` based on the following specifications:
+
+
+1. SEO & METADATA:
+- Title: "Umzugskosten Landshut 2026/27 » Richtpreise & Rechner | LAF"
+- Meta Description: "Was kostet ein Umzug in Landshut? Echte Richtpreise für 1- bis 4-Zimmer-Wohnungen & Häuser. Keine versteckten Kosten. Hier Festpreis berechnen!"
+- Canonical Tag: "https://umzuegelandshut.de/umzugskosten-landshut/"
+- Language: German (`de-DE`)
+
+
+2. STRUCTURED DATA:
+Include full JSON-LD schema in the <head> combining `MovingCompany`, `Service`, `FAQPage`, and `BreadcrumbList`.
+
+
+3. UI & LAYOUT COMPONENTS:
+- Hero Section with H1 "Umzugskosten in Landshut: Transparente Preise & Richtwerte", Subline, Trust Badges ("Festpreis-Garantie", "Antwort in 4 Std.") and CTA Button to Calculator.
+- Interactive Price Table (HTML <table>) with categories: 1-Zimmer, 2-Zimmer, 3-Zimmer, 4-Zimmer, Haus showing volume, basic price range, and full-service price range.
+- Breakdown section for additional services (Halteverbotszone, Montage, Packservice).
+- Multi-Step Lead Funnel Component (JavaScript-driven 3-step calculation form).
+- FAQ Accordion with Schema.org alignment.
+
+
+4. PERFORMANCE REQUIREMENTS:
+- Use modern CSS grid/flexbox, ensure zero layout shift (CLS = 0).
+- Ensure non-blocking render, semantic HTML tags (<header>, <main>, <section>, <article>, <footer>).
+--------------------------------------------------
+

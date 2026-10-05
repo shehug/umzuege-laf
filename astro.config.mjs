@@ -42,5 +42,9 @@ export default defineConfig({
     '/umzugsunternehmen': '/umzugsunternehmen-landshut',
     '/haushaltaufloesung-landshut': '/entruempelung/haushaltsaufloesung',
     '/haushaltsaufloesung-landshut': '/entruempelung/haushaltsaufloesung',
+    '/kleintransport-landshut': '/kleintransporte-landshut',
+    '/moebeltaxi-landshut': '/kleintransporte-landshut',
+    '/seniorenumzuege-landshut': '/seniorenumzug-landshut',
+    '/umzugspreise-landshut': '/umzugskosten-landshut',
   },
 });

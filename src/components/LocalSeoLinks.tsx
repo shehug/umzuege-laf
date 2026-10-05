@@ -1,17 +1,23 @@
-import Link from "next/link";
-
 const primaryLinks = [
   {
     title: "Umzugsunternehmen Landshut",
     href: "/umzugsunternehmen-landshut",
   },
   {
-    title: "Umzug Landshut",
-    href: "/umzug-landshut",
+    title: "Umzugskosten Landshut",
+    href: "/umzugskosten-landshut",
   },
   {
     title: "Privatumzug Landshut",
     href: "/privatumzug-landshut",
+  },
+  {
+    title: "Seniorenumzug Landshut",
+    href: "/seniorenumzug-landshut",
+  },
+  {
+    title: "Kleintransporte Landshut",
+    href: "/kleintransporte-landshut",
   },
   {
     title: "Firmenumzug Landshut",
@@ -117,13 +123,13 @@ export default function LocalSeoLinks() {
 
             <div className="mt-4 grid gap-2">
               {primaryLinks.map((link) => (
-                <Link
+                <a
                   key={link.href}
                   href={link.href}
                   className="text-xs sm:text-sm font-semibold text-slate-700 transition hover:text-[#b45309]"
                 >
                   {link.title} →
-                </Link>
+                </a>
               ))}
             </div>
           </div>
@@ -135,13 +141,13 @@ export default function LocalSeoLinks() {
 
             <div className="mt-4 grid gap-2">
               {serviceLinks.map((link) => (
-                <Link
+                <a
                   key={link.href}
                   href={link.href}
                   className="text-xs sm:text-sm font-semibold text-slate-700 transition hover:text-[#b45309]"
                 >
                   {link.title} →
-                </Link>
+                </a>
               ))}
             </div>
           </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import type { SiteContent } from "@/lib/siteContent";
 
 type Props = {
@@ -9,7 +8,6 @@ type Props = {
 };
 
 export default function AdminContentEditor({ initialContent }: Props) {
-  const router = useRouter();
   const [content, setContent] = useState(initialContent);
   const [status, setStatus] = useState<"idle" | "saving" | "success" | "error">(
     "idle"
@@ -45,7 +43,7 @@ export default function AdminContentEditor({ initialContent }: Props) {
 
     setStatus("success");
     setMessage("Inhalte wurden gespeichert.");
-    router.refresh();
+    window.location.reload();
   }
 
   async function handleLogout() {
@@ -53,8 +51,7 @@ export default function AdminContentEditor({ initialContent }: Props) {
       method: "POST",
     });
 
-    router.push("/admin/login");
-    router.refresh();
+    window.location.href = "/admin/login";
   }
 
   return (

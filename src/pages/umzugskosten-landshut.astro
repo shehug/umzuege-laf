@@ -1,0 +1,689 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Image from "@/components/ui/Image";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import LocalSeoLinks from "@/components/LocalSeoLinks";
+import UmzugskostenFunnel from "@/components/UmzugskostenFunnel";
+import ContactForm from "@/components/ContactForm";
+import BookingCalendar from "@/components/BookingCalendar";
+import { seoPages } from "@/lib/seo";
+
+const meta = seoPages.umzugskosten;
+
+const priceTable = [
+  {
+    type: "1-Zimmer-Wohnung",
+    area: "30 – 40 m²",
+    volume: "10 – 15 m³",
+    basicPrice: "350 € – 550 €",
+    withMontagePrice: "470 € – 750 €",
+    popular: false,
+  },
+  {
+    type: "2-Zimmer-Wohnung",
+    area: "50 – 65 m²",
+    volume: "15 – 25 m³",
+    basicPrice: "550 € – 850 €",
+    withMontagePrice: "750 € – 1.150 €",
+    popular: true,
+  },
+  {
+    type: "3-Zimmer-Wohnung",
+    area: "70 – 90 m²",
+    volume: "25 – 35 m³",
+    basicPrice: "850 € – 1.250 €",
+    withMontagePrice: "1.150 € – 1.650 €",
+    popular: false,
+  },
+  {
+    type: "4-Zimmer-Wohnung",
+    area: "95 – 120 m²",
+    volume: "35 – 50 m³",
+    basicPrice: "1.250 € – 1.750 €",
+    withMontagePrice: "1.650 € – 2.300 €",
+    popular: false,
+  },
+  {
+    type: "Einfamilienhaus",
+    area: "> 130 m²",
+    volume: "50 – 80+ m³",
+    basicPrice: "ab 1.750 €",
+    withMontagePrice: "ab 2.350 €",
+    popular: false,
+  },
+];
+
+const additionalCosts = [
+  {
+    title: "Halteverbotszone Landshut",
+    price: "120 € – 160 €",
+    unit: "pauschal inkl. Behördengebühr",
+    desc: "Behördliche Beantragung bei der Stadt Landshut, amtliche Genehmigung, fristgerechtes Aufstellen und Wiederabholen der Halteverbotsschilder.",
+    badge: "Empfohlen für Altstadt & enge Straßen",
+  },
+  {
+    title: "Möbel- & Küchenmontage",
+    price: "40 € – 55 €",
+    unit: "pro Monteur / Stunde",
+    desc: "Fachgerechter Abbau und Wiederaufbau von Schränken, Betten, Wohnwänden sowie maßgenaue Anpassung von Arbeitsplatten und Einbauküchen.",
+    badge: "Inkl. Profi-Werkzeug",
+  },
+  {
+    title: "Etagenzuschlag ohne Aufzug",
+    price: "50 € – 100 €",
+    unit: "pro Etage (ab 2. OG)",
+    desc: "Faire Entlastungspauschale bei hohen Stockwerken und langen Tragewegen ohne Personen- oder Lastenaufzug.",
+    badge: "Entfällt bei Aufzugsnutzung",
+  },
+];
+
+const faqs = [
+  {
+    q: "Was kostet ein Umzugsunternehmen in Landshut im Durchschnitt?",
+    a: "Was kostet ein Umzugsunternehmen in Landshut? Die Kosten beginnen im Nahbereich bei ca. 350 € bis 550 € für eine 1-Zimmer-Wohnung. Für eine typische 2- bis 3-Zimmer-Wohnung (60 bis 80 m²) liegen die Kosten meist zwischen 550 € und 1.250 €. Bei Buchung inklusive professioneller Möbel- und Küchenmontage (40–55 € pro Stunde) liegt der Preis zwischen 750 € und 1.650 €.",
+  },
+  {
+    q: "Umzug 1 Zimmer Wohnung Kosten Landshut: Womit muss ich rechnen?",
+    a: "Für einen Umzug 1 Zimmer Wohnung Kosten Landshut können Sie im Nahbereich mit etwa 350 € bis 550 € im Basis-Tarif (LKW + 2 Möbelträger) rechnen. Je nach Stockwerk und Eigenleistung erhalten Sie bei uns einen garantierten Festpreis.",
+  },
+  {
+    q: "Umzug 3 Zimmer Wohnung Preis Landshut: Wie hoch sind die Gesamtkosten?",
+    a: "Der Umzug 3 Zimmer Wohnung Preis Landshut liegt erfahrungsgemäß zwischen 850 € und 1.450 € für einen Kompletttransport. Mit unserem Tool (Umzugskosten Rechner online Landshut Umland) erhalten Sie in wenigen Minuten eine genaue Kostenschätzung.",
+  },
+  {
+    q: "Bieten Sie den Umzug Landshut nach München zum Festpreis an?",
+    a: "Ja, für die Route Umzug Landshut nach München Festpreis bieten wir verbindliche Pauschalen an. Die rund 75 km Fahrtstrecke kalkulieren wir ohne Risiko von Stauaufschlägen oder versteckten Kilometersätzen.",
+  },
+  {
+    q: "Halteverbotszone beantragen Umzug Stadt Landshut: Wie funktioniert das?",
+    a: "Wer eine Halteverbotszone beantragen Umzug Stadt Landshut benötigt, erhält bei uns den kompletten Service: Wir reichen den Antrag bei der Straßenverkehrsbehörde Landshut ein, stellen die Schilder vorschriftsmäßig 72 Stunden vor Umzugsbeginn auf und holen sie wieder ab.",
+  },
+  {
+    q: "Küche abbauen und aufbauen lassen Umzug Landshut: Was kostet der Montageservice?",
+    a: "Für Küche abbauen und aufbauen lassen Umzug Landshut berechnen wir für geschulte Fachmonteure faire 40 € bis 55 € pro Stunde inkl. Profi-Werkzeug, inklusive Anpassung der Arbeitsplatte und fachgerechtem Anschluss.",
+  },
+  {
+    q: "Bietet Umzüge LAF verbindliche Umzugsfirma Landshut Festpreis Angebote?",
+    a: "Ja, zu 100%. Unsere Umzugsfirma Landshut Festpreis Angebote sind garantiert bindend. Nach einer genauen Vorab-Besichtigung oder detaillierten Absprache erhalten Sie ein schriftliches Angebot – ohne einen Cent versteckter Kosten.",
+  },
+];
+
+const structuredDataGraph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MovingCompany",
+      "@id": "https://umzuegelandshut.de/#organization",
+      name: "Umzüge LAF",
+      url: "https://umzuegelandshut.de/",
+      logo: "https://umzuegelandshut.de/images/logo/laf-logo.png",
+      telephone: "+491629007565",
+      priceRange: "€€",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Ergoldinger Str. 15",
+        addressLocality: "Landshut",
+        postalCode: "84030",
+        addressRegion: "Bayern",
+        addressCountry: "DE",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 48.5529,
+        longitude: 12.1648,
+      },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          opens: "08:00",
+          closes: "18:00",
+        },
+      ],
+      areaServed: [
+        "Landshut",
+        "Ergolding",
+        "Altdorf",
+        "Essenbach",
+        "Kumhausen",
+        "Vilsbiburg",
+        "Moosburg an der Isar",
+        "Landkreis Landshut",
+      ],
+    },
+    {
+      "@type": "Service",
+      "@id": "https://umzuegelandshut.de/umzugskosten-landshut/#service",
+      name: "Umzugskosten Landshut & Preistransparenz",
+      url: "https://umzuegelandshut.de/umzugskosten-landshut",
+      serviceType: "Umzugskostenrechner & Umzugspreise",
+      description:
+        "Transparente Umzugskosten und verbindliche Festpreisangebote für Umzüge in Landshut und Umgebung. Richtpreise für 1- bis 4-Zimmer-Wohnungen und Häuser.",
+      provider: {
+        "@id": "https://umzuegelandshut.de/#organization",
+      },
+      areaServed: {
+        "@type": "City",
+        name: "Landshut",
+      },
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "EUR",
+        priceRange: "350€ - 2950€",
+        url: "https://umzuegelandshut.de/umzugskosten-landshut",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://umzuegelandshut.de/umzugskosten-landshut/#faq",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.a,
+        },
+      })),
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://umzuegelandshut.de/umzugskosten-landshut/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Startseite",
+          item: "https://umzuegelandshut.de/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Umzugskosten Landshut",
+          item: "https://umzuegelandshut.de/umzugskosten-landshut",
+        },
+      ],
+    },
+  ],
+};
+---
+
+<Layout
+  title={meta.title}
+  description={meta.description}
+  keywords={meta.keywords}
+  canonical={meta.path}
+  image={meta.image}
+>
+  <!-- Dedicated Structured Data Graph for SEO / Rich Snippets -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(structuredDataGraph)}
+  />
+
+  <main class="min-h-screen bg-white text-slate-900">
+    <Header />
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="relative overflow-hidden bg-slate-950 pt-28 pb-16 text-white sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28">
+      {/* Background Hero Image */}
+      <div class="absolute inset-0 z-0 opacity-60">
+        <Image
+          src="/images/services/Transport.jpg"
+          alt="Umzüge LAF Transporter und Umzugskosten Landshut"
+          fill
+          priority
+          class="object-cover object-center sm:object-right"
+        />
+      </div>
+      <div class="absolute inset-0 z-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/30 sm:to-transparent"></div>
+      <div class="absolute inset-0 z-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/40"></div>
+
+      <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <div class="flex justify-center mb-4">
+            <Breadcrumbs
+              items={[
+                { label: "Leistungen", href: "/leistungen" },
+                { label: "Umzugskosten Landshut" },
+              ]}
+            />
+          </div>
+
+          <div class="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-1.5 text-xs sm:text-sm font-bold text-amber-300 backdrop-blur-md">
+            <span class="flex h-2 w-2 rounded-full bg-amber-400 animate-ping"></span>
+            Echte Richtpreise & Transparenz 2026/2027
+          </div>
+
+          <h1 class="mt-6 text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.15]">
+            Umzugskosten in Landshut: <span class="text-amber-400">Transparente Preise</span> & Richtwerte
+          </h1>
+
+          <p class="mt-6 text-base sm:text-lg leading-relaxed text-slate-300">
+            Schluss mit undurchsichtigen Lockangeboten: Was kostet ein Umzug in Landshut und Umgebung wirklich? Hier finden Sie reale Preiskorridore für 1- bis 4-Zimmer-Wohnungen und Häuser – mit <strong>100% Festpreis-Garantie</strong> und ohne versteckte Nachforderungen.
+          </p>
+
+          {/* Trust Badges */}
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm font-bold text-slate-200">
+            <div class="flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-800/80 px-3.5 py-2 backdrop-blur-sm">
+              <svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>Verbindliche Festpreis-Garantie</span>
+            </div>
+            <div class="flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-800/80 px-3.5 py-2 backdrop-blur-sm">
+              <svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>Antwort in maximal 4 Stunden</span>
+            </div>
+            <div class="flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-800/80 px-3.5 py-2 backdrop-blur-sm">
+              <svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>Kostenlose Vor-Ort-Besichtigung</span>
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div class="mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+            <a
+              href="#umzugskosten-rechner"
+              class="inline-flex items-center justify-center gap-2 rounded-2xl bg-amber-500 px-6 py-3.5 text-sm sm:text-base font-black text-slate-950 shadow-xl shadow-amber-500/30 transition hover:bg-amber-400 hover:scale-105"
+            >
+              <span>Kostenrechner (3 Schritte)</span>
+              <span>↓</span>
+            </a>
+            <a
+              href="#anfrage-formular"
+              class="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-amber-400/80 bg-slate-900/90 px-6 py-3.5 text-sm sm:text-base font-black text-amber-300 transition hover:bg-slate-800"
+            >
+              <span>Schnellanfrage Formular</span>
+              <span>↓</span>
+            </a>
+            <a
+              href="#termin-reservierung"
+              class="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-700 bg-slate-800/90 px-6 py-3.5 text-sm sm:text-base font-bold text-white transition hover:bg-slate-700"
+            >
+              <span>📅 Online Termin reservieren</span>
+            </a>
+            <a
+              href="tel:+491629007565"
+              class="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-700 bg-slate-800/60 px-5 py-3.5 text-sm sm:text-base font-bold text-slate-300 transition hover:text-white"
+            >
+              <svg class="h-4 w-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <span>0162 900 75 65</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PRICE TABLE SECTION ================= -->
+    <section class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <span class="text-xs font-black uppercase tracking-wider text-amber-600">
+            Orientierung & Kostentransparenz
+          </span>
+          <h2 class="mt-2 text-2xl font-black text-slate-900 sm:text-4xl">
+            Was kostet ein Umzug in Landshut? Preistabelle nach Wohnungsgröße
+          </h2>
+          <p class="mt-4 text-sm sm:text-base leading-relaxed text-slate-600">
+            Um absolute Kostensicherheit zu gewährleisten, orientieren sich seriöse Umzüge an Wohnfläche, Möbelvolumen und gewünschtem Leistungsumfang. Alle Richtwerte verstehen sich inkl. Umzugs-LKW, Personal und voller Transportversicherung.
+          </p>
+        </div>
+
+        {/* Desktop HTML Table */}
+        <div class="mt-12 hidden overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl md:block">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b border-slate-200 bg-slate-900 text-white text-xs uppercase tracking-wider">
+                <th class="p-5 font-black">Wohnungsgröße</th>
+                <th class="p-5 font-black">Volumen (ca.)</th>
+                <th class="p-5 font-black">Basis-Umzug (Nahbereich)</th>
+                <th class="p-5 font-black bg-amber-500/20 text-amber-300">Inkl. Möbel- &amp; Küchenmontage</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-sm">
+              {priceTable.map((row) => (
+                <tr class={`transition hover:bg-slate-50 ${row.popular ? "bg-amber-50/40" : ""}`}>
+                  <td class="p-5 font-bold text-slate-900">
+                    <div class="flex items-center gap-2">
+                      <span>{row.type}</span>
+                      {row.popular && (
+                        <span class="rounded-full bg-amber-400 px-2 py-0.5 text-[10px] font-black uppercase text-slate-950">
+                          Häufig gebucht
+                        </span>
+                      )}
+                    </div>
+                    <span class="text-xs font-normal text-slate-500">{row.area}</span>
+                  </td>
+                  <td class="p-5 font-semibold text-slate-700">{row.volume}</td>
+                  <td class="p-5 font-black text-slate-900">{row.basicPrice}</td>
+                  <td class="p-5 font-black text-amber-900 bg-amber-50/50">{row.withMontagePrice}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Mobile Cards (Zero CLS, responsive) */}
+        <div class="mt-8 grid gap-4 md:hidden">
+          {priceTable.map((row) => (
+            <div class={`rounded-2xl border p-5 shadow-sm ${row.popular ? "border-amber-400 bg-amber-50/50" : "border-slate-200 bg-white"}`}>
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-base font-black text-slate-900">{row.type}</h3>
+                  <p class="text-xs text-slate-500">{row.area} · ca. {row.volume}</p>
+                </div>
+                {row.popular && (
+                  <span class="rounded-full bg-amber-400 px-2.5 py-0.5 text-[10px] font-black uppercase text-slate-950">
+                    Beliebt
+                  </span>
+                )}
+              </div>
+
+              <div class="mt-4 grid grid-cols-2 gap-2 border-t border-slate-200/80 pt-4">
+                <div>
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Basis-Umzug</span>
+                  <div class="mt-0.5 text-base font-black text-slate-900">{row.basicPrice}</div>
+                </div>
+                <div>
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-amber-700">Inkl. Montage</span>
+                  <div class="mt-0.5 text-base font-black text-amber-900">{row.withMontagePrice}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Legend / Info explanation */}
+        <div class="mt-8 grid gap-4 sm:grid-cols-2 rounded-2xl border border-slate-200 bg-white p-6 text-xs sm:text-sm text-slate-600">
+          <div>
+            <strong class="font-bold text-slate-900 block mb-1">Was bedeutet Basis-Umzug?</strong>
+            Transport Ihrer bereits gepackten Kisten und demontierten Möbel. Inklusive Bereitstellung des passenden Umzugs-LKWs, Anfahrt in Landshut, 2 bis 3 erfahrene Möbelträger und professionelle Ladungssicherung.
+          </div>
+          <div>
+            <strong class="font-bold text-slate-900 block mb-1">Was beinhaltet der Service mit Möbelmontage?</strong>
+            Fachgerechte Möbel- und Küchendemontage sowie Wiederaufbau in der neuen Wohnung durch erfahrene Monteure (40–55 € pro Stunde).
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BREAKDOWN ADDITIONAL COSTS ================= -->
+    <section class="py-16 sm:py-24 bg-white">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <span class="text-xs font-black uppercase tracking-wider text-amber-600">
+            Faire Einzelleistungen
+          </span>
+          <h2 class="mt-2 text-2xl font-black text-slate-900 sm:text-4xl">
+            Transparente Aufschlüsselung der Zusatzkosten
+          </h2>
+          <p class="mt-4 text-sm sm:text-base leading-relaxed text-slate-600">
+            Jeder Umzug ist individuell. Damit Sie genau planen können, sind bei uns alle Zusatzleistungen transparent kalkuliert und jederzeit flexibel zubuchbar.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {additionalCosts.map((item) => (
+            <div class="flex flex-col justify-between rounded-3xl border border-slate-200 bg-slate-50/70 p-6 shadow-sm transition hover:shadow-md hover:border-amber-300">
+              <div>
+                <span class="inline-block rounded-full bg-amber-400/20 px-2.5 py-1 text-[11px] font-bold text-amber-900 mb-3">
+                  {item.badge}
+                </span>
+                <h3 class="text-lg font-bold text-slate-900">{item.title}</h3>
+                <div class="mt-3">
+                  <span class="text-2xl font-black text-slate-900">{item.price}</span>
+                  <span class="block text-xs font-semibold text-slate-500 mt-0.5">{item.unit}</span>
+                </div>
+                <p class="mt-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-slate-200">
+                <a
+                  href="#umzugskosten-rechner"
+                  class="text-xs font-bold text-amber-600 hover:text-amber-700 inline-flex items-center gap-1"
+                >
+                  <span>Im Rechner auswählen</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INTERACTIVE 3-STEP CALCULATOR ================= -->
+    <section class="py-16 sm:py-24 bg-gradient-to-b from-slate-100 to-white">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center mb-10">
+          <span class="text-xs font-black uppercase tracking-wider text-amber-600">
+            Online-Kostenrechner
+          </span>
+          <h2 class="mt-2 text-2xl font-black text-slate-900 sm:text-4xl">
+            Umzugskosten Rechner Online für Landshut & Umland: In 3 Schritten zum Festpreis
+          </h2>
+          <p class="mt-3 text-sm sm:text-base text-slate-600">
+            Wählen Sie Zimmeranzahl, Adressen und gewünschte Zusatzleistungen – wir berechnen Ihren individuellen Umzug und melden uns binnen 4 Stunden mit einem Festpreis-Angebot.
+          </p>
+        </div>
+
+        <UmzugskostenFunnel client:load />
+      </div>
+    </section>
+
+    <!-- ================= COST FACTORS SECTION ================= -->
+    <section class="py-16 sm:py-20 bg-white border-t border-slate-200">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <span class="text-xs font-black uppercase tracking-wider text-amber-600">
+            Ratgeber & Expertise
+          </span>
+          <h2 class="mt-2 text-2xl font-black text-slate-900 sm:text-3xl">
+            Kostenfaktoren beim Umzug: Kubikmeter, Stockwerke und Transportweg
+          </h2>
+        </div>
+
+        <div class="mt-12 grid gap-8 md:grid-cols-3">
+          <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50/50">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-400 text-slate-950 font-black text-lg">
+              1
+            </div>
+            <h3 class="mt-4 text-base font-bold text-slate-900">Volumen & Wohnungsgröße</h3>
+            <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Die Kubikmeterzahl Ihrer Möbel und Kartons bestimmt die benötigte LKW-Größe (z.B. 3,5t Transporter oder 7,5t LKW) sowie die Anzahl der benötigten Umzugshelfer.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50/50">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-400 text-slate-950 font-black text-lg">
+              2
+            </div>
+            <h3 class="mt-4 text-base font-bold text-slate-900">Laufwege & Parkplatz (Altstadt)</h3>
+            <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+              In der Landshuter Altstadt, Neustadt oder in verwinkelten Gassen sind die Zufahrten oft eng. Kurze Laufwege dank Halteverbotszone sparen bis zu 30% Zeit und Arbeitsaufwand.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50/50">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-400 text-slate-950 font-black text-lg">
+              3
+            </div>
+            <h3 class="mt-4 text-base font-bold text-slate-900">Möbelmontage & Spezialwünsche</h3>
+            <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Große Spiegelschränke, schwere Boxspringbetten oder Küchenmontagen erfordern erfahrenes Handwerker-Personal. Bei LAF erhalten Sie gelernte Monteure direkt aus einer Hand.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ACCORDION SECTION ================= -->
+    <section class="py-16 sm:py-24 bg-slate-50 border-t border-slate-200">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <span class="text-xs font-black uppercase tracking-wider text-amber-600">
+            Häufige Fragen
+          </span>
+          <h2 class="mt-2 text-2xl font-black text-slate-900 sm:text-4xl">
+            FAQ: Alles zu Umzugskosten & Ablauf
+          </h2>
+          <p class="mt-3 text-sm text-slate-600">
+            Transparente Antworten auf die wichtigsten Fragen rund um die Umzugspreise in Landshut.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          {faqs.map((faq, index) => (
+            <details
+              class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition open:shadow-md"
+              open={index === 0}
+            >
+              <summary class="flex cursor-pointer items-center justify-between text-base font-bold text-slate-900 select-none">
+                <span>{faq.q}</span>
+                <span class="ml-4 flex h-7 w-7 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition group-open:rotate-180 group-open:bg-amber-400 group-open:text-slate-950">
+                  ↓
+                </span>
+              </summary>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600 border-t border-slate-100 pt-3">
+                {faq.a}
+              </p>
+            </details>
+          ))}
+        </div>
+
+        <div class="mt-12 text-center rounded-2xl bg-amber-50 border border-amber-300 p-6">
+          <h3 class="text-base font-bold text-amber-950">
+            Haben Sie eine spezielle Frage zu Ihrem Umzug?
+          </h3>
+          <p class="mt-1 text-xs sm:text-sm text-amber-900">
+            Wir beraten Sie gerne unverbindlich telefonisch oder per WhatsApp.
+          </p>
+          <div class="mt-4 flex flex-wrap justify-center gap-3">
+            <a
+              href="tel:+491629007565"
+              class="inline-flex items-center gap-2 rounded-xl bg-amber-500 px-5 py-2.5 text-xs sm:text-sm font-black text-slate-950 hover:bg-amber-400 transition"
+            >
+              0162 900 75 65 anrufen
+            </a>
+            <a
+              href="https://wa.me/491629007565"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-xs sm:text-sm font-bold text-slate-800 hover:bg-slate-50 transition"
+            >
+              WhatsApp Nachricht
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ONLINE TERMIN RESERVIERUNG ================= -->
+    <section id="termin-reservierung" class="py-16 sm:py-24 bg-slate-900 text-white scroll-mt-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center mb-10">
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-amber-400/20 px-3.5 py-1.5 text-xs font-black text-amber-300">
+            <span>📅</span>
+            <span>Online-Terminbuchung · Sofortige Bestätigung</span>
+          </span>
+          <h2 class="mt-3 text-2xl sm:text-4xl font-black text-white">
+            Wunschtermin für kostenlose Vor-Ort-Besichtigung reservieren
+          </h2>
+          <p class="mt-3 text-sm sm:text-base text-slate-300">
+            Wählen Sie direkt im Live-Kalender einen freien Tag und eine Uhrzeit aus. Unser Inhaber oder Einsatzleiter kommt persönlich bei Ihnen in Landshut oder Umgebung vorbei, begutachtet das Umzugsvolumen und erstellt Ihnen direkt vor Ort Ihr verbindliches Festpreis-Angebot.
+          </p>
+        </div>
+
+        <BookingCalendar client:visible />
+      </div>
+    </section>
+
+    <!-- ================= SCHNELL-ANFRAGEFORMULAR ================= -->
+    <section id="anfrage-formular" class="py-16 sm:py-24 bg-white border-t border-slate-200 scroll-mt-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div>
+            <span class="text-xs font-black uppercase tracking-wider text-amber-600">
+              Direktanfrage
+            </span>
+            <h2 class="mt-2 text-2xl sm:text-4xl font-black text-slate-900">
+              Jetzt Festpreis anfordern: Rückmeldung innerhalb von 4 Stunden garantiert
+            </h2>
+            <p class="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
+              Sie möchten kein langes Formular ausfüllen? Hinterlassen Sie uns einfach kurz Ihre Start- und Zieldaten sowie Ihre Telefonnummer. Wir melden uns garantiert innerhalb von 4 Stunden bei Ihnen für ein maßgeschneidertes Angebot ohne versteckte Kosten.
+            </p>
+
+            <div class="mt-8 space-y-4">
+              <div class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-400 text-slate-950 font-black text-xs">
+                  ✓
+                </span>
+                <div>
+                  <h3 class="text-sm font-bold text-slate-900">Verbindlicher Festpreis</h3>
+                  <p class="text-xs text-slate-500 mt-0.5">Keine nachträglichen Überraschungen oder versteckten Stundensätze.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-400 text-slate-950 font-black text-xs">
+                  ✓
+                </span>
+                <div>
+                  <h3 class="text-sm font-bold text-slate-900">100% Kostenlos &amp; Unverbindlich</h3>
+                  <p class="text-xs text-slate-500 mt-0.5">Besichtigung vor Ort oder digital per Video ohne jegliches Risiko.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-400 text-slate-950 font-black text-xs">
+                  ✓
+                </span>
+                <div>
+                  <h3 class="text-sm font-bold text-slate-900">Voll versicherter Transport</h3>
+                  <p class="text-xs text-slate-500 mt-0.5">Maximale Sicherheit für Möbel, Gläser und persönliche Erinnerungsstücke.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 rounded-2xl bg-amber-50 border border-amber-200 p-5">
+              <div class="text-xs font-bold text-amber-900">Lieber direkt anrufen?</div>
+              <a
+                href="tel:+491629007565"
+                class="mt-2 inline-flex items-center gap-2 text-lg font-black text-slate-950 hover:text-amber-700 transition"
+              >
+                <span>📞 0162 900 75 65</span>
+              </a>
+              <p class="text-xs text-slate-600 mt-1">Mo–Sa: 08:00 – 18:00 Uhr erreichbar</p>
+            </div>
+          </div>
+
+          {/* Contact Form Card */}
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-xl">
+            <h3 class="text-lg font-bold text-slate-900 mb-1">
+              Jetzt Festpreis-Angebot anfordern
+            </h3>
+            <p class="text-xs text-slate-500 mb-6">
+              Füllen Sie die Felder kurz aus – wir melden uns umgehend bei Ihnen.
+            </p>
+            <ContactForm client:visible />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local Area Links -->
+    <LocalSeoLinks />
+  </main>
+
+  <Footer />
+</Layout>

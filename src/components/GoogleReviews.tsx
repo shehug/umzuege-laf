@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const reviews = [
   {
     name: "Andreae Redeniem",
@@ -42,11 +40,11 @@ export default function GoogleReviews() {
               <span>Google Bewertungen</span>
             </div>
             <h2 className="mt-3 text-2xl sm:text-4xl font-black text-white tracking-tight">
-              Echte Kundenstimmen aus Landshut & Region
+              Echte Kundenstimmen aus Landshut &amp; Region
             </h2>
             <p className="mt-2 text-sm sm:text-base text-slate-400 max-w-2xl">
-              100% zufriedene Kunden. Lesen Sie, was Kunden über unsere Pünktlichkeit,
-              Sorgfalt und faire Festpreise sagen.
+              100% zufriedene Kunden. Lesen Sie, was unsere Kunden über unsere Pünktlichkeit,
+              Sorgfalt und faire Festpreise auf Google sagen.
             </p>
           </div>
 
@@ -57,6 +55,7 @@ export default function GoogleReviews() {
             </div>
             <div className="flex justify-center text-amber-400 text-sm mt-0.5">★★★★★</div>
             <p className="mt-1 text-[11px] font-bold text-slate-300">Google Unternehmensprofil</p>
+            <p className="text-[10px] text-slate-400">Top-Bewertungen</p>
           </div>
         </div>
 
@@ -72,20 +71,25 @@ export default function GoogleReviews() {
                     {"★".repeat(rev.rating)}
                   </div>
                   <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-400 border border-emerald-500/20">
-                    <span>✓</span> Verifiziert
+                    <span className="text-[11px]">✓</span> 5-Sterne Google
                   </span>
                 </div>
 
-                <p className="mt-4 text-xs sm:text-sm text-slate-300 leading-relaxed italic">
+                <p className="mt-4 text-xs sm:text-sm text-slate-300 leading-relaxed italic line-clamp-5">
                   &ldquo;{rev.text}&rdquo;
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-700/60">
-                <p className="text-sm font-black text-white">{rev.name}</p>
-                <div className="flex items-center justify-between mt-0.5 text-[11px] text-slate-400">
-                  <span>{rev.location}</span>
-                  <span>{rev.date}</span>
+              <div className="mt-6 pt-4 border-t border-slate-700/60 flex items-center gap-3">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-amber-400/20 text-amber-300 font-black text-xs shrink-0 border border-amber-400/30">
+                  {rev.name.charAt(0).toUpperCase()}
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm font-black text-white truncate">{rev.name}</p>
+                  <div className="flex items-center justify-between text-[11px] text-slate-400">
+                    <span className="truncate">{rev.location}</span>
+                    <span className="shrink-0 ml-1">{rev.date}</span>
+                  </div>
                 </div>
               </div>
             </div>

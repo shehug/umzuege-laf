@@ -1,0 +1,58 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import LocalSeoLanding from "@/components/LocalSeoLanding.astro";
+import { createSeoMetadata, seoPages } from "@/lib/seo";
+
+const meta = createSeoMetadata(seoPages.halteverbotszone);
+---
+
+<Layout
+  title={meta.title}
+  description={meta.description}
+  keywords={meta.keywords}
+  canonical={meta.canonical}
+  image={meta.image}
+  noIndex={meta.noIndex}
+>
+  <LocalSeoLanding
+      breadcrumbName="Halteverbotszone Landshut"
+      path="/umzuege/halteverbotszone"
+      serviceName="Halteverbotszone Landshut"
+      serviceType="Halteverbotszone"
+      serviceDescription="Halteverbotszone für Ihren Umzug in Landshut einrichten & beantragen. Rechtssichere Genehmigung der Stadt Landshut, termingerechte Aufstellung und Abholung."
+      badge="Rechtssicher & Pünktlich"
+      h1Top="Halteverbotszone für Ihren Umzug in Landshut"
+      h1Highlight="einrichten & beantragen."
+      h1Bottom="Direkt vor der Haustür parken."
+      intro="Sparen Sie Zeit und lange Tragewege beim Umzug in Landshut: Umzüge LAF übernimmt die behördliche Genehmigung, fristgerechte Schilderaufstellung und Protokollierung für Sie."
+      image="/images/services/Umzug.jpg"
+      imageAlt="Halteverbotszone für Ihren Umzug in Landshut einrichten"
+      sectionKicker="Halteverbotsservice"
+      sectionTitle="Halteverbot in Landshut: Genehmigung der Stadt & rechtssichere Aufstellung"
+      sectionText="Gerade in der Landshuter Altstadt, Neustadt oder engen Wohngebieten ist ein freier Stellplatz für den Umzugs-LKW unverzichtbar. Wir beantragen das Halteverbot offiziell beim Straßenverkehrsamt Landshut und stellen die Schilder vorschriftsmäßig mindestens 72 Stunden vor Umzugsbeginn auf."
+      benefits={[
+        "Offizielle behördliche Genehmigung der Stadt Landshut",
+        "Fristgerechte Aufstellung 72 Stunden vorab",
+        "Rechtssichere Protokollierung der Kennzeichen",
+        "Aufstellung und Abholung inklusive",
+        "Gültig für 15 bis 20 Meter LKW-Länge",
+        "Festpreis inklusive aller Gebühren",
+      ]}
+      steps={[
+        { title: "Bedarf mitteilen", text: "Nennen Sie uns Adresse, Umzugsdatum und Zeitraum für das Halteverbot in Landshut." },
+        { title: "Behördlicher Antrag", text: "Wir reichen alle Unterlagen rechtzeitig bei der Straßenverkehrsbehörde Landshut ein." },
+        { title: "Schilder aufstellen", text: "Wir stellen die Schilder fristgerecht auf und fertigen das geforderte Aufstellprotokoll an." },
+        { title: "Stressfrei be- und entladen", text: "Der Umzugswagen parkt direkt vor der Haustür – ohne lange Tragewege oder Parkplatzsuche." },
+      ]}
+      relatedServices={[
+        { title: "Privatumzug Landshut", text: "Klassischer Wohnungsumzug in Landshut und Umgebung.", href: "/privatumzug-landshut" },
+        { title: "Umzugskosten Landshut", text: "Transparente Kostenübersicht und Online-Rechner.", href: "/umzugskosten-landshut" },
+        { title: "Umzugsunternehmen Landshut", text: "Alle Umzugsdienstleistungen in Landshut aus einer Hand.", href: "/umzugsunternehmen-landshut" },
+      ]}
+      faqs={[
+        { q: "Wie viele Tage vor dem Umzug muss das Halteverbot in Landshut stehen?", a: "Die Stadt Landshut schreibt vor, dass die mobilen Halteverbotsschilder mindestens 72 Stunden (3 volle Tage) vor Gültigkeitsbeginn aufgestellt und protokolliert sein müssen." },
+        { q: "Was kostet eine Halteverbotszone in Landshut?", a: "Die Gesamtkosten liegen meist zwischen 120 € und 160 € pauschal – inklusive behördlicher Genehmigungsgebühr, Aufstellung, Protokollierung und Wiederabholung." },
+        { q: "Darf ich mein Halteverbot mit Stühlen oder Flatterband selbst absperren?", a: "Nein, eigenmächtige Absperrungen im öffentlichen Straßenraum sind verboten und rechtlich wirkungslos. Nur behördlich genehmigte Schilder mit Aufstellprotokoll berechtigen zum Abschleppen unberechtigt parkender Fahrzeuge." },
+      ]}
+    />
+</Layout>

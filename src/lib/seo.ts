@@ -230,6 +230,20 @@ export const seoPages = {
     image: `${siteUrl}/images/services/Lagerung.jpg`,
   },
 
+  halteverbotszone: {
+    title: "Halteverbotszone Landshut | Umzug Halteverbot beantragen & aufstellen",
+    description:
+      "Halteverbotszone für Ihren Umzug in Landshut einrichten & beantragen: Behördliche Genehmigung der Stadt & rechtssichere Aufstellung der Schilder. Alles aus einer Hand!",
+    path: "/umzuege/halteverbotszone",
+    keywords: [
+      "Halteverbotszone Landshut",
+      "Halteverbot Umzug Landshut",
+      "Halteverbotszone beantragen Landshut",
+      "Halteverbot Stadt Landshut",
+    ],
+    image: `${siteUrl}/images/services/Halteverbot.jpg`,
+  },
+
   entruempelung: {
     title: "Entrümpelung Landshut » Schnell & Besenrein | Umzüge LAF",
     description:
@@ -385,5 +399,53 @@ export const seoPages = {
       "Datenschutzerklärung von Umzüge LAF für die Website umzuegelandshut.de.",
     path: "/datenschutz",
     keywords: ["Datenschutz Umzüge LAF"],
+  },
+
+  umzugskosten: {
+    title: "Umzugskosten Landshut 2026/27 » Richtpreise & Rechner | LAF",
+    description:
+      "Was kostet ein Umzug in Landshut? Transparente Richtpreise für 1- bis 4-Zimmer-Wohnungen & Häuser. Keine versteckten Kosten. Hier Festpreis berechnen!",
+    path: "/umzugskosten-landshut",
+    keywords: [
+      "Umzugskosten Landshut",
+      "Was kostet ein Umzug Landshut",
+      "Umzugskostenrechner Landshut",
+      "Preise Umzug Landshut",
+      "Umzugsfirma Kosten Landshut",
+      "Umzugspreise Landshut",
+    ],
+    image: `${siteUrl}/images/services/Transport.webp`,
+  },
+
+  seniorenumzug: {
+    title: "Seniorenumzug Landshut | Einfühlsam, Sicher & Full-Service | LAF",
+    description:
+      "Seniorenumzüge in Landshut mit Rundum-Sorglos-Service: Einpacken, Demontage, Entsorgung & stressfreier Einzug. Jetzt persönliche Beratung buchen!",
+    path: "/seniorenumzug-landshut",
+    keywords: [
+      "Seniorenumzug Landshut",
+      "Umzug für Senioren Landshut",
+      "Seniorenumzüge Landshut",
+      "Altersgerechter Umzug Landshut",
+      "Full Service Umzug Senioren",
+      "Pflegekasse Umzug Landshut",
+    ],
+    image: `${siteUrl}/images/services/PU1.webp`,
+  },
+
+  kleintransporte: {
+    title: "Kleintransporte Landshut | Schnell & Günstig zum Festpreis | LAF",
+    description:
+      "Spontane und günstige Kleintransporte in Landshut. Einzelmöbel, Haushaltsgeräte, IKEA-Abholung & Express-Möbeltransport. Jetzt unverbindlich anfragen!",
+    path: "/kleintransporte-landshut",
+    keywords: [
+      "Kleintransporte Landshut",
+      "Möbeltransport Landshut",
+      "Einzelmöbel transportieren Landshut",
+      "IKEA Transport Landshut",
+      "Express Transport Landshut",
+      "Transporter mit Fahrer Landshut",
+    ],
+    image: `${siteUrl}/images/services/Express.webp`,
   },
 } satisfies Record<string, SeoPage>;

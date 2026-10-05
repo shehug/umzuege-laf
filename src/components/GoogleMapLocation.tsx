@@ -5,8 +5,8 @@ export default function GoogleMapLocation() {
   const openMapUrl = "https://maps.google.com/?q=Ergoldinger+Str.+15,+84030+Landshut";
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-      <div className="relative h-64 sm:h-72 w-full bg-slate-100">
+    <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm h-full flex flex-col justify-between">
+      <div className="relative min-h-[300px] sm:min-h-[350px] lg:min-h-[410px] w-full bg-slate-100 flex-1">
         <iframe
           title="Umzüge LAF Standort Landshut"
           src={mapEmbedUrl}

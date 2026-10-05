@@ -1,0 +1,523 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Image from "@/components/ui/Image";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import LocalSeoLinks from "@/components/LocalSeoLinks";
+import SeniorenumzugForm from "@/components/SeniorenumzugForm";
+import BookingCalendar from "@/components/BookingCalendar";
+import ContactForm from "@/components/ContactForm";
+import { seoPages } from "@/lib/seo";
+
+const meta = seoPages.seniorenumzug;
+
+const benefits = [
+  {
+    title: "Einfühlsam & Geduldig",
+    desc: "Wir hören zu, nehmen Sorgen ernst und planen jeden Schritt in Ruhe – ohne Hektik und Zeitdruck.",
+    icon: "heart",
+  },
+  {
+    title: "Kompletter Pack- & Auspackservice",
+    desc: "Geschirr, Kleidung, Erinnerungsstücke: Unser Team verpackt alles schonend und räumt es am neuen Ort wieder ein.",
+    icon: "box",
+  },
+  {
+    title: "Fachgerechte Möbelmontage",
+    desc: "Vertraute Schränke, Lieblingsbetten und Küchenzeilen werden von unseren Schreinern millimetergenau aufgebaut.",
+    icon: "wrench",
+  },
+  {
+    title: "Wohnungsauflösung & Entrümpelung",
+    desc: "Nicht mehr benötigte Möbel oder Hausrat entsorgen wir fachgerecht und übergeben die alte Wohnung besenrein.",
+    icon: "sparkles",
+  },
+  {
+    title: "Bis zu 4.000 € Zuschuss der Pflegekasse",
+    desc: "Bei Vorliegen eines Pflegegrads (1–5) unterstützen wir bei der Beantragung des Umzugskostenzuschusses.",
+    icon: "cash",
+  },
+  {
+    title: "Feste Bezugsperson vor Ort",
+    desc: "Von der Erstbesichtigung bis zum fertigen Aufbau in Landshut haben Sie und Ihre Angehörigen einen festen Ansprechpartner.",
+    icon: "user",
+  },
+];
+
+const steps = [
+  {
+    step: "01",
+    title: "Kostenloses Beratungsgespräch",
+    text: "Wir kommen zu Ihnen nach Hause in Landshut oder Umgebung, trinken gemeinsam einen Kaffee und besprechen alle Wünsche.",
+  },
+  {
+    step: "02",
+    title: "Verbindliches Festpreisangebot",
+    text: "Sie und Ihre Angehörigen erhalten ein klares, transparentes Angebot ohne versteckte Kosten. Kein Risiko, volle Sicherheit.",
+  },
+  {
+    step: "03",
+    title: "Sorgfältiges Einpacken & Demontage",
+    text: "Auf Wunsch packen wir Tage vorher oder direkt am Umzugstag alles sicher ein und demontieren die Schränke behutsam.",
+  },
+  {
+    step: "04",
+    title: "Sicherer Transport & Wohlfühl-Aufbau",
+    text: "In der neuen barrierefreien Wohnung oder Residenz bauen wir alles wieder auf, hängen Lampen auf und schließen Geräte an.",
+  },
+  {
+    step: "05",
+    title: "Alte Wohnung besenrein übergeben",
+    text: "Keller räumen, Möbel entsorgen, Böden säubern: Wir hinterlassen die alte Wohnung bezugs- und übergabefertig für den Vermieter.",
+  },
+];
+
+const faqs = [
+  {
+    q: "Wann übernimmt die Pflegekasse bis zu 4.000 € für den Seniorenumzug?",
+    a: "Wenn die umziehende Person mindestens Pflegegrad 1 besitzt und der Umzug zu einer sogenannten 'Verbesserung des individuellen Wohnumfeldes' führt (z.B. Umzug in eine barrierefreie Wohnung, ins betreute Wohnen oder ins Erdgeschoss), bezuschusst die Pflegekasse die Umzugskosten nach § 40 Abs. 4 SGB XI mit bis zu 4.000 € je Person. Umzüge LAF stellt Ihnen einen entsprechenden Kostenvoranschlag für die Pflegekasse aus.",
+  },
+  {
+    q: "Können Angehörige die Umzugskosten steuerlich absetzen?",
+    a: "Ja, Aufwendungen für den Seniorenumzug können im Rahmen der Steuererklärung als 'haushaltsnahe Dienstleistungen' oder unter bestimmten Voraussetzungen als 'außergewöhnliche Belastung' geltend gemacht werden. Sprechen Sie hierzu mit Ihrem Steuerberater.",
+  },
+  {
+    q: "Was passiert mit Möbeln, die nicht in die neue, kleinere Wohnung passen?",
+    a: "Beim Umzug von einem großen Haus in eine kleinere Seniorenwohnung bleibt oft Hausrat übrig. Umzüge LAF bietet hierfür zwei Lösungen: Wir entsorgen nicht mehr benötigte Altmöbel fachgerecht und umweltfreundlich oder lagern wertvolle Erbstücke sicher in unserem trockenen Möbellager ein.",
+  },
+  {
+    q: "Helfen Sie auch beim Auspacken und Einrichten?",
+    a: "Ja, sehr gerne! Unser Team packt die Umzugskartons am Zielort wieder behutsam aus, räumt Gläser und Kleidung in die Schränke und hängt Bilder sowie Lampen auf. Unser Ziel ist, dass sich die Senioren bereits am ersten Abend wie zu Hause fühlen.",
+  },
+  {
+    q: "Bieten Sie den Seniorenumzug in Landshut mit Möbelmontage und Entsorgung an?",
+    a: "Ja, genau das ist unser gefragtester Service: Seniorenumzug Landshut mit Möbelmontage und Entsorgung. Wir bauen Schränke und Betten am alten Wohnort fachgerecht ab, transportieren alles sicher und bauen es im neuen Zuhause wieder auf. Gleichzeitig übernehmen wir die fachgerechte Entsorgung von Altmöbeln.",
+  },
+];
+
+const structuredDataGraph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MovingCompany",
+      "@id": "https://umzuegelandshut.de/#organization",
+      name: "Umzüge LAF",
+      url: "https://umzuegelandshut.de/",
+      logo: "https://umzuegelandshut.de/images/logo/laf-logo.png",
+      telephone: "+491629007565",
+      priceRange: "€€",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Ergoldinger Str. 15",
+        addressLocality: "Landshut",
+        postalCode: "84030",
+        addressRegion: "Bayern",
+        addressCountry: "DE",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 48.5529,
+        longitude: 12.1648,
+      },
+      areaServed: [
+        "Landshut",
+        "Ergolding",
+        "Altdorf",
+        "Essenbach",
+        "Kumhausen",
+        "Vilsbiburg",
+        "Moosburg an der Isar",
+        "Landkreis Landshut",
+      ],
+    },
+    {
+      "@type": "Service",
+      "@id": "https://umzuegelandshut.de/seniorenumzug-landshut/#service",
+      name: "Seniorenumzug Landshut",
+      url: "https://umzuegelandshut.de/seniorenumzug-landshut",
+      serviceType: "Seniorenumzug & Begleiteter Umzug",
+      description:
+        "Einfühlsamer Seniorenumzug in Landshut und Umgebung. Rundum-Sorglos-Service für Senioren und Angehörige: Einpackservice, Möbelmontage, Entsorgung und Pflegekassen-Abrechnung.",
+      provider: {
+        "@id": "https://umzuegelandshut.de/#organization",
+      },
+      areaServed: {
+        "@type": "City",
+        name: "Landshut",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://umzuegelandshut.de/seniorenumzug-landshut/#faq",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.a,
+        },
+      })),
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://umzuegelandshut.de/seniorenumzug-landshut/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Startseite",
+          item: "https://umzuegelandshut.de/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Seniorenumzug Landshut",
+          item: "https://umzuegelandshut.de/seniorenumzug-landshut",
+        },
+      ],
+    },
+  ],
+};
+---
+
+<Layout
+  title={meta.title}
+  description={meta.description}
+  keywords={meta.keywords}
+  canonical={meta.path}
+  image={meta.image}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(structuredDataGraph)}
+  />
+
+  <main class="min-h-screen bg-white text-slate-900">
+    <Header />
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="relative overflow-hidden bg-slate-950 pt-28 pb-16 text-white sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28">
+      {/* Background Hero Image */}
+      <div class="absolute inset-0 z-0 opacity-60">
+        <Image
+          src="/images/services/PU1.jpg"
+          alt="Umzüge LAF Seniorenumzug Landshut persönliche Beratung"
+          fill
+          priority
+          class="object-cover object-center sm:object-right"
+        />
+      </div>
+      <div class="absolute inset-0 z-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/30 sm:to-transparent"></div>
+      <div class="absolute inset-0 z-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/40"></div>
+
+      <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-4">
+          <Breadcrumbs
+            items={[
+              { label: "Leistungen", href: "/leistungen" },
+              { label: "Seniorenumzug Landshut" },
+            ]}
+          />
+        </div>
+
+        <div class="grid items-center gap-12 lg:grid-cols-12">
+          {/* Left Column Text */}
+          <div class="lg:col-span-7">
+            <div class="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-1.5 text-xs sm:text-sm font-bold text-amber-300 backdrop-blur-md">
+              <span class="flex h-2 w-2 rounded-full bg-amber-400"></span>
+              Rundum-Sorglos-Service für Senioren & Angehörige
+            </div>
+
+            <h1 class="mt-6 text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.15]">
+              Seniorenumzug Landshut: <span class="text-amber-400">Sicher, einfühlsam</span> & persönlich umziehen
+            </h1>
+
+            <p class="mt-6 text-base sm:text-lg leading-relaxed text-slate-300">
+              Ein Umzug im Alter oder der Wechsel in ein barrierefreies Zuhause bzw. eine Seniorenresidenz ist ein großer Lebensschritt. Umzüge LAF steht Ihnen und Ihrer Familie mit Geduld, Respekt und tatkräftiger Hilfe zur Seite – vom Einpacken bis zur besenreinen Wohnungsübergabe.
+            </p>
+
+            {/* USPs List */}
+            <div class="mt-8 grid gap-3 sm:grid-cols-2 text-xs sm:text-sm font-bold text-slate-200">
+              <div class="flex items-center gap-2">
+                <span class="flex h-5 w-5 items-center justify-center rounded-full bg-amber-400 text-slate-950 font-black text-xs">✓</span>
+                <span>Kostenlose persönliche Vor-Ort-Besichtigung</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="flex h-5 w-5 items-center justify-center rounded-full bg-amber-400 text-slate-950 font-black text-xs">✓</span>
+                <span>Bis zu 4.000 € Pflegekassenzuschuss</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="flex h-5 w-5 items-center justify-center rounded-full bg-amber-400 text-slate-950 font-black text-xs">✓</span>
+                <span>Bruchsicherer Ein- & Auspackservice</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="flex h-5 w-5 items-center justify-center rounded-full bg-amber-400 text-slate-950 font-black text-xs">✓</span>
+                <span>Möbelmontage & Lampenanschluss</span>
+              </div>
+            </div>
+
+            <div class="mt-10 flex flex-wrap items-center gap-3 sm:gap-4">
+              <a
+                href="#beratung"
+                class="inline-flex items-center justify-center gap-2 rounded-2xl bg-amber-500 px-7 py-3.5 text-sm sm:text-base font-black text-slate-950 shadow-xl shadow-amber-500/25 transition hover:bg-amber-400 hover:scale-105"
+              >
+                <span>Persönliche Beratung ↓</span>
+              </a>
+              <a
+                href="#termin-reservierung"
+                class="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-amber-400/80 bg-slate-900/90 px-6 py-3.5 text-sm sm:text-base font-black text-amber-300 transition hover:bg-slate-800"
+              >
+                <span>📅 Online Termin buchen</span>
+              </a>
+              <a
+                href="tel:+491629007565"
+                class="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-700 bg-slate-800/80 px-6 py-3.5 text-sm sm:text-base font-bold text-white transition hover:bg-slate-700"
+              >
+                <svg class="h-5 w-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span>0162 900 75 65</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Right Column Form */}
+          <div id="beratung" class="lg:col-span-5">
+            <SeniorenumzugForm client:load />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PFLEGEKASSE INFO BOX ================= -->
+    <section class="py-12 bg-amber-400 text-slate-950 border-b border-amber-500">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col items-center justify-between gap-6 md:flex-row">
+          <div class="flex items-center gap-4">
+            <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-slate-950 text-amber-400 text-2xl font-black">
+              €
+            </div>
+            <div>
+              <span class="rounded-full bg-slate-950/10 px-2.5 py-0.5 text-xs font-black uppercase tracking-wider text-slate-900">
+                Wichtiger Förder-Tipp (§ 40 Abs. 4 SGB XI)
+              </span>
+              <h3 class="text-xl font-black text-slate-950 sm:text-2xl mt-1">
+                Bis zu 4.000 € Pflegekassen-Zuschuss für Ihren Seniorenumzug
+              </h3>
+              <p class="mt-1 text-xs sm:text-sm font-semibold text-slate-900 max-w-2xl">
+                Besitzen Sie oder Ihre Angehörigen einen Pflegegrad (1–5)? Dann übernimmt die Pflegekasse bei einem Umzug in ein barrierefreies Umfeld oft bis zu 4.000 € der Kosten. Wir erstellen den passenden Kostenvoranschlag direkt für Ihre Kasse!
+              </p>
+            </div>
+          </div>
+
+          <a
+            href="tel:+491629007565"
+            class="shrink-0 rounded-2xl bg-slate-950 px-6 py-3.5 text-sm font-black text-white hover:bg-slate-800 transition"
+          >
+            Jetzt Kassen-Zuschuss prüfen
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BENEFITS GRID ================= -->
+    <section class="py-16 sm:py-24 bg-slate-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <span class="text-xs font-black uppercase tracking-wider text-amber-600">
+            Unser Versprechen
+          </span>
+          <h2 class="mt-2 text-2xl font-black text-slate-900 sm:text-4xl">
+            Full-Service Seniorenumzug: Komplette Entlastung für Senioren und Angehörige
+          </h2>
+          <p class="mt-3 text-sm sm:text-base text-slate-600">
+            Wir sind kein anonymer Großkonzern, sondern ein inhabergeführtes Landshuter Umzugsunternehmen mit Herz und Verlässlichkeit.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {benefits.map((b) => (
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm transition hover:shadow-md hover:border-amber-300">
+              <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-400/20 text-amber-800 font-black">
+                ★
+              </div>
+              <h3 class="mt-4 text-lg font-bold text-slate-900">{b.title}</h3>
+              <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                {b.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 5-STEP PROCESS ================= -->
+    <section class="py-16 sm:py-24 bg-white border-t border-slate-200">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <span class="text-xs font-black uppercase tracking-wider text-amber-600">
+            Schritt für Schritt
+          </span>
+          <h2 class="mt-2 text-2xl font-black text-slate-900 sm:text-4xl">
+            So begleiten wir Ihren Seniorenumzug stressfrei
+          </h2>
+          <p class="mt-3 text-sm sm:text-base text-slate-600">
+            Ein klarer, transparenter Ablauf schenkt Senioren und der ganzen Familie Sicherheit und Gelassenheit.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-6 md:grid-cols-5">
+          {steps.map((s) => (
+            <div class="relative rounded-2xl border border-slate-200 bg-slate-50/70 p-5 flex flex-col justify-between">
+              <div>
+                <span class="text-2xl font-black text-amber-500">{s.step}</span>
+                <h3 class="mt-2 text-base font-bold text-slate-900">{s.title}</h3>
+                <p class="mt-2 text-xs text-slate-600 leading-relaxed">{s.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ SECTION ================= -->
+    <section class="py-16 sm:py-24 bg-slate-50 border-t border-slate-200">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <span class="text-xs font-black uppercase tracking-wider text-amber-600">
+            Häufige Fragen
+          </span>
+          <h2 class="mt-2 text-2xl font-black text-slate-900 sm:text-4xl">
+            FAQ zum Seniorenumzug in Landshut
+          </h2>
+          <p class="mt-3 text-sm text-slate-600">
+            Wissenswertes für Senioren, Töchter, Söhne und gesetzliche Betreuer.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          {faqs.map((faq, index) => (
+            <details
+              class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition open:shadow-md"
+              open={index === 0}
+            >
+              <summary class="flex cursor-pointer items-center justify-between text-base font-bold text-slate-900 select-none">
+                <span>{faq.q}</span>
+                <span class="ml-4 flex h-7 w-7 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition group-open:rotate-180 group-open:bg-amber-400 group-open:text-slate-950">
+                  ↓
+                </span>
+              </summary>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600 border-t border-slate-100 pt-3">
+                {faq.a}
+              </p>
+            </details>
+          ))}
+        </div>
+
+        <div class="mt-12 text-center rounded-3xl bg-slate-900 text-white p-8 sm:p-10 shadow-xl">
+          <h3 class="text-xl font-bold sm:text-2xl text-white">
+            Wünschen Sie ein persönliches Kennenlernen vor Ort?
+          </h3>
+          <p class="mt-2 text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
+            Rufen Sie uns unverbindlich an. Wir vereinbaren einen kostenlosen Besuchstermin bei Ihnen zu Hause in Landshut oder Umgebung.
+          </p>
+          <div class="mt-6 flex flex-wrap justify-center gap-4">
+            <a
+              href="tel:+491629007565"
+              class="inline-flex items-center gap-2 rounded-xl bg-amber-500 px-6 py-3.5 text-sm font-black text-slate-950 hover:bg-amber-400 transition"
+            >
+              0162 900 75 65 anrufen
+            </a>
+            <a
+              href="#beratung"
+              class="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-800 px-6 py-3.5 text-sm font-bold text-white hover:bg-slate-700 transition"
+            >
+              Rückruf anfordern
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ONLINE TERMIN RESERVIERUNG ================= -->
+    <section id="termin-reservierung" class="py-16 sm:py-24 bg-slate-900 text-white scroll-mt-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center mb-10">
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-amber-400/20 px-3.5 py-1.5 text-xs font-black text-amber-300">
+            <span>📅</span>
+            <span>Online-Kalender · Sofortige Bestätigung</span>
+          </span>
+          <h2 class="mt-3 text-2xl sm:text-4xl font-black text-white">
+            Termin für Seniorenumzug-Erstgespräch online reservieren
+          </h2>
+          <p class="mt-3 text-sm sm:text-base text-slate-300">
+            Wählen Sie einfach einen freien Termin im Kalender aus. Wir kommen pünktlich, freundlich und in aller Ruhe zu Ihnen nach Hause in Landshut oder Umgebung, um alle Einzelheiten zu besprechen.
+          </p>
+        </div>
+
+        <BookingCalendar client:visible />
+      </div>
+    </section>
+
+    <!-- ================= SCHNELL-ANFRAGEFORMULAR ================= -->
+    <section id="anfrage-formular" class="py-16 sm:py-24 bg-white border-t border-slate-200 scroll-mt-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div>
+            <span class="text-xs font-black uppercase tracking-wider text-amber-600">
+              Direktnachricht
+            </span>
+            <h2 class="mt-2 text-2xl sm:text-4xl font-black text-slate-900">
+              Haben Sie Fragen zum Seniorenumzug oder zur Pflegekasse?
+            </h2>
+            <p class="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
+              Ob Angehörige, Betreuer oder Senioren selbst: Schreiben Sie uns kurz Ihre Kontaktdaten und Ihr Anliegen. Wir melden uns verständnisvoll und persönlich bei Ihnen.
+            </p>
+
+            <div class="mt-8 space-y-4">
+              <div class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-400 text-slate-950 font-black text-xs">✓</span>
+                <div>
+                  <h3 class="text-sm font-bold text-slate-900">Geduldige Vor-Ort-Beratung</h3>
+                  <p class="text-xs text-slate-500 mt-0.5">Wir nehmen uns die nötige Zeit für alle Fragen rund um Möbel und Erinnerungsstücke.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-400 text-slate-950 font-black text-xs">✓</span>
+                <div>
+                  <h3 class="text-sm font-bold text-slate-900">Kostenübernahme durch Pflegekasse</h3>
+                  <p class="text-xs text-slate-500 mt-0.5">Erstellung des formellen Kostenvoranschlags für bis zu 4.000 € Zuschuss.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-400 text-slate-950 font-black text-xs">✓</span>
+                <div>
+                  <h3 class="text-sm font-bold text-slate-900">Besenreine Übergabe der alten Wohnung</h3>
+                  <p class="text-xs text-slate-500 mt-0.5">Komplette Entlastung der Familie von Entrümpelung bis Schlüsselübergabe.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-xl">
+            <h3 class="text-lg font-bold text-slate-900 mb-1">
+              Nachricht senden &amp; Rückruf erhalten
+            </h3>
+            <p class="text-xs text-slate-500 mb-6">
+              Wir antworten Ihnen garantiert innerhalb von 4 Stunden.
+            </p>
+            <ContactForm client:visible />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local Area Links -->
+    <LocalSeoLinks />
+  </main>
+
+  <Footer />
+</Layout>
