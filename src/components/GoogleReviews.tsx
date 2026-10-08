@@ -43,8 +43,7 @@ export default function GoogleReviews() {
               Echte Kundenstimmen aus Landshut &amp; Region
             </h2>
             <p className="mt-2 text-sm sm:text-base text-slate-400 max-w-2xl">
-              100% zufriedene Kunden. Lesen Sie, was unsere Kunden über unsere Pünktlichkeit,
-              Sorgfalt und faire Festpreise auf Google sagen.
+              Lesen Sie, wie Kunden unsere Arbeit auf Google bewerten.
             </p>
           </div>
 

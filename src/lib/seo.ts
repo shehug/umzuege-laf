@@ -97,7 +97,7 @@ export const seoPages = {
   home: {
     title: "Umzüge Landshut » Ihr zuverlässiger Umzugsservice | Umzüge LAF",
     description:
-      "★ 5.0 Sterne für Umzüge in Landshut: Ihr Partner für Privatumzug, Firmenumzug, Montage & Entrümpelung. 100% Festpreis-Garantie & Angebot in 4 Std.! Jetzt anfragen.",
+      "Umzüge LAF für Umzüge in Landshut und Umgebung: Privatumzug, Firmenumzug, Möbelmontage und Entrümpelung. Jetzt kostenloses Angebot anfordern.",
     path: "/",
     keywords: [
       "Umzüge Landshut",

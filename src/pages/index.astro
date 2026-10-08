@@ -19,8 +19,8 @@ const trustPillars = [
     icon: "💶",
   },
   {
-    title: "Voll versichert",
-    desc: "Ihre Möbel & Wertsachen sind während des gesamten Transports optimal geschützt.",
+    title: "Versicherter Umzug",
+    desc: "Umzüge LAF verfügt über Versicherungsschutz für Umzugsleistungen. Fragen zum Umfang und zu den Bedingungen klären wir vor der Beauftragung.",
     icon: "🛡️",
   },
   {
@@ -29,8 +29,8 @@ const trustPillars = [
     icon: "📍",
   },
   {
-    title: "Antwort in 4 Stunden",
-    desc: "Verbindliches Angebot innerhalb von 4 Stunden nach Ihrer Anfrage.",
+    title: "Angebot in 4 Stunden während der Geschäftszeiten",
+    desc: "Bei vollständigen Angaben zu Ihrem Umzug erhalten Sie während unserer Geschäftszeiten innerhalb von vier Stunden ein Angebot. Geschäftszeiten: Mo–Sa, 08:00–18:00 Uhr. Außerhalb dieser Zeiten beginnt die Vier-Stunden-Frist mit dem nächsten Geschäftszeitbeginn. Gezählt werden ausschließlich Stunden innerhalb der Geschäftszeiten.",
     icon: "⏱️",
   },
 ];
@@ -75,7 +75,7 @@ const steps = [
   {
     num: "2",
     title: "Verbindliches Festpreis-Angebot",
-    text: "Sie erhalten innerhalb von 4 Stunden ein transparentes, faires Angebot ohne versteckte Kosten.",
+    text: "Bei vollständigen Angaben zu Ihrem Umzug erhalten Sie während unserer Geschäftszeiten innerhalb von vier Stunden ein Angebot. Geschäftszeiten: Mo–Sa, 08:00–18:00 Uhr. Außerhalb dieser Zeiten beginnt die Vier-Stunden-Frist mit dem nächsten Geschäftszeitbeginn. Gezählt werden ausschließlich Stunden innerhalb der Geschäftszeiten.",
   },
   {
     num: "3",
@@ -91,11 +91,11 @@ const homeFaqs = [
   },
   {
     q: "Wie schnell erhalte ich mein Umzugsangebot?",
-    a: "Wir garantieren Ihnen eine persönliche Rückmeldung und ein transparentes Angebot innerhalb von maximal 4 Stunden während unserer Geschäftszeiten (Mo–Sa: 08:00 – 18:00 Uhr).",
+    a: "Bei vollständigen Angaben zu Ihrem Umzug erhalten Sie innerhalb von vier Stunden während unserer Geschäftszeiten ein Angebot. Wir sind Montag bis Samstag von 08:00 bis 18:00 Uhr erreichbar. Für Anfragen außerhalb dieser Zeiten beginnt die Vier-Stunden-Frist mit dem nächsten Geschäftszeitbeginn. Gezählt werden ausschließlich Stunden innerhalb unserer Geschäftszeiten.",
   },
   {
     q: "Sind meine Möbel beim Transport versichert?",
-    a: "Ja, alle Transporte, Tragearbeiten und Montageservices sind selbstverständlich vollumfänglich nach gesetzlichen deutschen Transportstandards versichert.",
+    a: "Umzüge LAF verfügt über Versicherungsschutz für Umzugsleistungen. Welche Leistungen und Gegenstände im konkreten Auftrag versichert sind und welche Bedingungen gelten, klären wir vor der Beauftragung.",
   },
   {
     q: "Sind auch kurzfristige Umzugstermine möglich?",
@@ -195,7 +195,7 @@ const meta = createSeoMetadata(seoPages.home);
                 </div>
                 <div class="flex items-center gap-2 group cursor-default">
                   <NikeCheck delay="1s" />
-                  <span class="transition-colors group-hover:text-white">Antwort in 4 Std.</span>
+                  <span class="transition-colors group-hover:text-white">Angebot in 4 Stunden während der Geschäftszeiten</span>
                 </div>
               </div>
             </div>
@@ -369,8 +369,10 @@ const meta = createSeoMetadata(seoPages.home);
               </h2>
 
               <p class="mt-4 text-base text-slate-300 leading-relaxed">
-                Ob 1-Zimmer-Wohnung, Einfamilienhaus oder Büro: Teilen Sie uns kurz
-                Ihre Eckdaten mit. Wir melden uns innerhalb von 4 Stunden mit einem fairen Festpreis bei Ihnen.
+                Teilen Sie uns Startadresse, Zieladresse, Terminwunsch und den Umfang Ihres Umzugs mit. Bei vollständigen Angaben erhalten Sie während unserer Geschäftszeiten innerhalb von vier Stunden ein Angebot.
+              </p>
+              <p class="mt-2 text-xs sm:text-sm text-slate-400 leading-relaxed">
+                Geschäftszeiten: Mo–Sa, 08:00–18:00 Uhr. Außerhalb dieser Zeiten beginnt die Vier-Stunden-Frist mit dem nächsten Geschäftszeitbeginn. Gezählt werden ausschließlich Stunden innerhalb der Geschäftszeiten.
               </p>
 
               <div class="mt-8 rounded-2xl border border-slate-700 bg-slate-800/60 p-6">
@@ -447,8 +449,8 @@ const meta = createSeoMetadata(seoPages.home);
                 <p class="mt-2 text-xs leading-relaxed text-slate-600">Verbindliche Angebote ohne Nachverhandlungen oder versteckte Extrakosten.</p>
               </div>
               <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                <p class="text-base font-black text-slate-900">Voll abgesichert: Transportversicherung und Betriebshaftpflicht inklusive</p>
-                <p class="mt-2 text-xs leading-relaxed text-slate-600">Voller Versicherungsschutz für all Ihre wertvollen Möbel und Kartons bei jedem Transport.</p>
+                <p class="text-base font-black text-slate-900">Versicherter Umzug</p>
+                <p class="mt-2 text-xs leading-relaxed text-slate-600">Umzüge LAF verfügt über Versicherungsschutz für Umzugsleistungen. Fragen zum Umfang und zu den Bedingungen klären wir vor der Beauftragung.</p>
               </div>
               <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                 <p class="text-base font-black text-slate-900">Möbelmontage & Packservice</p>
@@ -456,7 +458,7 @@ const meta = createSeoMetadata(seoPages.home);
               </div>
               <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                 <p class="text-base font-black text-slate-900">Express & Spontantermine</p>
-                <p class="mt-2 text-xs leading-relaxed text-slate-600">Schnelle Rückmeldung innerhalb von 4 Stunden und flexible Terminvergabe.</p>
+                <p class="mt-2 text-xs leading-relaxed text-slate-600">Bei vollständigen Angaben zu Ihrem Umzug erhalten Sie während unserer Geschäftszeiten innerhalb von vier Stunden ein Angebot. Geschäftszeiten: Mo–Sa, 08:00–18:00 Uhr. Außerhalb dieser Zeiten beginnt die Vier-Stunden-Frist mit dem nächsten Geschäftszeitbeginn. Gezählt werden ausschließlich Stunden innerhalb der Geschäftszeiten.</p>
               </div>
             </div>
           </div>
