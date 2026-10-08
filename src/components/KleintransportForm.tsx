@@ -103,7 +103,7 @@ E-Mail: ${email || "Keine"}
           Kleintransport in Landshut anfragen
         </h3>
         <p className="mt-1 text-xs sm:text-sm text-slate-600">
-          Spontaner Termin noch heute oder zum Wunschdatum. 100% faire Festpreise.
+          Transportdaten übermitteln und ein individuelles Angebot anfordern. Kurzfristige Termine sind nach Verfügbarkeit möglich.
         </p>
       </div>
 
