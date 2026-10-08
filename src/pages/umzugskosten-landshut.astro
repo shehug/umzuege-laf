@@ -9,104 +9,37 @@ import UmzugskostenFunnel from "@/components/UmzugskostenFunnel";
 import ContactForm from "@/components/ContactForm";
 import BookingCalendar from "@/components/BookingCalendar";
 import { seoPages } from "@/lib/seo";
+import {
+  tableRows,
+  CALCULATION_DISCLAIMER,
+  MONTAGE_DISCLAIMER,
+  BUSINESS_HOURS_PROMISE,
+  faqs,
+} from "@/lib/umzugskosten";
 
 const meta = seoPages.umzugskosten;
-
-const priceTable = [
-  {
-    type: "1-Zimmer-Wohnung",
-    area: "30 – 40 m²",
-    volume: "10 – 15 m³",
-    basicPrice: "350 € – 550 €",
-    withMontagePrice: "470 € – 750 €",
-    popular: false,
-  },
-  {
-    type: "2-Zimmer-Wohnung",
-    area: "50 – 65 m²",
-    volume: "15 – 25 m³",
-    basicPrice: "550 € – 850 €",
-    withMontagePrice: "750 € – 1.150 €",
-    popular: true,
-  },
-  {
-    type: "3-Zimmer-Wohnung",
-    area: "70 – 90 m²",
-    volume: "25 – 35 m³",
-    basicPrice: "850 € – 1.250 €",
-    withMontagePrice: "1.150 € – 1.650 €",
-    popular: false,
-  },
-  {
-    type: "4-Zimmer-Wohnung",
-    area: "95 – 120 m²",
-    volume: "35 – 50 m³",
-    basicPrice: "1.250 € – 1.750 €",
-    withMontagePrice: "1.650 € – 2.300 €",
-    popular: false,
-  },
-  {
-    type: "Einfamilienhaus",
-    area: "> 130 m²",
-    volume: "50 – 80+ m³",
-    basicPrice: "ab 1.750 €",
-    withMontagePrice: "ab 2.350 €",
-    popular: false,
-  },
-];
 
 const additionalCosts = [
   {
     title: "Halteverbotszone Landshut",
-    price: "120 € – 160 €",
-    unit: "pauschal inkl. Behördengebühr",
-    desc: "Behördliche Beantragung bei der Stadt Landshut, amtliche Genehmigung, fristgerechtes Aufstellen und Wiederabholen der Halteverbotsschilder.",
+    price: "Auf Anfrage",
+    unit: "Kosten nach Prüfung von Standort, Dauer und erforderlicher Genehmigung.",
+    desc: "Behördliche Beantragung bei der Stadt Landshut, amtliche Genehmigung sowie fristgerechtes Aufstellen und Wiederabholen der Halteverbotsschilder.",
     badge: "Empfohlen für Altstadt & enge Straßen",
   },
   {
-    title: "Möbel- & Küchenmontage",
-    price: "40 € – 55 €",
-    unit: "pro Monteur / Stunde",
-    desc: "Fachgerechter Abbau und Wiederaufbau von Schränken, Betten, Wohnwänden sowie maßgenaue Anpassung von Arbeitsplatten und Einbauküchen.",
-    badge: "Inkl. Profi-Werkzeug",
+    title: "Möbelmontage",
+    price: "Aufwand abhängig",
+    unit: "Aufwand abhängig von Möbeln und vereinbartem Leistungsumfang.",
+    desc: "Fachgerechter Abbau und Wiederaufbau von Schränken, Betten und Standardmöbeln durch erfahrene Monteure. Küchenmontage, Anpassungsarbeiten und Anschlüsse gesondert auf Anfrage.",
+    badge: "Fachgerechte Durchführung",
   },
   {
-    title: "Etagenzuschlag ohne Aufzug",
-    price: "50 € – 100 €",
-    unit: "pro Etage (ab 2. OG)",
-    desc: "Faire Entlastungspauschale bei hohen Stockwerken und langen Tragewegen ohne Personen- oder Lastenaufzug.",
-    badge: "Entfällt bei Aufzugsnutzung",
-  },
-];
-
-const faqs = [
-  {
-    q: "Was kostet ein Umzugsunternehmen in Landshut im Durchschnitt?",
-    a: "Was kostet ein Umzugsunternehmen in Landshut? Die Kosten beginnen im Nahbereich bei ca. 350 € bis 550 € für eine 1-Zimmer-Wohnung. Für eine typische 2- bis 3-Zimmer-Wohnung (60 bis 80 m²) liegen die Kosten meist zwischen 550 € und 1.250 €. Bei Buchung inklusive professioneller Möbel- und Küchenmontage (40–55 € pro Stunde) liegt der Preis zwischen 750 € und 1.650 €.",
-  },
-  {
-    q: "Umzug 1 Zimmer Wohnung Kosten Landshut: Womit muss ich rechnen?",
-    a: "Für einen Umzug 1 Zimmer Wohnung Kosten Landshut können Sie im Nahbereich mit etwa 350 € bis 550 € im Basis-Tarif (LKW + 2 Möbelträger) rechnen. Je nach Stockwerk und Eigenleistung erhalten Sie bei uns einen garantierten Festpreis.",
-  },
-  {
-    q: "Umzug 3 Zimmer Wohnung Preis Landshut: Wie hoch sind die Gesamtkosten?",
-    a: "Der Umzug 3 Zimmer Wohnung Preis Landshut liegt erfahrungsgemäß zwischen 850 € und 1.450 € für einen Kompletttransport. Mit unserem Tool (Umzugskosten Rechner online Landshut Umland) erhalten Sie in wenigen Minuten eine genaue Kostenschätzung.",
-  },
-  {
-    q: "Bieten Sie den Umzug Landshut nach München zum Festpreis an?",
-    a: "Ja, für die Route Umzug Landshut nach München Festpreis bieten wir verbindliche Pauschalen an. Die rund 75 km Fahrtstrecke kalkulieren wir ohne Risiko von Stauaufschlägen oder versteckten Kilometersätzen.",
-  },
-  {
-    q: "Halteverbotszone beantragen Umzug Stadt Landshut: Wie funktioniert das?",
-    a: "Wer eine Halteverbotszone beantragen Umzug Stadt Landshut benötigt, erhält bei uns den kompletten Service: Wir reichen den Antrag bei der Straßenverkehrsbehörde Landshut ein, stellen die Schilder vorschriftsmäßig 72 Stunden vor Umzugsbeginn auf und holen sie wieder ab.",
-  },
-  {
-    q: "Küche abbauen und aufbauen lassen Umzug Landshut: Was kostet der Montageservice?",
-    a: "Für Küche abbauen und aufbauen lassen Umzug Landshut berechnen wir für geschulte Fachmonteure faire 40 € bis 55 € pro Stunde inkl. Profi-Werkzeug, inklusive Anpassung der Arbeitsplatte und fachgerechtem Anschluss.",
-  },
-  {
-    q: "Bietet Umzüge LAF verbindliche Umzugsfirma Landshut Festpreis Angebote?",
-    a: "Ja, zu 100%. Unsere Umzugsfirma Landshut Festpreis Angebote sind garantiert bindend. Nach einer genauen Vorab-Besichtigung oder detaillierten Absprache erhalten Sie ein schriftliches Angebot – ohne einen Cent versteckter Kosten.",
+    title: "Etagen & Tragewege",
+    price: "Individuell",
+    unit: "Berücksichtigung im individuellen Angebot.",
+    desc: "Stockwerke ohne Personen- oder Lastenaufzug sowie lange Tragewege fließen in die individuelle Angebotskalkulation ein.",
+    badge: "Abhängig von den Bedingungen vor Ort",
   },
 ];
 
@@ -158,21 +91,15 @@ const structuredDataGraph = {
       "@id": "https://umzuegelandshut.de/umzugskosten-landshut/#service",
       name: "Umzugskosten Landshut & Preistransparenz",
       url: "https://umzuegelandshut.de/umzugskosten-landshut",
-      serviceType: "Umzugskostenrechner & Umzugspreise",
+      serviceType: "Umzugskostenrechner & Kostenschätzung",
       description:
-        "Transparente Umzugskosten und verbindliche Festpreisangebote für Umzüge in Landshut und Umgebung. Richtpreise für 1- bis 4-Zimmer-Wohnungen und Häuser.",
+        "Umzugskostenrechner mit unverbindlichen Modellschätzungen für Umzüge in Landshut und Umgebung.",
       provider: {
         "@id": "https://umzuegelandshut.de/#organization",
       },
       areaServed: {
         "@type": "City",
         name: "Landshut",
-      },
-      offers: {
-        "@type": "Offer",
-        priceCurrency: "EUR",
-        priceRange: "350€ - 2950€",
-        url: "https://umzuegelandshut.de/umzugskosten-landshut",
       },
     },
     {
@@ -253,15 +180,15 @@ const structuredDataGraph = {
 
           <div class="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-1.5 text-xs sm:text-sm font-bold text-amber-300 backdrop-blur-md">
             <span class="flex h-2 w-2 rounded-full bg-amber-400 animate-ping"></span>
-            Echte Richtpreise & Transparenz 2026/2027
+            Unverbindliche Richtwerte &amp; Modellschätzung
           </div>
 
           <h1 class="mt-6 text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.15]">
-            Umzugskosten in Landshut: <span class="text-amber-400">Transparente Preise</span> & Richtwerte
+            Umzugskosten in Landshut: <span class="text-amber-400">Kosten unverbindlich einschätzen</span>
           </h1>
 
           <p class="mt-6 text-base sm:text-lg leading-relaxed text-slate-300">
-            Schluss mit undurchsichtigen Lockangeboten: Was kostet ein Umzug in Landshut und Umgebung wirklich? Hier finden Sie reale Preiskorridore für 1- bis 4-Zimmer-Wohnungen und Häuser – mit <strong>100% Festpreis-Garantie</strong> und ohne versteckte Nachforderungen.
+            Was kostet Ihr Umzug in Landshut und Umgebung? Unsere Beispielwerte und der Umzugskostenrechner geben Ihnen eine erste Orientierung für die Budgetplanung. Den tatsächlichen Preis ermitteln wir nach Prüfung Ihrer Angaben und des gewünschten Leistungsumfangs.
           </p>
 
           {/* Trust Badges */}
@@ -270,13 +197,13 @@ const structuredDataGraph = {
               <svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
-              <span>Verbindliche Festpreis-Garantie</span>
+              <span>Unverbindliche Kostenschätzung</span>
             </div>
             <div class="flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-800/80 px-3.5 py-2 backdrop-blur-sm">
               <svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
-              <span>Antwort in maximal 4 Stunden</span>
+              <span>Rückmeldung während der Geschäftszeiten</span>
             </div>
             <div class="flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-800/80 px-3.5 py-2 backdrop-blur-sm">
               <svg class="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
@@ -327,36 +254,42 @@ const structuredDataGraph = {
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-3xl text-center">
           <span class="text-xs font-black uppercase tracking-wider text-amber-600">
-            Orientierung & Kostentransparenz
+            Orientierung &amp; Kostentransparenz
           </span>
           <h2 class="mt-2 text-2xl font-black text-slate-900 sm:text-4xl">
-            Was kostet ein Umzug in Landshut? Preistabelle nach Wohnungsgröße
+            Beispielhafte Kostenschätzungen für einen Nahumzug
           </h2>
           <p class="mt-4 text-sm sm:text-base leading-relaxed text-slate-600">
-            Um absolute Kostensicherheit zu gewährleisten, orientieren sich seriöse Umzüge an Wohnfläche, Möbelvolumen und gewünschtem Leistungsumfang. Alle Richtwerte verstehen sich inkl. Umzugs-LKW, Personal und voller Transportversicherung.
+            Die folgende Übersicht zeigt typische Modellbeispiele für einen Nahumzug im Raum Landshut bei durchschnittlicher Ausstattung.
           </p>
         </div>
 
+        {/* Visible Disclaimer directly at the table */}
+        <div class="mt-8 mx-auto max-w-4xl rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 text-xs sm:text-sm leading-relaxed text-slate-700 shadow-sm">
+          <strong class="font-bold text-slate-900 block mb-1">Hinweis zur Kostenschätzung:</strong>
+          <p>{CALCULATION_DISCLAIMER}</p>
+        </div>
+
         {/* Desktop HTML Table */}
-        <div class="mt-12 hidden overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl md:block">
+        <div class="mt-10 hidden overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl md:block">
           <table class="w-full text-left border-collapse">
             <thead>
               <tr class="border-b border-slate-200 bg-slate-900 text-white text-xs uppercase tracking-wider">
                 <th class="p-5 font-black">Wohnungsgröße</th>
                 <th class="p-5 font-black">Volumen (ca.)</th>
-                <th class="p-5 font-black">Basis-Umzug (Nahbereich)</th>
-                <th class="p-5 font-black bg-amber-500/20 text-amber-300">Inkl. Möbel- &amp; Küchenmontage</th>
+                <th class="p-5 font-black">Basis-Schätzung (Nahumzug)</th>
+                <th class="p-5 font-black bg-amber-500/20 text-amber-300">Mit geschätzter Möbelmontage</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-slate-100 text-sm">
-              {priceTable.map((row) => (
+              {tableRows.map((row) => (
                 <tr class={`transition hover:bg-slate-50 ${row.popular ? "bg-amber-50/40" : ""}`}>
                   <td class="p-5 font-bold text-slate-900">
                     <div class="flex items-center gap-2">
                       <span>{row.type}</span>
                       {row.popular && (
                         <span class="rounded-full bg-amber-400 px-2 py-0.5 text-[10px] font-black uppercase text-slate-950">
-                          Häufig gebucht
+                          Beispiel
                         </span>
                       )}
                     </div>
@@ -373,23 +306,23 @@ const structuredDataGraph = {
 
         {/* Mobile Cards (Zero CLS, responsive) */}
         <div class="mt-8 grid gap-4 md:hidden">
-          {priceTable.map((row) => (
+          {tableRows.map((row) => (
             <div class={`rounded-2xl border p-5 shadow-sm ${row.popular ? "border-amber-400 bg-amber-50/50" : "border-slate-200 bg-white"}`}>
               <div class="flex items-center justify-between">
                 <div>
                   <h3 class="text-base font-black text-slate-900">{row.type}</h3>
-                  <p class="text-xs text-slate-500">{row.area} · ca. {row.volume}</p>
+                  <p class="text-xs text-slate-500">{row.area} · {row.volume}</p>
                 </div>
                 {row.popular && (
                   <span class="rounded-full bg-amber-400 px-2.5 py-0.5 text-[10px] font-black uppercase text-slate-950">
-                    Beliebt
+                    Beispiel
                   </span>
                 )}
               </div>
 
               <div class="mt-4 grid grid-cols-2 gap-2 border-t border-slate-200/80 pt-4">
                 <div>
-                  <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Basis-Umzug</span>
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Basis-Schätzung</span>
                   <div class="mt-0.5 text-base font-black text-slate-900">{row.basicPrice}</div>
                 </div>
                 <div>
@@ -404,12 +337,12 @@ const structuredDataGraph = {
         {/* Legend / Info explanation */}
         <div class="mt-8 grid gap-4 sm:grid-cols-2 rounded-2xl border border-slate-200 bg-white p-6 text-xs sm:text-sm text-slate-600">
           <div>
-            <strong class="font-bold text-slate-900 block mb-1">Was bedeutet Basis-Umzug?</strong>
-            Transport Ihrer bereits gepackten Kisten und demontierten Möbel. Inklusive Bereitstellung des passenden Umzugs-LKWs, Anfahrt in Landshut, 2 bis 3 erfahrene Möbelträger und professionelle Ladungssicherung.
+            <strong class="font-bold text-slate-900 block mb-1">Was bedeutet die Basis-Schätzung?</strong>
+            Transport Ihrer bereits gepackten Kisten und demontierten Möbel im Nahbereich Landshut. Inklusive Bereitstellung des passenden Umzugsfahrzeugs, erfahrene Umzugskräfte und professionelle Ladungssicherung.
           </div>
           <div>
-            <strong class="font-bold text-slate-900 block mb-1">Was beinhaltet der Service mit Möbelmontage?</strong>
-            Fachgerechte Möbel- und Küchendemontage sowie Wiederaufbau in der neuen Wohnung durch erfahrene Monteure (40–55 € pro Stunde).
+            <strong class="font-bold text-slate-900 block mb-1">Was beinhaltet die Variante mit Möbelmontage?</strong>
+            {MONTAGE_DISCLAIMER}
           </div>
         </div>
       </div>
@@ -423,10 +356,10 @@ const structuredDataGraph = {
             Faire Einzelleistungen
           </span>
           <h2 class="mt-2 text-2xl font-black text-slate-900 sm:text-4xl">
-            Transparente Aufschlüsselung der Zusatzkosten
+            Transparente Übersicht möglicher Zusatzleistungen
           </h2>
           <p class="mt-4 text-sm sm:text-base leading-relaxed text-slate-600">
-            Jeder Umzug ist individuell. Damit Sie genau planen können, sind bei uns alle Zusatzleistungen transparent kalkuliert und jederzeit flexibel zubuchbar.
+            Jeder Umzug hat individuelle Rahmenbedingungen. Damit Sie verlässlich planen können, klären wir alle Zusatzleistungen transparent vorab.
           </p>
         </div>
 
@@ -470,10 +403,10 @@ const structuredDataGraph = {
             Online-Kostenrechner
           </span>
           <h2 class="mt-2 text-2xl font-black text-slate-900 sm:text-4xl">
-            Umzugskosten Rechner Online für Landshut & Umland: In 3 Schritten zum Festpreis
+            Umzugskostenrechner für Landshut und Umgebung
           </h2>
           <p class="mt-3 text-sm sm:text-base text-slate-600">
-            Wählen Sie Zimmeranzahl, Adressen und gewünschte Zusatzleistungen – wir berechnen Ihren individuellen Umzug und melden uns binnen 4 Stunden mit einem Festpreis-Angebot.
+            Wählen Sie Wohnungsgröße und Wohnfläche für eine erste Kostenschätzung. Anschließend können Sie Angaben zu Ihrem Umzug und gewünschten Zusatzleistungen übermitteln. Daraus erstellen wir Ihr individuelles Angebot.
           </p>
         </div>
 
@@ -486,7 +419,7 @@ const structuredDataGraph = {
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-3xl text-center">
           <span class="text-xs font-black uppercase tracking-wider text-amber-600">
-            Ratgeber & Expertise
+            Ratgeber &amp; Expertise
           </span>
           <h2 class="mt-2 text-2xl font-black text-slate-900 sm:text-3xl">
             Kostenfaktoren beim Umzug: Kubikmeter, Stockwerke und Transportweg
@@ -498,7 +431,7 @@ const structuredDataGraph = {
             <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-400 text-slate-950 font-black text-lg">
               1
             </div>
-            <h3 class="mt-4 text-base font-bold text-slate-900">Volumen & Wohnungsgröße</h3>
+            <h3 class="mt-4 text-base font-bold text-slate-900">Volumen &amp; Wohnungsgröße</h3>
             <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
               Die Kubikmeterzahl Ihrer Möbel und Kartons bestimmt die benötigte LKW-Größe (z.B. 3,5t Transporter oder 7,5t LKW) sowie die Anzahl der benötigten Umzugshelfer.
             </p>
@@ -508,9 +441,9 @@ const structuredDataGraph = {
             <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-400 text-slate-950 font-black text-lg">
               2
             </div>
-            <h3 class="mt-4 text-base font-bold text-slate-900">Laufwege & Parkplatz (Altstadt)</h3>
+            <h3 class="mt-4 text-base font-bold text-slate-900">Laufwege &amp; Parkmöglichkeiten</h3>
             <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
-              In der Landshuter Altstadt, Neustadt oder in verwinkelten Gassen sind die Zufahrten oft eng. Kurze Laufwege dank Halteverbotszone sparen bis zu 30% Zeit und Arbeitsaufwand.
+              In der Landshuter Altstadt oder engen Straßen sind Zufahrten oft begrenzt. Eine rechtzeitig behördlich genehmigte Halteverbotszone sorgt für kurze Tragewege und einen reibungslosen Ablauf.
             </p>
           </div>
 
@@ -518,9 +451,9 @@ const structuredDataGraph = {
             <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-400 text-slate-950 font-black text-lg">
               3
             </div>
-            <h3 class="mt-4 text-base font-bold text-slate-900">Möbelmontage & Spezialwünsche</h3>
+            <h3 class="mt-4 text-base font-bold text-slate-900">Möbelmontage &amp; Sonderwünsche</h3>
             <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Große Spiegelschränke, schwere Boxspringbetten oder Küchenmontagen erfordern erfahrenes Handwerker-Personal. Bei LAF erhalten Sie gelernte Monteure direkt aus einer Hand.
+              Große Schränke, Betten oder sperrige Möbelstücke erfordern handwerkliche Erfahrung. Nach vorheriger Absprache übernehmen unsere Monteure den fachgerechten Abbau und Wiederaufbau Ihrer Möbel.
             </p>
           </div>
         </div>
@@ -535,7 +468,7 @@ const structuredDataGraph = {
             Häufige Fragen
           </span>
           <h2 class="mt-2 text-2xl font-black text-slate-900 sm:text-4xl">
-            FAQ: Alles zu Umzugskosten & Ablauf
+            FAQ: Alles zu Umzugskosten &amp; Ablauf
           </h2>
           <p class="mt-3 text-sm text-slate-600">
             Transparente Antworten auf die wichtigsten Fragen rund um die Umzugspreise in Landshut.
@@ -600,7 +533,7 @@ const structuredDataGraph = {
             Wunschtermin für kostenlose Vor-Ort-Besichtigung reservieren
           </h2>
           <p class="mt-3 text-sm sm:text-base text-slate-300">
-            Wählen Sie direkt im Live-Kalender einen freien Tag und eine Uhrzeit aus. Unser Inhaber oder Einsatzleiter kommt persönlich bei Ihnen in Landshut oder Umgebung vorbei, begutachtet das Umzugsvolumen und erstellt Ihnen direkt vor Ort Ihr verbindliches Festpreis-Angebot.
+            Wählen Sie direkt im Live-Kalender einen freien Tag und eine Uhrzeit aus. Unser Inhaber oder Einsatzleiter kommt persönlich bei Ihnen in Landshut oder Umgebung vorbei, begutachtet das Umzugsvolumen und bespricht mit Ihnen alle Details für Ihr individuelles Angebot.
           </p>
         </div>
 
@@ -617,10 +550,10 @@ const structuredDataGraph = {
               Direktanfrage
             </span>
             <h2 class="mt-2 text-2xl sm:text-4xl font-black text-slate-900">
-              Jetzt Festpreis anfordern: Rückmeldung innerhalb von 4 Stunden garantiert
+              Ihr individuelles Umzugsangebot anfordern
             </h2>
             <p class="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
-              Sie möchten kein langes Formular ausfüllen? Hinterlassen Sie uns einfach kurz Ihre Start- und Zieldaten sowie Ihre Telefonnummer. Wir melden uns garantiert innerhalb von 4 Stunden bei Ihnen für ein maßgeschneidertes Angebot ohne versteckte Kosten.
+              {BUSINESS_HOURS_PROMISE}
             </p>
 
             <div class="mt-8 space-y-4">
@@ -629,8 +562,8 @@ const structuredDataGraph = {
                   ✓
                 </span>
                 <div>
-                  <h3 class="text-sm font-bold text-slate-900">Verbindlicher Festpreis</h3>
-                  <p class="text-xs text-slate-500 mt-0.5">Keine nachträglichen Überraschungen oder versteckten Stundensätze.</p>
+                  <h3 class="text-sm font-bold text-slate-900">Individuelles Festpreis-Angebot</h3>
+                  <p class="text-xs text-slate-500 mt-0.5">Nach Prüfung Ihrer Angaben erhalten Sie ein transparentes Angebot ohne versteckte Kosten.</p>
                 </div>
               </div>
 
@@ -649,8 +582,8 @@ const structuredDataGraph = {
                   ✓
                 </span>
                 <div>
-                  <h3 class="text-sm font-bold text-slate-900">Voll versicherter Transport</h3>
-                  <p class="text-xs text-slate-500 mt-0.5">Maximale Sicherheit für Möbel, Gläser und persönliche Erinnerungsstücke.</p>
+                  <h3 class="text-sm font-bold text-slate-900">Versicherungsschutz für Umzugsleistungen</h3>
+                  <p class="text-xs text-slate-500 mt-0.5">Umzüge LAF verfügt über Versicherungsschutz für Umzugsleistungen. Fragen zum Umfang und zu den Bedingungen klären wir vor der Beauftragung.</p>
                 </div>
               </div>
             </div>

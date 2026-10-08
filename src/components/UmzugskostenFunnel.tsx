@@ -2,48 +2,16 @@
 
 import { useState } from "react";
 import { trackContactFormSubmit } from "@/lib/gtmEvents";
-
-type RoomType = "1" | "2" | "3" | "4" | "haus";
-
-interface RoomPreset {
-  defaultSqm: number;
-  baseMin: number;
-  baseMax: number;
-  m3Factor: number;
-}
-
-const ROOM_DATA: Record<RoomType, RoomPreset> = {
-  "1": {
-    defaultSqm: 35,
-    baseMin: 350,
-    baseMax: 550,
-    m3Factor: 0.38,
-  },
-  "2": {
-    defaultSqm: 60,
-    baseMin: 550,
-    baseMax: 850,
-    m3Factor: 0.38,
-  },
-  "3": {
-    defaultSqm: 80,
-    baseMin: 850,
-    baseMax: 1250,
-    m3Factor: 0.38,
-  },
-  "4": {
-    defaultSqm: 105,
-    baseMin: 1250,
-    baseMax: 1750,
-    m3Factor: 0.40,
-  },
-  haus: {
-    defaultSqm: 140,
-    baseMin: 1750,
-    baseMax: 2600,
-    m3Factor: 0.42,
-  },
-};
+import {
+  ROOM_DATA,
+  type RoomType,
+  calculateMovingCost,
+  CALCULATION_DISCLAIMER,
+  MONTAGE_DISCLAIMER,
+  STEP2_DISCLAIMER,
+  STEP3_DISCLAIMER,
+  BUSINESS_HOURS_PROMISE,
+} from "@/lib/umzugskosten";
 
 export default function UmzugskostenFunnel() {
   const [step, setStep] = useState<1 | 2 | 3>(1);
@@ -81,31 +49,9 @@ export default function UmzugskostenFunnel() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  // Dynamic calculations in real-time as user moves the slider:
-  const currentData = ROOM_DATA[rooms];
-
-  // Calculated Volume directly from sqm
-  const calculatedVolume = Math.max(8, Math.round(sqm * currentData.m3Factor));
-
-  // Dynamic price calculation:
-  // As sqm increases or decreases, price scales smoothly in real time!
-  // Scale factor: 40% fixed (LKW, Anfahrt, Grundaufwand) + 60% variable (sqm / defaultSqm)
-  const sqmRatio = sqm / currentData.defaultSqm;
-  const scaleFactor = 0.4 + 0.6 * sqmRatio;
-
-  // Round to clean 10 € increments
-  const basicMin = Math.round((currentData.baseMin * scaleFactor) / 10) * 10;
-  const basicMax = Math.round((currentData.baseMax * scaleFactor) / 10) * 10;
-
-  // Möbelmontage: 40 - 55 € / Stunde
-  // Estimated montage hours scale with apartment size: ~0.05 to 0.075 hours per m²
-  const montageHoursMin = Math.max(2, Math.round(sqm * 0.05));
-  const montageHoursMax = Math.max(3, Math.round(sqm * 0.075));
-  const montageCostMin = montageHoursMin * 40;
-  const montageCostMax = montageHoursMax * 55;
-
-  const withMontageMin = basicMin + montageCostMin;
-  const withMontageMax = basicMax + montageCostMax;
+  // Dynamic calculation using the shared foundation
+  const calc = calculateMovingCost(rooms, sqm);
+  const { calculatedVolume, basicMin, basicMax, withMontageMin, withMontageMax } = calc;
 
   const handleRoomChange = (r: RoomType) => {
     setRooms(r);
@@ -135,8 +81,8 @@ export default function UmzugskostenFunnel() {
     };
 
     const selectedServicesList = [
-      services.montage ? "Möbel- & Küchenmontage (40–55 €/h)" : null,
-      services.halteverbot ? "Halteverbotszone Landshut" : null,
+      services.montage ? "Möbelmontage angefragt; Leistungsumfang und Preis noch abzustimmen" : null,
+      services.halteverbot ? "Halteverbotszone Landshut (nach Aufwand)" : null,
       services.entruempelung ? "Zusätzl. Entrümpelung" : null,
     ]
       .filter(Boolean)
@@ -204,7 +150,7 @@ Kunden-Bemerkung: ${notes || "Keine"}
           <div>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-400/20 px-3 py-1 text-xs font-bold text-amber-300">
               <span className="h-2 w-2 rounded-full bg-amber-400 animate-pulse"></span>
-              3-Schritte Festpreis-Rechner
+              Kostenschätzung &amp; Umzugsanfrage
             </span>
             <h3 className="mt-2 text-xl font-black tracking-tight text-white sm:text-2xl">
               Umzugskosten unverbindlich berechnen
@@ -325,33 +271,39 @@ Kunden-Bemerkung: ${notes || "Keine"}
                   ~ {calculatedVolume} <span className="text-lg font-bold text-amber-600">m³</span>
                 </div>
                 <p className="mt-1 text-xs text-slate-500">
-                  Richtwert für Möbel & ca. {Math.round(calculatedVolume * 1.5)} Kartons
+                  Richtwert für Möbel &amp; ca. {Math.round(calculatedVolume * 1.5)} Kartons
                 </p>
               </div>
 
               <div className="rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-sm">
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                  Basis-Umzug (Transport &amp; Tragen)
+                  Basis-Schätzung (Nahumzug)
                 </span>
                 <div className="mt-2 text-2xl font-black text-slate-900">
                   {basicMin} € – {basicMax} €
                 </div>
                 <p className="mt-1 text-xs text-slate-500">
-                  LKW, Fahrer &amp; Träger (Landshut &amp; 25 km)
+                  Orientierungswert für Transport &amp; Tragen im Raum Landshut
                 </p>
               </div>
 
               <div className="rounded-2xl border border-amber-300 bg-amber-50/60 p-5 text-center shadow-sm">
                 <span className="text-xs font-bold uppercase tracking-wider text-amber-800">
-                  Inkl. Möbel- &amp; Küchenmontage
+                  Mit geschätzter Möbelmontage
                 </span>
                 <div className="mt-2 text-2xl font-black text-amber-950">
                   {withMontageMin} € – {withMontageMax} €
                 </div>
                 <p className="mt-1 text-xs text-amber-800">
-                  Transport + Montage (40–55 €/h)
+                  Transport + angenommene Möbelmontage (40–55 €/h)
                 </p>
               </div>
+            </div>
+
+            {/* Visible Calculation Disclaimer */}
+            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-xs leading-relaxed text-slate-600 space-y-2">
+              <p className="font-semibold text-slate-800">{CALCULATION_DISCLAIMER}</p>
+              <p className="text-slate-500">{MONTAGE_DISCLAIMER}</p>
             </div>
 
             {/* Step 1 Actions */}
@@ -361,7 +313,7 @@ Kunden-Bemerkung: ${notes || "Keine"}
                 onClick={() => setStep(2)}
                 className="inline-flex items-center gap-2 rounded-xl bg-amber-500 px-7 py-3.5 text-base font-black text-slate-950 shadow-lg shadow-amber-500/25 transition hover:bg-amber-400 hover:shadow-xl"
               >
-                <span>Weiter zu Schritt 2: Adressen & Etagen</span>
+                <span>Weiter zu Schritt 2: Adressen &amp; Etagen</span>
                 <span>→</span>
               </button>
             </div>
@@ -373,11 +325,16 @@ Kunden-Bemerkung: ${notes || "Keine"}
           <div className="space-y-8 animate-fadeIn">
             <div>
               <label className="block text-sm font-black uppercase tracking-wider text-slate-500">
-                Schritt 2 von 3 · Auszug & Einzug
+                Schritt 2 von 3 · Auszug &amp; Einzug
               </label>
               <h4 className="mt-1 text-lg font-bold text-slate-900 sm:text-xl">
                 Wo startet und endet Ihr Umzug?
               </h4>
+            </div>
+
+            {/* Step 2 Disclaimer */}
+            <div className="rounded-2xl border border-amber-200 bg-amber-50/70 p-4 text-xs leading-relaxed text-amber-950">
+              <p className="font-medium">{STEP2_DISCLAIMER}</p>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2">
@@ -546,7 +503,7 @@ Kunden-Bemerkung: ${notes || "Keine"}
                 onClick={() => setStep(3)}
                 className="inline-flex items-center gap-2 rounded-xl bg-amber-500 px-7 py-3.5 text-base font-black text-slate-950 shadow-lg shadow-amber-500/25 transition hover:bg-amber-400 hover:shadow-xl"
               >
-                <span>Weiter zu Schritt 3: Services & Festpreis</span>
+                <span>Weiter zu Schritt 3: Zusatzleistungen &amp; Anfrage</span>
                 <span>→</span>
               </button>
             </div>
@@ -558,11 +515,16 @@ Kunden-Bemerkung: ${notes || "Keine"}
           <form onSubmit={handleSubmit} className="space-y-8 animate-fadeIn">
             <div>
               <label className="block text-sm font-black uppercase tracking-wider text-slate-500">
-                Schritt 3 von 3 · Zusatzleistungen & Festpreis-Angebot
+                Schritt 3 von 3 · Zusatzleistungen &amp; Anfrage
               </label>
               <h4 className="mt-1 text-lg font-bold text-slate-900 sm:text-xl">
                 Benötigen Sie handwerkliche Unterstützung oder Zusatzleistungen?
               </h4>
+            </div>
+
+            {/* Step 3 Disclaimer */}
+            <div className="rounded-2xl border border-amber-200 bg-amber-50/70 p-4 text-xs leading-relaxed text-amber-950">
+              <p className="font-medium">{STEP3_DISCLAIMER}</p>
             </div>
 
             {/* Checkbox Options */}
@@ -570,13 +532,13 @@ Kunden-Bemerkung: ${notes || "Keine"}
               {[
                 {
                   key: "montage",
-                  title: "Möbel- & Küchenmontage",
-                  desc: "Fachgerechte Demontage & Montage von Schränken, Betten & Küchen (40–55 €/h)",
+                  title: "Möbelmontage",
+                  desc: "Demontage und Montage von Schränken und Betten. Leistungsumfang und Preis klären wir im individuellen Angebot. Küchenmontage gesondert auf Anfrage.",
                 },
                 {
                   key: "halteverbot",
                   title: "Halteverbotszone Landshut",
-                  desc: "Behördliche Genehmigung & Schilder für stressfreies Be- & Entladen (120–160 €)",
+                  desc: "Behördliche Genehmigung & Schilder (Kosten nach Prüfung von Standort & Dauer)",
                 },
                 {
                   key: "entruempelung",
@@ -619,8 +581,12 @@ Kunden-Bemerkung: ${notes || "Keine"}
             {/* Contact Fields */}
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:p-6">
               <h5 className="text-sm font-black uppercase tracking-wider text-slate-700">
-                Ihre Kontaktdaten für das garantierte 4-Stunden-Angebot
+                Ihre Kontaktdaten für Ihr individuelles Angebot
               </h5>
+
+              <p className="mt-2 text-xs leading-relaxed text-slate-600">
+                {BUSINESS_HOURS_PROMISE}
+              </p>
 
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
                 <div>
@@ -646,7 +612,7 @@ Kunden-Bemerkung: ${notes || "Keine"}
                     required
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="Für Rückfragen & Terminabstimmung"
+                    placeholder="Für Rückfragen &amp; Terminabstimmung"
                     className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/30"
                   />
                 </div>
@@ -659,7 +625,7 @@ Kunden-Bemerkung: ${notes || "Keine"}
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Für das schriftliche Festpreisangebot"
+                    placeholder="Für Ihr individuelles Angebot"
                     className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-400/30"
                   />
                 </div>
@@ -706,19 +672,19 @@ Kunden-Bemerkung: ${notes || "Keine"}
                   <svg className="h-4 w-4 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  100% Verbindliche Festpreis-Garantie
+                  Unverbindliche Kostenschätzung
                 </span>
                 <span className="flex items-center gap-1.5 text-amber-900">
                   <svg className="h-4 w-4 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  Antwort & Angebot innerhalb von 4 Stunden
+                  Angebot innerhalb von 4 Stunden (Geschäftszeiten)
                 </span>
                 <span className="flex items-center gap-1.5 text-amber-900">
                   <svg className="h-4 w-4 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  Kostenlos & unverbindlich
+                  Kostenlos &amp; unverbindlich
                 </span>
               </div>
 
@@ -737,10 +703,10 @@ Kunden-Bemerkung: ${notes || "Keine"}
                   className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-amber-500 px-8 py-4 text-base font-black text-slate-950 shadow-xl shadow-amber-500/30 transition hover:bg-amber-400 sm:w-auto disabled:opacity-50"
                 >
                   {isSubmitting ? (
-                    <span>Berechne & sende Angebot...</span>
+                    <span>Sende Anfrage...</span>
                   ) : (
                     <>
-                      <span>Jetzt Festpreis-Angebot kostenlos erhalten</span>
+                      <span>Kostenloses Umzugsangebot anfordern</span>
                       <span>→</span>
                     </>
                   )}

@@ -402,9 +402,9 @@ export const seoPages = {
   },
 
   umzugskosten: {
-    title: "Umzugskosten Landshut 2026/27 » Richtpreise & Rechner | LAF",
+    title: "Umzugskosten Landshut: Rechner & Kostenschätzung | Umzüge LAF",
     description:
-      "Was kostet ein Umzug in Landshut? Transparente Richtpreise für 1- bis 4-Zimmer-Wohnungen & Häuser. Keine versteckten Kosten. Hier Festpreis berechnen!",
+      "Umzugskosten in Landshut unverbindlich einschätzen: Rechner und Beispielwerte für Ihre Budgetplanung. Individuelles Angebot von Umzüge LAF anfordern.",
     path: "/umzugskosten-landshut",
     keywords: [
       "Umzugskosten Landshut",
