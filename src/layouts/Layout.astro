@@ -80,7 +80,7 @@ const keywordsString = Array.isArray(keywords) ? keywords.join(", ") : keywords;
 
     <SeoJsonLd />
   </head>
-  <body class="pb-12 md:pb-0 font-sans antialiased text-slate-900 bg-white selection:bg-amber-400 selection:text-slate-950">
+  <body class="pb-24 md:pb-0 font-sans antialiased text-slate-900 bg-white selection:bg-amber-400 selection:text-slate-950">
     <GoogleTagManager />
     <slot />
     <FloatingWhatsApp />
@@ -102,6 +102,8 @@ const keywordsString = Array.isArray(keywords) ? keywords.join(", ") : keywords;
           window.dataLayer.push({ event: 'email_click', click_location: loc, email: 'info@umzuege-laf.de' });
         } else if (type === 'booking') {
           window.dataLayer.push({ event: 'booking_click', click_location: loc, service: 'Vor-Ort-Besichtigung' });
+        } else if (type === 'calculator') {
+          window.dataLayer.push({ event: 'calculator_click', click_location: loc });
         }
       });
     </script>

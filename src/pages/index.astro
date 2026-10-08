@@ -164,22 +164,30 @@ const meta = createSeoMetadata(seoPages.home);
               </p>
 
               {/* CTAs */}
-              <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
+              <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4 sm:items-center">
                 <a
-                  href={phoneHref}
-                  class="flex items-center justify-center gap-2.5 rounded-full bg-[#f59e0b] px-7 py-4 text-center text-base font-black text-slate-950 shadow-lg transition hover:bg-amber-400 active:scale-98"
+                  href="/umzugskosten-landshut#umzugskosten-rechner"
+                  data-track="calculator"
+                  data-track-loc="Hero_Rechner"
+                  class="group relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 px-7 py-4 text-center text-base font-black text-slate-950 shadow-[0_4px_25px_rgba(245,158,11,0.4)] transition hover:scale-[1.02] hover:shadow-[0_6px_35px_rgba(245,158,11,0.6)] active:scale-98"
                 >
-                  <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  <span>Direkt anrufen: {phone}</span>
+                  <span class="flex h-6 w-6 items-center justify-center rounded-full bg-slate-950 text-amber-400 text-xs shadow-xs">🧮</span>
+                  <span>Umzugskosten berechnen</span>
+                  <span class="rounded-full bg-slate-950/20 px-2 py-0.5 text-[11px] font-black uppercase text-slate-950 tracking-wider">In 2 Min.</span>
+                  <span class="transition-transform group-hover:translate-x-1">→</span>
+                  <span class="pointer-events-none absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/40 to-transparent"></span>
                 </a>
 
                 <a
-                  href="#direktanfrage"
-                  class="flex items-center justify-center rounded-full border-2 border-slate-600 bg-slate-800/80 px-7 py-4 text-center text-base font-bold text-white transition hover:border-slate-400 hover:bg-slate-700 active:scale-98"
+                  href={phoneHref}
+                  data-track="phone"
+                  data-track-loc="Hero_Phone"
+                  class="flex items-center justify-center gap-2.5 rounded-full border-2 border-slate-700 bg-slate-900/80 px-6 py-4 text-center text-base font-bold text-white transition hover:border-amber-400 hover:text-amber-400 active:scale-98"
                 >
-                  Kostenlos anfragen →
+                  <svg class="h-5 w-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  <span>Anrufen: {phone}</span>
                 </a>
               </div>
 
@@ -233,12 +241,22 @@ const meta = createSeoMetadata(seoPages.home);
                 </div>
               </div>
 
-              <div class="mt-8 pt-6 border-t border-slate-800">
+              <div class="mt-8 pt-6 border-t border-slate-800 space-y-2.5">
+                <a
+                  href="/umzugskosten-landshut#umzugskosten-rechner"
+                  data-track="calculator"
+                  data-track-loc="QuickHeroCard_Rechner"
+                  class="group flex items-center justify-center gap-2 w-full rounded-xl bg-amber-400 py-3.5 text-center text-sm font-black text-slate-950 transition hover:bg-amber-300 shadow-md"
+                >
+                  <span>🧮</span>
+                  <span>Umzugskosten online berechnen</span>
+                  <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
                 <a
                   href="#direktanfrage"
-                  class="block w-full rounded-xl bg-amber-400 py-3.5 text-center text-sm font-black text-slate-950 transition hover:bg-amber-300 shadow-md"
+                  class="block w-full rounded-xl border border-slate-700 bg-slate-800/80 py-2.5 text-center text-xs font-bold text-slate-300 transition hover:bg-slate-700 hover:text-white"
                 >
-                  Unverbindliches Angebot anfordern →
+                  Oder Schnell-Anfrageformular ausfüllen
                 </a>
               </div>
             </div>
@@ -292,6 +310,57 @@ const meta = createSeoMetadata(seoPages.home);
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── INTERAKTIVER UMZUGSKOSTEN-RECHNER TEASER ── */}
+      <section class="py-12 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 text-white relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-amber-400/10 blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-20 -bottom-20 h-64 w-64 rounded-full bg-amber-400/10 blur-3xl pointer-events-none"></div>
+
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="rounded-3xl border border-amber-400/30 bg-slate-900/80 p-6 sm:p-10 lg:p-12 shadow-2xl backdrop-blur-md">
+            <div class="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+              <div>
+                <div class="inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-400/10 px-3.5 py-1.5 text-xs font-extrabold text-amber-300 mb-4">
+                  <span>🧮</span>
+                  <span>Online & Unverbindlich in 3 Schritten</span>
+                </div>
+                <h2 class="text-2xl sm:text-4xl font-black tracking-tight text-white leading-tight">
+                  Was kostet Ihr Umzug in Landshut?<br />
+                  <span class="text-amber-400">Jetzt Richtwert online berechnen</span>
+                </h2>
+                <p class="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed max-w-xl">
+                  Nutzen Sie unseren kostenlosen Umzugskostenrechner: Wohnfläche auswählen, Zusatzleistungen festlegen und sofort eine realistische Preisschätzung für Landshut & Region erhalten.
+                </p>
+                <div class="mt-6 flex flex-wrap items-center gap-4 text-xs font-bold text-slate-300">
+                  <span class="flex items-center gap-1.5"><span class="text-amber-400 font-black">✓</span> 100% unverbindlich</span>
+                  <span class="flex items-center gap-1.5"><span class="text-amber-400 font-black">✓</span> In nur 2 Minuten</span>
+                  <span class="flex items-center gap-1.5"><span class="text-amber-400 font-black">✓</span> Sofortige Richtpreis-Kalkulation</span>
+                </div>
+              </div>
+
+              <div class="flex flex-col items-center justify-center sm:items-end">
+                <a
+                  href="/umzugskosten-landshut#umzugskosten-rechner"
+                  data-track="calculator"
+                  data-track-loc="TeaserBanner_Rechner"
+                  class="group relative flex w-full sm:w-auto items-center justify-center gap-3 overflow-hidden rounded-2xl bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 px-8 py-5 text-center text-slate-950 shadow-[0_0_35px_rgba(245,158,11,0.45)] transition hover:scale-105 hover:shadow-[0_0_50px_rgba(245,158,11,0.65)] active:scale-98"
+                >
+                  <span class="text-2xl">🧮</span>
+                  <span class="flex flex-col text-left">
+                    <span class="text-[11px] uppercase tracking-wider text-slate-900 font-extrabold">Online-Rechner</span>
+                    <span class="text-base sm:text-lg font-black">Umzugskosten berechnen</span>
+                  </span>
+                  <span class="text-xl transition-transform group-hover:translate-x-1.5">→</span>
+                  <span class="pointer-events-none absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/40 to-transparent"></span>
+                </a>
+                <p class="mt-3 text-xs text-slate-400 text-center sm:text-right">
+                  Kostenlos & ohne Registrierung
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -497,5 +566,33 @@ const meta = createSeoMetadata(seoPages.home);
 
       <LocalSeoLinks />
       <Footer />
+
+      {/* ── FLOATING DESKTOP UMZUGSKOSTEN-RECHNER CTA WIDGET ── */}
+      <aside aria-label="Umzugskosten Online-Rechner" class="hidden md:flex fixed bottom-6 left-6 z-[80] group">
+        <a
+          href="/umzugskosten-landshut#umzugskosten-rechner"
+          data-track="calculator"
+          data-track-loc="FloatingDesktop_Rechner"
+          class="flex items-center gap-3.5 rounded-2xl border border-amber-400/40 bg-slate-950/92 px-4 py-3 text-white shadow-[0_10px_35px_rgba(0,0,0,0.35)] backdrop-blur-md transition-all duration-300 hover:border-amber-400 hover:bg-slate-900 hover:scale-105 hover:shadow-[0_0_35px_rgba(245,158,11,0.4)] ring-1 ring-white/10"
+        >
+          <div class="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-amber-500 via-amber-400 to-amber-300 text-slate-950 font-black shadow-inner">
+            <span class="text-xl">🧮</span>
+            <span class="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75"></span>
+              <span class="relative inline-flex h-3.5 w-3.5 rounded-full bg-amber-400"></span>
+            </span>
+          </div>
+          <div class="text-left pr-1">
+            <div class="flex items-center gap-2">
+              <span class="text-[11px] font-extrabold uppercase tracking-wider text-amber-400">Online-Rechner</span>
+              <span class="rounded-full bg-emerald-500/20 px-1.5 py-0.2 text-[10px] font-bold text-emerald-400">In 2 Min.</span>
+            </div>
+            <p class="text-sm font-black text-white group-hover:text-amber-300 transition-colors flex items-center gap-1.5 mt-0.5">
+              <span>Umzugskosten berechnen</span>
+              <span class="inline-block transition-transform group-hover:translate-x-1 font-bold">→</span>
+            </p>
+          </div>
+        </a>
+      </aside>
     </main>
 </Layout>
