@@ -36,7 +36,7 @@ Name: ${name}
 Telefon: ${phone}
 E-Mail: ${email || "Keine"}
 Geplanter Umzug nach: ${moveType}
-Liegt ein Pflegegrad vor: ${hasPflegegrad.toUpperCase()} (Pflegekassenzuschuss bis zu 4.000 € prüfen)
+Liegt ein Pflegegrad vor: ${hasPflegegrad.toUpperCase()} (Pflegekassenzuschuss nach Prüfung möglich)
 Bevorzugte Kontaktaufnahme: ${preferredContact === "telefon" ? "Telefonischer Rückruf" : "E-Mail"}
 Nachricht / Wünsche: ${message || "Wünscht kostenlose & unverbindliche Beratung vor Ort"}
     `.trim();
@@ -185,10 +185,10 @@ Nachricht / Wünsche: ${message || "Wünscht kostenlose & unverbindliche Beratun
         {/* Pflegegrad question */}
         <div className="rounded-2xl border border-amber-200 bg-amber-50/60 p-4">
           <label className="block text-xs font-black uppercase tracking-wider text-amber-950">
-            Liegt ein Pflegegrad vor? (Pflegekassenzuschuss bis 4.000 €)
+            Liegt ein Pflegegrad vor?
           </label>
           <p className="mt-0.5 text-xs text-amber-900 leading-relaxed">
-            Bei Pflegegrad (1–5) bezuschusst die Pflegekasse den Umzug oft mit bis zu 4.000 €. Wir unterstützen bei der Beantragung.
+            Bei einem Pflegegrad kann ein geeigneter Umzug als wohnumfeldverbessernde Maßnahme bezuschusst werden. Ob und in welcher Höhe eine Förderung möglich ist, entscheidet Ihre Pflegekasse.
           </p>
           <div className="mt-2.5 flex gap-3">
             {[
