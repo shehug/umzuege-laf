@@ -5,7 +5,7 @@ export const prerender = false;
 const baseUrl = "https://umzuegelandshut.de";
 
 const routes = [
-  { path: "", priority: "1.0", changeFrequency: "weekly" },
+  { path: "/", priority: "1.0", changeFrequency: "weekly" },
   { path: "/umzug-landshut", priority: "1.0", changeFrequency: "weekly" },
   { path: "/umzugskosten-landshut", priority: "1.0", changeFrequency: "weekly" },
   { path: "/privatumzug-landshut", priority: "0.95", changeFrequency: "weekly" },
@@ -14,7 +14,7 @@ const routes = [
   { path: "/firmenumzug-landshut", priority: "0.95", changeFrequency: "weekly" },
   { path: "/entruempelung-landshut", priority: "0.95", changeFrequency: "weekly" },
   { path: "/wohnungsaufloesung-landshut", priority: "0.9", changeFrequency: "weekly" },
-  { path: "/haushaltsaufloesung-landshut", priority: "0.9", changeFrequency: "weekly" },
+  { path: "/entruempelung/haushaltsaufloesung", priority: "0.9", changeFrequency: "weekly" },
   { path: "/umzugsunternehmen-landshut", priority: "1.0", changeFrequency: "weekly" },
   { path: "/leistungen", priority: "0.95", changeFrequency: "monthly" },
   { path: "/umzuege", priority: "0.95", changeFrequency: "monthly" },
@@ -37,15 +37,12 @@ const routes = [
 ];
 
 export const GET: APIRoute = async () => {
-  const currentDate = new Date().toISOString().split("T")[0];
-
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${routes
   .map(
     (route) => `  <url>
     <loc>${baseUrl}${route.path}</loc>
-    <lastmod>${currentDate}</lastmod>
     <changefreq>${route.changeFrequency}</changefreq>
     <priority>${route.priority}</priority>
   </url>`
