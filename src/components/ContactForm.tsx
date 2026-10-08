@@ -179,7 +179,7 @@ export default function ContactForm() {
       {/* Response Promise Banner */}
       <div className="mt-3.5 flex items-center gap-2 rounded-lg bg-amber-50 border border-amber-300 px-3 py-2 text-xs font-bold text-amber-950">
         <span className="text-sm">⏱️</span>
-        <span>Antwort-Garantie: Rückmeldung innerhalb von 4 Stunden (Mo–Sa)</span>
+        <span>Rückmeldung innerhalb von 4 Stunden während unserer Geschäftszeiten: Mo–Sa, 08:00–18:00 Uhr. Gezählt werden ausschließlich Stunden innerhalb der Geschäftszeiten.</span>
       </div>
 
       {statusMessage && (
