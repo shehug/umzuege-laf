@@ -1,7 +1,15 @@
 const primaryLinks = [
   {
+    title: "Umzüge Landshut",
+    href: "/",
+  },
+  {
     title: "Umzugsunternehmen Landshut",
     href: "/umzugsunternehmen-landshut",
+  },
+  {
+    title: "Umzugsfirma Landshut",
+    href: "/umzug-landshut",
   },
   {
     title: "Umzugskosten Landshut",

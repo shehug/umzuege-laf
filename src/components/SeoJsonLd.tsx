@@ -108,7 +108,7 @@ const services = [
   }
 ];
 
-const structuredData = {
+const baseStructuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -179,6 +179,8 @@ const structuredData = {
       ],
       sameAs: [
         "https://maps.google.com/?q=Ergoldinger+Str.+15,+84030+Landshut",
+        "https://www.umzuege-laf.de",
+        "https://umzuege-laf.de",
         "https://www.facebook.com/61561388244118/",
         "https://www.gelbeseiten.de/gsbiz/aece8f96-e961-4a60-b646-a30f2f40f9af",
         "https://www.dasoertliche.de/Themen/LAF-Umz%C3%BCge-Landshut-Industriegebiet-Ergoldinger-Str",
@@ -233,6 +235,8 @@ const structuredData = {
       },
       sameAs: [
         "https://maps.google.com/?q=Ergoldinger+Str.+15,+84030+Landshut",
+        "https://www.umzuege-laf.de",
+        "https://umzuege-laf.de",
         "https://www.facebook.com/61561388244118/",
         "https://www.gelbeseiten.de/gsbiz/aece8f96-e961-4a60-b646-a30f2f40f9af",
         "https://www.dasoertliche.de/Themen/LAF-Umz%C3%BCge-Landshut-Industriegebiet-Ergoldinger-Str",
@@ -255,35 +259,56 @@ const structuredData = {
       publisher: {
         "@id": `${siteUrl}/#organization`
       }
-    },
-    {
-      "@type": "WebPage",
-      "@id": `${siteUrl}/#webpage`,
-      url: siteUrl,
-      name: "Umzugsunternehmen Landshut | Umzüge LAF",
-      description:
-        "Umzüge LAF ist Ihr Umzugsunternehmen in Landshut für Umzug, Privatumzug, Firmenumzug, Entrümpelung, Haushaltsauflösung, Möbelmontage und Sperrmüllentsorgung.",
-      inLanguage: "de-DE",
-      isPartOf: {
-        "@id": `${siteUrl}/#website`
-      },
-      about: {
-        "@id": `${siteUrl}/#localbusiness`
-      },
-      primaryImageOfPage: {
-        "@type": "ImageObject",
-        url: `${siteUrl}/images/hero/hero-umzug-landshut.jpg`
-      }
     }
   ]
 };
 
-export default function SeoJsonLd() {
+export interface SeoJsonLdProps {
+  currentUrl?: string;
+  pageTitle?: string;
+  pageDescription?: string;
+  pageImage?: string;
+}
+
+export default function SeoJsonLd({
+  currentUrl = siteUrl,
+  pageTitle = "Umzüge Landshut | Umzugsunternehmen & Umzugsfirma » LAF",
+  pageDescription = "Umzüge LAF ist Ihr zuverlässiges Umzugsunternehmen und Ihre Umzugsfirma in Landshut für Privatumzug, Firmenumzug, Möbelmontage und Entrümpelung zum Festpreis.",
+  pageImage = `${siteUrl}/images/hero/hero-umzug-landshut.jpg`,
+}: SeoJsonLdProps = {}) {
+  const pageId = `${currentUrl}#webpage`;
+  const dynamicGraph = [
+    ...baseStructuredData["@graph"],
+    {
+      "@type": "WebPage",
+      "@id": pageId,
+      url: currentUrl,
+      name: pageTitle,
+      description: pageDescription,
+      inLanguage: "de-DE",
+      isPartOf: {
+        "@id": `${siteUrl}/#website`,
+      },
+      about: {
+        "@id": `${siteUrl}/#localbusiness`,
+      },
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: pageImage,
+      },
+    },
+  ];
+
+  const fullData = {
+    "@context": "https://schema.org",
+    "@graph": dynamicGraph,
+  };
+
   return (
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+        __html: JSON.stringify(fullData).replace(/</g, "\\u003c"),
       }}
     />
   );
