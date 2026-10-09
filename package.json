@@ -17,7 +17,7 @@
     "nodemailer": "^10.0.13",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "sharp": "^0.35.4"
+    "sharp": "^0.35.5"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.0.0",
@@ -31,6 +31,9 @@
   "overrides": {
     "esbuild": "^0.28.2",
     "devalue": "^5.9.4",
-    "undici": "^8.11.2"
+    "undici": "^8.11.2",
+    "sharp": "^0.35.5",
+    "source-map-js": "^1.2.2",
+    "smol-toml": "^1.9.0"
   }
 }
