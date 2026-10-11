@@ -8,23 +8,23 @@ import LocalSeoLinks from "@/components/LocalSeoLinks";
 import ContactForm from "@/components/ContactForm";
 import GoogleMapLocation from "@/components/GoogleMapLocation";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import BookingCalendar from "@/components/BookingCalendar";
+import BesichtigungsAnfrage from "@/components/BesichtigungsAnfrage";
 
 const phone = "0162 900 75 65";
 const phoneHref = "tel:+491629007565";
 const whatsappHref = "https://wa.me/491629007565?text=Hallo%20Umz%C3%BCge%20LAF%2C%20ich%20m%C3%B6chte%20ein%20unverbindliches%20Angebot%20anfragen.";
 const email = "info@umzuege-laf.de";
 const emailHref = "mailto:info@umzuege-laf.de";
-const calBookingHref = "https://cal.com/fahrush-kalludra-2scjtx/termin";
 
 const trustBadges = [
   { icon: "💶", title: "100% Kostenlos", desc: "Unverbindliches Festpreis-Angebot" },
-  { icon: "⚡", title: "Antwort in 4 Std.", desc: "Garantierte Rückmeldung Mo–Sa" },
+  { icon: "⚡", title: "Antwort in 4 Std.", desc: "4 Geschäftszeit-Stunden, Mo–Sa 08–18 Uhr" },
   { icon: "🛡️", title: "Festpreis-Garantie", desc: "Transparente Preise ohne Überraschungen" },
   { icon: "📍", title: "Persönlich in Landshut", desc: "Direkte Beratung & Vor-Ort-Besichtigung" },
 ];
 
 const meta = createSeoMetadata(seoPages.kontakt);
+const initialRequestType = Astro.url.searchParams.get("leistung") ?? "Privatumzug";
 
 
 ---
@@ -56,7 +56,7 @@ const meta = createSeoMetadata(seoPages.kontakt);
 
           <p class="mt-4 max-w-2xl mx-auto text-base text-slate-300 sm:text-lg leading-relaxed">
             Wählen Sie den Kontaktweg, der für Sie am bequemsten ist: Telefon, WhatsApp, 
-            unser Online-Terminkalender oder das 2-Minuten-Anfrageformular.
+            E-Mail oder das 2-Minuten-Anfrageformular. Ihr Ansprechpartner ist Fahri Kalludra.
           </p>
         </div>
       </section>
@@ -114,7 +114,7 @@ const meta = createSeoMetadata(seoPages.kontakt);
             </a>
           </div>
 
-          {/* Cal.com Vor-Ort-Besichtigung buchen */}
+          {/* Vor-Ort-Besichtigung anfragen */}
           <div class="rounded-2xl border-2 border-amber-400 bg-amber-50/40 p-6 shadow-sm flex flex-col justify-between hover:shadow-md transition relative">
             <div class="absolute -top-3 right-4 rounded-full bg-amber-400 px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider text-slate-950 shadow-sm">
               Empfohlen
@@ -123,20 +123,20 @@ const meta = createSeoMetadata(seoPages.kontakt);
               <div class="flex items-center justify-between">
                 <span class="rounded-lg bg-amber-200 p-2.5 text-xl">📅</span>
                 <span class="rounded-full bg-amber-100 px-2.5 py-1 text-[11px] font-bold text-amber-900">
-                  Online-Kalender
+                  Persönliche Abstimmung
                 </span>
               </div>
-              <h2 class="mt-4 text-base sm:text-lg font-black text-slate-900">Besichtigung buchen</h2>
+              <h2 class="mt-4 text-base sm:text-lg font-black text-slate-900">Besichtigung anfragen</h2>
               <p class="mt-1 text-xs text-slate-600 leading-relaxed">
-                Wunschtermin für kostenlose Vor-Ort-Besichtigung wählen
+                Wunschtermin für eine kostenlose Vor-Ort-Besichtigung mitteilen
               </p>
               <p class="mt-3 text-xs font-bold text-[#b45309]">100% kostenlos & unverbindlich</p>
             </div>
             <a
-              href="#termin-kalender"
+              href="/kontakt?leistung=Besichtigung#anfrageformular"
               class="mt-5 flex items-center justify-center gap-2 rounded-xl bg-slate-900 py-3 text-center text-xs sm:text-sm font-black text-white shadow-sm transition hover:bg-slate-800"
             >
-              Termin unten wählen ↓
+              Besichtigung anfragen ↓
             </a>
           </div>
 
@@ -167,9 +167,9 @@ const meta = createSeoMetadata(seoPages.kontakt);
         </div>
       </section>
 
-      {/* ── EINGEBETTETER INTERAKTIVER CAL.COM KALENDER ── */}
-      <section id="termin-kalender" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12 scroll-mt-24">
-        <BookingCalendar client:visible />
+      {/* ── PERSÖNLICHE BESICHTIGUNGSANFRAGE ── */}
+      <section id="besichtigung" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12 scroll-mt-24">
+        <BesichtigungsAnfrage />
       </section>
 
       {/* ── FORMULAR & STANDORT MIT GOOGLE MAPS ── */}
@@ -206,12 +206,12 @@ const meta = createSeoMetadata(seoPages.kontakt);
                   Online-Anfrageformular
                 </h2>
                 <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Füllen Sie kurz die wichtigsten Eckdaten aus. Wir melden uns garantiert innerhalb von 4 Stunden mit einem Festpreis.
+                  Nennen Sie uns die wichtigsten Eckdaten. Sie erhalten innerhalb von 4 Geschäftszeit-Stunden eine Rückmeldung (Mo–Sa, 08:00–18:00 Uhr). Den Festpreis vereinbaren wir nach Klärung des Leistungsumfangs.
                 </p>
               </div>
 
               <div class="flex-1 rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
-                <ContactForm client:visible />
+                <ContactForm client:visible initialRequestType={initialRequestType} />
               </div>
             </div>
           </div>

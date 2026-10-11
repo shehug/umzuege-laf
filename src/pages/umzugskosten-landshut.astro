@@ -7,7 +7,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import LocalSeoLinks from "@/components/LocalSeoLinks";
 import UmzugskostenFunnel from "@/components/UmzugskostenFunnel";
 import ContactForm from "@/components/ContactForm";
-import BookingCalendar from "@/components/BookingCalendar";
+import BesichtigungsAnfrage from "@/components/BesichtigungsAnfrage";
 import { seoPages } from "@/lib/seo";
 import {
   tableRows,
@@ -47,46 +47,6 @@ const structuredDataGraph = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "MovingCompany",
-      "@id": "https://umzuegelandshut.de/#organization",
-      name: "Umzüge LAF",
-      url: "https://umzuegelandshut.de/",
-      logo: "https://umzuegelandshut.de/images/logo/laf-logo.png",
-      telephone: "+491629007565",
-      priceRange: "€€",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "Ergoldinger Str. 15",
-        addressLocality: "Landshut",
-        postalCode: "84030",
-        addressRegion: "Bayern",
-        addressCountry: "DE",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: 48.5529,
-        longitude: 12.1648,
-      },
-      openingHoursSpecification: [
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          opens: "08:00",
-          closes: "18:00",
-        },
-      ],
-      areaServed: [
-        "Landshut",
-        "Ergolding",
-        "Altdorf",
-        "Essenbach",
-        "Kumhausen",
-        "Vilsbiburg",
-        "Moosburg an der Isar",
-        "Landkreis Landshut",
-      ],
-    },
-    {
       "@type": "Service",
       "@id": "https://umzuegelandshut.de/umzugskosten-landshut/#service",
       name: "Umzugskosten Landshut & Preistransparenz",
@@ -95,7 +55,7 @@ const structuredDataGraph = {
       description:
         "Umzugskostenrechner mit unverbindlichen Modellschätzungen für Umzüge in Landshut und Umgebung.",
       provider: {
-        "@id": "https://umzuegelandshut.de/#organization",
+        "@id": "https://umzuegelandshut.de/#localbusiness",
       },
       areaServed: {
         "@type": "City",
@@ -527,17 +487,17 @@ const structuredDataGraph = {
         <div class="mx-auto max-w-3xl text-center mb-10">
           <span class="inline-flex items-center gap-1.5 rounded-full bg-amber-400/20 px-3.5 py-1.5 text-xs font-black text-amber-300">
             <span>📅</span>
-            <span>Online-Terminbuchung · Sofortige Bestätigung</span>
+            <span>Besichtigung · Persönliche Terminabstimmung</span>
           </span>
           <h2 class="mt-3 text-2xl sm:text-4xl font-black text-white">
             Wunschtermin für kostenlose Vor-Ort-Besichtigung reservieren
           </h2>
           <p class="mt-3 text-sm sm:text-base text-slate-300">
-            Wählen Sie direkt im Live-Kalender einen freien Tag und eine Uhrzeit aus. Unser Inhaber oder Einsatzleiter kommt persönlich bei Ihnen in Landshut oder Umgebung vorbei, begutachtet das Umzugsvolumen und bespricht mit Ihnen alle Details für Ihr individuelles Angebot.
+            Fragen Sie eine kostenlose Besichtigung in Landshut oder Umgebung an. Fahri Kalludra stimmt den Termin mit Ihnen ab und bespricht Umzugsvolumen, Leistungsumfang und die Grundlage Ihres individuellen Angebots.
           </p>
         </div>
 
-        <BookingCalendar client:visible />
+        <BesichtigungsAnfrage />
       </div>
     </section>
 

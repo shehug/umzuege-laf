@@ -64,6 +64,13 @@ const {
   faqs = [],
 } = Astro.props;
 
+const initialRequestType = path.includes("sperrmuell") ? "Sperrmüllentsorgung"
+  : /aufl[oö]esung/.test(path) ? "Haushaltsauflösung"
+  : path.startsWith("/entruempelung/") ? "Entrümpelung"
+  : path.includes("moebelmontage") ? "Möbelmontage"
+  : path.includes("einpackservice") ? "Einpackservice"
+  : "Privatumzug";
+
 const webpImage = image.replace(/\.(jpe?g|png)$/i, ".webp");
 
 const phone = "0162 900 75 65";
@@ -361,7 +368,7 @@ const faqSchema = {
             In 2 Minuten ausgefüllt – 100% unverbindlich.
           </p>
           <div class="mt-5">
-            <ContactForm client:visible />
+            <ContactForm client:visible initialRequestType={initialRequestType} />
           </div>
         </div>
       </div>

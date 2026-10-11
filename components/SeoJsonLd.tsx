@@ -124,13 +124,6 @@ const structuredData = {
       geo,
       areaServed,
       serviceArea: areaServed,
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "5.0",
-        reviewCount: "48",
-        bestRating: "5",
-        worstRating: "1"
-      },
       founder: {
         "@type": "Person",
         name: legalName

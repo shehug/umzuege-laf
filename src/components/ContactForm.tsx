@@ -11,10 +11,16 @@ const requestTypes = [
   "Möbelmontage",
   "Einpackservice",
   "Entrümpelung",
+  "Haushaltsauflösung",
+  "Sperrmüllentsorgung",
+  "Besichtigung",
   "Sonstige Anfrage",
 ];
 
-export default function ContactForm() {
+export default function ContactForm({ initialRequestType = "Privatumzug" }: { initialRequestType?: string }) {
+  const selectedRequestType = requestTypes.includes(initialRequestType) ? initialRequestType : "Sonstige Anfrage";
+  const [requestType, setRequestType] = useState(selectedRequestType);
+  const isClearing = ["Entrümpelung", "Haushaltsauflösung", "Sperrmüllentsorgung"].includes(requestType);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle"
   );
@@ -127,6 +133,8 @@ export default function ContactForm() {
           <select
             id="contact-requestType"
             name="requestType"
+            value={requestType}
+            onChange={(event) => setRequestType(event.target.value)}
             aria-label="Art der Leistung"
             className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
           >
@@ -138,7 +146,7 @@ export default function ContactForm() {
 
         <div>
           <label htmlFor="contact-startLocation" className="mb-1 block text-xs font-bold text-slate-900">
-            Von (Startort / Etage)
+            {isClearing ? "Adresse / Ort / Etage der Räumung" : "Von (Startort / Etage)"}
           </label>
           <input
             id="contact-startLocation"
@@ -151,13 +159,13 @@ export default function ContactForm() {
 
         <div>
           <label htmlFor="contact-targetLocation" className="mb-1 block text-xs font-bold text-slate-900">
-            Nach (Zielort / Etage)
+            {isClearing ? "Zusätzlicher Transport (optional)" : "Nach (Zielort / Etage)"}
           </label>
           <input
             id="contact-targetLocation"
             name="targetLocation"
             type="text"
-            placeholder="z. B. Ergolding, EG"
+            placeholder={isClearing ? "Nur bei Transport an eine weitere Adresse" : "z. B. Ergolding, EG"}
             className="w-full rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
           />
         </div>
@@ -171,7 +179,7 @@ export default function ContactForm() {
           id="contact-message"
           name="message"
           rows={3}
-          placeholder="Gewünschter Termin, besondere Möbel, Aufzug vorhanden etc."
+          placeholder={isClearing ? "Wunschtermin, Räume, Menge, Zugang und besondere Gegenstände" : "Gewünschter Termin, besondere Möbel, Aufzug vorhanden etc."}
           className="w-full resize-none rounded-xl border border-slate-300 bg-slate-50/50 px-3.5 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-amber-500 focus:bg-white focus:ring-3 focus:ring-amber-500/20"
         />
       </div>

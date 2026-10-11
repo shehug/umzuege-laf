@@ -132,36 +132,6 @@ const baseStructuredData = {
       hasMap: "https://maps.google.com/?q=Ergoldinger+Str.+15,+84030+Landshut",
       areaServed,
       serviceArea: areaServed,
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "5.0",
-        reviewCount: "48",
-        bestRating: "5",
-        worstRating: "1"
-      },
-      review: [
-        {
-          "@type": "Review",
-          author: { "@type": "Person", name: "Michael B." },
-          datePublished: "2024-03-15",
-          reviewBody: "Absolut spitzenmäßige Arbeit! Das Team von Umzüge LAF war überpünktlich, extrem freundlich und hat all unsere Möbel und empfindlichen Gläser vorsichtig transportiert. Der vereinbarte Festpreis wurde centgenau eingehalten.",
-          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" }
-        },
-        {
-          "@type": "Review",
-          author: { "@type": "Person", name: "Sabine W." },
-          datePublished: "2024-02-28",
-          reviewBody: "Sehr schneller und unkomplizierter Kontakt. Der gesamte 3-Zimmer-Umzug inklusive Küchen- und Schrankmontage war an einem Vormittag erledigt. Tolle Truppe, kann ich jedem in Landshut nur wärmstens empfehlen!",
-          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" }
-        },
-        {
-          "@type": "Review",
-          author: { "@type": "Person", name: "Thomas K." },
-          datePublished: "2024-01-20",
-          reviewBody: "Wir haben unseren Gewerbeumzug und die Entrümpelung der alten Räume mit Umzüge LAF gemacht. Strukturierte Planung, keine Ausfallzeiten und besenreine Übergabe. Großes Lob an Herrn Kalludra und sein Team.",
-          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" }
-        }
-      ],
       founder: {
         "@type": "Person",
         name: legalName

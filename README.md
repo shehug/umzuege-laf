@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Umzüge LAF – Website
 
-## Getting Started
+Astro 7 mit React-Komponenten, Tailwind CSS und Node-Adapter. Die aktiven Seiten und Komponenten liegen unter `src/`. Die Verzeichnisse `components/` und `lib/` im Projektstamm sind ältere Bestände; Änderungen dort allein aktualisieren die Website nicht.
 
-First, run the development server:
+## Lokal arbeiten
 
-```bash
+Mit einer zur installierten Astro-Version passenden Node-Version (hier geprüft mit Node 24):
+
+```sh
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run typecheck
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Die Entwicklung läuft auf Port 3213. Der Build erstellt `dist/`. `npm start` startet den erzeugten Node-Server. Das Startskript `server.js` für das vorhandene Hosting wird zusätzlich nach `dist/server.js` und `dist/nodejs/server.js` kopiert. Die bisherigen Kompatibilitätsordner `.next`, `out` und `build` werden weiterhin angelegt, falls sie fehlen; für eine Veröffentlichung stets den aktuellen Inhalt von `dist/` verwenden.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Inhalte und Kontakt
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Hauptmetadaten: `src/lib/seo.ts`.
+- Unternehmensdaten: `src/components/SeoJsonLd.tsx`.
+- Inhaber und Ansprechpartner: Fahri Kalludra.
+- Kontaktformular: `src/components/ContactForm.tsx`, E-Mail-Endpunkt: `src/pages/api/contact.ts`.
+- Die bestehenden SMTP-Variablen im Hosting bleiben erforderlich. Eine lokale Vorschau bestätigt keine produktive E-Mail-Zustellung.
+- Der externe Terminkalender wurde entfernt. Besichtigungen werden über `/kontakt?leistung=Besichtigung#anfrageformular` oder telefonisch angefragt und persönlich bestätigt.
+- Die sichtbare Google-Bewertung hat einen ausdrücklich angegebenen Stand. Vor Aktualisierung anhand des tatsächlichen Unternehmensprofils prüfen. Keine unbelegten Kundenstimmen oder Bewertungsdaten in strukturierte Daten aufnehmen.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Die Veröffentlichung und Änderungen am Google-Unternehmensprofil erfolgen separat vom lokalen Build.

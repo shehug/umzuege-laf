@@ -243,15 +243,15 @@ export default function Header() {
               </Link>
 
               <TrackedLink
-                href="https://cal.com/fahrush-kalludra-2scjtx/termin"
+                href="/kontakt?leistung=Besichtigung#anfrageformular"
                 target="_blank"
                 rel="noopener noreferrer"
                 tracking="booking"
-                trackingLocation="Mobile Menü Cal.com"
+                trackingLocation="Mobile Menü Besichtigungsanfrage"
                 onClick={() => setOpen(false)}
                 className="col-span-2 flex items-center justify-center gap-2 rounded-xl border border-amber-400 bg-amber-50/70 py-3 text-center text-sm font-black text-slate-900 shadow-sm transition hover:bg-amber-100"
               >
-                <span>📅 Besichtigung online buchen</span>
+                <span>📅 Besichtigung anfragen</span>
               </TrackedLink>
             </div>
           </div>

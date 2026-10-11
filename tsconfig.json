@@ -4,11 +4,23 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "next/link": ["src/components/ui/Link.tsx"],
-      "next/image": ["src/components/ui/Image.tsx"],
-      "next/navigation": ["src/components/ui/Navigation.ts"]
+      "@/*": [
+        "src/*"
+      ],
+      "next/link": [
+        "src/components/ui/Link.tsx"
+      ],
+      "next/image": [
+        "src/components/ui/Image.tsx"
+      ],
+      "next/navigation": [
+        "src/components/ui/Navigation.ts"
+      ]
     }
   },
-  "include": ["src/**/*", "astro.config.mjs"]
+  "include": [
+    ".astro/types.d.ts",
+    "src/**/*",
+    "astro.config.mjs"
+  ]
 }

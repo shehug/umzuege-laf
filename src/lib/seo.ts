@@ -5,6 +5,17 @@ export type SeoMetadata = {
   canonical: string;
   image: string;
   noIndex: boolean;
+  robots: {
+    index: boolean;
+    follow: boolean;
+    googleBot: {
+      index: boolean;
+      follow: boolean;
+      "max-image-preview": string;
+      "max-snippet": number;
+      "max-video-preview": number;
+    };
+  };
   openGraph: {
     type: string;
     locale: string;
@@ -95,9 +106,9 @@ export function createSeoMetadata(page: SeoPage): SeoMetadata {
 
 export const seoPages = {
   home: {
-    title: "Umzüge Landshut | Umzugsunternehmen & Umzugsfirma » LAF",
+    title: "Umzugsunternehmen Landshut | Umzüge LAF",
     description:
-      "★ 5.0 Sterne Umzugsunternehmen & Umzugsfirma in Landshut: Umzüge LAF übernimmt Ihren Privatumzug, Firmenumzug & Montage zuverlässig zum Festpreis. Jetzt anfragen!",
+      "Umzüge LAF: Privatumzüge, Firmenumzüge, Möbelmontage und Entrümpelung in Landshut und Umgebung. Kostenlose Besichtigung und individuelles Festpreis-Angebot.",
     path: "/",
     keywords: [
       "Umzüge Landshut",
