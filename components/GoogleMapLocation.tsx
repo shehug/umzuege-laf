@@ -1,8 +1,8 @@
 export default function GoogleMapLocation() {
   const address = "Ergoldinger Str. 15, 84030 Landshut";
-  const mapEmbedUrl = "https://maps.google.com/maps?q=Ergoldinger+Str.+15,+84030+Landshut&t=&z=15&ie=UTF8&iwloc=&output=embed";
-  const routeUrl = "https://www.google.com/maps/dir/?api=1&destination=Ergoldinger+Str.+15,+84030+Landshut";
-  const openMapUrl = "https://maps.google.com/?q=Ergoldinger+Str.+15,+84030+Landshut";
+  const mapEmbedUrl = "https://maps.google.com/maps?q=Umz%C3%BCge+LAF,+Ergoldinger+Str.+15,+84030+Landshut&t=&z=15&ie=UTF8&iwloc=&output=embed";
+  const routeUrl = "https://www.google.com/maps/dir/?api=1&destination=Umz%C3%BCge+LAF,+Ergoldinger+Str.+15,+84030+Landshut";
+  const openMapUrl = "https://www.google.com/maps/search/?api=1&query=Umz%C3%BCge+LAF+Ergoldinger+Str.+15+84030+Landshut";
 
   return (
     <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
@@ -33,7 +33,7 @@ export default function GoogleMapLocation() {
               {address}
             </p>
             <p className="mt-0.5 text-xs text-slate-600">
-              Mo–Sa: 08:00 – 18:00 Uhr · Ansprechpartner vor Ort
+              Mo–Fr: 08:00 – 18:00 · Sa: 09:00 – 17:00 Uhr · Ansprechpartner vor Ort
             </p>
           </div>
 

@@ -28,11 +28,18 @@ const openingHoursSpecification = [
       "https://schema.org/Tuesday",
       "https://schema.org/Wednesday",
       "https://schema.org/Thursday",
-      "https://schema.org/Friday",
-      "https://schema.org/Saturday"
+      "https://schema.org/Friday"
     ],
     opens: "08:00",
     closes: "18:00"
+  },
+  {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "https://schema.org/Saturday"
+    ],
+    opens: "09:00",
+    closes: "17:00"
   }
 ];
 
@@ -130,11 +137,18 @@ const baseStructuredData = {
       email,
       vatID: "DE364728600",
       priceRange: "€€",
-      openingHours: "Mo-Sa 08:00-18:00",
+      openingHours: ["Mo-Fr 08:00-18:00", "Sa 09:00-17:00"],
       openingHoursSpecification,
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5.0",
+        reviewCount: "65",
+        bestRating: "5",
+        worstRating: "1"
+      },
       address,
       geo,
-      hasMap: "https://maps.google.com/?q=Ergoldinger+Str.+15,+84030+Landshut",
+      hasMap: "https://www.google.com/maps/search/?api=1&query=Umz%C3%BCge+LAF+Ergoldinger+Str.+15+84030+Landshut",
       areaServed,
       serviceArea: areaServed,
       founder: {

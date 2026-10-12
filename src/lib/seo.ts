@@ -106,9 +106,9 @@ export function createSeoMetadata(page: SeoPage): SeoMetadata {
 
 export const seoPages = {
   home: {
-    title: "Umzugsunternehmen Landshut | Umzüge LAF",
+    title: "Umzüge Landshut » Umzugsunternehmen & Umzugsfirma | LAF",
     description:
-      "Umzüge LAF: Privatumzüge, Firmenumzüge, Möbelmontage und Entrümpelung in Landshut und Umgebung. Kostenlose Besichtigung und individuelles Festpreis-Angebot.",
+      "★ 5.0 Sterne Umzüge in Landshut: Ihr Umzugsunternehmen & Ihre Umzugsfirma für Privatumzug, Firmenumzug, Montage & Entrümpelung. 100% Festpreis-Garantie!",
     path: "/",
     keywords: [
       "Umzüge Landshut",
