@@ -72,6 +72,11 @@ const services = [
     description: "Firmenumzug, Büroumzug und Gewerbeumzug in Landshut."
   },
   {
+    name: "Gewerbeumzüge Landshut",
+    url: `${siteUrl}/firmenumzug-landshut`,
+    description: "Professionelle Gewerbeumzüge, Büroumzüge und Betriebsverlagerungen in Landshut und Umgebung mit Festpreis."
+  },
+  {
     name: "Fernumzug Landshut",
     url: `${siteUrl}/umzuege/fernumzug`,
     description: "Fernumzug ab Landshut mit Planung, Transport und Möbelmontage."
@@ -149,8 +154,6 @@ const baseStructuredData = {
       ],
       sameAs: [
         "https://maps.google.com/?q=Ergoldinger+Str.+15,+84030+Landshut",
-        "https://www.umzuege-laf.de",
-        "https://umzuege-laf.de",
         "https://www.facebook.com/61561388244118/",
         "https://www.gelbeseiten.de/gsbiz/aece8f96-e961-4a60-b646-a30f2f40f9af",
         "https://www.dasoertliche.de/Themen/LAF-Umz%C3%BCge-Landshut-Industriegebiet-Ergoldinger-Str",
@@ -164,6 +167,9 @@ const baseStructuredData = {
         "Umzug Landshut",
         "Privatumzug Landshut",
         "Firmenumzug Landshut",
+        "Gewerbeumzüge Landshut",
+        "Gewerbeumzug Landshut",
+        "Büroumzug Landshut",
         "Entrümpelung Landshut",
         "Haushaltsauflösung Landshut",
         "Möbelmontage Landshut",
@@ -205,8 +211,6 @@ const baseStructuredData = {
       },
       sameAs: [
         "https://maps.google.com/?q=Ergoldinger+Str.+15,+84030+Landshut",
-        "https://www.umzuege-laf.de",
-        "https://umzuege-laf.de",
         "https://www.facebook.com/61561388244118/",
         "https://www.gelbeseiten.de/gsbiz/aece8f96-e961-4a60-b646-a30f2f40f9af",
         "https://www.dasoertliche.de/Themen/LAF-Umz%C3%BCge-Landshut-Industriegebiet-Ergoldinger-Str",
