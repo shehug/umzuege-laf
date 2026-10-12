@@ -66,29 +66,32 @@ const navItems = [
     </a>
 
     {/* Desktop Navigation */}
-    <nav class="hidden items-center gap-1 lg:flex">
+    <nav class="hidden items-center gap-1 lg:flex" aria-label="Hauptnavigation">
       {navItems.map((item) => (
-        <div class="group relative">
-          <a
-            href={item.href}
-            class="flex items-center gap-1 rounded-lg px-3.5 py-2 text-[14px] font-bold text-slate-700 transition hover:bg-slate-100 hover:text-slate-900"
-          >
-            {item.label}
-            {item.children && (
+        item.children ? (
+          <div class="desktop-dropdown-group relative" data-dropdown-group>
+            <button
+              type="button"
+              class="desktop-dropdown-btn flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-[14px] font-bold text-slate-700 transition hover:bg-slate-100 hover:text-slate-900 cursor-pointer"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              <span>{item.label}</span>
               <svg
-                class="h-3.5 w-3.5 text-slate-400 transition group-hover:rotate-180"
+                class="desktop-chevron h-3.5 w-3.5 text-slate-400 transition-transform duration-200"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
               </svg>
-            )}
-          </a>
+            </button>
 
-          {item.children && (
-            <div class="invisible absolute left-1/2 top-full w-[260px] -translate-x-1/2 pt-2 opacity-0 transition duration-150 group-hover:visible group-hover:opacity-100">
-              <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-xl">
+            <div
+              class="desktop-dropdown-menu absolute left-1/2 top-full w-[280px] -translate-x-1/2 pt-2 z-50"
+              data-dropdown-menu
+            >
+              <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-2xl ring-1 ring-black/5">
                 <div class="grid gap-0.5">
                   {item.children.map((child) => (
                     <a
@@ -102,8 +105,15 @@ const navItems = [
                 </div>
               </div>
             </div>
-          )}
-        </div>
+          </div>
+        ) : (
+          <a
+            href={item.href}
+            class="flex items-center gap-1 rounded-lg px-3.5 py-2 text-[14px] font-bold text-slate-700 transition hover:bg-slate-100 hover:text-slate-900"
+          >
+            {item.label}
+          </a>
+        )
       ))}
     </nav>
 
@@ -241,8 +251,106 @@ const navItems = [
   </div>
 </div>
 
+<style>
+  /* Desktop Dropdown Styles */
+  .desktop-dropdown-group {
+    position: relative;
+  }
+
+  .desktop-dropdown-menu {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(4px);
+    transition: opacity 160ms cubic-bezier(0.16, 1, 0.3, 1),
+                transform 160ms cubic-bezier(0.16, 1, 0.3, 1),
+                visibility 160ms;
+  }
+
+  /* Invisible hover tunnel/bridge connecting button to menu so diagonal mouse movement never loses hover */
+  .desktop-dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: -20px;
+    right: -20px;
+    height: 16px;
+    background: transparent;
+  }
+
+  /* Reliable opening: CSS hover, focus-within, and explicit JS is-open class (works on mouse, touch laptops, trackpads) */
+  .desktop-dropdown-group:hover .desktop-dropdown-menu,
+  .desktop-dropdown-group:focus-within .desktop-dropdown-menu,
+  .desktop-dropdown-group.is-open .desktop-dropdown-menu {
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: translateX(-50%) translateY(0) !important;
+  }
+
+  .desktop-dropdown-group:hover .desktop-chevron,
+  .desktop-dropdown-group:focus-within .desktop-chevron,
+  .desktop-dropdown-group.is-open .desktop-chevron {
+    transform: rotate(180deg);
+  }
+</style>
+
 <script is:inline>
   (function () {
+    // ── 1. Desktop Navigation Dropdown Toggle & Click-Outside ──
+    var desktopGroups = document.querySelectorAll(".desktop-dropdown-group");
+
+    desktopGroups.forEach(function (group) {
+      var btn = group.querySelector(".desktop-dropdown-btn");
+      if (!btn) return;
+
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var wasOpen = group.classList.contains("is-open");
+
+        // Close any other open menus
+        desktopGroups.forEach(function (other) {
+          if (other !== group) {
+            other.classList.remove("is-open");
+            var otherBtn = other.querySelector(".desktop-dropdown-btn");
+            if (otherBtn) otherBtn.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        if (wasOpen) {
+          group.classList.remove("is-open");
+          btn.setAttribute("aria-expanded", "false");
+        } else {
+          group.classList.add("is-open");
+          btn.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+
+    // Close desktop dropdowns on click outside
+    document.addEventListener("click", function (e) {
+      desktopGroups.forEach(function (group) {
+        if (!group.contains(e.target)) {
+          group.classList.remove("is-open");
+          var btn = group.querySelector(".desktop-dropdown-btn");
+          if (btn) btn.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+
+    // Close on Escape key
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        desktopGroups.forEach(function (group) {
+          group.classList.remove("is-open");
+          var btn = group.querySelector(".desktop-dropdown-btn");
+          if (btn) btn.setAttribute("aria-expanded", "false");
+        });
+      }
+    });
+
+    // ── 2. Mobile Drawer & Accordion Logic ──
     var openBtn = document.getElementById("mobile-menu-open-btn");
     var closeBtn = document.getElementById("mobile-menu-close-btn");
     var drawer = document.getElementById("mobile-menu-drawer");
@@ -274,7 +382,7 @@ const navItems = [
       });
     }
 
-    // Category accordions
+    // Mobile category accordions
     var categoryBtns = document.querySelectorAll("[data-mobile-category]");
     categoryBtns.forEach(function (btn) {
       btn.addEventListener("click", function () {

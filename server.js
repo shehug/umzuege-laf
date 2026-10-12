@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -25,4 +25,4 @@ if (!entryPath) {
 }
 
 console.log("[Hostinger Boot] Starting Astro Standalone from:", entryPath);
-import(entryPath);
+import(pathToFileURL(entryPath).href);
