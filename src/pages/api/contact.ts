@@ -3,7 +3,74 @@ import nodemailer from "nodemailer";
 
 export const prerender = false;
 
+// ── Rate Limiting (Bot & Spam Schutz) ─────────────────────────────────────────
+// Max. 5 Anfragen pro IP innerhalb von 10 Minuten
+const CONTACT_RATE_LIMIT_MAX = 5;
+const CONTACT_RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
+
+interface ContactRateEntry {
+  count: number;
+  firstAttempt: number;
+}
+
+const contactAttempts = new Map<string, ContactRateEntry>();
+
+function getClientIp(request: Request): string {
+  return (
+    request.headers.get("cf-connecting-ip") ||
+    request.headers.get("x-forwarded-for")?.split(",")[0].trim() ||
+    request.headers.get("x-real-ip") ||
+    "unknown"
+  );
+}
+
+function checkContactRateLimit(ip: string): boolean {
+  if (ip === "unknown") return true;
+  const now = Date.now();
+  const entry = contactAttempts.get(ip);
+
+  if (!entry) {
+    contactAttempts.set(ip, { count: 1, firstAttempt: now });
+    return true;
+  }
+
+  if (now - entry.firstAttempt > CONTACT_RATE_LIMIT_WINDOW_MS) {
+    contactAttempts.set(ip, { count: 1, firstAttempt: now });
+    return true;
+  }
+
+  if (entry.count >= CONTACT_RATE_LIMIT_MAX) {
+    return false;
+  }
+
+  entry.count += 1;
+  return true;
+}
+
+// Regelmäßige Bereinigung alter Einträge um Speicherlecks zu verhindern
+if (typeof setInterval !== "undefined") {
+  setInterval(() => {
+    const now = Date.now();
+    for (const [ip, entry] of contactAttempts.entries()) {
+      if (now - entry.firstAttempt > CONTACT_RATE_LIMIT_WINDOW_MS) {
+        contactAttempts.delete(ip);
+      }
+    }
+  }, 15 * 60 * 1000).unref?.();
+}
+
 export const POST: APIRoute = async ({ request }) => {
+  const ip = getClientIp(request);
+  if (!checkContactRateLimit(ip)) {
+    return new Response(
+      JSON.stringify({
+        success: false,
+        message: "Zu viele Anfragen in kurzer Zeit. Bitte warten Sie einige Minuten oder rufen Sie uns direkt an.",
+      }),
+      { status: 429, headers: { "Content-Type": "application/json", "Retry-After": "600" } }
+    );
+  }
+
   try {
     const body = await request.json();
 
@@ -24,6 +91,19 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
+    // Längenbegrenzungen gegen DoS / Memory-Exhaustion
+    const rawName = String(name).trim().slice(0, 100);
+    const rawPhone = String(phone).trim().slice(0, 50);
+    const rawEmail = email ? String(email).trim().slice(0, 120) : "";
+    const rawRequestType = requestType ? String(requestType).trim().slice(0, 80) : "Allgemein";
+    const rawStartLocation = startLocation ? String(startLocation).trim().slice(0, 200) : "Nicht angegeben";
+    const rawTargetLocation = targetLocation ? String(targetLocation).trim().slice(0, 200) : "Nicht angegeben";
+    const rawMessage = message ? String(message).trim().slice(0, 3000) : "Keine zusätzliche Nachricht angegeben.";
+
+    // Schutz vor Email-Header-Injection (CRLF-Entfernung für Header wie Subject / Reply-To)
+    const sanitizedEmailForHeader = rawEmail.replace(/[\r\n]/g, "");
+    const sanitizedSubjectName = rawName.replace(/[\r\n]/g, " ");
+
     const smtpHost = process.env.SMTP_HOST || "smtp.hostinger.com";
     const smtpPort = Number(process.env.SMTP_PORT || 465);
     const smtpUser = process.env.SMTP_USER || "info@umzuege-laf.de";
@@ -39,13 +119,13 @@ export const POST: APIRoute = async ({ request }) => {
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;");
 
-    const safeName = escapeHtml(String(name));
-    const safePhone = escapeHtml(String(phone));
-    const safeEmail = email ? escapeHtml(String(email)) : "";
-    const safeRequestType = requestType ? escapeHtml(String(requestType)) : "Allgemein";
-    const safeStartLocation = startLocation ? escapeHtml(String(startLocation)) : "Nicht angegeben";
-    const safeTargetLocation = targetLocation ? escapeHtml(String(targetLocation)) : "Nicht angegeben";
-    const safeMessage = message ? escapeHtml(String(message)).replace(/\n/g, "<br />") : "Keine zusätzliche Nachricht angegeben.";
+    const safeName = escapeHtml(rawName);
+    const safePhone = escapeHtml(rawPhone);
+    const safeEmail = rawEmail ? escapeHtml(rawEmail) : "";
+    const safeRequestType = escapeHtml(rawRequestType);
+    const safeStartLocation = escapeHtml(rawStartLocation);
+    const safeTargetLocation = escapeHtml(rawTargetLocation);
+    const safeMessage = escapeHtml(rawMessage).replace(/\n/g, "<br />");
 
     if (!smtpPass) {
       console.log("[DEV / LOCAL TEST] Neue Kontaktanfrage eingegangen:", {
@@ -89,8 +169,8 @@ export const POST: APIRoute = async ({ request }) => {
     await transporter.sendMail({
       from: sender,
       to: recipient,
-      replyTo: email || smtpUser,
-      subject: `Neue Umzugsanfrage: ${safeName} (${safeRequestType})`,
+      replyTo: sanitizedEmailForHeader || smtpUser,
+      subject: `Neue Umzugsanfrage: ${sanitizedSubjectName} (${safeRequestType})`,
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #0f172a; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden;">
           <div style="background-color: #0f172a; color: #ffffff; padding: 20px; text-align: center;">
@@ -117,20 +197,20 @@ export const POST: APIRoute = async ({ request }) => {
           </div>
         </div>
       `,
-        text: `
+      text: `
 Neue Umzugsanfrage über umzuegelandshut.de
 
-Name: ${name}
-Telefon: ${phone}
-E-Mail: ${email || "Nicht angegeben"}
-Leistungsart: ${requestType || "Nicht angegeben"}
-Startadresse: ${startLocation || "Nicht angegeben"}
-Zieladresse: ${targetLocation || "Nicht angegeben"}
+Name: ${rawName}
+Telefon: ${rawPhone}
+E-Mail: ${rawEmail || "Nicht angegeben"}
+Leistungsart: ${rawRequestType}
+Startadresse: ${rawStartLocation}
+Zieladresse: ${rawTargetLocation}
 
 Nachricht:
-${message || "Keine Angabe"}
-        `,
-      });
+${rawMessage}
+      `,
+    });
 
     return new Response(
       JSON.stringify({
