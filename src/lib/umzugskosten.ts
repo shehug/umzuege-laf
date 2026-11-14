@@ -156,7 +156,7 @@ export const STEP3_DISCLAIMER =
   "Halteverbotszone und Entrümpelung sind nicht in der angezeigten Schätzung enthalten. Wir berücksichtigen diese Leistungen bei der Erstellung Ihres Angebots.";
 
 export const BUSINESS_HOURS_PROMISE =
-  "Bei vollständigen Angaben zu Ihrem Umzug erhalten Sie innerhalb von vier Stunden während unserer Geschäftszeiten ein Angebot. Geschäftszeiten: Montag bis Samstag, 08:00–18:00 Uhr. Gezählt werden ausschließlich Stunden innerhalb der Geschäftszeiten. Außerhalb dieser Zeiten beginnt die Frist mit dem nächsten Geschäftszeitbeginn.";
+  "Bei vollständigen Angaben zu Ihrem Umzug erhalten Sie innerhalb von vier Stunden während unserer Geschäftszeiten ein Angebot. Geschäftszeiten: Montag bis Freitag, 08:00–18:00 Uhr und Samstag, 09:00–17:00 Uhr. Gezählt werden ausschließlich Stunden innerhalb der Geschäftszeiten. Außerhalb dieser Zeiten beginnt die Frist mit dem nächsten Geschäftszeitbeginn.";
 
 export const faqs = [
   {

@@ -8,6 +8,7 @@ import LocalSeoLinks from "@/components/LocalSeoLinks";
 import ContactForm from "@/components/ContactForm";
 import GoogleReviews from "@/components/GoogleReviews";
 import NikeCheck from "@/components/NikeCheck.astro";
+import RealWorkGallery from "@/components/RealWorkGallery.astro";
 
 const phone = "0162 900 75 65";
 const phoneHref = "tel:+491629007565";
@@ -20,8 +21,8 @@ const trustPillars = [
   },
   {
     id: "versicherung",
-    title: "Versicherter Umzug",
-    desc: "Versicherungsschutz für Umzugsleistungen. Umfang und Bedingungen klären wir vor der Beauftragung.",
+    title: "100 % versicherter Umzug",
+    desc: "Gesetzliche Verkehrshaftung nach § 451g HGB (620 € je m³ Ladevolumen) sowie umfassende Transport- und Betriebshaftpflichtversicherung für Ihr Umzugsgut und das Treppenhaus.",
   },
   {
     id: "regional",
@@ -31,7 +32,7 @@ const trustPillars = [
   {
     id: "schnelligkeit",
     title: "Rückmeldung in 4 Stunden",
-    desc: "Rückmeldung innerhalb von 4 Geschäftszeit-Stunden (Mo–Sa, 08:00–18:00 Uhr). Das Festpreis-Angebot folgt nach Klärung des Leistungsumfangs.",
+    desc: "Rückmeldung innerhalb von 4 Geschäftszeit-Stunden (Mo–Fr: 08:00–18:00 Uhr, Sa: 09:00–17:00 Uhr). Schnelle 2-Minuten-Besichtigung per WhatsApp-Video oder kostenlos vor Ort in Landshut.",
   },
 ];
 
@@ -42,6 +43,7 @@ const mainServices = [
     text: "Stressfreier Wohnungsumzug oder Hausumzug mit Einpackservice, Möbeltransport und Montage.",
     href: "/privatumzug-landshut",
     image: "/images/services/privatumzug.jpg",
+    imageAlt: "Umzüge LAF Transporter und Team beim Privatumzug in Landshut",
   },
   {
     title: "Firmenumzug Landshut",
@@ -49,6 +51,7 @@ const mainServices = [
     text: "Strukturierte Büroumzüge, Praxisumzüge und Gewerbeumzüge mit minimaler Ausfallzeit.",
     href: "/firmenumzug-landshut",
     image: "/images/services/firmenumzug.jpg",
+    imageAlt: "Professioneller Büroumzug und Möbeltransport in Landshut durch Umzüge LAF",
   },
   {
     title: "Möbelmontage",
@@ -56,6 +59,7 @@ const mainServices = [
     text: "Fachgerechter Abbau, sicherer Transport und stabiler Wiederaufbau aller Möbel.",
     href: "/umzuege/moebelmontage",
     image: "/images/services/Montage.jpg",
+    imageAlt: "Fachgerechte Möbelmontage und Schrankaufbau beim Umzug in Landshut",
   },
   {
     title: "Entrümpelung & Räumung",
@@ -63,6 +67,7 @@ const mainServices = [
     text: "Wohnungsauflösungen, Keller, Dachböden und Sperrmüllentsorgung schnell und sauber.",
     href: "/entruempelung-landshut",
     image: "/images/services/entruempelung.jpg",
+    imageAlt: "Besenreine Entrümpelung und Haushaltsauflösung in Landshut mit Umzüge LAF",
   },
 ];
 
@@ -75,7 +80,7 @@ const steps = [
   {
     num: "2",
     title: "Verbindliches Festpreis-Angebot",
-    text: "Bei vollständigen Angaben zu Ihrem Umzug erhalten Sie während unserer Geschäftszeiten innerhalb von vier Stunden ein Angebot. Geschäftszeiten: Mo–Sa, 08:00–18:00 Uhr. Außerhalb dieser Zeiten beginnt die Vier-Stunden-Frist mit dem nächsten Geschäftszeitbeginn. Gezählt werden ausschließlich Stunden innerhalb der Geschäftszeiten.",
+    text: "Bei vollständigen Angaben zu Ihrem Umzug erhalten Sie während unserer Geschäftszeiten innerhalb von vier Stunden ein Angebot. Geschäftszeiten: Mo–Fr: 08:00–18:00 Uhr, Sa: 09:00–17:00 Uhr. Außerhalb dieser Zeiten beginnt die Vier-Stunden-Frist mit dem nächsten Geschäftszeitbeginn. Gezählt werden ausschließlich Stunden innerhalb der Geschäftszeiten.",
   },
   {
     num: "3",
@@ -91,11 +96,11 @@ const homeFaqs = [
   },
   {
     q: "Wie schnell erhalte ich mein Umzugsangebot?",
-    a: "Bei vollständigen Angaben zu Ihrem Umzug erhalten Sie innerhalb von vier Stunden während unserer Geschäftszeiten ein Angebot. Wir sind Montag bis Samstag von 08:00 bis 18:00 Uhr erreichbar. Für Anfragen außerhalb dieser Zeiten beginnt die Vier-Stunden-Frist mit dem nächsten Geschäftszeitbeginn. Gezählt werden ausschließlich Stunden innerhalb unserer Geschäftszeiten.",
+    a: "Bei vollständigen Angaben zu Ihrem Umzug erhalten Sie innerhalb von vier Stunden während unserer Geschäftszeiten ein Angebot. Wir sind Montag bis Freitag von 08:00 bis 18:00 Uhr und Samstag von 09:00 bis 17:00 Uhr erreichbar. Für Anfragen außerhalb dieser Zeiten beginnt die Vier-Stunden-Frist mit dem nächsten Geschäftszeitbeginn. Gezählt werden ausschließlich Stunden innerhalb unserer Geschäftszeiten.",
   },
   {
     q: "Sind meine Möbel beim Transport versichert?",
-    a: "Umzüge LAF verfügt über Versicherungsschutz für Umzugsleistungen. Welche Leistungen und Gegenstände im konkreten Auftrag versichert sind und welche Bedingungen gelten, klären wir vor der Beauftragung.",
+    a: "Ja, zu 100 %! Bei Umzüge LAF gilt die gesetzliche Verkehrshaftung nach § 451g HGB (620 € je m³ Ladevolumen) sowie eine umfassende Transport- und Betriebshaftpflichtversicherung für Ihr Umzugsgut und das Treppenhaus.",
   },
   {
     q: "Sind auch kurzfristige Umzugstermine möglich?",
@@ -123,6 +128,7 @@ const meta = createSeoMetadata(seoPages.home);
   canonical={meta.canonical}
   image={meta.image}
   noIndex={meta.noIndex}
+  faqs={homeFaqs}
 >
   <main class="min-h-screen bg-white text-slate-900">
       <Header />
@@ -132,7 +138,7 @@ const meta = createSeoMetadata(seoPages.home);
         <div class="absolute inset-0 z-0 opacity-60">
           <Image
             src="/images/hero/Hero.webp"
-            alt="Umzüge LAF Transporter und Team Landshut"
+            alt="Umzugswagen und Team von Umzüge LAF beim Privatumzug in Landshut"
             fill
             priority
             fetchPriority="high"
@@ -155,8 +161,8 @@ const meta = createSeoMetadata(seoPages.home);
               </div>
 
               <h1 class="text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.15]">
-                Umzugsunternehmen &amp; Umzugsfirma Landshut.<br />
-                <span class="text-amber-400">Stressfreie Umzüge zum Festpreis.</span>
+                Umzugsunternehmen &amp; Umzugsfirma in Landshut –<br class="hidden sm:inline" />
+                <span class="text-amber-400">Stressfrei umziehen zum Festpreis</span>
               </h1>
 
               <p class="mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
@@ -197,7 +203,7 @@ const meta = createSeoMetadata(seoPages.home);
                 </div>
                 <div class="flex items-center gap-2 group cursor-default">
                   <NikeCheck delay="1s" />
-                  <span class="transition-colors group-hover:text-white">Angebot in 4 Std. (Mo–Sa)</span>
+                  <span class="transition-colors group-hover:text-white">Angebot in 4 Std. (Mo–Fr 8–18, Sa 9–17)</span>
                 </div>
               </div>
             </div>
@@ -341,9 +347,9 @@ const meta = createSeoMetadata(seoPages.home);
                       </span>
                       <span>
                         {p.id === "festpreis" && "Verbindliche Kosten ohne Überraschungen"}
-                        {p.id === "versicherung" && "Versicherungsumfang vorab besprechen"}
-                        {p.id === "regional" && "Kurze Wege & persönliche Beratung"}
-                        {p.id === "schnelligkeit" && "Feste Antwortzeit während Bürozeiten"}
+                        {p.id === "versicherung" && "Gesetzliche Haftung § 451g HGB + Betriebshaftpflicht"}
+                        {p.id === "regional" && "Kurze Wege & persönliche Beratung in Landshut"}
+                        {p.id === "schnelligkeit" && "Mo–Fr 8–18, Sa 9–17 Uhr · Video- oder Vor-Ort-Termin"}
                       </span>
                     </div>
                   </div>
@@ -412,7 +418,7 @@ const meta = createSeoMetadata(seoPages.home);
                 <div class="relative h-44 w-full overflow-hidden bg-slate-100">
                   <Image
                     src={srv.image}
-                    alt={srv.title}
+                    alt={srv.imageAlt || srv.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     class="object-cover transition duration-300 group-hover:scale-105"
@@ -443,8 +449,243 @@ const meta = createSeoMetadata(seoPages.home);
         </div>
       </section>
 
+      {/* ── NEU: PREISTABELLE (FEATURED-SNIPPET-MAGNET FÜR UMZUGSKOSTEN LANDSHUT) ── */}
+      <section class="py-16 sm:py-24 bg-slate-950 text-white border-b border-slate-800">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl">
+            <div class="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-3.5 py-1 text-xs font-bold text-amber-300">
+              <span>💶 Transparente Preisübersicht · Umzug Landshut</span>
+            </div>
+            <h2 class="mt-3 text-2xl sm:text-4xl font-black tracking-tight text-white">
+              Was kostet ein Umzug in Landshut? Richtwerte &amp; Festpreise
+            </h2>
+            <p class="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
+              Transparenz von Anfang an: Nachfolgend finden Sie realistische Richtwerte für Ihren Umzug in Landshut und Umgebung. Jeden Umzug führen wir auf Wunsch mit verbindlicher 100% Festpreis-Garantie ohne Nachforderungen durch.
+            </p>
+          </div>
+
+          <div class="mt-8 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/90 shadow-2xl backdrop-blur-md">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="border-b border-slate-800 bg-slate-900 text-xs font-black uppercase tracking-wider text-amber-400">
+                    <th scope="col" class="py-4 px-5 sm:px-6">Wohnungsgröße / Umzugsart</th>
+                    <th scope="col" class="py-4 px-5 sm:px-6">Volumen &amp; Team</th>
+                    <th scope="col" class="py-4 px-5 sm:px-6">Inkludierte Leistungen</th>
+                    <th scope="col" class="py-4 px-5 sm:px-6 text-right">Kosten &amp; Kalkulation</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-800/80 text-xs sm:text-sm text-slate-300">
+                  <tr class="hover:bg-slate-800/40 transition">
+                    <td class="py-4 px-5 sm:px-6 font-bold text-white">
+                      1–2 Zimmer Wohnung<br />
+                      <span class="text-xs font-normal text-slate-400">bis 45 m²</span>
+                    </td>
+                    <td class="py-4 px-5 sm:px-6">
+                      ca. 15–20 m³ Ladevolumen<br />
+                      <span class="text-xs text-amber-300 font-semibold">2 Umzugshelfer + LKW</span>
+                    </td>
+                    <td class="py-4 px-5 sm:px-6">
+                      Transport, Schutzdecken, Spanngurte, Versicherung nach § 451g HGB
+                    </td>
+                    <td class="py-4 px-5 sm:px-6 text-right font-black text-amber-400">
+                      Richtwert / Festpreis nach Besichtigung
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-slate-800/40 transition">
+                    <td class="py-4 px-5 sm:px-6 font-bold text-white">
+                      3 Zimmer Wohnung<br />
+                      <span class="text-xs font-normal text-slate-400">60–80 m²</span>
+                    </td>
+                    <td class="py-4 px-5 sm:px-6">
+                      ca. 25–35 m³ Ladevolumen<br />
+                      <span class="text-xs text-amber-300 font-semibold">3 Umzugshelfer + LKW</span>
+                    </td>
+                    <td class="py-4 px-5 sm:px-6">
+                      Inkl. Transportversicherung, Möbel-Demontage &amp; fachgerechter Montage
+                    </td>
+                    <td class="py-4 px-5 sm:px-6 text-right font-black text-amber-400">
+                      Inkl. Versicherung &amp; Demontage/Montage
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-slate-800/40 transition">
+                    <td class="py-4 px-5 sm:px-6 font-bold text-white">
+                      4+ Zimmer / Einfamilienhaus<br />
+                      <span class="text-xs font-normal text-slate-400">ab 90 m²</span>
+                    </td>
+                    <td class="py-4 px-5 sm:px-6">
+                      ab 35–50+ m³ Ladevolumen<br />
+                      <span class="text-xs text-amber-300 font-semibold">3–4 Umzugshelfer + LKW</span>
+                    </td>
+                    <td class="py-4 px-5 sm:px-6">
+                      Kostenlose Vor-Ort-Besichtigung in Landshut, Packservice &amp; Komplettmontage
+                    </td>
+                    <td class="py-4 px-5 sm:px-6 text-right font-black text-amber-400">
+                      Kostenlose Vor-Ort-Besichtigung in Landshut
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-slate-800/40 transition">
+                    <td class="py-4 px-5 sm:px-6 font-bold text-white">
+                      Firmenumzug / Büroumzug Landshut<br />
+                      <span class="text-xs font-normal text-slate-400">Büro, Praxis, Gewerbe</span>
+                    </td>
+                    <td class="py-4 px-5 sm:px-6">
+                      Individuelles Team &amp;<br />
+                      <span class="text-xs text-amber-300 font-semibold">angepasster Fuhrpark</span>
+                    </td>
+                    <td class="py-4 px-5 sm:px-6">
+                      IT- &amp; Akten-Logistik, Wochenend-Service ohne Betriebsunterbrechung
+                    </td>
+                    <td class="py-4 px-5 sm:px-6 text-right font-black text-amber-400">
+                      Wochenend-Service ohne Betriebsunterbrechung
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="border-t border-slate-800 bg-slate-900/60 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <p class="text-xs text-slate-400 text-center sm:text-left">
+                💡 <strong>Hinweis:</strong> Jeder Umzug ist individuell. Nutzen Sie unseren kostenlosen Online-Rechner für eine genaue Modellschätzung oder vereinbaren Sie eine Vor-Ort-Besichtigung.
+              </p>
+              <a
+                href="/umzugskosten-landshut#umzugskosten-rechner"
+                class="inline-flex items-center gap-2 rounded-xl bg-amber-400 px-5 py-2.5 text-xs font-black text-slate-950 transition hover:bg-amber-300 shrink-0"
+              >
+                <span>🧮 Zum Umzugskostenrechner Landshut</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── ECHTE KUNDENBEWERTUNGEN VOM GOOGLE PROFIL ── */}
       <GoogleReviews />
+
+      {/* ── NEU: LOKALE LANDSHUT-SPEZIFIKA (H2 ENTITÄTEN- & BEZIRKS-ARCHITEKTUR) ── */}
+      <section class="py-16 sm:py-24 bg-white border-b border-slate-200">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div>
+              <div class="inline-flex items-center gap-2 rounded-full bg-amber-100 border border-amber-300 px-3.5 py-1 text-xs font-bold text-amber-900">
+                <span>📍 Lokale Umzugsexpertise Landshut</span>
+              </div>
+              <h2 class="mt-3 text-2xl sm:text-4xl font-black tracking-tight text-slate-900 leading-tight">
+                Ihr ortsansässiges Umzugsteam für alle Stadtteile in Landshut &amp; Umland
+              </h2>
+              <p class="mt-4 text-sm sm:text-base leading-relaxed text-slate-700">
+                Als eingespieltes <strong>Umzugsunternehmen mit Standort in der Ergoldinger Straße 15 in Landshut</strong> kennen wir die verkehrstechnischen und baulichen Besonderheiten unserer Region aus unzähligen Einsätzen ganz genau:
+              </p>
+
+              <div class="mt-6 space-y-4">
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:border-amber-400">
+                  <h3 class="text-sm sm:text-base font-black text-slate-900 flex items-center gap-2">
+                    <span class="text-amber-600">🏛️</span>
+                    <span>Halteverbotszonen in der Altstadt, Neustadt &amp; Dreifaltigkeitsplatz</span>
+                  </h3>
+                  <p class="mt-1 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    Enge Straßen, Pflasterbelag und Fußgängerzonen im historischen Stadtkern erfordern perfekte Logistik. Wir übernehmen die behördliche Genehmigung bei der Stadt Landshut und die fristgerechte Aufstellung der Schilder, damit der Transporter unmittelbar vor der Haustür steht.
+                  </p>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:border-amber-400">
+                  <h3 class="text-sm sm:text-base font-black text-slate-900 flex items-center gap-2">
+                    <span class="text-amber-600">🏢</span>
+                    <span>Altbau-Umzüge in Nikola &amp; Wolfgang</span>
+                  </h3>
+                  <p class="mt-1 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    Hohe Geschosse, schmale Treppenaufgänge und verwinkelte Eingänge rund um den Hauptbahnhof meistern unsere Möbelträger mit professionellen Hebegurten, Treppenkantenschutz und bodenschonenden Schutzvliesen.
+                  </p>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:border-amber-400">
+                  <h3 class="text-sm sm:text-base font-black text-slate-900 flex items-center gap-2">
+                    <span class="text-amber-600">🏡</span>
+                    <span>Hausumzüge in Achdorf, Berg, Schönbrunn, Frauenberg, Münchnerau &amp; Peter und Paul</span>
+                  </h3>
+                  <p class="mt-1 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    Vom Einfamilienhaus am Hang des Hofbergs bis zur modernen Wohnanlage in Schönbrunn und Münchnerau: Wir disponieren LKW-Kapazitäten und Trägerteams exakt so, dass Ihr gesamter Hausrat an einem einzigen Tag ankommt.
+                  </p>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:border-amber-400">
+                  <h3 class="text-sm sm:text-base font-black text-slate-900 flex items-center gap-2">
+                    <span class="text-amber-600">🚚</span>
+                    <span>Kurze Anfahrtswege im gesamten Landkreis Landshut</span>
+                  </h3>
+                  <p class="mt-1 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    Dank unserer zentralen Lage in der Ergoldinger Straße erreichen wir in wenigen Minuten <strong>Ergolding, Altdorf, Kumhausen, Essenbach, Bruckberg, Vilsbiburg und Moosburg</strong> ohne teure Zusatzanfahrten.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-6">
+              {/* E-E-A-T Versicherungs- & Vertrauensbox */}
+              <div class="rounded-2xl border-2 border-amber-400 bg-gradient-to-br from-amber-500/10 via-amber-400/5 to-slate-50 p-6 sm:p-8 shadow-lg">
+                <div class="flex items-center gap-3">
+                  <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-400 text-slate-950 text-2xl font-black shadow-sm">
+                    🛡️
+                  </span>
+                  <div>
+                    <p class="text-xs font-bold uppercase tracking-wider text-amber-800">E-E-A-T Vertrauens-Garantie</p>
+                    <h3 class="text-lg sm:text-xl font-black text-slate-900">100 % versicherter Umzug</h3>
+                  </div>
+                </div>
+
+                <p class="mt-4 text-xs sm:text-sm leading-relaxed text-slate-700">
+                  Gesetzliche Verkehrshaftung nach <strong>§ 451g HGB (620 € je m³ Ladevolumen)</strong> sowie umfassende Transport- und Betriebshaftpflichtversicherung für Ihr Umzugsgut und das Treppenhaus.
+                </p>
+
+                <div class="mt-5 rounded-xl border border-amber-200 bg-white/90 p-4 text-xs text-slate-800">
+                  <p class="font-bold flex items-center gap-1.5 text-amber-950 text-sm">
+                    <span>📹</span>
+                    <span>Flexible Besichtigung nach Wahl:</span>
+                  </p>
+                  <p class="mt-1 text-slate-600 leading-relaxed">
+                    Schnelle 2-Minuten-Besichtigung per WhatsApp-Video oder kostenlos vor Ort in Landshut.
+                  </p>
+                </div>
+
+                <div class="mt-5 flex flex-col sm:flex-row gap-2.5">
+                  <a
+                    href="https://wa.me/491629007565?text=Hallo%20Umz%C3%BCge%20LAF%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Video-Besichtigungstermin%20per%20WhatsApp%20anfragen."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 py-3 text-xs font-black text-white shadow-sm hover:bg-green-600 transition"
+                  >
+                    <span>💬 WhatsApp Video-Termin</span>
+                  </a>
+                  <a
+                    href="/kontakt?leistung=Besichtigung#anfrageformular"
+                    class="flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-3 text-xs font-black text-white shadow-sm hover:bg-slate-800 transition"
+                  >
+                    <span>Vor-Ort-Besichtigung anfragen</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Lokale Einsatzorte Badge Matrix */}
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+                <p class="text-xs font-black uppercase tracking-wider text-[#b45309]">Stadtteile &amp; Landkreis Landshut</p>
+                <p class="mt-1 text-sm font-bold text-slate-900">Täglich einsatzbereit für Ihren Umzug</p>
+                <div class="mt-4 flex flex-wrap gap-1.5">
+                  {[
+                    "Altstadt", "Neustadt", "Dreifaltigkeitsplatz", "Nikola", "Wolfgang",
+                    "Achdorf", "Berg", "Schönbrunn", "Frauenberg", "Münchnerau",
+                    "Peter & Paul", "Ergolding", "Altdorf", "Kumhausen", "Essenbach",
+                    "Bruckberg", "Vilsbiburg", "Moosburg"
+                  ].map((district) => (
+                    <span key={district} class="rounded-lg border border-slate-200 bg-white px-2.5 py-1 text-[11px] font-semibold text-slate-700">
+                      ✓ {district}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ── DIREKTANFRAGE FORMULAR SEKTION ── */}
       <section id="direktanfrage" class="py-16 sm:py-24 bg-slate-900 text-white scroll-mt-20">
@@ -464,7 +705,7 @@ const meta = createSeoMetadata(seoPages.home);
                 Teilen Sie uns Startadresse, Zieladresse, Terminwunsch und den Umfang Ihres Umzugs mit. Bei vollständigen Angaben erhalten Sie während unserer Geschäftszeiten innerhalb von vier Stunden ein Angebot.
               </p>
               <p class="mt-2 text-xs sm:text-sm text-slate-400 leading-relaxed">
-                Geschäftszeiten: Mo–Sa, 08:00–18:00 Uhr. Außerhalb dieser Zeiten beginnt die Vier-Stunden-Frist mit dem nächsten Geschäftszeitbeginn. Gezählt werden ausschließlich Stunden innerhalb der Geschäftszeiten.
+                Geschäftszeiten: Mo–Fr: 08:00–18:00 Uhr, Sa: 09:00–17:00 Uhr. Außerhalb dieser Zeiten beginnt die Vier-Stunden-Frist mit dem nächsten Geschäftszeitbeginn. Gezählt werden ausschließlich Stunden innerhalb der Geschäftszeiten.
               </p>
 
               <div class="mt-8 rounded-2xl border border-slate-700 bg-slate-800/60 p-6">
@@ -479,7 +720,7 @@ const meta = createSeoMetadata(seoPages.home);
                   <span>{phone}</span>
                 </a>
                 <p class="mt-1 text-xs text-slate-400">
-                  Mo–Sa: 08:00 – 18:00 Uhr erreichbar
+                  Mo–Fr: 08:00 – 18:00 Uhr · Sa: 09:00 – 17:00 Uhr erreichbar
                 </p>
               </div>
 
@@ -539,8 +780,8 @@ const meta = createSeoMetadata(seoPages.home);
                 <p class="mt-2 text-xs leading-relaxed text-slate-600">Verbindliche Angebote ohne Nachverhandlungen oder versteckte Extrakosten.</p>
               </div>
               <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                <p class="text-base font-black text-slate-900">Versicherungsschutz klären</p>
-                <p class="mt-2 text-xs leading-relaxed text-slate-600">Transport- und Haftpflichtschutz für Ihr Mobiliar bei jedem Umzug inklusive.</p>
+                <p class="text-base font-black text-slate-900">100 % versicherter Umzug</p>
+                <p class="mt-2 text-xs leading-relaxed text-slate-600">Gesetzliche Verkehrshaftung nach § 451g HGB (620 € je m³ Ladevolumen) sowie umfassende Transport- und Betriebshaftpflichtversicherung.</p>
               </div>
               <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                 <p class="text-base font-black text-slate-900">Möbelmontage & Packservice</p>
@@ -548,12 +789,15 @@ const meta = createSeoMetadata(seoPages.home);
               </div>
               <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                 <p class="text-base font-black text-slate-900">Express & Spontantermine</p>
-                <p class="mt-2 text-xs leading-relaxed text-slate-600">Kurzfristige Termine nach Verfügbarkeit und garantierte Rückmeldung in 4 Std. (Mo–Sa 08–18 Uhr).</p>
+                <p class="mt-2 text-xs leading-relaxed text-slate-600">Kurzfristige Termine nach Verfügbarkeit und garantierte Rückmeldung in 4 Std. (Mo–Fr: 08–18 Uhr, Sa: 09–17 Uhr).</p>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* ── ECHTE EINSÄTZE AUS LANDSHUT GALERIE (E-E-A-T & BILD-SEO) ── */}
+      <RealWorkGallery />
 
       {/* ── FAQ SEKTION (6 FAQs) ── */}
       <section class="py-16 sm:py-24 bg-white border-t border-slate-200">

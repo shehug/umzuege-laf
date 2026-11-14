@@ -39,17 +39,17 @@ export default function ServiceJsonLd({
     ],
     provider: {
       "@type": "MovingCompany",
-      "@id": `${siteUrl}/#localbusiness`,
+      "@id": `${siteUrl}/#organization`,
       name: "Umzüge LAF",
       url: siteUrl,
       telephone: "+491629007565",
-      email: "info@umzuege-laf.de",
+      email: "info@umzuegelandshut.de",
       address: {
         "@type": "PostalAddress",
         streetAddress: "Ergoldinger Str. 15",
         postalCode: "84030",
         addressLocality: "Landshut",
-        addressRegion: "Bayern",
+        addressRegion: "BY",
         addressCountry: "DE",
       },
     },
@@ -63,7 +63,7 @@ export default function ServiceJsonLd({
         name: "Landshut",
       },
       seller: {
-        "@id": `${siteUrl}/#localbusiness`,
+        "@id": `${siteUrl}/#organization`,
       },
     },
   };

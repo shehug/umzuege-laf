@@ -18,7 +18,7 @@ const allFaqs = [
   },
   {
     q: "Wie schnell kann ich ein Angebot erhalten?",
-    a: "Nennen Sie uns Startadresse, Zieladresse, Etagen, gewünschten Termin und den Umfang Ihres Umzugs über unser Online-Formular oder telefonisch. Bei vollständigen Angaben erhalten Sie innerhalb von vier Stunden während unserer Geschäftszeiten ein Angebot. Geschäftszeiten: Montag bis Samstag, 08:00–18:00 Uhr. Gezählt werden ausschließlich Stunden innerhalb der Geschäftszeiten. Außerhalb dieser Zeiten beginnt die Frist mit dem nächsten Geschäftszeitbeginn.",
+    a: "Nennen Sie uns Startadresse, Zieladresse, Etagen, gewünschten Termin und den Umfang Ihres Umzugs über unser Online-Formular oder telefonisch. Bei vollständigen Angaben erhalten Sie innerhalb von vier Stunden während unserer Geschäftszeiten ein Angebot. Geschäftszeiten: Montag bis Freitag von 08:00 bis 18:00 Uhr und Samstag von 09:00 bis 17:00 Uhr. Gezählt werden ausschließlich Stunden innerhalb der Geschäftszeiten. Außerhalb dieser Zeiten beginnt die Frist mit dem nächsten Geschäftszeitbeginn.",
   },
   {
     q: "Bietet Umzüge LAF auch kurzfristige Umzüge an?",
@@ -58,6 +58,7 @@ const meta = createSeoMetadata(seoPages.faq);
   canonical={meta.canonical}
   image={meta.image}
   noIndex={meta.noIndex}
+  faqs={allFaqs}
 >
   <main class="min-h-screen bg-white text-slate-900">
       <Header />
@@ -100,6 +101,54 @@ const meta = createSeoMetadata(seoPages.faq);
                 </p>
               </div>
             ))}
+          </div>
+
+          {/* ── RATGEBER & DIREKT-VERLINKUNG ── */}
+          <div class="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+            <h3 class="text-lg font-black text-slate-900">
+              Direkt zu den gewünschten Umzugsservices in Landshut
+            </h3>
+            <p class="mt-2 text-xs sm:text-sm text-slate-600">
+              Finden Sie detaillierte Informationen, Checklisten und Kostenkalkulationen für Ihren individuellen Bedarf:
+            </p>
+            <div class="mt-5 flex flex-wrap gap-2.5">
+              <a
+                href="/"
+                class="rounded-xl border border-slate-300 bg-white px-4 py-2 text-xs font-bold text-slate-800 hover:border-amber-400 hover:text-amber-600 transition shadow-xs"
+              >
+                Umzugsunternehmen Landshut (Startseite) →
+              </a>
+              <a
+                href="/umzugskosten-landshut"
+                class="rounded-xl border border-slate-300 bg-white px-4 py-2 text-xs font-bold text-slate-800 hover:border-amber-400 hover:text-amber-600 transition shadow-xs"
+              >
+                Umzugskosten &amp; Rechner →
+              </a>
+              <a
+                href="/privatumzug-landshut"
+                class="rounded-xl border border-slate-300 bg-white px-4 py-2 text-xs font-bold text-slate-800 hover:border-amber-400 hover:text-amber-600 transition shadow-xs"
+              >
+                Privatumzug Landshut →
+              </a>
+              <a
+                href="/seniorenumzug-landshut"
+                class="rounded-xl border border-slate-300 bg-white px-4 py-2 text-xs font-bold text-slate-800 hover:border-amber-400 hover:text-amber-600 transition shadow-xs"
+              >
+                Seniorenumzug Landshut →
+              </a>
+              <a
+                href="/umzuege/halteverbotszone"
+                class="rounded-xl border border-slate-300 bg-white px-4 py-2 text-xs font-bold text-slate-800 hover:border-amber-400 hover:text-amber-600 transition shadow-xs"
+              >
+                Halteverbotszone Landshut einrichten →
+              </a>
+              <a
+                href="/entruempelung-landshut"
+                class="rounded-xl border border-slate-300 bg-white px-4 py-2 text-xs font-bold text-slate-800 hover:border-amber-400 hover:text-amber-600 transition shadow-xs"
+              >
+                Entrümpelung Landshut →
+              </a>
+            </div>
           </div>
         </div>
       </section>

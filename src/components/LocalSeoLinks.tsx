@@ -5,11 +5,11 @@ const primaryLinks = [
   },
   {
     title: "Umzugsunternehmen Landshut",
-    href: "/umzugsunternehmen-landshut",
+    href: "/",
   },
   {
     title: "Umzugsfirma Landshut",
-    href: "/umzug-landshut",
+    href: "/",
   },
   {
     title: "Umzugskosten Landshut",
@@ -45,6 +45,10 @@ const serviceLinks = [
   {
     title: "Möbelmontage Landshut",
     href: "/umzuege/moebelmontage",
+  },
+  {
+    title: "Halteverbotszone Landshut",
+    href: "/umzuege/halteverbotszone",
   },
   {
     title: "Einpackservice Landshut",

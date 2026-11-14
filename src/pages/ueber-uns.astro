@@ -8,6 +8,7 @@ import LocalSeoLinks from "@/components/LocalSeoLinks";
 import ContactForm from "@/components/ContactForm";
 import GoogleReviews from "@/components/GoogleReviews";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import RealWorkGallery from "@/components/RealWorkGallery.astro";
 
 const phone = "0162 900 75 65";
 const phoneHref = "tel:+491629007565";
@@ -56,7 +57,7 @@ const meta = createSeoMetadata(seoPages.ueberUns);
         <div class="absolute inset-0 z-0 opacity-60">
           <Image
             src="/images/services/umzuege-laf-1.jpg"
-            alt="Umzüge LAF Team und Service Landshut"
+            alt="Inhaber Fahri Kalludra und das Team von Umzüge LAF in Landshut"
             fill
             priority
             sizes="100vw"
@@ -132,6 +133,9 @@ const meta = createSeoMetadata(seoPages.ueberUns);
       {/* ── KUNDENSTIMMEN ── */}
       <GoogleReviews />
 
+      {/* ── ECHTE EINSÄTZE AUS LANDSHUT GALERIE ── */}
+      <RealWorkGallery />
+
       {/* ── ANFRAGE SEKTION ── */}
       <section id="anfrage-formular" class="py-16 sm:py-24 bg-slate-900 text-white scroll-mt-20">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -147,7 +151,7 @@ const meta = createSeoMetadata(seoPages.ueberUns);
               </h2>
 
               <p class="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
-                Rufen Sie uns an oder senden Sie uns Ihre Anfrage. Bei vollständigen Angaben zu Ihrem Umzug erhalten Sie innerhalb von vier Stunden während unserer Geschäftszeiten ein Angebot. Geschäftszeiten: Montag bis Samstag, 08:00–18:00 Uhr. Außerhalb dieser Zeiten beginnt die Vier-Stunden-Frist mit dem nächsten Geschäftszeitbeginn. Gezählt werden ausschließlich Stunden innerhalb der Geschäftszeiten.
+                Rufen Sie uns an oder senden Sie uns Ihre Anfrage. Bei vollständigen Angaben zu Ihrem Umzug erhalten Sie innerhalb von vier Stunden während unserer Geschäftszeiten ein Angebot. Geschäftszeiten: Montag bis Freitag von 08:00 bis 18:00 Uhr und Samstag von 09:00 bis 17:00 Uhr. Gezählt werden ausschließlich Stunden innerhalb der Geschäftszeiten.
               </p>
 
               <div class="mt-6 rounded-2xl border border-slate-700 bg-slate-800/80 p-5">
@@ -162,7 +166,7 @@ const meta = createSeoMetadata(seoPages.ueberUns);
                   <span>{phone}</span>
                 </a>
                 <p class="mt-2 text-xs text-slate-400">
-                  Ergoldinger Str. 15, 84030 Landshut · Mo–Sa: 08:00 – 18:00 Uhr
+                  Ergoldinger Str. 15, 84030 Landshut · Mo–Fr: 08:00 – 18:00 Uhr, Sa: 09:00 – 17:00 Uhr
                 </p>
               </div>
             </div>

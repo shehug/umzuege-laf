@@ -1,13 +1,13 @@
 ---
 const phone = "0162 900 75 65";
 const phoneHref = "tel:+491629007565";
-const email = "info@umzuege-laf.de";
+const email = "info@umzuegelandshut.de";
 
 const links = [
   { label: "Startseite", href: "/" },
-  { label: "Umzugsunternehmen Landshut", href: "/umzugsunternehmen-landshut" },
+  { label: "Umzugsunternehmen Landshut", href: "/" },
   { label: "Umzugskosten & Rechner", href: "/umzugskosten-landshut" },
-  { label: "Umzugsfirma Landshut", href: "/umzug-landshut" },
+  { label: "Umzugsfirma Landshut", href: "/" },
   { label: "Leistungen", href: "/leistungen" },
   { label: "Über uns", href: "/ueber-uns" },
   { label: "Häufige Fragen (FAQ)", href: "/faq" },
@@ -20,6 +20,7 @@ const services = [
   { label: "Seniorenumzug Landshut", href: "/seniorenumzug-landshut" },
   { label: "Kleintransporte Landshut", href: "/kleintransporte-landshut" },
   { label: "Firmenumzug Landshut", href: "/firmenumzug-landshut" },
+  { label: "Halteverbotszone Landshut", href: "/umzuege/halteverbotszone" },
   { label: "Entrümpelung Landshut", href: "/entruempelung-landshut" },
   { label: "Wohnungsauflösung Landshut", href: "/wohnungsaufloesung-landshut" },
   { label: "Möbelmontage Landshut", href: "/umzuege/moebelmontage" },
@@ -41,7 +42,7 @@ const currentYear = new Date().getFullYear();
             <source srcset="/images/logo/laf-logo-footer.webp" type="image/webp" />
             <img
               src="/images/logo/laf-logo-footer.png"
-              alt="Umzüge LAF Logo"
+              alt="Umzüge LAF – Ihr Umzugsunternehmen in Landshut"
               width="160"
               height="90"
               loading="lazy"
@@ -57,16 +58,18 @@ const currentYear = new Date().getFullYear();
         </p>
 
         <div class="mt-5 text-xs sm:text-sm font-semibold text-slate-300">
+          <p class="font-bold text-white">Umzüge LAF (Inh. Fahri Kalludra)</p>
           <a
             href="https://maps.google.com/?q=Ergoldinger+Str.+15,+84030+Landshut"
             target="_blank"
             rel="noopener noreferrer"
-            class="hover:text-amber-400 transition"
+            class="hover:text-amber-400 transition block mt-1"
           >
-            <p class="font-bold text-white">Standort:</p>
             <p>Ergoldinger Str. 15</p>
             <p>84030 Landshut</p>
           </a>
+          <p class="mt-2 text-slate-400">Telefon: <a href={phoneHref} class="hover:text-amber-400 transition text-slate-200 font-bold">{phone}</a></p>
+          <p class="text-slate-400">E-Mail: <a href={`mailto:${email}`} class="hover:text-amber-400 transition text-slate-200">{email}</a></p>
         </div>
       </div>
 
@@ -130,9 +133,9 @@ const currentYear = new Date().getFullYear();
 
         <div class="mt-5 rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-xs text-slate-400">
           <p class="font-bold text-white">Öffnungszeiten:</p>
-          <p class="mt-1">Mo – Fr: 08:00 – 18:00 Uhr</p>
-          <p>Samstag: 09:00 – 17:00 Uhr</p>
-          <p>Sonntag: Geschlossen</p>
+          <p class="mt-1 text-slate-300">Mo–Fr: 08:00 – 18:00 Uhr</p>
+          <p class="text-slate-300">Sa: 09:00 – 17:00 Uhr</p>
+          <p class="text-slate-500">So: Geschlossen</p>
         </div>
       </div>
     </div>

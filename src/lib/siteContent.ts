@@ -15,7 +15,7 @@ const defaultContent: SiteContent = {
     "Zuverlässige Umzüge, Entrümpelungen, Möbelmontage und Einpackservice in Landshut und Umgebung.",
   homeCtaText: "Kostenlose Anfrage stellen",
   phone: "0162 900 75 65",
-  email: "info@umzuege-laf.de",
+  email: "info@umzuegelandshut.de",
 };
 
 const contentPath = path.join(process.cwd(), "data", "siteContent.json");
