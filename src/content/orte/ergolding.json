@@ -1,0 +1,34 @@
+{
+  "slug": "ergolding",
+  "ort": "Ergolding",
+  "plz": "84030",
+  "draft": false,
+  "metaTitle": "Umzug Ergolding | Umzüge LAF – Direkt aus der Nachbarschaft",
+  "metaDescription": "Ihr Umzugsunternehmen für Ergolding: Privatumzug, Firmenumzug & Entrümpelung ohne Anfahrtsaufschlag. Kostenlose Besichtigung & Festpreis-Angebot!",
+  "h1": "Umzugsunternehmen für Ergolding – In 5 Minuten direkt vor Ort",
+  "anfahrtMinuten": 5,
+  "intro": "Durch unseren direkten Standort in der Ergoldinger Straße in Landshut ist Ergolding für unser Team praktisch ein Heimspiel. Ob Wohnungsumzug rund um die Rottenburger Straße, Einfamilienhaus in den Neubaugebieten oder Gewerbeumzug im Industriegebiet Ergolding – wir sind ohne lange Anfahrtswege und ohne Nahbereichs-Zuschläge für Sie im Einsatz.",
+  "zufahrtsBesonderheiten": "In Ergolding treffen wir häufig auf moderne Doppelhaushälften und Mehrfamilienhäuser mit Tiefgaragen sowie engeren Anliegerstraßen in älteren Ortsteilen wie Piflas oder Käufelkofen. Wir prüfen vorab die Durchfahrtshöhe für unsere 3,5-Tonner und 7,5-Tonner und sichern empfindliche Treppenhäuser sowie Parkettböden in Neubauten mit Schutzvlies ab.",
+  "beispielAuftrag": {
+    "titel": "3-Zimmer-Wohnung inkl. Küchenabbau & -aufbau in Ergolding-Piflas",
+    "groesse": "82 m² (3 Zimmer + Kellerabteil)",
+    "etage": "2. OG ohne Aufzug nach EG mit Terrasse",
+    "dauer": "6,5 Stunden mit 3 Umzugshelfern & 1 LKW",
+    "preisSpanne": "1.180 € (Festpreis inkl. MwSt. & Schutzmaterial)"
+  },
+  "lokaleFaqs": [
+    {
+      "frage": "Fallen für einen Umzug innerhalb von Ergolding oder zwischen Ergolding und Landshut Anfahrtskosten an?",
+      "antwort": "Nein. Da unser Standort direkt an der Grenze zwischen Landshut und Ergolding liegt, berechnen wir für Einsätze in Ergolding, Piflas und Oberglaim keine gesonderten Anfahrtsaufschläge."
+    },
+    {
+      "frage": "Führen Sie auch Firmenumzüge im Gewerbegebiet Ergolding durch?",
+      "antwort": "Ja, wir übernehmen regelmäßig Büro- und Lagerumzüge rund um das Gewerbegebiet Ergolding und die B15n – auf Wunsch auch am Wochenende, damit Ihr Geschäftsbetrieb nicht unterbrochen wird."
+    },
+    {
+      "frage": "Wie kurzfristig ist eine kostenlose Besichtigung in Ergolding möglich?",
+      "antwort": "Durch die unmittelbare Nähe können wir oft noch am selben oder nächsten Werktag kurz bei Ihnen in Ergolding vorbeikommen oder eine 10-minütige Video-Besichtigung per WhatsApp durchführen."
+    }
+  ],
+  "nachbarorte": ["altdorf", "kumhausen", "essenbach"]
+}

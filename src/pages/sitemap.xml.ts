@@ -4,6 +4,21 @@ export const prerender = false;
 
 const baseUrl = "https://umzuegelandshut.de";
 
+interface OrtData {
+  slug: string;
+  draft?: boolean;
+}
+
+const orteModules = import.meta.glob<{ default: OrtData }>("../content/orte/*.json", { eager: true });
+const orteRoutes = Object.values(orteModules)
+  .map((m) => m.default)
+  .filter((o) => !o.draft)
+  .map((o) => ({
+    path: `/umzug-${o.slug}`,
+    priority: "0.85",
+    changeFrequency: "weekly",
+  }));
+
 const routes = [
   { path: "/", priority: "1.0", changeFrequency: "weekly" },
   { path: "/umzugskosten-landshut", priority: "1.0", changeFrequency: "weekly" },
@@ -11,13 +26,16 @@ const routes = [
   { path: "/seniorenumzug-landshut", priority: "0.95", changeFrequency: "weekly" },
   { path: "/kleintransporte-landshut", priority: "0.95", changeFrequency: "weekly" },
   { path: "/firmenumzug-landshut", priority: "0.95", changeFrequency: "weekly" },
+  { path: "/halteverbotszone-landshut", priority: "0.9", changeFrequency: "weekly" },
+  { path: "/umzugscheckliste-landshut", priority: "0.85", changeFrequency: "weekly" },
+  { path: "/haftung", priority: "0.6", changeFrequency: "monthly" },
+  ...orteRoutes,
   { path: "/entruempelung-landshut", priority: "0.95", changeFrequency: "weekly" },
   { path: "/wohnungsaufloesung-landshut", priority: "0.9", changeFrequency: "weekly" },
   { path: "/entruempelung/haushaltsaufloesung", priority: "0.9", changeFrequency: "weekly" },
   { path: "/leistungen", priority: "0.95", changeFrequency: "monthly" },
   { path: "/umzuege", priority: "0.95", changeFrequency: "monthly" },
   { path: "/umzuege/moebelmontage", priority: "0.85", changeFrequency: "monthly" },
-  { path: "/umzuege/halteverbotszone", priority: "0.85", changeFrequency: "monthly" },
   { path: "/umzuege/einpackservice", priority: "0.8", changeFrequency: "monthly" },
   { path: "/umzuege/fernumzug", priority: "0.85", changeFrequency: "monthly" },
   { path: "/umzuege/expressumzug", priority: "0.85", changeFrequency: "monthly" },

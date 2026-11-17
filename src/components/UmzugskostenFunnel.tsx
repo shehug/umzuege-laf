@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { trackContactFormSubmit } from "@/lib/gtmEvents";
+import { trackContactFormSubmit, trackCalculatorSubmit } from "@/lib/gtmEvents";
 import {
   ROOM_DATA,
   type RoomType,
@@ -129,6 +129,7 @@ Kunden-Bemerkung: ${notes || "Keine"}
         throw new Error("Fehler beim Senden der Anfrage");
       }
 
+      trackCalculatorSubmit({ form_location: "Umzugskosten_Rechner" });
       trackContactFormSubmit("Umzugskosten_Rechner");
       window.location.href = "/danke";
     } catch {

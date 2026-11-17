@@ -18,6 +18,10 @@ export function pushGtmEvent(event: string, params?: GtmEventParams) {
 }
 
 export function trackPhoneClick(location: string) {
+  pushGtmEvent("click_call", {
+    click_location: location,
+    phone_number: "+491629007565",
+  });
   pushGtmEvent("phone_click", {
     click_location: location,
     phone_number: "+491629007565",
@@ -25,6 +29,10 @@ export function trackPhoneClick(location: string) {
 }
 
 export function trackWhatsappClick(location: string) {
+  pushGtmEvent("click_whatsapp", {
+    click_location: location,
+    phone_number: "+491629007565",
+  });
   pushGtmEvent("whatsapp_click", {
     click_location: location,
     phone_number: "+491629007565",
@@ -46,7 +54,15 @@ export function trackBookingClick(location: string) {
 }
 
 export function trackContactFormSubmit(location: string) {
+  pushGtmEvent("form_submit", {
+    form_location: location,
+  });
   pushGtmEvent("contact_form_submit", {
     form_location: location,
   });
+}
+
+export function trackCalculatorSubmit(params?: Record<string, unknown>) {
+  pushGtmEvent("calculator_submit", params as GtmEventParams);
+  pushGtmEvent("calculator_completed", params as GtmEventParams);
 }

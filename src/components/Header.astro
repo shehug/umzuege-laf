@@ -1,6 +1,8 @@
 ---
-const phone = "0162 900 75 65";
-const phoneHref = "tel:+491629007565";
+import { company } from '../data/company';
+
+const phone = company.phoneDisplay;
+const phoneHref = company.phoneHref;
 
 const navItems = [
   { label: "Startseite", href: "/" },
@@ -8,13 +10,13 @@ const navItems = [
     label: "Umzüge",
     href: "/umzuege",
     children: [
-      { label: "Umzugsunternehmen Landshut", href: "/" },
-      { label: "Umzugskosten & Rechner", href: "/umzugskosten-landshut" },
       { label: "Privatumzug", href: "/privatumzug-landshut" },
+      { label: "Umzugskosten & Rechner", href: "/umzugskosten-landshut" },
       { label: "Seniorenumzug", href: "/seniorenumzug-landshut" },
       { label: "Kleintransporte", href: "/kleintransporte-landshut" },
       { label: "Firmenumzug", href: "/firmenumzug-landshut" },
-      { label: "Halteverbotszone", href: "/umzuege/halteverbotszone" },
+      { label: "Halteverbotszone", href: "/halteverbotszone-landshut" },
+      { label: "Möbelmontage", href: "/umzuege/moebelmontage" },
       { label: "Fernumzug", href: "/umzuege/fernumzug" },
       { label: "Expressumzug", href: "/umzuege/expressumzug" },
     ],

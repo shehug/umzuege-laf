@@ -52,5 +52,6 @@ export default defineConfig({
     '/moebeltaxi-landshut': '/kleintransporte-landshut',
     '/seniorenumzuege-landshut': '/seniorenumzug-landshut',
     '/umzugspreise-landshut': '/umzugskosten-landshut',
+    '/umzuege/halteverbotszone': '/halteverbotszone-landshut',
   },
 });

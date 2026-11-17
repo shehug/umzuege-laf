@@ -1,0 +1,254 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Breadcrumbs from "../components/Breadcrumbs";
+import { company } from "../data/company";
+
+const title = "Umzugscheckliste Landshut (+ PDF-Druckversion) | LAF";
+const description = "Kostenlose Umzugscheckliste für Landshut: Schritt für Schritt von 8 Wochen vorher bis Bürgerbüro-Ummeldung. Mit 1-Klick-Druckversion!";
+const canonicalUrl = "https://umzuegelandshut.de/umzugscheckliste-landshut";
+
+const breadcrumbs = [
+  { name: "Startseite", path: "/" },
+  { name: "Ratgeber", path: "/leistungen" },
+  { name: "Umzugscheckliste Landshut", path: "/umzugscheckliste-landshut" },
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical={canonicalUrl}
+  breadcrumbs={breadcrumbs}
+>
+  <Header />
+
+  <main class="min-h-screen bg-slate-50 pt-28 pb-20 print:pt-4 print:pb-4 print:bg-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 print:px-2 print:max-w-none">
+      {/* Breadcrumbs - hidden on print */}
+      <div class="mb-6 print:hidden">
+        <Breadcrumbs items={breadcrumbs} />
+      </div>
+
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 sm:p-10 shadow-sm print:border-none print:p-0 print:shadow-none">
+        {/* Header Header */}
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-200 pb-6 print:pb-3">
+          <div>
+            <div class="inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1 text-xs font-bold text-amber-900 print:hidden">
+              <span>📋 Kostenloser Umzugshelfer</span>
+            </div>
+            <h1 class="mt-2 text-2xl sm:text-4xl font-black text-slate-900 print:text-2xl">
+              Umzugscheckliste Landshut
+            </h1>
+            <p class="mt-1 text-xs sm:text-sm text-slate-600">
+              Ihr strukturierter Leitfaden für einen stressfreien Umzug in Landshut und Umgebung.
+            </p>
+          </div>
+
+          <button
+            onclick="window.print()"
+            class="print:hidden inline-flex items-center justify-center gap-2 rounded-xl bg-amber-400 px-5 py-3 text-xs sm:text-sm font-black text-slate-950 shadow-sm transition hover:bg-amber-300 cursor-pointer self-start sm:self-auto"
+          >
+            <span>🖨️</span>
+            <span>Checkliste drucken</span>
+          </button>
+        </div>
+
+        {/* Notfall-Kontakt Header for Print */}
+        <div class="mt-4 hidden print:block text-xs border border-slate-300 rounded p-2 text-slate-700">
+          <strong>Umzüge LAF</strong> · Ergoldinger Str. 15, 84030 Landshut · Tel: 0162 900 75 65 · info@umzuegelandshut.de · umzuegelandshut.de
+        </div>
+
+        {/* Phase 1: 8 Wochen vorher */}
+        <section class="mt-8">
+          <div class="flex items-center gap-3">
+            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-400 text-slate-950 font-black text-xs print:h-6 print:w-6">
+              1
+            </span>
+            <h2 class="text-lg sm:text-xl font-black text-slate-900 print:text-base">
+              8 Wochen vor dem Umzug: Planung &amp; Vorbereitung
+            </h2>
+          </div>
+          <div class="mt-4 space-y-2.5 pl-2 sm:pl-11 print:pl-6 text-xs sm:text-sm text-slate-700">
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+              <span>Alten Mietvertrag fristgerecht schriftlich kündigen (gesetzliche Kündigungsfrist meist 3 Monate)</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+              <span>Umzugstermin festlegen und Sonderurlaub beim Arbeitgeber beantragen (oft 1–2 Tage)</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+              <span><strong>Umzüge LAF kontaktieren:</strong> Kostenlose Vor-Ort-Besichtigung oder WhatsApp-Video für Festpreisangebot vereinbaren</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+              <span>Gründlich ausmisten: Keller, Dachboden und Schränke entrümpeln (nicht benötigte Möbel verkaufen oder verschenken)</span>
+            </label>
+          </div>
+        </section>
+
+        {/* Phase 2: 4 Wochen vorher */}
+        <section class="mt-8 border-t border-slate-200 pt-6 print:mt-4 print:pt-3">
+          <div class="flex items-center gap-3">
+            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-400 text-slate-950 font-black text-xs print:h-6 print:w-6">
+              2
+            </span>
+            <h2 class="text-lg sm:text-xl font-black text-slate-900 print:text-base">
+              4 Wochen vor dem Umzug: Behörden, Fristen &amp; Kartons
+            </h2>
+          </div>
+          <div class="mt-4 space-y-2.5 pl-2 sm:pl-11 print:pl-6 text-xs sm:text-sm text-slate-700">
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+              <span><strong>Halteverbotszone Landshut beauftragen:</strong> Vorlaufzeit von 10–14 Tagen bei der Stadt Landshut beachten (Aufstellung 72h vorab)</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+              <span>Nachsendeauftrag bei der Deutschen Post einrichten (mindestens 2 Wochen Vorlauf)</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+              <span>Stabile Umzugskartons, Kleiderboxen und Schutzfolie bei Umzüge LAF anfordern &amp; mit Packen beginnen (Kartons nach Räumen beschriften)</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+              <span>Internet-, Telefon- und Stromanbieter über Wohnungswechsel informieren bzw. Umzugsservice beauftragen</span>
+            </label>
+          </div>
+        </section>
+
+        {/* Phase 3: 1 Woche vorher */}
+        <section class="mt-8 border-t border-slate-200 pt-6 print:mt-4 print:pt-3">
+          <div class="flex items-center gap-3">
+            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-400 text-slate-950 font-black text-xs print:h-6 print:w-6">
+              3
+            </span>
+            <h2 class="text-lg sm:text-xl font-black text-slate-900 print:text-base">
+              1 Woche vor dem Umzug: Endspurt &amp; Feinabstimmung
+            </h2>
+          </div>
+          <div class="mt-4 space-y-2.5 pl-2 sm:pl-11 print:pl-6 text-xs sm:text-sm text-slate-700">
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+              <span>Nachbarn über bevorstehenden Umzug und kurzzeitige Treppenhausnutzung informieren</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+              <span>Kühlschrank und Tiefkühltruhe abtauen und reinigen</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+              <span>Wichtige Dokumente (Ausweise, Urkunden, Verträge, Medikamente, Bargeld) in separater Notfall-Tasche packen</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+              <span>Prüfen, ob die Halteverbotsschilder 72 Stunden vorab ordnungsgemäß aufgestellt und protokolliert wurden</span>
+            </label>
+          </div>
+        </section>
+
+        {/* Phase 4: Am Umzugstag */}
+        <section class="mt-8 border-t border-slate-200 pt-6 print:mt-4 print:pt-3">
+          <div class="flex items-center gap-3">
+            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-400 text-slate-950 font-black text-xs print:h-6 print:w-6">
+              4
+            </span>
+            <h2 class="text-lg sm:text-xl font-black text-slate-900 print:text-base">
+              Am Umzugstag: Reibungsloser Ablauf mit Umzüge LAF
+            </h2>
+          </div>
+          <div class="mt-4 space-y-2.5 pl-2 sm:pl-11 print:pl-6 text-xs sm:text-sm text-slate-700">
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+              <span>Treppenhaus und Böden vorab kurz auf bestehende Vorschäden prüfen (wir bringen Schutzvlies mit)</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+              <span>Zählerstände (Strom, Gas, Wasser, Fernwärme) in der alten und neuen Wohnung fotografieren und notieren</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+              <span>Namensschilder an Klingel und Briefkasten an der neuen Wohnung anbringen</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+              <span>Wohnungsübergabe mit Vermieter durchführen und offizielles Übergabeprotokoll unterzeichnen</span>
+            </label>
+          </div>
+        </section>
+
+        {/* Phase 5: Nach dem Umzug (Landshut-spezifisch) */}
+        <section class="mt-8 border-t border-slate-200 pt-6 print:mt-4 print:pt-3">
+          <div class="flex items-center gap-3">
+            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-400 text-slate-950 font-black text-xs print:h-6 print:w-6">
+              5
+            </span>
+            <h2 class="text-lg sm:text-xl font-black text-slate-900 print:text-base">
+              Nach dem Umzug: Lokale Behördenschritte in Landshut
+            </h2>
+          </div>
+          <div class="mt-4 space-y-2.5 pl-2 sm:pl-11 print:pl-6 text-xs sm:text-sm text-slate-700">
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+              <span><strong>Wohnsitz ummelden beim Bürgerbüro Landshut</strong> (Luitpoldstraße 29, 84034 Landshut) binnen 14 Tagen nach Einzug (Wohnungsgeberbestätigung mitbringen)</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+              <span><strong>Kfz-Ummeldung</strong> bei der Zulassungsbehörde der Stadt bzw. des Landkreises Landshut durchführen</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+              <span><strong>Wertstoffhof &amp; Sperrmüll Landshut:</strong> Nicht mehr benötigte Kartons und Restmüll fachgerecht am Wertstoffhof entsorgen (oder durch Umzüge LAF abholen lassen)</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-amber-500 focus:ring-amber-400" />
+              <span>Banken, Versicherungen, Krankenkasse, Rundfunkbeitrag (GEZ) und Abonnements über neue Anschrift informieren</span>
+            </label>
+          </div>
+        </section>
+
+        {/* CTA Box (hidden on print) */}
+        <div class="mt-12 rounded-2xl border border-amber-300 bg-amber-50 p-6 sm:p-8 print:hidden">
+          <h3 class="text-lg font-black text-slate-900">
+            Benötigen Sie tatkräftige Unterstützung in Landshut?
+          </h3>
+          <p class="mt-2 text-xs sm:text-sm text-slate-700 leading-relaxed">
+            Ob kompletter Full-Service-Umzug, reine Möbelmontage oder Halteverbotszone: Umzüge LAF ist Ihr zuverlässiger Partner direkt vor Ort.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-4 text-xs sm:text-sm font-bold">
+            <a href={company.phoneHref} class="inline-flex items-center gap-2 rounded-xl bg-amber-400 px-5 py-2.5 text-slate-950 transition hover:bg-amber-300">
+              <span>📞 {company.phoneDisplay}</span>
+            </a>
+            <a href="/umzugskosten-landshut" class="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-slate-800 transition hover:bg-slate-100">
+              <span>Festpreis online kalkulieren →</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  @media print {
+    :global(header),
+    :global(footer),
+    :global(#cookie-consent-banner),
+    :global([role="dialog"]),
+    :global(.fixed),
+    :global(nav) {
+      display: none !important;
+    }
+    body {
+      background: white !important;
+      color: black !important;
+      padding: 0 !important;
+      font-size: 11pt !important;
+    }
+  }
+</style>

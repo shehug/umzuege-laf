@@ -1,14 +1,6 @@
 const primaryLinks = [
   {
-    title: "Umzüge Landshut",
-    href: "/",
-  },
-  {
-    title: "Umzugsunternehmen Landshut",
-    href: "/",
-  },
-  {
-    title: "Umzugsfirma Landshut",
+    title: "Startseite",
     href: "/",
   },
   {
@@ -48,7 +40,11 @@ const serviceLinks = [
   },
   {
     title: "Halteverbotszone Landshut",
-    href: "/umzuege/halteverbotszone",
+    href: "/halteverbotszone-landshut",
+  },
+  {
+    title: "Umzugscheckliste Landshut",
+    href: "/umzugscheckliste-landshut",
   },
   {
     title: "Einpackservice Landshut",

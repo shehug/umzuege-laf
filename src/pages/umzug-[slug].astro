@@ -1,0 +1,346 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Breadcrumbs from "../components/Breadcrumbs";
+import ContactForm from "../components/ContactForm";
+import ServiceJsonLd from "../components/ServiceJsonLd";
+import RealWorkGallery from "../components/RealWorkGallery.astro";
+import { company } from "../data/company";
+
+interface OrtData {
+  slug: string;
+  ort: string;
+  plz: string;
+  draft?: boolean;
+  metaTitle: string;
+  metaDescription: string;
+  h1: string;
+  anfahrtMinuten: number;
+  intro: string;
+  zufahrtsBesonderheiten: string;
+  beispielAuftrag: {
+    titel: string;
+    groesse: string;
+    etage: string;
+    dauer: string;
+    preisSpanne: string;
+  };
+  lokaleFaqs: Array<{
+    frage: string;
+    antwort: string;
+  }>;
+  nachbarorte: string[];
+}
+
+const orteModules = import.meta.glob<{ default: OrtData }>("../content/orte/*.json", { eager: true });
+const allOrte: OrtData[] = Object.values(orteModules)
+  .map((mod) => mod.default)
+  .filter((o) => !o.draft);
+
+const { slug } = Astro.params;
+const ortData = allOrte.find((o) => o.slug === slug);
+
+if (!ortData) {
+  return Astro.redirect("/404");
+}
+
+const ortMap = new Map(allOrte.map((o) => [o.slug, o.ort]));
+const canonicalUrl = `https://umzuegelandshut.de/umzug-${ortData.slug}`;
+
+const breadcrumbs = [
+  { name: "Startseite", path: "/" },
+  { name: "Einzugsgebiet", path: "/leistungen" },
+  { name: `Umzug ${ortData.ort}`, path: `/umzug-${ortData.slug}` },
+];
+
+const faqs = ortData.lokaleFaqs.map((f) => ({
+  q: f.frage,
+  a: f.antwort,
+}));
+---
+
+<Layout
+  title={ortData.metaTitle}
+  description={ortData.metaDescription}
+  canonical={canonicalUrl}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <ServiceJsonLd
+    serviceName={`Umzug ${ortData.ort}`}
+    serviceType={`Umzugsservice ${ortData.ort}`}
+    description={ortData.metaDescription}
+    url={canonicalUrl}
+    areaServed={ortData.ort}
+  />
+
+  <Header />
+
+  <main class="min-h-screen bg-slate-950 text-white pt-28 pb-16 sm:pt-36 sm:pb-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Breadcrumb */}
+      <div class="mb-6">
+        <Breadcrumbs items={breadcrumbs} />
+      </div>
+
+      {/* Hero Header */}
+      <div class="max-w-4xl">
+        <div class="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-3.5 py-1.5 text-xs font-bold text-amber-300">
+          <span>📍 Raum Landshut · Anfahrt ca. {ortData.anfahrtMinuten} Minuten</span>
+        </div>
+
+        <h1 class="mt-4 text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.15]">
+          {ortData.h1}
+        </h1>
+
+        <p class="mt-5 text-base sm:text-lg leading-relaxed text-slate-300">
+          {ortData.intro}
+        </p>
+
+        {/* Quick CTA Buttons */}
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
+          <a
+            href={company.phoneHref}
+            data-track="phone"
+            data-track-loc={`Ort_${ortData.slug}_Hero`}
+            class="flex items-center justify-center gap-2.5 rounded-full bg-[#f59e0b] px-7 py-3.5 text-center text-sm font-black text-slate-950 shadow-lg transition hover:bg-amber-400"
+          >
+            <span>📞 Direkt anrufen: {company.phoneDisplay}</span>
+          </a>
+          <a
+            href="https://wa.me/491629007565?text=Hallo%20Umz%C3%BCge%20LAF,%20ich%20interessiere%20mich%20f%C3%BCr%20einen%20Umzug%20in%20"
+            data-track="whatsapp"
+            data-track-loc={`Ort_${ortData.slug}_WhatsApp`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2.5 rounded-full border border-emerald-500/40 bg-emerald-950/60 px-7 py-3.5 text-center text-sm font-bold text-emerald-300 transition hover:bg-emerald-900/60"
+          >
+            <span>💬 WhatsApp-Besichtigung</span>
+          </a>
+        </div>
+      </div>
+
+      {/* Lokale Besonderheiten & Zufahrt */}
+      <div class="mt-16 grid gap-8 lg:grid-cols-2">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-6 sm:p-8 backdrop-blur-sm">
+          <div class="flex items-center gap-3">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-400 text-slate-950 text-xl font-bold">
+              🚚
+            </span>
+            <h2 class="text-xl sm:text-2xl font-black text-white">
+              Zufahrt &amp; Parkplatzsituation in {ortData.ort}
+            </h2>
+          </div>
+          <p class="mt-4 text-xs sm:text-sm leading-relaxed text-slate-300">
+            {ortData.zufahrtsBesonderheiten}
+          </p>
+
+          <div class="mt-6 rounded-xl border border-amber-400/20 bg-amber-400/5 p-4 text-xs text-amber-200">
+            <p class="font-bold text-amber-300 flex items-center gap-2">
+              <span>⚠️</span>
+              <span>Halteverbot in {ortData.ort} nötig?</span>
+            </p>
+            <p class="mt-1 text-slate-300">
+              Bei beengten Straßen oder fehlenden Parkmöglichkeiten beantragen und beschildern wir eine behördliche Halteverbotszone. Mehr Infos unter <a href="/halteverbotszone-landshut" class="text-amber-400 underline font-semibold hover:text-amber-300">Halteverbotszone Landshut &amp; Region</a>.
+            </p>
+          </div>
+        </div>
+
+        {/* Echter Beispielauftrag */}
+        <div class="rounded-2xl border-2 border-amber-400/50 bg-gradient-to-br from-amber-500/10 via-slate-900 to-slate-900 p-6 sm:p-8 shadow-xl">
+          <div class="inline-flex items-center gap-1.5 rounded-md bg-amber-400 px-2.5 py-0.5 text-xs font-black text-slate-950 uppercase tracking-wider">
+            Realer Praxiseinsatz
+          </div>
+          <h2 class="mt-3 text-xl sm:text-2xl font-black text-white">
+            {ortData.beispielAuftrag.titel}
+          </h2>
+
+          <dl class="mt-6 space-y-3 text-xs sm:text-sm">
+            <div class="flex justify-between border-b border-slate-800 pb-2">
+              <dt class="text-slate-400">Objektgröße:</dt>
+              <dd class="font-bold text-white text-right">{ortData.beispielAuftrag.groesse}</dd>
+            </div>
+            <div class="flex justify-between border-b border-slate-800 pb-2">
+              <dt class="text-slate-400">Stockwerk / Lage:</dt>
+              <dd class="font-bold text-white text-right">{ortData.beispielAuftrag.etage}</dd>
+            </div>
+            <div class="flex justify-between border-b border-slate-800 pb-2">
+              <dt class="text-slate-400">Dauer &amp; Team:</dt>
+              <dd class="font-bold text-white text-right">{ortData.beispielAuftrag.dauer}</dd>
+            </div>
+            <div class="flex justify-between pt-2">
+              <dt class="font-black text-amber-300">Endpreis:</dt>
+              <dd class="font-black text-amber-400 text-base text-right">{ortData.beispielAuftrag.preisSpanne}</dd>
+            </div>
+          </dl>
+
+          <p class="mt-4 text-xs text-slate-400 leading-relaxed">
+            * Anonymisierter Richtwert. Jeder Umzug wird individuell nach Volumen und Montageaufwand kalkuliert.
+          </p>
+        </div>
+      </div>
+
+      {/* Leistungsübersicht mit internen Links */}
+      <div class="mt-16 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 sm:p-10">
+        <h2 class="text-xl sm:text-3xl font-black text-white">
+          Unsere Umzugsleistungen für {ortData.ort}
+        </h2>
+        <p class="mt-2 text-xs sm:text-sm text-slate-300 max-w-2xl">
+          Ganz gleich ob Wohnung, Doppelhaushälfte oder Betrieb: Bei Umzüge LAF buchen Sie genau die Bausteine, die Sie benötigen.
+        </p>
+
+        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="rounded-xl border border-slate-800 bg-slate-950 p-5 hover:border-amber-400/40 transition">
+            <h3 class="text-base font-bold text-white">
+              <a href="/privatumzug-landshut" class="hover:text-amber-400 transition flex items-center justify-between">
+                <span>Privatumzug</span>
+                <span class="text-amber-400">→</span>
+              </a>
+            </h3>
+            <p class="mt-2 text-xs text-slate-400 leading-relaxed">
+              Vollservice für Wohnungen und Häuser inkl. Möbeltransport und Tragehelfern.
+            </p>
+          </div>
+
+          <div class="rounded-xl border border-slate-800 bg-slate-950 p-5 hover:border-amber-400/40 transition">
+            <h3 class="text-base font-bold text-white">
+              <a href="/umzugskosten-landshut" class="hover:text-amber-400 transition flex items-center justify-between">
+                <span>Umzugskosten berechnen</span>
+                <span class="text-amber-400">→</span>
+              </a>
+            </h3>
+            <p class="mt-2 text-xs text-slate-400 leading-relaxed">
+              Transparenter Festpreisrechner für Umzüge in {ortData.ort} und ganz Landshut.
+            </p>
+          </div>
+
+          <div class="rounded-xl border border-slate-800 bg-slate-950 p-5 hover:border-amber-400/40 transition">
+            <h3 class="text-base font-bold text-white">
+              <a href="/halteverbotszone-landshut" class="hover:text-amber-400 transition flex items-center justify-between">
+                <span>Halteverbotszone Service</span>
+                <span class="text-amber-400">→</span>
+              </a>
+            </h3>
+            <p class="mt-2 text-xs text-slate-400 leading-relaxed">
+              Amtliche Beantragung, Schilderaufstellung 72h vorab und Protokollierung.
+            </p>
+          </div>
+
+          <div class="rounded-xl border border-slate-800 bg-slate-950 p-5 hover:border-amber-400/40 transition">
+            <h3 class="text-base font-bold text-white">
+              <a href="/seniorenumzug-landshut" class="hover:text-amber-400 transition flex items-center justify-between">
+                <span>Seniorenumzug</span>
+                <span class="text-amber-400">→</span>
+              </a>
+            </h3>
+            <p class="mt-2 text-xs text-slate-400 leading-relaxed">
+              Einfühlsame Begleitung mit Packservice, Möbelmontage und Pflegekassen-Angeboten.
+            </p>
+          </div>
+
+          <div class="rounded-xl border border-slate-800 bg-slate-950 p-5 hover:border-amber-400/40 transition">
+            <h3 class="text-base font-bold text-white">
+              <a href="/entruempelung-landshut" class="hover:text-amber-400 transition flex items-center justify-between">
+                <span>Entrümpelung &amp; Entsorgung</span>
+                <span class="text-amber-400">→</span>
+              </a>
+            </h3>
+            <p class="mt-2 text-xs text-slate-400 leading-relaxed">
+              Keller, Dachböden oder Wohnungsauflösungen besenrein und fachgerecht entsorgt.
+            </p>
+          </div>
+
+          <div class="rounded-xl border border-slate-800 bg-slate-950 p-5 hover:border-amber-400/40 transition">
+            <h3 class="text-base font-bold text-white">
+              <a href="/firmenumzug-landshut" class="hover:text-amber-400 transition flex items-center justify-between">
+                <span>Firmen- &amp; Büroumzug</span>
+                <span class="text-amber-400">→</span>
+              </a>
+            </h3>
+            <p class="mt-2 text-xs text-slate-400 leading-relaxed">
+              Wochenendservice für Betriebe ohne Unterbrechung der Arbeitsabläufe.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Impressionen / Real Work Gallery */}
+      <div class="mt-16">
+        <RealWorkGallery />
+      </div>
+
+      {/* Lokale FAQs */}
+      <div class="mt-16 rounded-2xl border border-slate-800 bg-slate-900/80 p-6 sm:p-10">
+        <h2 class="text-xl sm:text-3xl font-black text-white">
+          Häufige Fragen zu Umzügen in {ortData.ort}
+        </h2>
+        <div class="mt-6 space-y-4">
+          {ortData.lokaleFaqs.map((faq, idx) => (
+            <div class="rounded-xl border border-slate-800 bg-slate-950/60 p-5">
+              <h3 class="text-sm sm:text-base font-bold text-amber-300">
+                {faq.frage}
+              </h3>
+              <p class="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                {faq.antwort}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Interne Verlinkung auf Nachbarorte */}
+      {ortData.nachbarorte && ortData.nachbarorte.length > 0 && (
+        <div class="mt-12 rounded-2xl border border-slate-800 bg-slate-900/40 p-6 text-center sm:text-left">
+          <p class="text-xs font-black uppercase tracking-wider text-amber-400">
+            Weitere Einsatzgebiete in der Nachbarschaft:
+          </p>
+          <div class="mt-3 flex flex-wrap gap-2.5 justify-center sm:justify-start">
+            {ortData.nachbarorte.map((nSlug) => {
+              const nName = ortMap.get(nSlug) || nSlug.charAt(0).toUpperCase() + nSlug.slice(1);
+              return (
+                <a
+                  href={`/umzug-${nSlug}`}
+                  class="rounded-lg border border-slate-700 bg-slate-800/80 px-3.5 py-1.5 text-xs font-semibold text-slate-200 transition hover:border-amber-400 hover:text-white"
+                >
+                  Umzug {nName} →
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* Kontakt / Anfrage-Sektion */}
+      <div class="mt-16 rounded-2xl border border-slate-800 bg-slate-900 p-6 sm:p-10">
+        <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+          <div>
+            <div class="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-3.5 py-1 text-xs font-bold text-amber-300">
+              <span>Schnelle Rückmeldung</span>
+            </div>
+            <h2 class="mt-3 text-2xl sm:text-4xl font-black text-white">
+              Jetzt Angebot für Ihren Umzug in {ortData.ort} anfordern
+            </h2>
+            <p class="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Füllen Sie einfach unser kurzes Anfrageformular aus. Wir melden uns innerhalb von 4 Geschäftszeit-Stunden mit einem verbindlichen Festpreis oder vereinbaren eine kostenlose Vor-Ort-Besichtigung in {ortData.ort}.
+            </p>
+            <div class="mt-6 flex flex-col gap-3 sm:flex-row text-xs sm:text-sm font-bold">
+              <a href={company.phoneHref} class="flex items-center justify-center gap-2 rounded-xl bg-amber-400 py-3 px-5 text-slate-950 hover:bg-amber-300 transition">
+                <span>📞 {company.phoneDisplay}</span>
+              </a>
+              <a href={`mailto:${company.email}`} class="flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-800 py-3 px-5 text-white hover:bg-slate-700 transition">
+                <span>✉️ {company.email}</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-slate-700 bg-white p-5 sm:p-6 text-slate-900 shadow-xl">
+            <ContactForm client:visible defaultLocation={ortData.ort} />
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

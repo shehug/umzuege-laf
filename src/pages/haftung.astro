@@ -1,0 +1,160 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Breadcrumbs from "../components/Breadcrumbs";
+import { company } from "../data/company";
+
+const title = "Haftung & Transportversicherung (§ 451g HGB) | Umzüge LAF";
+const description = "Haftungsinformation gemäß § 451g HGB: Gesetzliche Frachtführerhaftung (620 €/m³ nach § 451e HGB), Fristen, Ausschlüsse & Transportversicherung.";
+
+const breadcrumbs = [
+  { name: "Startseite", path: "/" },
+  { name: "Haftung & Versicherung", path: "/haftung" },
+];
+---
+
+<Layout title={title} description={description} breadcrumbs={breadcrumbs}>
+  <Header />
+
+  <main class="min-h-screen bg-slate-50 pt-28 pb-20">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-6">
+        <Breadcrumbs items={breadcrumbs} />
+      </div>
+
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
+        <div class="inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-400/10 px-3.5 py-1.5 text-xs font-bold text-amber-900">
+          <span>⚖️ Rechtliche Kundeninformation</span>
+        </div>
+
+        <h1 class="mt-4 text-2xl sm:text-4xl font-black tracking-tight text-slate-900">
+          Haftungsinformation gemäß § 451g HGB &amp; Transportversicherung
+        </h1>
+
+        <p class="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
+          Als professionelles Möbelspedition- und Umzugsunternehmen in Landshut legen wir größten Wert auf Transparenz und Rechtssicherheit. Nachfolgend informieren wir Sie über den gesetzlichen Haftungsumfang, gesetzliche Fristen sowie Möglichkeiten des erweiterten Versicherungsschutzes.
+        </p>
+
+        {/* 1. Gesetzliche Grundhaftung */}
+        <section class="mt-10 border-t border-slate-200 pt-8">
+          <h2 class="text-xl sm:text-2xl font-black text-slate-900">
+            1. Gesetzliche Frachtführerhaftung nach § 451e HGB
+          </h2>
+          <p class="mt-3 text-sm text-slate-700 leading-relaxed">
+            Der Frachtführer (Umzüge LAF) haftet für Schäden, die durch Verlust oder Beschädigung des Umzugsguts in der Zeit von der Übernahme zur Beförderung bis zur Ablieferung oder durch Überschreitung der Lieferfrist entstehen.
+          </p>
+          <div class="mt-4 rounded-xl border border-amber-200 bg-amber-50/80 p-4 text-sm text-slate-800">
+            <strong class="font-bold text-amber-950">Gesetzlicher Haftungshöchstbetrag (§ 451e HGB):</strong>
+            <p class="mt-1 text-slate-700">
+              Die gesetzliche Haftung wegen Verlust oder Beschädigung ist auf einen Betrag von <strong>620 Euro je Kubikmeter Laderaum</strong> begrenzt, der zur Erfüllung des Vertrags benötigt wird.
+            </p>
+          </div>
+        </section>
+
+        {/* 2. Schadensanzeige & Fristen */}
+        <section class="mt-10 border-t border-slate-200 pt-8">
+          <h2 class="text-xl sm:text-2xl font-black text-slate-900">
+            2. Schadensanzeige &amp; Fristen (§ 451g HGB)
+          </h2>
+          <p class="mt-3 text-sm text-slate-700 leading-relaxed">
+            Um den Verlust von Ersatzansprüchen zu vermeiden, beachten Sie bitte zwingend folgende gesetzliche Rügefristen nach § 451g HGB:
+          </p>
+          <ul class="mt-4 space-y-3 text-sm text-slate-700">
+            <li class="flex items-start gap-3 rounded-lg border border-slate-200 bg-slate-50 p-3.5">
+              <span class="font-black text-amber-600">①</span>
+              <div>
+                <strong class="text-slate-900">Äußerlich erkennbare Beschädigungen oder Verluste:</strong>
+                <p class="mt-0.5 text-slate-600">
+                  Müssen spätestens am <strong>Tag nach der Ablieferung</strong> schriftlich oder auf dem Abnahmeprotokoll/Lieferschein detailliert gerügt werden.
+                </p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3 rounded-lg border border-slate-200 bg-slate-50 p-3.5">
+              <span class="font-black text-amber-600">②</span>
+              <div>
+                <strong class="text-slate-900">Äußerlich nicht erkennbare Beschädigungen oder Verluste:</strong>
+                <p class="mt-0.5 text-slate-600">
+                  Müssen innerhalb von <strong>14 Tagen nach der Ablieferung</strong> schriftlich und nachweisbar (z. B. per E-Mail mit Fotodokumentation) gegenüber Umzüge LAF angezeigt werden.
+                </p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3 rounded-lg border border-slate-200 bg-slate-50 p-3.5">
+              <span class="font-black text-amber-600">③</span>
+              <div>
+                <strong class="text-slate-900">Lieferfristüberschreitungen:</strong>
+                <p class="mt-0.5 text-slate-600">
+                  Ansprüche wegen Überschreitung der Lieferfrist erlöschen, wenn der Empfänger die Verspätung nicht innerhalb von <strong>21 Tagen nach Ablieferung</strong> schriftlich anzeigt.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        {/* 3. Gesetzliche Haftungsausschlüsse */}
+        <section class="mt-10 border-t border-slate-200 pt-8">
+          <h2 class="text-xl sm:text-2xl font-black text-slate-900">
+            3. Besondere Haftungsausschlussgründe (§ 451d HGB)
+          </h2>
+          <p class="mt-3 text-sm text-slate-700 leading-relaxed">
+            Der Frachtführer ist von der Haftung befreit, soweit der Verlust, die Beschädigung oder die Überschreitung der Lieferfrist auf Umständen beruht, die der Frachtführer auch bei größter Sorgfalt nicht vermeiden und deren Folgen er nicht abwenden konnte (unabwendbares Ereignis). Zudem haftet der Frachtführer unter anderem nicht für:
+          </p>
+          <ul class="mt-3 list-disc pl-5 space-y-1.5 text-sm text-slate-700">
+            <li><strong>Selbst gepackte Kartons:</strong> Für Beschädigungen an Gegenständen in vom Absender selbst gepackten Behältern oder Kartons besteht keine Haftung, es sei denn, die äußere Verpackung weist nachweisbare Transportschäden auf.</li>
+            <li><strong>Besondere Güter:</strong> Beförderung von Edelmetallen, Juwelen, Edelsteinen, Geld, Briefmarken, Münzen, Wertpapieren oder Urkunden.</li>
+            <li><strong>Lebende Tiere oder Pflanzen:</strong> Für das Eingehen von Pflanzen oder unvorhersehbare Reaktionen lebender Tiere.</li>
+            <li><strong>Natürliche Beschaffenheit:</strong> Schäden, die auf die natürliche oder mangelhafte Beschaffenheit des Guts (z. B. Rost, innerer Verderb, Lecken) zurückzuführen sind.</li>
+          </ul>
+        </section>
+
+        {/* 4. Optionale Transportversicherung */}
+        <section class="mt-10 border-t border-slate-200 pt-8">
+          <h2 class="text-xl sm:text-2xl font-black text-slate-900">
+            4. Optionale Zusatz-Transportversicherung (Zeitwert oder Neuwert)
+          </h2>
+          <p class="mt-3 text-sm text-slate-700 leading-relaxed">
+            Da die gesetzliche Frachtführerhaftung nach § 451e HGB auf 620 € je Kubikmeter Laderaum gedeckelt ist, reicht dieser Betrag bei besonders hochwertigen Designermöbeln, Antiquitäten, empfindlicher Unterhaltungselektronik oder Gemälden oft nicht aus.
+          </p>
+          <div class="mt-4 rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm text-slate-800">
+            <p class="font-bold text-slate-900">Wir bieten Ihnen gerne eine zusätzliche Transportversicherung an:</p>
+            <p class="mt-1.5 text-slate-600 leading-relaxed">
+              Auf Wunsch versichern wir Ihr gesamtes Umzugsgut oder ausgewählte Einzelstücke zum vollen <strong>Zeitwert</strong> oder <strong>Neuwert</strong> über unsere Partner-Versicherung. Sprechen Sie uns bei der Besichtigung oder Angebotsanfrage einfach darauf an.
+            </p>
+          </div>
+        </section>
+
+        {/* 5. Betriebshaftpflicht */}
+        <section class="mt-10 border-t border-slate-200 pt-8">
+          <h2 class="text-xl sm:text-2xl font-black text-slate-900">
+            5. Umfassende Betriebshaftpflichtversicherung
+          </h2>
+          <p class="mt-3 text-sm text-slate-700 leading-relaxed">
+            Neben dem Umzugsgut schützt unsere gewerbliche Betriebshaftpflichtversicherung auch Ihr Eigentum und das Gebäude (z. B. Wände, Treppenhäuser, Aufzüge, Parkettböden oder Türen), falls beim Transportieren trotz aller Schutzmaßnahmen versehentlich ein Schaden am Gebäude entstehen sollte.
+          </p>
+        </section>
+
+        {/* Kontaktbox */}
+        <div class="mt-12 rounded-2xl border border-amber-300 bg-amber-50 p-6 sm:p-8">
+          <h3 class="text-lg font-black text-slate-900">
+            Haben Sie Fragen zu Haftung oder Versicherung?
+          </h3>
+          <p class="mt-2 text-xs sm:text-sm text-slate-700 leading-relaxed">
+            Fahri Kalludra und das Team von Umzüge LAF stehen Ihnen gerne persönlich für alle Rückfragen zur Verfügung:
+          </p>
+          <div class="mt-4 flex flex-wrap gap-4 text-sm font-bold">
+            <a href={company.phoneHref} class="inline-flex items-center gap-2 rounded-xl bg-amber-400 px-4 py-2.5 text-slate-950 transition hover:bg-amber-300">
+              <span>📞</span>
+              <span>{company.phoneDisplay}</span>
+            </a>
+            <a href={`mailto:${company.email}`} class="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-slate-800 transition hover:bg-slate-100">
+              <span>✉️</span>
+              <span>{company.email}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

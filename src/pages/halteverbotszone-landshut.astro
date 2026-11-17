@@ -1,0 +1,237 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Breadcrumbs from "../components/Breadcrumbs";
+import ContactForm from "../components/ContactForm";
+import ServiceJsonLd from "../components/ServiceJsonLd";
+import { company } from "../data/company";
+
+const title = "Halteverbotszone Landshut » Amtlich einrichten & buchen | LAF";
+const description = "Halteverbotszone in Landshut amtlich beantragen & fristgerecht aufstellen: Vorlauf 10-14 Tage, Aufstellpflicht 72h vorab, Protokollierung & Rundum-Service.";
+const canonicalUrl = "https://umzuegelandshut.de/halteverbotszone-landshut";
+
+const breadcrumbs = [
+  { name: "Startseite", path: "/" },
+  { name: "Leistungen", path: "/leistungen" },
+  { name: "Halteverbotszone Landshut", path: "/halteverbotszone-landshut" },
+];
+
+const faqs = [
+  {
+    q: "Wie lange im Voraus muss eine Halteverbotszone in Landshut beantragt werden?",
+    a: "Die Straßenverkehrsbehörde der Stadt Landshut benötigt eine Bearbeitungszeit von ca. 10 bis 14 Tagen. Bitte beauftragen Sie uns daher idealerweise mindestens zwei Wochen vor Ihrem geplanten Umzugstermin.",
+  },
+  {
+    q: "Wann müssen die Halteverbotsschilder in Landshut aufgestellt sein?",
+    a: "Rechtlich vorgeschrieben ist eine Aufstellung mindestens 72 Stunden (3 volle Kalendertage) vor Inkrafttreten des Halteverbots. Nur so können dort parkende Anwohner rechtzeitig reagieren, und nur so ist im Ernstfall das Abschleppen von Falschparkern rechtmäßig.",
+  },
+  {
+    q: "Darf ich Parkplätze mit Stühlen, Kartons oder Flatterband selbst reservieren?",
+    a: "Nein! Das eigenmächtige Absperren von öffentlichem Parkraum stellt einen gefährlichen Eingriff in den Straßenverkehr dar (Ordnungswidrigkeit). Zudem dürfen dort parkende Fahrzeuge keinesfalls abgeschleppt werden. Nur ein behördlich genehmigtes Halteverbot mit offiziellem Aufstellprotokoll ist rechtssicher.",
+  },
+  {
+    q: "Was tun, wenn am Umzugstag fremde Autos in der Halteverbotszone parken?",
+    a: "Mit unserer amtlichen Genehmigung und dem von uns angefertigten Aufstellprotokoll (inkl. Kennzeichen-Dokumentation beim Aufstellen) verständigen wir die örtliche Polizei oder das Ordnungsamt Landshut. Diese lassen das Fahrzeug zügig und kostenpflichtig für den Falschparker umsetzen.",
+  },
+  {
+    q: "Was kostet die Halteverbotszone in Landshut im Komplettservice?",
+    a: "Die Gesamtkosten liegen in der Regel zwischen 120 € und 160 € inklusive der städtischen Genehmigungsgebühr, Bereitstellung der VZ-283-Schilder mit Zusatzzeichen, fristgerechter Aufstellung, lückenlosem Protokoll und Wiederabholung.",
+  },
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical={canonicalUrl}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+>
+  <ServiceJsonLd
+    serviceName="Halteverbotszone Landshut"
+    serviceType="Halteverbotszonen-Service"
+    description={description}
+    url={canonicalUrl}
+    areaServed="Landshut"
+  />
+
+  <Header />
+
+  <main class="min-h-screen bg-slate-950 text-white pt-28 pb-16 sm:pt-36 sm:pb-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Breadcrumbs */}
+      <div class="mb-6">
+        <Breadcrumbs items={breadcrumbs} />
+      </div>
+
+      {/* Hero Header */}
+      <div class="max-w-4xl">
+        <div class="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-3.5 py-1.5 text-xs font-bold text-amber-300">
+          <span>🛑 Amtlich genehmigt · Stadt Landshut &amp; Landkreis</span>
+        </div>
+
+        <h1 class="mt-4 text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.15]">
+          Halteverbotszone für Ihren Umzug in Landshut – <span class="text-amber-400">Rechtssicher &amp; pünktlich</span>
+        </h1>
+
+        <p class="mt-5 text-base sm:text-lg leading-relaxed text-slate-300">
+          Sparen Sie sich schwere Schlepperei und lange Tragewege beim Umzug in Landshut: Umzüge LAF übernimmt die behördliche Beantragung beim Straßenverkehrsamt Landshut, die vorschriftsmäßige Aufstellung der Halteverbotsschilder 72 Stunden vorab und die rechtssichere Protokollierung für Sie.
+        </p>
+
+        {/* Quick CTA Buttons */}
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
+          <a
+            href={company.phoneHref}
+            data-track="phone"
+            data-track-loc="Halteverbot_Hero_Phone"
+            class="flex items-center justify-center gap-2.5 rounded-full bg-[#f59e0b] px-7 py-3.5 text-center text-sm font-black text-slate-950 shadow-lg transition hover:bg-amber-400"
+          >
+            <span>📞 Direkt anfragen: {company.phoneDisplay}</span>
+          </a>
+          <a
+            href="#halteverbot-formular"
+            class="flex items-center justify-center gap-2.5 rounded-full border border-slate-700 bg-slate-900 px-7 py-3.5 text-center text-sm font-bold text-slate-200 transition hover:bg-slate-800"
+          >
+            <span>Halteverbot online reservieren ↓</span>
+          </a>
+        </div>
+      </div>
+
+      {/* Wann nötig in Landshut */}
+      <div class="mt-16 grid gap-8 lg:grid-cols-3">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-6 sm:p-8">
+          <div class="text-3xl">🏛️</div>
+          <h2 class="mt-3 text-lg sm:text-xl font-bold text-white">
+            Altstadt, Neustadt &amp; Dreifaltigkeitsplatz
+          </h2>
+          <p class="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+            In der historischen Innenstadt von Landshut sind Parkflächen stark reglementiert und Fußgängerzonen gesondert zu beantragen. Ohne reservierte Ladezone ist ein Be- oder Entladen mit dem LKW praktisch unmöglich.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-6 sm:p-8">
+          <div class="text-3xl">🏘️</div>
+          <h2 class="mt-3 text-lg sm:text-xl font-bold text-white">
+            Nikola, Wolfgang &amp; Peter und Paul
+          </h2>
+          <p class="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Dichte Wohnstraßen mit beidseitigem Anwohnerparken. Ein 7,5-Tonner benötigt mindestens 15 bis 20 Meter freie Haltezone, um niemanden zu blockieren und direkt am Hauseingang laden zu können.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-6 sm:p-8">
+          <div class="text-3xl">🏡</div>
+          <h2 class="mt-3 text-lg sm:text-xl font-bold text-white">
+            Achdorf, Berg &amp; Umland (Ergolding, Altdorf)
+          </h2>
+          <p class="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Engere Hanglagen in Achdorf und Berg oder Neubausiedlungen mit begrenztem Wenderaum machen ein vorab gesichertes Halteverbot zum Garanten für einen zügigen und kostengünstigen Umzugstag.
+          </p>
+        </div>
+      </div>
+
+      {/* Ablauf & Behörden-Fakten */}
+      <div class="mt-16 rounded-2xl border border-slate-800 bg-slate-900/90 p-6 sm:p-10">
+        <div class="max-w-3xl">
+          <h2 class="text-2xl sm:text-3xl font-black text-white">
+            Ablauf &amp; Fristen bei der Stadt Landshut
+          </h2>
+          <p class="mt-2 text-xs sm:text-sm text-slate-300">
+            Wir kümmern uns um den gesamten bürokratischen und praktischen Ablauf:
+          </p>
+        </div>
+
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="rounded-xl border border-slate-800 bg-slate-950 p-5">
+            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-400 text-slate-950 font-black text-xs">1</span>
+            <h3 class="mt-3 font-bold text-white text-sm">Vorlauf: 10–14 Tage</h3>
+            <p class="mt-1.5 text-xs text-slate-400 leading-relaxed">
+              Sie nennen uns Datum, Adresse und benötigte LKW-Länge. Wir reichen den Antrag bei der Straßenverkehrsbehörde Landshut ein.
+            </p>
+          </div>
+
+          <div class="rounded-xl border border-slate-800 bg-slate-950 p-5">
+            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-400 text-slate-950 font-black text-xs">2</span>
+            <h3 class="mt-3 font-bold text-white text-sm">Aufstellung 72h vorab</h3>
+            <p class="mt-1.5 text-xs text-slate-400 leading-relaxed">
+              Mindestens 3 volle Tage vor dem Umzug stellen wir die amtlichen VZ-283 Schilder mit Datumszusatz vorschriftsmäßig auf.
+            </p>
+          </div>
+
+          <div class="rounded-xl border border-slate-800 bg-slate-950 p-5">
+            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-400 text-slate-950 font-black text-xs">3</span>
+            <h3 class="mt-3 font-bold text-white text-sm">Aufstellprotokoll</h3>
+            <p class="mt-1.5 text-xs text-slate-400 leading-relaxed">
+              Wir dokumentieren Datum, Uhrzeit und alle zum Aufstellzeitpunkt dort geparkten Fahrzeuge mit Kennzeichen rechtssicher.
+            </p>
+          </div>
+
+          <div class="rounded-xl border border-slate-800 bg-slate-950 p-5">
+            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-400 text-slate-950 font-black text-xs">4</span>
+            <h3 class="mt-3 font-bold text-white text-sm">Freie Ladezone &amp; Abbau</h3>
+            <p class="mt-1.5 text-xs text-slate-400 leading-relaxed">
+              Der Möbelwagen parkt direkt vor der Tür. Nach dem Umzug holen wir alle Schilder wieder ab – Sie müssen sich um nichts kümmern.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQs */}
+      <div class="mt-16 rounded-2xl border border-slate-800 bg-slate-900/80 p-6 sm:p-10">
+        <h2 class="text-xl sm:text-3xl font-black text-white">
+          Häufige Fragen zur Halteverbotszone in Landshut
+        </h2>
+        <div class="mt-6 space-y-4">
+          {faqs.map((faq) => (
+            <div class="rounded-xl border border-slate-800 bg-slate-950/60 p-5">
+              <h3 class="text-sm sm:text-base font-bold text-amber-300">
+                {faq.q}
+              </h3>
+              <p class="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                {faq.a}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Formular-Sektion */}
+      <div id="halteverbot-formular" class="mt-16 rounded-2xl border border-slate-800 bg-slate-900 p-6 sm:p-10">
+        <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+          <div>
+            <div class="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-3.5 py-1 text-xs font-bold text-amber-300">
+              <span>Rundum-Sorglos-Service</span>
+            </div>
+            <h2 class="mt-3 text-2xl sm:text-4xl font-black text-white">
+              Halteverbotszone Landshut direkt reservieren
+            </h2>
+            <p class="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Buchen Sie die Halteverbotszone als Einzelservice oder direkt im Rahmen Ihres Umzugs bei Umzüge LAF. Wir prüfen die Genehmigungsfähigkeit vorab kostenlos.
+            </p>
+            <div class="mt-6 space-y-2 text-xs sm:text-sm text-slate-300">
+              <p class="flex items-center gap-2">
+                <span class="text-amber-400 font-bold">✓</span>
+                <span>Inklusive behördlicher Gebühren der Stadt Landshut</span>
+              </p>
+              <p class="flex items-center gap-2">
+                <span class="text-amber-400 font-bold">✓</span>
+                <span>Aufstellung 72 Stunden vorab &amp; Kennzeichenprotokoll</span>
+              </p>
+              <p class="flex items-center gap-2">
+                <span class="text-amber-400 font-bold">✓</span>
+                <span>Für Einzug, Auszug oder beide Adressen buchbar</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-slate-700 bg-white p-5 sm:p-6 text-slate-900 shadow-xl">
+            <ContactForm client:visible defaultService="Halteverbotszone" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

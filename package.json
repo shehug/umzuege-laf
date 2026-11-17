@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/astro.mjs dev --port 3213",
-    "build": "node scripts/astro.mjs build",
+    "seo:check": "node scripts/seo-check.mjs",
+    "build": "node scripts/seo-check.mjs && node scripts/astro.mjs build",
     "preview": "node scripts/astro.mjs preview --port 3213",
     "start": "node ./dist/server/entry.mjs",
     "typecheck": "astro sync && tsc --noEmit"

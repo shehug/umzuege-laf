@@ -1,0 +1,34 @@
+{
+  "slug": "essenbach",
+  "ort": "Essenbach",
+  "plz": "84051",
+  "draft": false,
+  "metaTitle": "Umzug Essenbach | Umzüge LAF – Privat- & Firmenumzug zum Festpreis",
+  "metaDescription": "Ihr Umzugsunternehmen für Essenbach, Ohu & Mirskofen: Schneller Transport über B15n/A92, Möbelmontage & Entrümpelung zum Festpreis. Jetzt anfragen!",
+  "h1": "Umzugsunternehmen für Essenbach, Ohu & Mirskofen",
+  "anfahrtMinuten": 12,
+  "intro": "Dank der direkten Anbindung über die B15n und die A92 ist unser Team in rund 12 Minuten in Essenbach, Ohu, Mirskofen oder Altheim. Ob Familienumzug in ein Neubaugebiet, Wohnungswechsel oder gewerblicher Standortwechsel entlang der Isar-Achse – wir sorgen für einen reibungslosen Ablauf.",
+  "zufahrtsBesonderheiten": "In Essenbach und seinen Ortsteilen begleiten wir sowohl kompakte Wohnungswechsel als auch umfangreiche Hausumzüge mit großen Gartenmöbeln, Werkstattausstattung und Einbauküchen. Unsere Transporter sind mit Luftfederung, Schwerlast-Sackkarren und Tragegurten ausgestattet, damit auch schwere Haushaltsgeräte sicher bewegt werden.",
+  "beispielAuftrag": {
+    "titel": "2,5-Zimmer-Wohnung von Landshut-Achdorf nach Essenbach-Mirskofen",
+    "groesse": "68 m² (2,5 Zimmer)",
+    "etage": "1. OG in 1. OG mit Balkon",
+    "dauer": "5 Stunden mit 3 Umzugshelfern & 1 Koffer-LKW",
+    "preisSpanne": "890 € (Festpreis inkl. MwSt.)"
+  },
+  "lokaleFaqs": [
+    {
+      "frage": "Fahren Sie auch kleinere Ortsteile wie Mettenbach, Oberwattenbach oder Unterwattenbach an?",
+      "antwort": "Ja, wir bedienen das gesamte Gemeindegebiet Essenbach inklusive aller umliegenden Ortschaften ohne versteckte Streckenaufschläge."
+    },
+    {
+      "frage": "Können wir beim Umzug selbst mithelfen, um Kosten zu sparen?",
+      "antwort": "Gerne. Wenn Sie kleinere Kartons bereits selbst transportieren oder Möbel vorab demontieren möchten, passen wir das Angebot individuell an, sodass Sie nur die Arbeitszeit zahlen, die Sie wirklich benötigen."
+    },
+    {
+      "frage": "Bieten Sie nach dem Auszug auch eine Endreinigung der alten Wohnung an?",
+      "antwort": "Ja, auf Wunsch übernehmen wir nach dem Auszug die besenreine Endreinigung für eine stressfreie Wohnungsübergabe an Ihren Vermieter."
+    }
+  ],
+  "nachbarorte": ["ergolding", "altdorf", "dingolfing"]
+}

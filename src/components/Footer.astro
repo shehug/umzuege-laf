@@ -1,14 +1,16 @@
 ---
-const phone = "0162 900 75 65";
-const phoneHref = "tel:+491629007565";
-const email = "info@umzuegelandshut.de";
+import { company } from '../data/company';
+
+const phone = company.phoneDisplay;
+const phoneHref = company.phoneHref;
+const email = company.email;
 
 const links = [
   { label: "Startseite", href: "/" },
-  { label: "Umzugsunternehmen Landshut", href: "/" },
-  { label: "Umzugskosten & Rechner", href: "/umzugskosten-landshut" },
-  { label: "Umzugsfirma Landshut", href: "/" },
   { label: "Leistungen", href: "/leistungen" },
+  { label: "Umzugskosten & Rechner", href: "/umzugskosten-landshut" },
+  { label: "Halteverbotszone Landshut", href: "/halteverbotszone-landshut" },
+  { label: "Umzugscheckliste Landshut", href: "/umzugscheckliste-landshut" },
   { label: "Über uns", href: "/ueber-uns" },
   { label: "Häufige Fragen (FAQ)", href: "/faq" },
   { label: "Kontakt", href: "/kontakt" },
@@ -20,7 +22,7 @@ const services = [
   { label: "Seniorenumzug Landshut", href: "/seniorenumzug-landshut" },
   { label: "Kleintransporte Landshut", href: "/kleintransporte-landshut" },
   { label: "Firmenumzug Landshut", href: "/firmenumzug-landshut" },
-  { label: "Halteverbotszone Landshut", href: "/umzuege/halteverbotszone" },
+  { label: "Halteverbotszone Landshut", href: "/halteverbotszone-landshut" },
   { label: "Entrümpelung Landshut", href: "/entruempelung-landshut" },
   { label: "Wohnungsauflösung Landshut", href: "/wohnungsaufloesung-landshut" },
   { label: "Möbelmontage Landshut", href: "/umzuege/moebelmontage" },
@@ -30,12 +32,20 @@ const services = [
   { label: "Sperrmüllentsorgung", href: "/entruempelung/sperrmuellentsorgung" },
 ];
 
+const regionLinks = [
+  { label: "Umzug Ergolding", href: "/umzug-ergolding" },
+  { label: "Umzug Altdorf", href: "/umzug-altdorf" },
+  { label: "Umzug Kumhausen", href: "/umzug-kumhausen" },
+  { label: "Umzug Essenbach", href: "/umzug-essenbach" },
+  { label: "Umzug Vilsbiburg", href: "/umzug-vilsbiburg" },
+];
+
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class="border-t border-slate-200 bg-slate-950 text-white px-4 py-16 sm:px-6 lg:px-8">
   <div class="mx-auto max-w-7xl">
-    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
       <div>
         <a href="/" class="inline-flex items-center transition hover:opacity-90">
           <picture>
@@ -58,15 +68,15 @@ const currentYear = new Date().getFullYear();
         </p>
 
         <div class="mt-5 text-xs sm:text-sm font-semibold text-slate-300">
-          <p class="font-bold text-white">Umzüge LAF (Inh. Fahri Kalludra)</p>
+          <p class="font-bold text-white">{company.name} (Inh. {company.owner})</p>
           <a
-            href="https://maps.google.com/?q=Ergoldinger+Str.+15,+84030+Landshut"
+            href={company.sameAs[0]}
             target="_blank"
             rel="noopener noreferrer"
             class="hover:text-amber-400 transition block mt-1"
           >
-            <p>Ergoldinger Str. 15</p>
-            <p>84030 Landshut</p>
+            <p>{company.street}</p>
+            <p>{company.zip} {company.city}</p>
           </a>
           <p class="mt-2 text-slate-400">Telefon: <a href={phoneHref} class="hover:text-amber-400 transition text-slate-200 font-bold">{phone}</a></p>
           <p class="text-slate-400">E-Mail: <a href={`mailto:${email}`} class="hover:text-amber-400 transition text-slate-200">{email}</a></p>
@@ -94,12 +104,28 @@ const currentYear = new Date().getFullYear();
           Leistungen
         </p>
         <div class="mt-4 grid gap-2.5">
-          {services.map((service) => (
+          {services.slice(0, 8).map((service) => (
             <a
               href={service.href}
               class="text-xs sm:text-sm text-slate-300 hover:text-white transition"
             >
               {service.label}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <p class="text-xs font-black uppercase tracking-wider text-amber-400">
+          Umzüge in der Region
+        </p>
+        <div class="mt-4 grid gap-2.5">
+          {regionLinks.map((item) => (
+            <a
+              href={item.href}
+              class="text-xs sm:text-sm text-slate-300 hover:text-white transition"
+            >
+              {item.label}
             </a>
           ))}
         </div>
@@ -158,6 +184,9 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <div class="flex flex-wrap gap-4">
+        <a href="/haftung" class="hover:text-amber-400 transition">
+          Haftung (§ 451g HGB)
+        </a>
         <a href="/impressum" class="hover:text-white transition">
           Impressum
         </a>

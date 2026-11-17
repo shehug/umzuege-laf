@@ -16,26 +16,28 @@ interface Props {
   ogType?: string;
   googleSiteVerification?: string;
   faqs?: { q: string; a: string }[];
+  breadcrumbs?: { name: string; path: string }[];
 }
 
 const siteUrl = "https://umzuegelandshut.de";
 const defaultTitle = "Umzugsunternehmen Landshut » Umzüge zum Festpreis | LAF";
-const defaultDescription = "Ihr Umzugsunternehmen in Landshut (5,0★ bei 65+ Bewertungen). Privat- & Firmenumzüge, Möbelmontage & Entrümpelung zum 100% Festpreis. Angebot in 4 Std. anfordern!";
+const defaultDescription = "Ihr Umzugsunternehmen in Landshut (5,0★ bei 65+ Bewertungen). Privat- & Firmenumzüge zum fairen Festpreis. Kostenloses Angebot in 4 Std. anfordern!";
 const defaultImage = `${siteUrl}/images/logo/laf-logo.png`;
 
 const {
   title = defaultTitle,
   description = defaultDescription,
-  keywords,
   canonical = Astro.url.pathname,
   image = defaultImage,
   noIndex = false,
   ogType = "website",
   googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION,
   faqs = [],
+  breadcrumbs = [],
 } = Astro.props;
 
-const canonicalUrl = canonical.startsWith("http") ? canonical : `${siteUrl}${canonical}`;
+const rawCanonical = canonical.startsWith("http") ? canonical : `${siteUrl}${canonical}`;
+const canonicalUrl = rawCanonical.length > siteUrl.length && rawCanonical.endsWith("/") ? rawCanonical.slice(0, -1) : rawCanonical;
 const imageUrl = image.startsWith("http") ? image : `${siteUrl}${image}`;
 const keywordsString = Array.isArray(keywords) ? keywords.join(", ") : keywords;
 ---
@@ -51,7 +53,6 @@ const keywordsString = Array.isArray(keywords) ? keywords.join(", ") : keywords;
 
     <title>{title}</title>
     <meta name="description" content={description} />
-    {keywordsString && <meta name="keywords" content={keywordsString} />}
     <link rel="canonical" href={canonicalUrl} />
 
     <meta property="og:type" content={ogType} />
@@ -86,6 +87,7 @@ const keywordsString = Array.isArray(keywords) ? keywords.join(", ") : keywords;
       pageDescription={description}
       pageImage={imageUrl}
       faqs={faqs}
+      breadcrumbs={breadcrumbs}
     />
   </head>
   <body class="pb-24 md:pb-0 font-sans antialiased text-slate-900 bg-white selection:bg-amber-400 selection:text-slate-950">
@@ -97,16 +99,20 @@ const keywordsString = Array.isArray(keywords) ? keywords.join(", ") : keywords;
 
     <script is:inline>
       document.addEventListener('click', function(e) {
-        var target = e.target.closest('a[data-track]');
+        var target = e.target.closest('a');
         if (!target) return;
+        var href = target.getAttribute('href') || '';
         var type = target.getAttribute('data-track');
         var loc = target.getAttribute('data-track-loc') || '';
         window.dataLayer = window.dataLayer || [];
-        if (type === 'phone') {
+
+        if (href.startsWith('tel:') || type === 'phone') {
+          window.dataLayer.push({ event: 'click_call', click_location: loc, phone_number: '+491629007565' });
           window.dataLayer.push({ event: 'phone_click', click_location: loc, phone_number: '+491629007565' });
-        } else if (type === 'whatsapp') {
+        } else if (href.includes('wa.me') || href.includes('whatsapp.com') || type === 'whatsapp') {
+          window.dataLayer.push({ event: 'click_whatsapp', click_location: loc, phone_number: '+491629007565' });
           window.dataLayer.push({ event: 'whatsapp_click', click_location: loc, phone_number: '+491629007565' });
-        } else if (type === 'email') {
+        } else if (href.startsWith('mailto:') || type === 'email') {
           window.dataLayer.push({ event: 'email_click', click_location: loc, email: 'info@umzuegelandshut.de' });
         } else if (type === 'booking') {
           window.dataLayer.push({ event: 'booking_click', click_location: loc, service: 'Vor-Ort-Besichtigung' });

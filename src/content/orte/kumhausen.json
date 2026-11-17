@@ -1,0 +1,34 @@
+{
+  "slug": "kumhausen",
+  "ort": "Kumhausen",
+  "plz": "84036",
+  "draft": false,
+  "metaTitle": "Umzug Kumhausen | Umzüge LAF – Ihr regionaler Umzugspartner",
+  "metaDescription": "Umzug & Entrümpelung in Kumhausen und Umgebung zum verbindlichen Festpreis. Schnelle Vor-Ort-Besichtigung, Möbelmontage & Versicherung. Jetzt Angebot holen!",
+  "h1": "Umzug & Entrümpelung in Kumhausen – Direkt aus der Nachbarschaft",
+  "anfahrtMinuten": 12,
+  "intro": "Südlich von Landshut gelegen, verbindet Kumhausen ländliche Ruhe mit direkter Stadtnähe. Ob Sie innerhalb von Kumhausen, Preisenberg oder Obergangkofen umziehen oder den Schritt vom Stadtleben in ein Eigenheim im südlichen Landkreis wagen: Umzüge LAF plant Ihren Wohnungs- oder Hausumzug zuverlässig und zum verbindlichen Festpreis.",
+  "zufahrtsBesonderheiten": "In den ländlich geprägten Ortsteilen rund um Kumhausen sind Zufahrten teils schmaler oder abschüssig, während im Ortskern moderne Wohnanlagen entstanden sind. Wir stimmen die Fahrzeuggröße vorab exakt auf Ihre Hofeinfahrt oder Straße ab und schützen empfindliche Terrassen- und Eingangsbereiche.",
+  "beispielAuftrag": {
+    "titel": "Einfamilienhaus-Umzug mit Teil-Einpackservice in Kumhausen",
+    "groesse": "130 m² (5 Zimmer + Doppelgarage)",
+    "etage": "2 Etagen (Haus zu Haus)",
+    "dauer": "9 Stunden mit 4 Umzugshelfern & 2 Fahrzeugen",
+    "preisSpanne": "1.950 € (Festpreis inkl. MwSt. & Verpackungsmaterial)"
+  },
+  "lokaleFaqs": [
+    {
+      "frage": "Wie läuft die Preisberechnung für einen Hausumzug in Kumhausen ab?",
+      "antwort": "Wir kommen kostenlos zu Ihnen nach Kumhausen, erfassen das tatsächliche Umzugsvolumen sowie den Montageaufwand und erstellen daraufhin ein verbindliches Festpreis-Angebot ohne versteckte Nachforderungen."
+    },
+    {
+      "frage": "Unterstützen Sie auch bei Seniorenumzügen aus dem Raum Kumhausen nach Landshut?",
+      "antwort": "Ja, wir begleiten Seniorenumzüge besonders einfühlsam – auf Wunsch inklusive komplettem Ein- und Auspacken von Geschirr und Kleidung sowie dem Aufhängen von Bildern und Lampen."
+    },
+    {
+      "frage": "Sind meine Möbel während des Transports versichert?",
+      "antwort": "Ja, Ihr Umzugsgut ist im Rahmen der gesetzlichen Frachtführerhaftung nach § 451e HGB (bis 620 € je m³ Laderaum) abgesichert. Für besonders hochwertige Einzelstücke bieten wir auf Wunsch zusätzlich eine Zeitwert-Transportversicherung an."
+    }
+  ],
+  "nachbarorte": ["vilsbiburg", "ergolding", "altdorf"]
+}

@@ -1,23 +1,24 @@
+import { company } from "../data/company";
+
 const siteUrl = "https://umzuegelandshut.de";
 
-const companyName = "Umzüge LAF";
-const legalName = "Fahri Kalludra";
-const phone = "+491629007565";
-const email = "info@umzuegelandshut.de";
+const companyName = company.name;
+const legalName = company.owner;
+const phone = company.phone;
+const email = company.email;
 
 const address = {
   "@type": "PostalAddress",
-  streetAddress: "Ergoldinger Str. 15",
-  postalCode: "84030",
-  addressLocality: "Landshut",
-  addressRegion: "BY",
-  addressCountry: "DE",
+  streetAddress: company.street,
+  postalCode: company.zip,
+  addressLocality: company.city,
+  addressCountry: company.country,
 };
 
 const geo = {
   "@type": "GeoCoordinates",
-  latitude: 48.5674,
-  longitude: 12.1604,
+  latitude: company.geo.latitude,
+  longitude: company.geo.longitude,
 };
 
 const openingHoursSpecification = [
@@ -41,8 +42,7 @@ const openingHoursSpecification = [
   },
 ];
 
-const postalCodes = ["84028", "84030", "84032", "84034", "84036", "84003"];
-const coreCities = [
+const areaServed = [
   "Landshut",
   "Ergolding",
   "Altdorf",
@@ -50,21 +50,7 @@ const coreCities = [
   "Essenbach",
   "Vilsbiburg",
   "Moosburg an der Isar",
-  "Bruckberg",
-];
-
-const areaServed = [
-  ...postalCodes.map((code) => ({
-    "@type": "PostalAddress",
-    postalCode: code,
-    addressCountry: "DE",
-  })),
-  ...coreCities.map((city) => ({
-    "@type": "City",
-    name: city,
-  })),
-  { "@type": "AdministrativeArea", name: "Landkreis Landshut" },
-  { "@type": "State", name: "Bayern" },
+  "Dingolfing",
 ];
 
 const catalogServices = [
@@ -95,7 +81,7 @@ const catalogServices = [
   },
   {
     name: "Halteverbotszone Landshut",
-    url: `${siteUrl}/umzuege/halteverbotszone`,
+    url: `${siteUrl}/halteverbotszone-landshut`,
     description: "Amtliche Beantragung und rechtssichere Aufstellung von Halteverbotszonen für Ihren Umzug in Landshut.",
   },
   {
@@ -110,12 +96,18 @@ export interface FaqItem {
   a: string;
 }
 
+export interface BreadcrumbItem {
+  name: string;
+  path: string;
+}
+
 export interface SeoJsonLdProps {
   currentUrl?: string;
   pageTitle?: string;
   pageDescription?: string;
   pageImage?: string;
   faqs?: FaqItem[];
+  breadcrumbs?: BreadcrumbItem[];
 }
 
 export default function SeoJsonLd({
@@ -124,6 +116,7 @@ export default function SeoJsonLd({
   pageDescription = "Ihr Umzugsunternehmen in Landshut (5,0★ bei 65+ Bewertungen). Privat- & Firmenumzüge, Möbelmontage & Entrümpelung zum 100% Festpreis. Angebot in 4 Std. anfordern!",
   pageImage = `${siteUrl}/images/hero/hero-umzug-landshut.webp`,
   faqs = [],
+  breadcrumbs = [],
 }: SeoJsonLdProps = {}) {
   const pageId = `${currentUrl}#webpage`;
 
@@ -144,13 +137,6 @@ export default function SeoJsonLd({
     priceRange: "€€",
     openingHours: ["Mo-Fr 08:00-18:00", "Sa 09:00-17:00"],
     openingHoursSpecification,
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "65",
-      bestRating: "5",
-      worstRating: "1",
-    },
     address,
     geo,
     hasMap: "https://www.google.com/maps/search/?api=1&query=Umz%C3%BCge+LAF+Ergoldinger+Str.+15+84030+Landshut",
@@ -170,14 +156,7 @@ export default function SeoJsonLd({
         hoursAvailable: openingHoursSpecification,
       },
     ],
-    sameAs: [
-      "https://maps.google.com/?q=Ergoldinger+Str.+15,+84030+Landshut",
-      "https://www.facebook.com/61561388244118/",
-      "https://www.gelbeseiten.de/gsbiz/aece8f96-e961-4a60-b646-a30f2f40f9af",
-      "https://www.dasoertliche.de/Themen/LAF-Umz%C3%BCge-Landshut-Industriegebiet-Ergoldinger-Str",
-      "https://www.11880.com/branchenbuch/landshut-isar/060441364B113012317/laf-umzuege-kurierdienst.html",
-      "https://www.cylex.de/firma-home/umzuege-laf-16102146.html",
-    ],
+    sameAs: company.sameAs,
     knowsAbout: [
       "Umzugsunternehmen Landshut",
       "Umzugsfirma Landshut",
@@ -243,6 +222,19 @@ export default function SeoJsonLd({
       },
     },
   ];
+
+  if (breadcrumbs && breadcrumbs.length > 0) {
+    graphNodes.push({
+      "@type": "BreadcrumbList",
+      "@id": `${currentUrl}#breadcrumb`,
+      itemListElement: breadcrumbs.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.name,
+        item: item.path.startsWith("http") ? item.path : `${siteUrl}${item.path}`,
+      })),
+    });
+  }
 
   if (faqs && faqs.length > 0) {
     graphNodes.push({
