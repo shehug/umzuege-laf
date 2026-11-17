@@ -16,7 +16,7 @@ export default defineConfig({
   },
   server: {
     host: true,
-    port: 3213,
+    port: Number(process.env.PORT) || 3000,
   },
   integrations: [react()],
   vite: {
