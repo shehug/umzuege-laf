@@ -8,6 +8,7 @@ import LocalSeoLinks from "@/components/LocalSeoLinks";
 import UmzugskostenFunnel from "@/components/UmzugskostenFunnel";
 import ContactForm from "@/components/ContactForm";
 import BesichtigungsAnfrage from "@/components/BesichtigungsAnfrage";
+import { company } from "@/data/company";
 import { seoPages } from "@/lib/seo";
 import {
   tableRows,
@@ -355,6 +356,149 @@ const structuredDataGraph = {
       </div>
     </section>
 
+    <!-- ================= REAL CASE EXAMPLES & FIXED PRICE COMPARISON ================= -->
+    <section class="py-16 sm:py-24 bg-slate-900 text-white">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-amber-400/20 px-3 py-1 text-xs font-black text-amber-300 uppercase tracking-wider">
+            Reale Praxisbeispiele
+          </span>
+          <h2 class="mt-3 text-2xl font-black text-white sm:text-4xl">
+            Echte Beispielaufträge aus Landshut &amp; Region
+          </h2>
+          <p class="mt-4 text-sm sm:text-base leading-relaxed text-slate-300">
+            Damit Sie ein realistisches Gefühl für Umzugspreise in Landshut bekommen, finden Sie hier drei anonymisierte Aufträge aus unserem Alltag:
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
+          {/* Fall A */}
+          <div class="rounded-3xl border border-slate-800 bg-slate-800/60 p-6 flex flex-col justify-between hover:border-amber-400/50 transition">
+            <div>
+              <div class="flex items-center justify-between gap-2 border-b border-slate-700/80 pb-4">
+                <span class="text-xs font-black uppercase text-amber-400 tracking-wider">Kunde A · Nikola</span>
+                <span class="rounded-full bg-emerald-500/20 px-2.5 py-0.5 text-[11px] font-bold text-emerald-300">2-Zimmer</span>
+              </div>
+              <div class="mt-4 space-y-2 text-xs sm:text-sm text-slate-300">
+                <p><strong class="text-white">Wohnfläche &amp; Volumen:</strong> 45 m² · ca. 15 m³</p>
+                <p><strong class="text-white">Etagen &amp; Lage:</strong> 2. OG Altbau ohne Aufzug</p>
+                <p><strong class="text-white">Leistung:</strong> Beladung, Schutzverpackung, Transport &amp; behördliche Halteverbotszone</p>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-700/80">
+              <span class="text-xs text-slate-400 block">Tatsächlicher Festpreis:</span>
+              <span class="text-2xl font-black text-amber-400">680 €</span>
+              <span class="text-[11px] text-slate-400 block mt-0.5">inkl. 19% MwSt. &amp; Halteverbotszone</span>
+            </div>
+          </div>
+
+          {/* Fall B */}
+          <div class="rounded-3xl border border-amber-400/60 bg-slate-800/90 p-6 flex flex-col justify-between shadow-xl ring-1 ring-amber-400/30">
+            <div>
+              <div class="flex items-center justify-between gap-2 border-b border-slate-700/80 pb-4">
+                <span class="text-xs font-black uppercase text-amber-400 tracking-wider">Kunde B · Achdorf → Ergolding</span>
+                <span class="rounded-full bg-amber-400 px-2.5 py-0.5 text-[11px] font-black text-slate-950">Hausumzug</span>
+              </div>
+              <div class="mt-4 space-y-2 text-xs sm:text-sm text-slate-300">
+                <p><strong class="text-white">Wohnfläche &amp; Volumen:</strong> 110 m² · ca. 38 m³</p>
+                <p><strong class="text-white">Etagen &amp; Lage:</strong> Einfamilienhaus mit Garage</p>
+                <p><strong class="text-white">Leistung:</strong> Kompletter Ab- &amp; Wiederaufbau großer Kleiderschränke, 3 Helfer + LKW</p>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-700/80">
+              <span class="text-xs text-slate-400 block">Tatsächlicher Festpreis:</span>
+              <span class="text-2xl font-black text-amber-400">1.850 €</span>
+              <span class="text-[11px] text-slate-400 block mt-0.5">inkl. 19% MwSt., Demontage &amp; Montage</span>
+            </div>
+          </div>
+
+          {/* Fall C */}
+          <div class="rounded-3xl border border-slate-800 bg-slate-800/60 p-6 flex flex-col justify-between hover:border-amber-400/50 transition">
+            <div>
+              <div class="flex items-center justify-between gap-2 border-b border-slate-700/80 pb-4">
+                <span class="text-xs font-black uppercase text-amber-400 tracking-wider">Kunde C · Altstadt</span>
+                <span class="rounded-full bg-emerald-500/20 px-2.5 py-0.5 text-[11px] font-bold text-emerald-300">3-Zimmer</span>
+              </div>
+              <div class="mt-4 space-y-2 text-xs sm:text-sm text-slate-300">
+                <p><strong class="text-white">Wohnfläche &amp; Volumen:</strong> 75 m² · ca. 28 m³</p>
+                <p><strong class="text-white">Etagen &amp; Lage:</strong> 3. OG Altstadt, enge Gasse</p>
+                <p><strong class="text-white">Leistung:</strong> Langer Trageweg, Halteverbot vorab eingerichtet, 3 Helfer + LKW</p>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-700/80">
+              <span class="text-xs text-slate-400 block">Tatsächlicher Festpreis:</span>
+              <span class="text-2xl font-black text-amber-400">1.150 €</span>
+              <span class="text-[11px] text-slate-400 block mt-0.5">inkl. 19% MwSt. &amp; Transport</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Comparison Box: Fixed Price vs. Hourly / Private Help */}
+        <div class="mt-16 rounded-3xl border border-slate-800 bg-slate-950 p-6 sm:p-10">
+          <div class="text-center max-w-3xl mx-auto mb-8">
+            <h3 class="text-xl sm:text-3xl font-black text-white">
+              Garantierter Festpreis vs. Stundenabrechnung &amp; private Helfer
+            </h3>
+            <p class="mt-2 text-xs sm:text-sm text-slate-400">
+              Warum ein verbindliches Angebot von Umzüge LAF Ihnen maximale finanzielle Sicherheit garantiert:
+            </p>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-2">
+            <div class="rounded-2xl border border-amber-400/40 bg-amber-400/5 p-6">
+              <div class="flex items-center gap-2 text-amber-400 font-black text-base sm:text-lg mb-4">
+                <span>✓</span>
+                <h4>Garantierter Festpreis bei Umzüge LAF</h4>
+              </div>
+              <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span><strong>100% Planungssicherheit:</strong> Der vereinbarte Endpreis steht fest – keine Nachforderungen bei Stau auf der B15 oder Verzögerungen im Treppenhaus.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span><strong>Gesetzlicher Schutz:</strong> Grundhaftung nach § 451e HGB (620 €/m³) und gewerbliche Betriebshaftpflichtversicherung schützen Ihr Inventar (<a href="/haftung" class="text-amber-400 underline">Details zur Haftung</a>).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span><strong>Echtes Fachpersonal:</strong> Eingespieltes Stammpersonal, professioneller Möbelkoffer mit Hebebühne, Schutzdecken, Zurrgurte und Bodenschutz.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span><strong>Verbindlicher Termin:</strong> Feste Terminzusage ohne Risiko kurzfristiger Absagen am Umzugstag.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+              <div class="flex items-center gap-2 text-slate-400 font-black text-base sm:text-lg mb-4">
+                <span>✕</span>
+                <h4>Stundenmodelle &amp; private Kleinanzeigen-Helfer</h4>
+              </div>
+              <ul class="space-y-3 text-xs sm:text-sm text-slate-400">
+                <li class="flex items-start gap-2">
+                  <span class="text-rose-400 font-bold">✕</span>
+                  <span><strong>Unkalkulierbares Kostenrisiko:</strong> Jeder Stau, enge Türen oder schwere Möbel treiben den Endpreis minutengenau in die Höhe.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-rose-400 font-bold">✕</span>
+                  <span><strong>Haftungsfalle:</strong> Private Helfer haften bei Beschädigung von TV, Möbeln oder Treppenhäusern meist gar nicht (Gefälligkeitshandlung).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-rose-400 font-bold">✕</span>
+                  <span><strong>Fehlendes Equipment:</strong> Oft ungeeignete Kleintransporter ohne Ladebordwand, mangelhafte Sicherungsgurte und fehlende Packdecken.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-rose-400 font-bold">✕</span>
+                  <span><strong>Hohe Ausfallquote:</strong> Kurzfristige Absagen aus Krankheits- oder Zeitgründen gefährden Ihre fristgerechte Wohnungsübergabe.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= INTERACTIVE 3-STEP CALCULATOR ================= -->
     <section class="py-16 sm:py-24 bg-gradient-to-b from-slate-100 to-white">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -551,12 +695,12 @@ const structuredDataGraph = {
             <div class="mt-8 rounded-2xl bg-amber-50 border border-amber-200 p-5">
               <div class="text-xs font-bold text-amber-900">Lieber direkt anrufen?</div>
               <a
-                href="tel:+491629007565"
+                href={company.phoneHref}
                 class="mt-2 inline-flex items-center gap-2 text-lg font-black text-slate-950 hover:text-amber-700 transition"
               >
-                <span>📞 0162 900 75 65</span>
+                <span>📞 {company.phoneDisplay}</span>
               </a>
-              <p class="text-xs text-slate-600 mt-1">Mo–Sa: 08:00 – 18:00 Uhr erreichbar</p>
+              <p class="text-xs text-slate-600 mt-1">{company.openingHours} erreichbar</p>
             </div>
           </div>
 

@@ -160,27 +160,24 @@ Kunden-Bemerkung: ${notes || "Keine"}
 
           <div className="flex items-center gap-2 text-xs font-bold text-slate-400">
             <span
-              className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-black transition ${
-                step >= 1 ? "bg-amber-400 text-slate-950" : "bg-slate-800 text-slate-400"
-              }`}
+              className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-black transition ${step >= 1 ? "bg-amber-400 text-slate-950" : "bg-slate-800 text-slate-400"
+                }`}
             >
               1
             </span>
             <span className="hidden sm:inline">Größe</span>
             <span className="text-slate-600">→</span>
             <span
-              className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-black transition ${
-                step >= 2 ? "bg-amber-400 text-slate-950" : "bg-slate-800 text-slate-400"
-              }`}
+              className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-black transition ${step >= 2 ? "bg-amber-400 text-slate-950" : "bg-slate-800 text-slate-400"
+                }`}
             >
               2
             </span>
             <span className="hidden sm:inline">Adressen</span>
             <span className="text-slate-600">→</span>
             <span
-              className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-black transition ${
-                step === 3 ? "bg-amber-400 text-slate-950" : "bg-slate-800 text-slate-400"
-              }`}
+              className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-black transition ${step === 3 ? "bg-amber-400 text-slate-950" : "bg-slate-800 text-slate-400"
+                }`}
             >
               3
             </span>
@@ -218,16 +215,14 @@ Kunden-Bemerkung: ${notes || "Keine"}
                     key={item.key}
                     type="button"
                     onClick={() => handleRoomChange(item.key as RoomType)}
-                    className={`flex flex-col items-center justify-center rounded-2xl border-2 p-4 text-center transition-all ${
-                      isActive
+                    className={`flex flex-col items-center justify-center rounded-2xl border-2 p-4 text-center transition-all ${isActive
                         ? "border-amber-400 bg-amber-50/70 shadow-md ring-2 ring-amber-400/40"
                         : "border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50"
-                    }`}
+                      }`}
                   >
                     <span
-                      className={`text-base font-black ${
-                        isActive ? "text-amber-950" : "text-slate-800"
-                      }`}
+                      className={`text-base font-black ${isActive ? "text-amber-950" : "text-slate-800"
+                        }`}
                     >
                       {item.label}
                     </span>
@@ -389,22 +384,20 @@ Kunden-Bemerkung: ${notes || "Keine"}
                         <button
                           type="button"
                           onClick={() => setStartElevator("ja")}
-                          className={`flex-1 rounded-xl border py-2 text-xs font-bold transition ${
-                            startElevator === "ja"
+                          className={`flex-1 rounded-xl border py-2 text-xs font-bold transition ${startElevator === "ja"
                               ? "border-amber-400 bg-amber-400 text-slate-950 font-black"
                               : "border-slate-300 bg-white text-slate-700 hover:bg-slate-50"
-                          }`}
+                            }`}
                         >
                           Ja
                         </button>
                         <button
                           type="button"
                           onClick={() => setStartElevator("nein")}
-                          className={`flex-1 rounded-xl border py-2 text-xs font-bold transition ${
-                            startElevator === "nein"
+                          className={`flex-1 rounded-xl border py-2 text-xs font-bold transition ${startElevator === "nein"
                               ? "border-amber-400 bg-amber-400 text-slate-950 font-black"
                               : "border-slate-300 bg-white text-slate-700 hover:bg-slate-50"
-                          }`}
+                            }`}
                         >
                           Nein
                         </button>
@@ -464,22 +457,20 @@ Kunden-Bemerkung: ${notes || "Keine"}
                         <button
                           type="button"
                           onClick={() => setTargetElevator("ja")}
-                          className={`flex-1 rounded-xl border py-2 text-xs font-bold transition ${
-                            targetElevator === "ja"
+                          className={`flex-1 rounded-xl border py-2 text-xs font-bold transition ${targetElevator === "ja"
                               ? "border-amber-400 bg-amber-400 text-slate-950 font-black"
                               : "border-slate-300 bg-white text-slate-700 hover:bg-slate-50"
-                          }`}
+                            }`}
                         >
                           Ja
                         </button>
                         <button
                           type="button"
                           onClick={() => setTargetElevator("nein")}
-                          className={`flex-1 rounded-xl border py-2 text-xs font-bold transition ${
-                            targetElevator === "nein"
+                          className={`flex-1 rounded-xl border py-2 text-xs font-bold transition ${targetElevator === "nein"
                               ? "border-amber-400 bg-amber-400 text-slate-950 font-black"
                               : "border-slate-300 bg-white text-slate-700 hover:bg-slate-50"
-                          }`}
+                            }`}
                         >
                           Nein
                         </button>
@@ -552,17 +543,16 @@ Kunden-Bemerkung: ${notes || "Keine"}
                   <div
                     key={serviceItem.key}
                     onClick={() => handleServiceToggle(serviceItem.key as keyof typeof services)}
-                    className={`cursor-pointer rounded-2xl border-2 p-4 transition-all ${
-                      isChecked
+                    className={`cursor-pointer rounded-2xl border-2 p-4 transition-all ${isChecked
                         ? "border-amber-400 bg-amber-50/70 shadow-sm"
                         : "border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50"
-                    }`}
+                      }`}
                   >
                     <div className="flex items-start gap-3">
                       <input
                         type="checkbox"
                         checked={isChecked}
-                        onChange={() => {}}
+                        onChange={() => { }}
                         className="mt-1 h-5 w-5 rounded border-slate-300 text-amber-500 focus:ring-amber-400"
                       />
                       <div>
