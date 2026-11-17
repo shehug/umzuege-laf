@@ -39,7 +39,6 @@ const {
 const rawCanonical = canonical.startsWith("http") ? canonical : `${siteUrl}${canonical}`;
 const canonicalUrl = rawCanonical.length > siteUrl.length && rawCanonical.endsWith("/") ? rawCanonical.slice(0, -1) : rawCanonical;
 const imageUrl = image.startsWith("http") ? image : `${siteUrl}${image}`;
-const keywordsString = Array.isArray(keywords) ? keywords.join(", ") : keywords;
 ---
 
 <!doctype html>
