@@ -57,6 +57,11 @@ export const company: CompanyData = {
     "https://www.cylex.de/firma-home/umzuege-laf-16102146.html",
     "https://lokal.expert/umzuge-laf",
     "https://brancheonline.de/eintrag/umzuege-laf-landshut",
+    "https://www.werkenntdenbesten.de/e/113012317/entsorgung/landshut-isar/laf-umzuege-kurierdienst-bewertungen.html",
+    "https://www.firmenindex-deutschland.de/Umzuege-LAF_fa17e2aee0c56f0b2e35d8fa925f8788.html",
+    "https://deutschland-informiert.de/webkatalog.php?id=744",
+    "https://awl-zentrum.de/umzug-landshut/",
+    "https://www.brancheplus.de/eintrag/umzuege-laf-84030-landshut/",
   ],
 };
 
