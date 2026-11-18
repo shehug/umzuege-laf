@@ -112,8 +112,8 @@ export interface SeoJsonLdProps {
 
 export default function SeoJsonLd({
   currentUrl = siteUrl,
-  pageTitle = "Umzugsunternehmen Landshut » Umzüge zum Festpreis | LAF",
-  pageDescription = "Ihr Umzugsunternehmen in Landshut (5,0★ bei 65+ Bewertungen). Privat- & Firmenumzüge, Möbelmontage & Entrümpelung zum 100% Festpreis. Angebot in 4 Std. anfordern!",
+  pageTitle = "Umzüge Landshut » Umzugsunternehmen & Umzugsfirma | LAF",
+  pageDescription = "★ 5.0 Sterne Umzugsunternehmen & Umzugsfirma in Landshut: Privatumzug, Firmenumzug, Montage & Entrümpelung zum Festpreis. Angebot in 4 Std. anfordern!",
   pageImage = `${siteUrl}/images/hero/hero-umzug-landshut.webp`,
   faqs = [],
   breadcrumbs = [],
