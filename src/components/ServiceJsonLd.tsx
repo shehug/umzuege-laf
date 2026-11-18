@@ -1,3 +1,5 @@
+import { company } from "../data/company";
+
 const siteUrl = "https://umzuegelandshut.de";
 
 type ServiceJsonLdProps = {
@@ -44,6 +46,7 @@ export default function ServiceJsonLd({
       url: siteUrl,
       telephone: "+491629007565",
       email: "info@umzuege-laf.de",
+      sameAs: company.sameAs,
       address: {
         "@type": "PostalAddress",
         streetAddress: "Ergoldinger Str. 15",
