@@ -62,6 +62,9 @@ export const company: CompanyData = {
     "https://deutschland-informiert.de/webkatalog.php?id=744",
     "https://awl-zentrum.de/umzug-landshut/",
     "https://www.brancheplus.de/eintrag/umzuege-laf-84030-landshut/",
+    "https://www.reinigung-landshut.de/",
+    "https://entruempelungen-laf.de/",
+    "https://enterbit-web.de/",
   ],
 };
 
