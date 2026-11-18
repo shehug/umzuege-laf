@@ -49,10 +49,14 @@ export const company: CompanyData = {
     "https://maps.google.com/?q=Ergoldinger+Str.+15,+84030+Landshut",
     "https://www.google.com/maps/search/?api=1&query=Umz%C3%BCge+LAF,+Ergoldinger+Str.+15,+84030+Landshut",
     "https://www.facebook.com/61561388244118/",
+    "https://www.provenexpert.com/de-de/umzuege-laf-landshut/",
+    "https://adresse.dastelefonbuch.de/Landshut/1-M%C3%B6beltransporte-LAF-Umz%C3%BCge-Landshut-Ergoldinger-Str.html",
     "https://www.gelbeseiten.de/gsbiz/aece8f96-e961-4a60-b646-a30f2f40f9af",
     "https://www.dasoertliche.de/Themen/LAF-Umz%C3%BCge-Landshut-Industriegebiet-Ergoldinger-Str",
     "https://www.11880.com/branchenbuch/landshut-isar/060441364B113012317/laf-umzuege-kurierdienst.html",
     "https://www.cylex.de/firma-home/umzuege-laf-16102146.html",
+    "https://lokal.expert/umzuge-laf",
+    "https://brancheonline.de/eintrag/umzuege-laf-landshut",
   ],
 };
 
