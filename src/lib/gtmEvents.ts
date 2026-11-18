@@ -42,7 +42,7 @@ export function trackWhatsappClick(location: string) {
 export function trackEmailClick(location: string) {
   pushGtmEvent("email_click", {
     click_location: location,
-    email: "info@umzuegelandshut.de",
+    email: "info@umzuege-laf.de",
   });
 }
 

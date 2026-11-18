@@ -24,7 +24,7 @@ export interface CompanyData {
 }
 
 export const company: CompanyData = {
-  name: "Umzüge LAF",
+  name: "Umzüge LAF Landshut",
   brand: "Umzüge LAF",
   owner: "Fahri Kalludra",
   address: "Ergoldinger Str. 15, 84030 Landshut",
@@ -35,7 +35,7 @@ export const company: CompanyData = {
   phone: "+49 162 9007565",
   phoneDisplay: "0162 900 75 65",
   phoneHref: "tel:+491629007565",
-  email: "info@umzuegelandshut.de",
+  email: "info@umzuege-laf.de",
   url: "https://umzuegelandshut.de",
   openingHours: "Mo–Fr 08:00–18:00 Uhr, Sa 09:00–17:00 Uhr, So geschlossen",
   openingHoursShort: "Mo–Fr: 08:00–18:00 Uhr | Sa: 09:00–17:00 Uhr",

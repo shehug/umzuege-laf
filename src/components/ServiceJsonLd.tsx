@@ -40,10 +40,10 @@ export default function ServiceJsonLd({
     provider: {
       "@type": "MovingCompany",
       "@id": `${siteUrl}/#organization`,
-      name: "Umzüge LAF",
+      name: "Umzüge LAF Landshut",
       url: siteUrl,
       telephone: "+491629007565",
-      email: "info@umzuegelandshut.de",
+      email: "info@umzuege-laf.de",
       address: {
         "@type": "PostalAddress",
         streetAddress: "Ergoldinger Str. 15",

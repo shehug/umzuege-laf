@@ -106,9 +106,9 @@ export const POST: APIRoute = async ({ request }) => {
 
     const smtpHost = process.env.SMTP_HOST || "smtp.hostinger.com";
     const smtpPort = Number(process.env.SMTP_PORT || 465);
-    const smtpUser = process.env.SMTP_USER || "info@umzuegelandshut.de";
+    const smtpUser = process.env.SMTP_USER || "info@umzuege-laf.de";
     const smtpPass = process.env.SMTP_PASS;
-    const recipient = process.env.CONTACT_TO || "info@umzuegelandshut.de";
+    const recipient = process.env.CONTACT_TO || "info@umzuege-laf.de";
     const sender = process.env.SMTP_FROM || `"Umzüge LAF" <${smtpUser}>`;
 
     const escapeHtml = (str: string) =>
