@@ -21,6 +21,8 @@ const orteRoutes = Object.values(orteModules)
 
 const routes = [
   { path: "/", priority: "1.0", changeFrequency: "weekly" },
+  { path: "/umzugsunternehmen-landshut", priority: "1.0", changeFrequency: "weekly" },
+  { path: "/umzug-landshut", priority: "1.0", changeFrequency: "weekly" },
   { path: "/umzugskosten-landshut", priority: "1.0", changeFrequency: "weekly" },
   { path: "/privatumzug-landshut", priority: "0.95", changeFrequency: "weekly" },
   { path: "/seniorenumzug-landshut", priority: "0.95", changeFrequency: "weekly" },
