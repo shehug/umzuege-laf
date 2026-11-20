@@ -196,7 +196,7 @@ export default function SeoJsonLd({
     ],
     address,
     geo,
-    hasMap: "https://www.google.com/maps/search/?api=1&query=Umz%C3%BCge+LAF+Ergoldinger+Str.+15+84030+Landshut",
+    hasMap: "https://www.google.com/maps/search/?api=1&query=Umz%C3%BCge+LAF+Ergoldinger+Stra%C3%9Fe+15+84030+Landshut",
     areaServed,
     founder: {
       "@type": "Person",
@@ -252,7 +252,7 @@ export default function SeoJsonLd({
     {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
-      name: "Umzüge LAF Landshut",
+      name: company.name,
       alternateName: ["LAF Umzüge", "Umzüge LAF", "Umzugsunternehmen Landshut"],
       url: siteUrl,
       inLanguage: "de-DE",

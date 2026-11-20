@@ -8,8 +8,6 @@ const email = "info@umzuege-laf.de";
 
 const links = [
   { label: "Startseite", href: "/" },
-  { label: "Umzugsunternehmen Landshut", href: "/umzugsunternehmen-landshut" },
-  { label: "Umzug Landshut", href: "/umzug-landshut" },
   { label: "Leistungen", href: "/leistungen" },
   { label: "Über uns", href: "/ueber-uns" },
   { label: "Häufige Fragen (FAQ)", href: "/faq" },
@@ -53,13 +51,13 @@ export default function Footer() {
 
             <div className="mt-5 text-xs sm:text-sm font-semibold text-slate-300">
               <a
-                href="https://maps.google.com/?q=Ergoldinger+Str.+15,+84030+Landshut"
+                href="https://maps.google.com/?q=Ergoldinger+Stra%C3%9Fe+15,+84030+Landshut"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-amber-400 transition"
               >
                 <p className="font-bold text-white">Standort:</p>
-                <p>Ergoldinger Str. 15</p>
+                <p>Ergoldinger Straße 15</p>
                 <p>84030 Landshut</p>
               </a>
             </div>
@@ -127,9 +125,7 @@ export default function Footer() {
 
             <div className="mt-5 rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-xs text-slate-400">
               <p className="font-bold text-white">Öffnungszeiten:</p>
-              <p className="mt-1">Mo – Fr: 08:00 – 18:00 Uhr</p>
-              <p>Samstag: 09:00 – 17:00 Uhr</p>
-              <p>Sonntag: Geschlossen</p>
+              <p className="mt-1">Mo–Fr 08:00–18:00 Uhr, Sa 09:00–17:00 Uhr</p>
             </div>
           </div>
         </div>

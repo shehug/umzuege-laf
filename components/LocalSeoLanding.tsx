@@ -330,7 +330,7 @@ export default function LocalSeoLanding({
             <div>
               <div className="inline-flex items-center gap-2 rounded-full bg-amber-400/10 px-3 py-1 text-xs font-bold text-amber-300">
                 <span>📍</span>
-                <span>Standort: Ergoldinger Str. 15, 84030 Landshut</span>
+                <span>Standort: Ergoldinger Straße 15, 84030 Landshut</span>
               </div>
 
               <h2 className="mt-4 text-3xl sm:text-4xl font-black text-white">

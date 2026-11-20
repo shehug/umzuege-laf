@@ -1,11 +1,6 @@
 export default function GoogleReviews() {
-  const currentDate = new Intl.DateTimeFormat("de-DE", {
-    month: "long",
-    year: "numeric",
-  }).format(new Date());
-
   const googleMapsUrl =
-    "https://www.google.com/maps/search/?api=1&query=Umz%C3%BCge+LAF,+Ergoldinger+Str.+15,+84030+Landshut";
+    "https://www.google.com/maps/search/?api=1&query=Umz%C3%BCge+LAF,+Ergoldinger+Stra%C3%9Fe+15,+84030+Landshut";
 
   return (
     <section className="border-y border-slate-800 bg-slate-900 py-16 text-white sm:py-24">
@@ -30,7 +25,7 @@ export default function GoogleReviews() {
             </p>
           </div>
           <p className="mt-1.5 text-xs text-slate-400">
-            Aktueller Stand ({currentDate}). Alle Bewertungen direkt auf Google einsehbar.
+            Alle Bewertungen direkt auf Google einsehbar.
           </p>
         </div>
         <a

@@ -46,7 +46,7 @@ export default function ServiceJsonLd({
       email: "info@umzuege-laf.de",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Ergoldinger Str. 15",
+        streetAddress: "Ergoldinger Straße 15",
         postalCode: "84030",
         addressLocality: "Landshut",
         addressRegion: "Bayern",

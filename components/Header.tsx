@@ -12,9 +12,9 @@ const navItems = [
   { label: "Startseite", href: "/" },
   {
     label: "Umzüge",
-    href: "/umzugsunternehmen-landshut",
+    href: "/",
     children: [
-      { label: "Umzugsunternehmen Landshut", href: "/umzugsunternehmen-landshut" },
+      { label: "Umzugsunternehmen Landshut", href: "/" },
       { label: "Privatumzug", href: "/privatumzug-landshut" },
       { label: "Firmenumzug", href: "/firmenumzug-landshut" },
       { label: "Fernumzug", href: "/umzuege/fernumzug" },

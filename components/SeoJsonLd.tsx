@@ -7,7 +7,7 @@ const email = "info@umzuege-laf.de";
 
 const address = {
   "@type": "PostalAddress",
-  streetAddress: "Ergoldinger Str. 15",
+  streetAddress: "Ergoldinger Straße 15",
   postalCode: "84030",
   addressLocality: "Landshut",
   addressRegion: "Bayern",
@@ -58,7 +58,7 @@ const areaServed = [
 const services = [
   {
     name: "Umzugsunternehmen Landshut",
-    url: `${siteUrl}/umzugsunternehmen-landshut`,
+    url: `${siteUrl}/`,
     description: "Professionelle Umzüge in Landshut und Umgebung mit Umzüge LAF."
   },
   {
@@ -136,7 +136,7 @@ const structuredData = {
       },
       address,
       geo,
-      hasMap: "https://www.google.com/maps/search/?api=1&query=Umz%C3%BCge+LAF+Ergoldinger+Str.+15+84030+Landshut",
+      hasMap: "https://www.google.com/maps/search/?api=1&query=Umz%C3%BCge+LAF+Ergoldinger+Stra%C3%9Fe+15+84030+Landshut",
       areaServed,
       serviceArea: areaServed,
       founder: {
@@ -208,7 +208,7 @@ const structuredData = {
     {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
-      name: "Umzüge LAF Landshut",
+      name: "Umzüge LAF",
       alternateName: [
         "Umzüge LAF",
         "Umzugsunternehmen Landshut",

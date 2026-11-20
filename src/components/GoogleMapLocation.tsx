@@ -34,9 +34,9 @@ export default function GoogleMapLocation() {
     }
   };
 
-  const mapEmbedUrl = `https://maps.google.com/maps?q=Umz%C3%BCge+LAF,+${encodeURIComponent(company.address.street + ", " + company.address.postalCode + " " + company.address.city)}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
-  const routeUrl = `https://www.google.com/maps/dir/?api=1&destination=Umz%C3%BCge+LAF,+${encodeURIComponent(company.address.street + ", " + company.address.postalCode + " " + company.address.city)}`;
-  const openMapUrl = `https://www.google.com/maps/search/?api=1&query=Umz%C3%BCge+LAF+${encodeURIComponent(company.address.street + " " + company.address.postalCode + " " + company.address.city)}`;
+  const mapEmbedUrl = `https://maps.google.com/maps?q=Umz%C3%BCge+LAF,+${encodeURIComponent(company.street + ", " + company.zip + " " + company.city)}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+  const routeUrl = `https://www.google.com/maps/dir/?api=1&destination=Umz%C3%BCge+LAF,+${encodeURIComponent(company.street + ", " + company.zip + " " + company.city)}`;
+  const openMapUrl = `https://www.google.com/maps/search/?api=1&query=Umz%C3%BCge+LAF+${encodeURIComponent(company.street + " " + company.zip + " " + company.city)}`;
 
   return (
     <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm h-full flex flex-col justify-between">
@@ -95,10 +95,10 @@ export default function GoogleMapLocation() {
               </p>
             </div>
             <p className="mt-1 text-base font-black text-slate-900">
-              {company.name} ({company.legalOwner})
+              {company.name} ({company.owner})
             </p>
             <p className="text-xs sm:text-sm font-semibold text-slate-700">
-              {company.address.street}, {company.address.postalCode} {company.address.city}
+              {company.street}, {company.zip} {company.city}
             </p>
             <div className="mt-2 space-y-0.5 text-xs text-slate-600">
               <p>Telefon: <a href={company.phoneHref} className="font-bold text-slate-900 hover:text-amber-600">{company.phoneDisplay}</a></p>

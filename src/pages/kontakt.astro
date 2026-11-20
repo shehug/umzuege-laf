@@ -18,7 +18,7 @@ const emailHref = "mailto:info@umzuege-laf.de";
 
 const trustBadges = [
   { icon: "💶", title: "100% Kostenlos", desc: "Unverbindliches Festpreis-Angebot" },
-  { icon: "⚡", title: "Antwort in 4 Std.", desc: "4 Geschäftszeit-Stunden (Mo–Fr 08–18 Uhr, Sa 09–17 Uhr)" },
+  { icon: "⚡", title: "Antwort in 4 Std.", desc: "Antwort in der Regel innerhalb von 4 Stunden (werktags)." },
   { icon: "🛡️", title: "Festpreis-Garantie", desc: "Transparente Preise ohne Überraschungen" },
   { icon: "📍", title: "Persönlich in Landshut", desc: "Direkte Beratung & Vor-Ort-Besichtigung" },
 ];
@@ -75,7 +75,7 @@ const initialRequestType = Astro.url.searchParams.get("leistung") ?? "Privatumzu
               </div>
               <h2 class="mt-4 text-base sm:text-lg font-black text-slate-900">Direkt anrufen</h2>
               <p class="mt-1 text-xs text-slate-600">
-                Mo–Fr: 08:00 – 18:00 · Sa: 09:00 – 17:00 Uhr erreichbar
+                Mo–Fr 08:00–18:00 Uhr, Sa 09:00–17:00 Uhr erreichbar
               </p>
               <p class="mt-3 text-base font-black text-slate-900">{phone}</p>
             </div>
@@ -206,7 +206,7 @@ const initialRequestType = Astro.url.searchParams.get("leistung") ?? "Privatumzu
                   Online-Anfrageformular
                 </h2>
                 <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Nennen Sie uns die wichtigsten Eckdaten. Sie erhalten innerhalb von 4 Geschäftszeit-Stunden eine Rückmeldung (Mo–Fr: 08:00 – 18:00 Uhr, Sa: 09:00 – 17:00 Uhr). Den Festpreis vereinbaren wir nach Klärung des Leistungsumfangs.
+                  Nennen Sie uns die wichtigsten Eckdaten. Antwort in der Regel innerhalb von 4 Stunden (werktags). Den Festpreis vereinbaren wir nach Klärung des Leistungsumfangs.
                 </p>
               </div>
 

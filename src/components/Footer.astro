@@ -17,6 +17,10 @@ const links = [
 ];
 
 const services = [
+  { label: "Umzüge im Überblick", href: "/umzuege" },
+  { label: "Haushaltsauflösung", href: "/entruempelung/haushaltsaufloesung" },
+  { label: "Kellerentrümpelung", href: "/entruempelung/kellerentruempelung" },
+  { label: "Lagerung", href: "/umzuege/lagerung" },
   { label: "Umzugskosten Landshut", href: "/umzugskosten-landshut" },
   { label: "Privatumzug Landshut", href: "/privatumzug-landshut" },
   { label: "Seniorenumzug Landshut", href: "/seniorenumzug-landshut" },
@@ -104,7 +108,7 @@ const currentYear = new Date().getFullYear();
           Leistungen
         </p>
         <div class="mt-4 grid gap-2.5">
-          {services.slice(0, 8).map((service) => (
+          {services.map((service) => (
             <a
               href={service.href}
               class="text-xs sm:text-sm text-slate-300 hover:text-white transition"
@@ -159,9 +163,7 @@ const currentYear = new Date().getFullYear();
 
         <div class="mt-5 rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-xs text-slate-400">
           <p class="font-bold text-white">Öffnungszeiten:</p>
-          <p class="mt-1 text-slate-300">Mo–Fr: 08:00 – 18:00 Uhr</p>
-          <p class="text-slate-300">Sa: 09:00 – 17:00 Uhr</p>
-          <p class="text-slate-500">So: Geschlossen</p>
+          <p class="mt-1 text-slate-300">{company.openingHours}</p>
         </div>
       </div>
     </div>

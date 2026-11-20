@@ -187,7 +187,7 @@ export default function ContactForm({ initialRequestType = "Privatumzug" }: { in
       {/* Response Promise Banner */}
       <div className="mt-3.5 flex items-center gap-2 rounded-lg bg-amber-50 border border-amber-300 px-3 py-2 text-xs font-bold text-amber-950">
         <span className="text-sm">⏱️</span>
-        <span>Rückmeldung innerhalb von 4 Stunden während unserer Geschäftszeiten: Mo–Fr: 08:00 – 18:00 Uhr, Sa: 09:00 – 17:00 Uhr. Gezählt werden ausschließlich Stunden innerhalb der Geschäftszeiten.</span>
+        <span>Antwort in der Regel innerhalb von 4 Stunden (werktags).</span>
       </div>
 
       {statusMessage && (

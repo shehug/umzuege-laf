@@ -2,12 +2,8 @@ import Link from "next/link";
 
 const primaryLinks = [
   {
-    title: "Umzugsunternehmen Landshut",
-    href: "/umzugsunternehmen-landshut",
-  },
-  {
-    title: "Umzug Landshut",
-    href: "/umzug-landshut",
+    title: "Startseite",
+    href: "/",
   },
   {
     title: "Privatumzug Landshut",

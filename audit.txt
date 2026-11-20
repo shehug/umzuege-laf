@@ -135,8 +135,8 @@ Platz
 	5.0
 	6.5
 	* / (Startseite): "Umzüge Landshut – stressfrei & zuverlässig zum Festpreis"
-   * /umzug-landshut/
-   * /umzugsunternehmen-landshut/
+   * / (Startseite)
+   * / (Startseite)
    * /privatumzug-landshut/
    * /expressumzug-landshut//firmenumzug-landshut/
    * /fernumzug-landshut/
