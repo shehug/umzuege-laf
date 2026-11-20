@@ -24,7 +24,7 @@ export interface CompanyData {
 }
 
 export const company: CompanyData = {
-  name: "Umzüge LAF Landshut",
+  name: "Umzüge LAF",
   brand: "Umzüge LAF",
   owner: "Fahri Kalludra",
   address: "Ergoldinger Straße 15, 84030 Landshut",
